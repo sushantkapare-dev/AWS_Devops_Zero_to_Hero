@@ -1,6 +1,37 @@
 ## what is Docker
+Docker is a platform and a set of tools that allows developers to develop, package, and deploy applications as lightweight, portable containers. These containers can include everything needed to run the application, including code, runtime, libraries, and system tools. Docker provides a consistent and isolated environment for applications, making it easier to build, ship, and run software across different environments, such as development laptops, testing servers, and production servers.
 
 ## write diff docker comamnds 
+
+**docker run**
+
+**docker ps and docker ps -a**
+
+**docker logs**
+
+**docker build**
+
+**docker images**
+
+**docker stop**
+
+**docker kill**
+
+**docker rm rmi**
+
+**docker exec**
+
+**docker network ls**
+
+**docker volume ls**
+
+**docker-compose up**
+
+**docker-compose down**
+
+**docker inspect**
+
+**docker cp**
 
 ## what is docker lifecycle
 
