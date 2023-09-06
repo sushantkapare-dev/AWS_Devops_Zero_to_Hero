@@ -38,4 +38,13 @@
 
 ## What are the common docker practices to reduce the size of docker images
 
+## What are networking types and what is default n/w
+
+## can you explain how to isolate n/w between containers
+
+## Realtime challenges with docker
+
+## what steps you take to secure containers
+
+## what is "docker --compress ."
 
