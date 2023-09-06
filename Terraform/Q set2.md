@@ -214,6 +214,63 @@ In this example, the dynamodb_table option specifies the name of the DynamoDB ta
 By enabling state locking, you ensure that Terraform operations are executed safely and sequentially, reducing the chances of data corruption and conflicts. It's a best practice for managing infrastructure in collaborative and automated DevOps environments.
 
 ## How to handle dependency between resources in terraform
+In Terraform, you can define dependencies between resources using the depends_on attribute and by referencing resource attributes. These dependencies ensure that resources are created, updated, or destroyed in the correct order, respecting the relationships between them. Handling dependencies is essential to model your infrastructure correctly and ensure that Terraform provisions resources in a predictable manner.
+Here are different methods for handling dependencies in Terraform:
+
+**Using depends_on Attribute**:
+The depends_on attribute allows you to explicitly specify dependencies between resources. You can add it to a resource block to indicate that it depends on one or more other resources.
+```
+resource "aws_security_group" "example" {
+  # Resource configuration here
+
+  # Define dependencies on other resources
+  depends_on = [aws_vpc.example_vpc]
+}
+```
+In this example, the aws_security_group resource depends on the aws_vpc resource, ensuring that the VPC is created or updated before the security group.
+
+**Implicit Dependencies**:
+Terraform automatically infers some dependencies based on references in resource configurations. For instance, if you reference the ID of another resource in the configuration, Terraform will establish a dependency.
+```
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+
+  # Reference another resource (depends implicitly on aws_security_group.example_sg)
+  security_groups = [aws_security_group.example_sg.name]
+}
+```
+In this case, aws_instance.example depends implicitly on aws_security_group.example_sg because it references it in the security_groups attribute.
+
+**Using Output Values**:
+You can use output values to pass information about one resource to another. This is useful for establishing dependencies and sharing information between resources or modules.
+```
+output "instance_id" {
+  value = aws_instance.example.id
+}
+
+resource "aws_security_group_rule" "example" {
+  type = "ingress"
+  # Depends on the instance ID
+  security_group_id = aws_security_group.example_sg.id
+  # Use output from aws_instance.example
+  source_security_group_id = aws_instance.example.id
+}
+```
+In this example, the aws_security_group_rule resource depends on the aws_instance resource because it uses the instance's ID as a source for the security group rule.
+
+**Module Dependencies**:
+If you are using Terraform modules, you can establish dependencies between modules by referencing output values from one module in the configuration of another module.
+```module "vpc" {
+  source = "./modules/vpc"
+}
+
+module "web_server" {
+  source = "./modules/web_server"
+  vpc_id = module.vpc.vpc_id
+}
+```
+Here, module.web_server depends on module.vpc because it references the vpc_id output from the VPC module.
 
 ## What is Tainted terraform resources
 
