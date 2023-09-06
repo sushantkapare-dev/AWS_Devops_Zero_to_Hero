@@ -1,41 +1,45 @@
-Terraform Interview Questions
-What do you know about terraform?
+
+# Terraform Interview Questions
+
+## What do you know about terraform?
 Ans: Terraform is a DevOps application that helps us create infrastructure and cloud data centres while keeping track of what was created and where. It is a tool that helps us build infrastructure safely and efficiently. Terraform can manage both popular service providers and custom in-house solutions.
  
-What steps comprise Terraform's core workflow?
+## What steps comprise Terraform's core workflow?
 Ans: Terraform's core workflow consists of three steps:
 The first step is to write, which includes developing infrastructure in code (code framework).
 The second step is to plan ahead to see how the changes will look before implementing them. 
 Finally, the third step is to apply, which is concerned with developing a repeatable infrastructure.    
-Discuss some critical features of Terraform.
+
+
+## Discuss some critical features of Terraform.
 Ans: Terraform assists us in dealing with our frameworks as code and developing them when required. The key features are:
 A control centre that permits clients to notice capacities.
 The capacity to interpret HCL code into JSON design.
 A setup language that upholds the introduction.
 A module count that monitors the number of modules applied to the frameworks.
  
-What exactly is IAC?
+## What exactly is IAC?
 Ans: This is one of the most basic and frequently asked terraform interview questions.IAC (Infrastructure as Code) enables you to build, change, and manage your infrastructure using code rather than manual processes. The configuration files are created based on the specifications of your infrastructure, and these configurations can be edited and distributed securely within an organisation.
  
-When can we use the terraform init command?
+## When can we use the terraform init command?
 Ans: We can use the terraform init command for the following cases:
 Plugin Installation
 Backend Initialization
 Child Module Installation
  
-What exactly is Terraform D, and how does it function?
+## What exactly is Terraform D, and how does it function?
 Ans: Terraform D is a Windows plugin compatible with nearly all in-service systems. The terraform init looks for plugins in the following directory by default.
  
-Can I add policies to Terraform Enterprise's open-source or pro versions?
+## Can I add policies to Terraform Enterprise's open-source or pro versions?
 Ans: Policies cannot be added to Terraform Enterprise's open-source description. The same is true for the Enterprise Pro edition. Terraform Enterprise's best version could only contact the watch policies.
  
-What are Modules in Terraform?
+## What are Modules in Terraform?
 Ans: A module in Terraform is a container for multiple resources used concurrently. Every Terraform that includes resources mentioned in .tf files requires the root module.
  
-Is it possible to use Terraform with callbacks on Azure? Sending a callback to, say, a logging system, a trigger, or other events?
+## Is it possible to use Terraform with callbacks on Azure? Sending a callback to, say, a logging system, a trigger, or other events?
 Ans: Yes. This can be accomplished using Azure Event Hubs. This feature is now available in the Terraform AzureRM provider. Terraform's Azure supplier offers users straightforward functionality. Microsoft Azure Cloud Shell includes a pre-configured Terraform occurrence.
  
-What exactly do you mean by Terraform providers?
+## What exactly do you mean by Terraform providers?
 Ans: Providers are Terraform plugins that allow it to interact with cloud providers, SaaS providers, and other APIs. The terraform configurations must declare which providers they require for Terraform to install and use. Some Terraform providers require configuration before use, such as endpoint URLs or cloud regions.
  
 Is it possible to deploy Terraform with multiple providers?
