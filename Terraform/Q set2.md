@@ -58,7 +58,6 @@ Terraform is an open-source infrastructure as code (IAC) tool developed by Hashi
 ## I want nginx and my-sql install on server and how templete file help you to achive this
 
 ## Key feature of terraform
-resources to match that desired state.
 
 Key features and concepts of Terraform include:
 
