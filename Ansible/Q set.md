@@ -52,4 +52,4 @@
 
 ## How to manage order of execution in playbook
 
-## what is serial keyword in ansible
+## what is "serial keyword" in ansible
