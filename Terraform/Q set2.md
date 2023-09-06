@@ -149,10 +149,32 @@ module "example_instance" {
 }
 ```
 
-
 ## what is terraform backend 
+In Terraform, a backend is a configuration that determines where and how Terraform stores its state data. The state data includes information about the resources and their current state that Terraform manages for a specific configuration. The backend configuration defines where this state data is stored and how it is accessed.
 
 ## what is terraform remote backend 
+In Terraform, a remote backend is a type of backend configuration that allows you to store your Terraform state file in a remote location rather than on your local machine. Remote backends are particularly useful in collaborative or production environments where multiple team members or automation processes need to work with the same Terraform configuration.
+Here are some key points about Terraform remote backends:
+
+** Remote State Storage **
+
+** Concurrency and Locking **
+
+** Collaboration **
+
+** Security **
+```
+terraform {
+  backend "s3" {
+    bucket         = "my-terraform-state-bucket"
+    key            = "myapp/terraform.tfstate"
+    region         = "us-west-2"
+    encrypt        = true
+    access_key     = "your-access-key"
+    secret_key     = "your-secret-key"
+  }
+}
+```
 
 ## How do you handle secret i Terraform
 
