@@ -143,15 +143,22 @@ Provisioners as it is used for executing scripts on a local or remote machine as
 The random provider assists in the generation of numeric or alphabetic characters that can be used as a prefix or suffix for the desired named identifier.
 
 ## What are the ten most used terraform commands?
-terraform init
-terraform init -upgrade
-terraform plan
-terraform apply
-terraform apply –auto-approve
-terraform destroy
-terraform destroy –auto-approve
-terraform fmt
-terraform fmt –recursive
-terraform show
+**terraform init**
 
-# 
+**terraform init -upgrade**
+
+**terraform plan**
+
+**terraform apply**
+
+**terraform apply –auto-approve**
+
+**terraform destroy**
+
+**terraform destroy –auto-approve**
+
+**terraform fmt**
+
+**terraform fmt –recursive**
+
+**terraform show**
