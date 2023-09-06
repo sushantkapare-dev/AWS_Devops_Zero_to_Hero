@@ -1,5 +1,7 @@
 ## what is Docker
 
+## write diff docker comamnds 
+
 ## what is docker lifecycle
 
 ## Tell me about docker container and diff from VM
