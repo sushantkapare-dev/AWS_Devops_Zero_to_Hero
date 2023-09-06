@@ -163,6 +163,8 @@ Here are some key points about Terraform remote backends:
 ** Collaboration **
 
 ** Security **
+
+Here's an example of configuring a Terraform configuration to use an Amazon S3 remote backend:
 ```
 terraform {
   backend "s3" {
@@ -176,7 +178,8 @@ terraform {
 }
 ```
 
-## How do you handle secret i Terraform
+## How do you handle secret in Terraform
+
 
 ## What is resource graph i Terraform
 
