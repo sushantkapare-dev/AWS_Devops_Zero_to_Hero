@@ -48,6 +48,12 @@
 
 ## what is "docker --compress ."
 
+## what is Docker Layerd architecture
+
+## How to make container volume persistant ? 
+
+## Can i setup my own docker repository
+
 ----------------------------------------------
 
 [wihout 'docker0' networking container not communiate with host machine ]
