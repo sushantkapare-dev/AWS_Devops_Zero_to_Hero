@@ -1,4 +1,5 @@
 ## What is terraform
+-- Terraform is an open-source infrastructure as code (IAC) tool developed by HashiCorp. It is used for provisioning and managing infrastructure resources in a declarative and automated way. Terraform allows you to define your infrastructure and services using a domain-specific language (DSL) called HashiCorp Configuration Language (HCL) or JSON. With Terraform, you can describe the desired state of your infrastructure, and it will automatically create, update, or delete resources to match that desired state.
 
 ## Diff between Terraform , Pulimi and aws clod-formation
 
