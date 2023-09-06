@@ -286,11 +286,34 @@ Terraform is designed to be platform-agnostic in the sense that it can be used t
 [But in my opinion it is not an platform-agnostic]
 
 ## I lost my state.tf file and i am going to apply then what will happen
+If you lose your terraform.tfstate file, it can significantly impact your ability to manage your infrastructure using Terraform. The terraform.tfstate file is essential because it contains the current state of your infrastructure resources as known to Terraform. Without it, Terraform may not have accurate information about your resources, making it challenging to manage them effectively.
+
+Here's what happens when you lose your terraform.tfstate file and try to apply changes:
+
+** Terraform Detects State File Missing **
+
+** State Corruption Risk: **
+
+** Apply Will Fail: **
+
+** Recreate State File **
 
 ## Diff between Terraform and ansible
+Terraform and Ansible are both popular DevOps tools, but they serve different purposes. Terraform is primarily an infrastructure-as-code tool that focuses on provisioning and managing cloud and on-premises infrastructure resources through declarative configurations. It creates and modifies resources to achieve a desired state. In contrast, Ansible is a configuration management and automation tool that emphasizes defining and enforcing the desired state of servers and applications, making it suitable for tasks such as software configuration, orchestration, and automation of repetitive tasks on existing infrastructure. While Terraform is resource-centric, Ansible is task-centric, and they are often used together in complementary roles to provision and configure infrastructure and applications as part of a comprehensive DevOps strategy.
 
 ## What is child and parent module and who callled other
+In Terraform, the concepts of child and parent modules are used to organize and modularize your infrastructure code. These terms refer to how you structure your Terraform configurations, and one module can call another module.
 
+**Child Module**:
+A child module is a self-contained collection of Terraform resources and configurations that encapsulate a specific piece of infrastructure or functionality.
+Child modules are typically designed to be reusable and independent, meaning they can be used in different Terraform configurations.
+A child module can be called or instantiated within a parent module to include its resources and configurations.
+
+**Parent Module**:
+A parent module is a Terraform configuration that includes one or more child modules.
+The parent module is responsible for defining the infrastructure topology, specifying values for child module input variables, and managing the overall configuration.
+It serves as the entry point for running Terraform commands, such as terraform apply or terraform plan, and is responsible for orchestrating the deployment of resources defined within child modules.
+In this relationship, the parent module calls or references child modules by specifying their source and providing input variable values. Child modules are designed to be reusable components, and they can be called from multiple parent modules, allowing you to build a modular and scalable infrastructure configuration.
 ## What is function in terraform
 
 ## What is Dynamic data fetching in Terraform
