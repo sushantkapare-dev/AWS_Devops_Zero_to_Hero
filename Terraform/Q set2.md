@@ -314,13 +314,23 @@ A parent module is a Terraform configuration that includes one or more child mod
 The parent module is responsible for defining the infrastructure topology, specifying values for child module input variables, and managing the overall configuration.
 It serves as the entry point for running Terraform commands, such as terraform apply or terraform plan, and is responsible for orchestrating the deployment of resources defined within child modules.
 In this relationship, the parent module calls or references child modules by specifying their source and providing input variable values. Child modules are designed to be reusable components, and they can be called from multiple parent modules, allowing you to build a modular and scalable infrastructure configuration.
+
 ## What is function in terraform
+In Terraform, functions are built-in operations and transformations that you can use within your Terraform configurations to manipulate data, perform calculations, and control the behavior of resources and modules. Functions allow you to work with data, values, and attributes in a declarative way, making it easier to define and customize your infrastructure.
+
+**String Manipulation**: Functions like join(), split(), replace(), and substr() allow you to manipulate strings, concatenate them, and extract substrings.
+
+**Math Operations**: Terraform provides mathematical functions like min(), max(), floor(), ceil(), and abs() for performing calculations within your configurations.
+
+**Conditional Logic**: Functions like if(), coalesce(), and can(), enable you to implement conditional logic, making it possible to choose between different values or configurations based on conditions.
 
 ## What is Dynamic data fetching in Terraform
+Dynamic data fetching in Terraform refers to the capability to retrieve or query information from external sources, such as cloud providers, APIs, or databases, and use that data within your Terraform configurations. This feature allows you to make your infrastructure code more flexible and adaptable by incorporating real-time or dynamic data into your resource definitions.
 
 ## What is data source in Terraform
+In Terraform, a "data source" is a construct used to retrieve information from external systems or resources and make that data available for use within your Terraform configuration. Data sources allow you to query and import information into your Terraform configuration, such as data from cloud providers, APIs, databases, or other external systems. This data can then be used to make decisions or configure resources in your infrastructure.
 
-## How to export data from one module to another
+## How to export data from one module to another.
 
 ## What is external data block in Terraform
 
