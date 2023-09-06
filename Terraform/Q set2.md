@@ -93,6 +93,21 @@ Implement role-based access control and least privilege principles.
 Monitor and audit access to sensitive data.
 
 ## Why terraform used for devops
+Terraform is widely used in DevOps for several reasons, as it offers significant benefits that align well with the goals and practices of DevOps teams. Here's why Terraform is a popular choice for DevOps:
+
+**1.Infrastructure as Code (IAC)**
+
+**2.Automation and Orchestration**
+
+**3.Multi-Cloud and Hybrid Cloud Support**
+
+**4.Scalability**
+
+**5.State Management**
+
+**6.Ecosystem and Community**
+
+**7.Integration with CI/CD Pipelines**
 
 ## What is terraform init
 
