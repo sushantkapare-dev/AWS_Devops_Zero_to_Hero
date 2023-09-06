@@ -331,22 +331,100 @@ Dynamic data fetching in Terraform refers to the capability to retrieve or query
 In Terraform, a "data source" is a construct used to retrieve information from external systems or resources and make that data available for use within your Terraform configuration. Data sources allow you to query and import information into your Terraform configuration, such as data from cloud providers, APIs, databases, or other external systems. This data can then be used to make decisions or configure resources in your infrastructure.
 
 ## How to export data from one module to another.
-
-## What is external data block in Terraform
+In Terraform, you can export data from one module to another by using output variables in the source module and input variables in the destination module. This allows you to pass information from one module to another, making it easier to modularize your infrastructure and reuse configurations.
 
 ## What is tf_log variable in terraform
+Terraform has detailed logs that you can enable by setting the TF_LOG environment variable to any value. Enabling this setting causes detailed logs to appear on stderr.
+
+You can set TF_LOG to one of the log levels (in order of decreasing verbosity) TRACE, DEBUG, INFO, WARN or ERROR to change the verbosity of the logs.
+
+Setting TF_LOG to JSON outputs logs at the TRACE level or higher, and uses a parseable JSON encoding as the formatting.
 
 ## what comand to reconsile the actual state and desired state
+In Terraform, the command to reconcile the actual state of your infrastructure with the desired state defined in your configuration files is the terraform apply command. This command is used to create, update, or delete resources as needed to bring the infrastructure in line with your configuration.
 
-## Diff between "terraform refresh"  and "terraform apply refresh only" 
-
-## what is terraform file in data source in terraform
+## what is Templete file in data source in terraform
+In Terraform, the template_file data source is used to render a template file and retrieve its content as a variable that can be used within your Terraform configuration. This can be helpful when you need to generate dynamic configuration files or scripts as part of your infrastructure provisioning process.
 
 ## I want nginx and my-sql install on server and how templete file help you to achive this
+To install Nginx and MySQL on a server using Terraform, you can utilize the template_file data source to generate configuration files for Nginx and MySQL. However, it's essential to understand that Terraform is primarily used for provisioning and managing infrastructure resources, such as virtual machines, cloud services, and network configurations, but it's not a package manager or a tool for direct software installation.
+
+Here's a general outline of how you can use template_file in conjunction with external tools like shell scripts or configuration management tools (e.g., Ansible, Chef, Puppet) to achieve your goal:
+
+Define Template Files:
+
+Create template files for the Nginx and MySQL configurations, which include placeholders for variables you want to customize. For example, you might create nginx.conf.tpl and my.cnf.tpl files.
+```
+# nginx.conf.tpl
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    server {
+        listen 80;
+        server_name ${var.nginx_server_name};
+        location / {
+            root   /usr/share/nginx/html;
+            index  index.html index.htm;
+        }
+    }
+}
+```
+```
+# my.cnf.tpl
+[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+
+user=mysql
+
+[client]
+socket=/var/lib/mysql/mysql.sock
+
+[mysql]
+socket=/var/lib/mysql/mysql.sock
+```
+**Use Terraform template_file**:
+In your Terraform configuration, use the template_file data source to read and render the content of these templates. Define variables to customize the configuration.
+```
+data "template_file" "nginx_conf" {
+  template = file("${path.module}/nginx.conf.tpl")
+
+  vars = {
+    nginx_server_name = "example.com"
+  }
+}
+
+data "template_file" "mysql_conf" {
+  template = file("${path.module}/my.cnf.tpl")
+}
+```
+**Output Rendered Configurations**:
+You can create local files containing the rendered configurations or use the rendered content directly within your Terraform configuration.
+```
+resource "local_file" "nginx_conf_file" {
+  filename = "/etc/nginx/nginx.conf"
+  content  = data.template_file.nginx_conf.rendered
+}
+
+resource "local_file" "mysql_conf_file" {
+  filename = "/etc/mysql/my.cnf"
+  content  = data.template_file.mysql_conf.rendered
+}
+```
+Please note that the above code assumes that the server has appropriate directories and permissions for the Nginx and MySQL configuration files. Adjust the paths and permissions as needed.
+
+**Apply Terraform Configuration**:
+Run terraform apply to execute the Terraform configuration, which will render the configuration files and potentially apply the installation and configuration steps if you've set up the shell provisioner accordingly.
 
 ## Key feature of terraform
 
-Key features and concepts of Terraform include:
+**Key features and concepts of Terraform include**:
 
 Declarative Configuration: You define your infrastructure's desired state in configuration files, specifying the resources you need and their properties. Terraform takes care of figuring out how to make the actual infrastructure match this desired state.
 
