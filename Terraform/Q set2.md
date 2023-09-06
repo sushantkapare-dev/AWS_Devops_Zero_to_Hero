@@ -178,12 +178,40 @@ terraform {
 }
 ```
 
-## How do you handle secret in Terraform
+## What is resource graph in Terraform
+In Terraform, a resource graph is a fundamental concept that represents the interdependencies and relationships between resources defined in your Terraform configuration. It is a directed acyclic graph (DAG) that Terraform constructs based on your configuration to understand the order in which resources should be created, updated, or destroyed.
 
-
-## What is resource graph i Terraform
+Understanding the resource graph is essential for effective Terraform usage because it helps you design your infrastructure configurations with dependencies in mind. By modeling resource dependencies accurately, you ensure that Terraform can create and manage resources in the correct order, preventing issues and ensuring a consistent and predictable infrastructure state.
 
 ## What is state Loacking in terraform
+State locking in Terraform is a mechanism that prevents concurrent access to the Terraform state file by multiple users or processes. It ensures that only one user or process can make changes to the infrastructure at a time, reducing the risk of conflicts, data corruption, and unintended changes when working with infrastructure as code in a collaborative or automated environment.
+e locking in Terraform is a mechanism that prevents concurrent access to the Terraform state file by multiple users or processes. It ensures that only one user or process can make changes to the infrastructure at a time, reducing the risk of conflicts, data corruption, and unintended changes when working with infrastructure as code in a collaborative or automated environment.
+
+Here's how state locking works in Terraform:
+
+**State File**: When Terraform runs, it reads the current state of the infrastructure from a state file. The state file contains information about the resources managed by Terraform, their attributes, and their dependencies.
+
+**Concurrency Risks**: In a collaborative or automated environment, multiple users or CI/CD pipelines may attempt to apply changes to the same infrastructure simultaneously. Without state locking, this can lead to race conditions and conflicts, potentially causing resource inconsistencies or errors.
+
+**State Locking**: State locking prevents this concurrent access. When Terraform initiates an operation, such as terraform apply or terraform destroy, it first attempts to acquire a lock on the state file. If the lock is acquired successfully, Terraform proceeds with the operation. If the lock is already held by another process, Terraform waits until the lock is released or times out.
+
+**Lock Providers**: Terraform supports various lock providers, which determine how locking is implemented. Common lock providers include local file-based locks, DynamoDB (for AWS), Azure Blob Storage (for Azure), and others. The choice of lock provider depends on the infrastructure and collaboration environment.
+
+Here's an example of configuring a DynamoDB lock for AWS:
+```
+terraform {
+  backend "s3" {
+    bucket         = "my-terraform-state-bucket"
+    key            = "myapp/terraform.tfstate"
+    region         = "us-west-2"
+    encrypt        = true
+    dynamodb_table = "my-terraform-lock-table"
+  }
+}
+```
+In this example, the dynamodb_table option specifies the name of the DynamoDB table to use for state locking. Terraform will use this table to acquire and release locks when performing operations.
+
+By enabling state locking, you ensure that Terraform operations are executed safely and sequentially, reducing the chances of data corruption and conflicts. It's a best practice for managing infrastructure in collaborative and automated DevOps environments.
 
 ## How to handle dependency between resources in terraform
 
