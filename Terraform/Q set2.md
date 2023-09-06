@@ -273,10 +273,17 @@ module "web_server" {
 Here, module.web_server depends on module.vpc because it references the vpc_id output from the VPC module.
 
 ## What is Tainted terraform resources
+In Terraform, a "tainted" resource refers to a resource that has been marked as tainted or "dirty." A tainted resource indicates that Terraform considers it to be in an inconsistent or undesirable state and that it needs to be recreated or updated in the next terraform apply operation. Tainting a resource is a way to trigger Terraform to take corrective action on a specific resource.
+```
+terraform taint <resource_address>
+```
+It's important to exercise caution when tainting resources, as it can lead to the recreation of resources, which may result in downtime or other disruptions. Tainting should be used judiciously and in situations where it is necessary to bring a resource back to a consistent and desired state.
 
 ## What is terraform state rollback
 
-## Do you think Terraform is platform egnostic
+## Do you think Terraform is platform-agnostic
+Terraform is designed to be platform-agnostic in the sense that it can be used to provision and manage infrastructure resources on a wide range of cloud and on-premises platforms without being tied to a specific cloud provider or technology stack. It achieves this platform-agnosticism through the use of "providers."
+[But in my opinion it is not an platform-agnostic]
 
 ## I lost my state.tf file and i am going to apply then what will happen
 
@@ -329,9 +336,4 @@ Version Control: Terraform configurations are typically stored in version contro
 ## What is "terraform D"
 
 ## Explain recent project you have work on
-
-
-
-
-
 
