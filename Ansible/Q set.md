@@ -19,3 +19,11 @@
 ## what is config. mgmt tools
 
 ## what is ansible handlers
+
+## what is inventory in anisble and its types
+
+## What is tag in ansible and why it is used
+
+## Ansible is better than other IAC tools?
+
+## 
