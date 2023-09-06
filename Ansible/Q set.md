@@ -19,4 +19,3 @@
 ## what is config. mgmt tools
 
 ## what is ansible handlers
-
