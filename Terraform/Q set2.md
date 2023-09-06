@@ -58,6 +58,25 @@ Terraform is an open-source infrastructure as code (IAC) tool developed by Hashi
 ## I want nginx and my-sql install on server and how templete file help you to achive this
 
 ## Key feature of terraform
+resources to match that desired state.
+
+Key features and concepts of Terraform include:
+
+Declarative Configuration: You define your infrastructure's desired state in configuration files, specifying the resources you need and their properties. Terraform takes care of figuring out how to make the actual infrastructure match this desired state.
+
+Provider-Based: Terraform supports a wide range of cloud providers (e.g., AWS, Azure, Google Cloud), as well as various other infrastructure platforms (e.g., Docker, Kubernetes, on-premises servers). Each provider has its own set of resources and configurations that you can manage.
+
+Resource Management: Terraform allows you to create, update, and delete infrastructure resources such as virtual machines, networks, storage, databases, and more. Resources are defined in Terraform configuration files.
+
+Dependency Management: You can define dependencies between resources to ensure they are created or destroyed in the correct order.
+
+State Management: Terraform maintains a state file that keeps track of the current state of your infrastructure. This state file is used to plan and apply changes, and it helps Terraform understand what needs to be updated or recreated.
+
+Plan and Apply: Terraform follows a two-step process. First, you run terraform plan to preview the changes that will be applied to your infrastructure. Then, you execute terraform apply to make those changes. This ensures you can review and approve changes before they are applied.
+
+Modularity and Reusability: Terraform configurations can be organized into modules, allowing you to reuse and share infrastructure code. This promotes modularity and makes it easier to manage complex infrastructures.
+
+Version Control: Terraform configurations are typically stored in version control systems (e.g., Git) to track changes, collaborate with others, and maintain an audit trail.
 
 ## Define IAC 
 
