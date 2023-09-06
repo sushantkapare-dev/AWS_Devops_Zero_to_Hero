@@ -26,4 +26,16 @@
 
 ## Diff between CMD and ENTRYPOINT in docker
 
+## How can you transfer a file from one to other container
+
+## Diff between Dockerfile , Docker-compose and Docker-swarm
+
+## What is multi-stage build in docker
+
+## what are destroless images in Docker
+
+## Will data on container be lost when docker container exists
+
+## What are the common docker practices to reduce the size of docker images
+
 
