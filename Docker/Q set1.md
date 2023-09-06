@@ -48,3 +48,6 @@
 
 ## what is "docker --compress ."
 
+----------------------------------------------
+
+[wihout 'docker0' networking container not communiate with host machine ]
