@@ -16,14 +16,12 @@ Scenario 3: Continuous Integration and Continuous Deployment (CI/CD)
 Your development team is adopting CI/CD practices to automate the software delivery process. As part of the pipeline, you need to build, test, and deploy Dockerized applications to different environments.
 
 Question 3: What role does Docker play in a CI/CD pipeline?
-
 Answer: Docker plays a crucial role in a CI/CD pipeline as it ensures consistency between different stages of the software delivery process. During the build phase, Docker allows you to create a container image with all the application dependencies, ensuring that the application will run the same way in any environment. In the testing phase, you can run the containerized application in isolated environments, guaranteeing that the tests are executed in the same environment as the production deployment. Finally, in the deployment phase, you can easily deploy the pre-built container image to various environments, promoting consistency and reducing the risk of errors caused by environment inconsistencies.
 
 Scenario 4: High Availability and Disaster Recovery
 Your company’s critical applications must maintain high availability to ensure uninterrupted service for users. Additionally, disaster recovery procedures need to be in place to handle system failures and data loss.
 
 Question 4: How can Docker contribute to achieving high availability and disaster recovery?
-
 Answer: Docker Swarm or Kubernetes can be used to set up a cluster of nodes to ensure high availability of containerized applications. In a Docker Swarm, you can create replicas of services across different nodes, providing fault tolerance in case of node failures. Kubernetes offers similar capabilities through its pods and replica sets. Moreover, Docker’s ability to create immutable container images ensures that the applications running in production can be easily replaced in case of system failures, speeding up the recovery process. By regularly backing up Docker volumes and images, you can enhance disaster recovery readiness and restore application states in the event of data loss.
 
 Scenario 1: Multi-Container Communication
@@ -34,6 +32,7 @@ Hint:
 Consider creating a user-defined bridge network using docker network create.
 Make sure both containers are attached to the same bridge network.
 Use environment variables or a configuration file to specify the Redis connection details in the web application.
+
 Scenario 2: Custom Bridge Network
 You have a microservices architecture, with each service running in a separate Docker container. By default, Docker creates a bridge network for communication between containers. However, to enhance security and control, you decide to create a custom bridge network that allows communication only between specific containers.
 
@@ -42,6 +41,7 @@ Hint:
 Create a new bridge network using docker network create.
 Start containers with the --network flag to attach them to the custom bridge network.
 Containers in the custom bridge network can communicate with each other using container names or IP addresses.
+
 Scenario 3: Docker Compose
 You are managing a complex application with multiple services, each requiring different configurations. Manually running each service with its specific settings becomes cumbersome. Your goal is to use Docker Compose to manage the services efficiently.
 
@@ -50,6 +50,7 @@ Hint:
 Create a docker-compose.yml file defining the services, networks, and volumes required.
 Specify environment variables, ports, and volume bindings for each service in the Compose file.
 Use the docker-compose up command to start and manage the entire application stack.
+
 Scenario 4: Load Balancing
 You are deploying a web application in a Docker swarm with multiple instances of the same service to achieve load balancing. You need to set up a load balancer to distribute incoming requests evenly among all running containers.
 
@@ -58,6 +59,7 @@ Hint:
 Utilize the built-in Docker swarm mode for orchestration and scaling.
 Define the desired number of replicas for the service to scale it horizontally.
 Use a reverse proxy/load balancer (like Nginx or Traefik) in front of the Docker swarm to distribute incoming traffic.
+
 Scenario 5: Service Rolling Update
 Your application is running as a service in a Docker swarm, and you need to update it to the latest version without any downtime. Implement a rolling update strategy for the service.
 
@@ -66,6 +68,7 @@ Hint:
 Use the docker service update command to apply rolling updates.
 Specify the desired image version/tag in the update command.
 Docker swarm will ensure that old containers are replaced with new ones one at a time, avoiding service downtime.
+
 Scenario 6: High Availability
 You are designing a high-availability architecture for a critical application using Docker containers. The architecture must ensure that the application remains available even if some of the Docker hosts fail.
 
