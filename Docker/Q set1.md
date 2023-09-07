@@ -903,7 +903,9 @@ If Jenkins is running on a Docker container and it stops working after someone r
 
 ## what is docker event?
 
-##
+## how to check health of containers?
+
+## 
 ----------------------------------------------
 
 [wihout 'docker0' networking container not communiate with host machine ]
