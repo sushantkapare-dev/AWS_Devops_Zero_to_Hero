@@ -905,7 +905,7 @@ If Jenkins is running on a Docker container and it stops working after someone r
 
 ## how to check health of containers?
 
-## 
+## what is Canary deployment in docker?
 ----------------------------------------------
 
 [wihout 'docker0' networking container not communiate with host machine ]
