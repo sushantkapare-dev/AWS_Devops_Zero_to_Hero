@@ -864,6 +864,10 @@ Here are the general steps to set up your own Docker registry:
 
 10. **Integrate with CI/CD Pipeline**:
     - Integrate your Docker registry with your CI/CD pipeline so that it can automatically push and pull images as part of your software development and deployment process.
+   
+## what is dockerfile ad explain there component?
+
+## 
 
 ----------------------------------------------
 
