@@ -26,5 +26,9 @@
 
 The specific meaning of "POM" depends on the context in which it is used, so it's essential to consider the context to determine its intended interpretation.
 
+## In mvn is it achivable to not stored in .m2 folder and stroe in some other folder?
 
+## what is GAVS in maven?
+
+## 
 
