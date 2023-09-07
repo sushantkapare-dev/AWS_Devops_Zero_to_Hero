@@ -2,7 +2,7 @@
 
 ## explain k8s architecture?
 
-## diff bet docker-swarm and k8s?
+## diff bet docker-swarm and k8s and docker ?
 
 ## What is init container and can have multiple init container?
 
@@ -40,5 +40,64 @@
 
 ## Which is better between self managed and namaged clusters?
 
-## 
+## what troubleshoot have you done in your project
+
+## How trfic outside reach to pod ingress way?
+
+## What is Deplyment and service object in k8s?
+
+## k8s certificates are encrypted ot encoded?
+
+## Diff between LB and Ingress in k8s
+
+## what is minikube in k8s?
+
+## what is POD and Node in k8s?
+
+## Diff between LB and Headless in k8s?
+
+## How application running with zero-downtime in k8s?
+
+## what is self-healing in k8s?
+
+## K8s is portable? and how?
+
+## In k8s how ensure application availability?
+
+## How to upgrade k8s cluster?
+
+## How to handle PVC in k8s?
+
+## How to use ConfigMap and secrets?
+
+## what is service account?
+
+## Diff types of deployment stategy?
+
+## How to secure k8s cluster if you are admin?
+
+## Tell your experiance with k8s and prometheus?
+
+## What is exit status in k8s?
+
+## Diff between deploy appication on host and container?
+
+## How does handle scaling in k8s?
+
+## what is deployment and how it is diff from RS?
+
+## Explain concept of rolling update in k8s?
+
+## How k8s handle n/w security and access control?
+
+## How k8s handle storage mgmt for containers?
+
+## what is single-node and multi-node cluster?
+
+## what is nodeaffinity and node-selector in k8s?
+
+## Node group resiliance in k8s?
+
+## what is Error code kin k8s?
+
 
