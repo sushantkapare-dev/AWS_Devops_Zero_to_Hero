@@ -871,6 +871,8 @@ Here are the general steps to set up your own Docker registry:
 
 ## How to increse docker volume?
 
+## Can we create an new docker image from existing Image?
+
 ## 
 
 ----------------------------------------------
