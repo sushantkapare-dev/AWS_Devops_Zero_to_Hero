@@ -867,6 +867,10 @@ Here are the general steps to set up your own Docker registry:
    
 ## what is dockerfile ad explain there component?
 
+## what is system-prune in docker?
+
+## How to increse docker volume?
+
 ## 
 
 ----------------------------------------------
