@@ -14,4 +14,18 @@
 
 ## Have you worked on SED job in jenkins
 
+## How to add user in jenkins
+
+## what parameter req to configure jenkins
+
+## where do you store your artifact and dependency in jenkins
+
+## how do you give instruction to your agent node in jenkins
+
+## HOw to run 400 jobs concurrently out of thousend jobs
+
+## what is post-block in jenkins
+
+## How to backup in jenkins
+
 ## 
