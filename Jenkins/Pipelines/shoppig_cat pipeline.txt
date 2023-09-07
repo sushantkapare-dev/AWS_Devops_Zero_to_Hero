@@ -1,0 +1,95 @@
+############CICD PIPELINE ################
+
+*****CI ******
+pipeline {
+    agent any
+    
+    tools{
+        jdk 'jdk11'
+        maven 'maven3'
+    }
+    
+    environment {
+        SCANNER_HOME=tool 'sonar-scanner'
+    }
+
+    stages {
+        stage('GIT CHECKOUT') {
+            steps {
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/SushantOps/Shopping-Cart.git'
+            }
+        }
+        
+        stage('CODE COMPILE') {
+            steps {
+                sh "mvn clean compile"
+            }
+        }
+        
+        stage('SONAR ANALYSIS') {
+            steps {
+                withSonarQubeEnv('sonar-scanner') {
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=shopping-cart \
+                    -Dsonar.java.binaries=. \
+                    -Dsonar.projectKey=shopping-cart '''
+    
+                }
+            }
+        }
+        
+        stage('OWASP DEPENDENCY') {
+            steps {
+                dependencyCheck additionalArguments: '--scan ./  ', odcInstallation: 'DP'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+        
+        stage('CODE BUILD') {
+            steps {
+                sh "mvn clean install -DskipTests=true "
+            }
+        }
+        
+        stage('DOCKER BUILD AND PUSH') {
+            steps {
+                scripts{
+                withDockerRegistry(credentialsId: 'b677996a-a13d-4ed0-9c0d-e1b586f0062c', toolName: 'docker') {
+                    sh "docker build -t shopping-cart:latest -f docker/Dockerfile  ."
+                    sh "docker tag shopping-cart:latest sushantkapare1717/shopping-cart:latest"
+                    sh "docker push sushantkapare1717/shopping-cart:latest"  
+                      }  
+                    
+                }
+                
+            }
+        }
+        
+        stage('TRIGGER CD PIPELINE') {
+            steps {
+               build job:"CD_Pipeline" , wait: true
+            }
+        }
+    }
+}
+
+
+
+***********CD***********
+
+pipeline {
+    agent any
+
+    stages {
+        stage('DOCKER DEPLOY') {
+            steps {
+                 scripts{
+                withDockerRegistry(credentialsId: 'b677996a-a13d-4ed0-9c0d-e1b586f0062c', toolName: 'docker') {
+                    sh "docker run -d --name shop -p 8070:8070 sushantkapare1717/shopping-cart:latest "
+                     
+                      }  
+                    
+                }
+            }
+        }
+    }
+}

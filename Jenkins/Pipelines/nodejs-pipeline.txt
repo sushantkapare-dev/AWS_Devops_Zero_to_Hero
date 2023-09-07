@@ -1,0 +1,56 @@
+pipeline {
+    agent any
+    tools {
+        nodejs 'nodejs-10'
+    }
+
+    stages {
+        stage('GIT CHECKOUT') {
+            steps {
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/SushantOps/NodeJS_WebApp_Public.git'
+            }
+        }
+        
+        stage('INSTALL DEPENDENCIES') {
+            steps {
+                sh "npm install"
+            }
+        }
+        
+        stage('OWASP Dependency Check') {
+            steps {
+                dependencyCheck additionalArguments: '--scan ./ ', odcInstallation: 'DP'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+        
+        stage('DOCKER Build & Push') {
+            steps {
+                script{
+                    withDockerRegistry(credentialsId: 'e315c736-efbb-4563-8406-d8b7143ebf59', toolName: 'docker') {
+                        
+                        sh "docker build -t demonodejs ."
+                        sh "docker tag demonodejs sushantkapare1717/nodejs:latest"
+                        sh "docker push sushantkapare1717/nodejs:latest"
+                     }
+                }
+            }
+            
+            
+        }
+        
+        stage('DOCKER DEPLOY') {
+            steps {
+                script{
+                    withDockerRegistry(credentialsId: 'e315c736-efbb-4563-8406-d8b7143ebf59', toolName: 'docker') {
+                        
+                        sh "docker run -d --name nodejs-app -p 8081:8081 sushantkapare1717/nodejs:latest"
+                     
+                     }
+                }
+            }
+            
+            
+        }
+    }
+}

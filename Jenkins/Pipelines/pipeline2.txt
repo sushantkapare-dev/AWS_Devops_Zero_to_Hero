@@ -1,0 +1,85 @@
+pipeline {
+    agent any
+    
+    tools {
+        jdk 'jdk-11'
+        maven 'maven3'
+    }
+    
+    environment {
+        SCANNER_HOME=tool 'sonar-scanner'
+    }
+
+    stages {
+        stage('GIT CHECKOUT') {
+            steps {
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/SushantOps/Petclinic.git'
+            }
+        }
+        
+        stage('CODE COMPILE') {
+            steps {
+                sh "mvn clean compile"
+            }
+        }
+        
+         stage('CODE TEST') {
+            steps {
+                sh "mvn test"
+            }
+        }
+        
+         stage('SONARQUBE ANALYSIS') {
+            steps {
+                withSonarQubeEnv('sonar-server') {
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Petclinic \
+                    -Dsonar.java.binaries=. \
+                    -Dsonar.projectKey=Petclinic '''
+                    
+                }
+            }
+        }
+        
+        stage('OWASP Dependency Check') {
+            steps {
+                dependencyCheck additionalArguments: '--scan ./  ', odcInstallation: 'DP-Check'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+        
+        stage('BUILD ARTIFACT') {
+            steps {
+                sh "mvn clean install"
+            }
+        }
+        
+         stage('DOCKER BUILD') {
+            steps {
+                script{
+                    withDockerRegistry(credentialsId: '5e8d387c-6e50-41ec-ac49-e08ae3b1a9dd', toolName: 'docker') {
+                       
+                       sh "docker build -t petclinic1 ." 
+                    }
+                }
+            }
+        }
+        
+        stage('DOCKER PUSH') {
+            steps {
+                script{
+                    withDockerRegistry(credentialsId: '5e8d387c-6e50-41ec-ac49-e08ae3b1a9dd', toolName: 'docker') {
+                       
+                       sh "docker tag petclinic1 sushantkapare1717/petclinic17:latest " 
+                       sh "docker push sushantkapare1717/petclinic17:latest "
+                    }
+                }
+            }
+        }
+        
+         stage('DOCKER DEPLOY') {
+            steps {
+                sh "docker run -d --name pet1 -p 8082:8082 sushantkapare1717/petclinic17:latest"
+            }
+        }
+    }
+}

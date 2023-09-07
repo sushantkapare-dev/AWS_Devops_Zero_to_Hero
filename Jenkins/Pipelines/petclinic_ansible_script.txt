@@ -1,0 +1,16 @@
+---
+- hosts: all
+  tasks:
+    - name: Print message
+      debug:
+        msg: hello ansible world
+  tasks:
+    - name: Check if folder exist
+      stat:
+        path: /home/ubuntu/Petclinic
+      register: file
+    - name: Build and Deploy
+      shell:
+        cd /home/ubuntu/
+        git clone https://github.com/SushantOps/Petclinic.git
+      when: not file.stat.exists

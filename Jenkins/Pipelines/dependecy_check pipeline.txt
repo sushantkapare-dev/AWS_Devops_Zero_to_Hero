@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('GIT CHECKOUT') {
+            steps {
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/SushantOps/Petclinic.git'
+            }
+        }
+        
+        stage('DEPENDENCY CHECK') {
+            steps {
+                dependencyCheck additionalArguments: '--format HTML', odcInstallation: 'DP-Check'
+            }
+        } 
+    }
+}

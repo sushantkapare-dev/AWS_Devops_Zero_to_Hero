@@ -1,0 +1,83 @@
+pipeline {
+    agent any
+    
+    tools{
+        jdk "jdk-11"
+        maven "maven3"
+    }
+    environment {
+        SCANNER_HOME=tool 'sonar-scanner'
+    }
+
+    stages {
+        stage('GIT CHECKOUT') {
+            steps {
+                git changelog: false, poll: false, url: 'https://github.com/SushantOps/jpetstore-6.git'
+            }
+        }
+        
+        stage('CODE COMPILE') {
+            steps {
+                sh "mvn clean compile"
+            }
+        }
+        
+        stage('SONARQUBE-ANALYSIS') {
+            steps {
+                withSonarQubeEnv('sonar-scanner') {
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=petstore \
+                    -Dsonar.java.binaries=. \
+                    -Dsonar.projectKey=petstore '''
+                    
+                 }
+            }
+        }
+        
+        stage('OWASP DEPENDENCY') {
+            steps {
+                dependencyCheck additionalArguments: '--scan ./ ', odcInstallation: 'DP'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+        
+        stage('CODE BUILD') {
+            steps {
+                sh "mvn clean package -DskipTests=true"
+            }
+        }
+        
+        stage('Docker Build & Push') {
+            steps {
+                script{
+                    withDockerRegistry(credentialsId: 'ad2c8c61-5d03-42f6-bb31-d9446b2f337f', toolName: 'docker ') {
+                        
+                        sh "docker build -t petstore ."
+                        sh "docker tag petstore sushantkapare1717/petstore1:latest"
+                        sh "docker push sushantkapare1717/petstore1:latest"
+                    }
+                }
+            }
+        }
+        
+        
+    }
+}
+
+pipeline {
+    agent any
+
+    stages {
+        
+        stage('DEPLOY TO DOCKER') {
+            steps {
+                 script{
+                    withDockerRegistry(credentialsId: 'ad2c8c61-5d03-42f6-bb31-d9446b2f337f', toolName: 'docker ') {
+                        
+                        sh "docker run -d -p 8081:8080 sushantkapare1717/petstore1:latest"
+                        
+                    }
+                }
+            }
+        }
+    }
+}

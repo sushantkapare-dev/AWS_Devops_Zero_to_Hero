@@ -1,0 +1,66 @@
+pipeline {
+    agent any
+    
+    environment {
+        SCANNER_HOME=tool 'sonar-scanner'
+    }
+
+    stages {
+        stage('GIT CHECKOUT') {
+            steps {
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/SushantOps/to-do-app.git'
+            }
+        }
+        
+        stage('SONAR SCANNER') {
+            steps {
+                withSonarQubeEnv('sonar-scanner') {
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=to-do-app \
+                    -Dsonar.java.binaries=. \
+                    -Dsonar.projectKey=to-do-app '''
+    
+                }
+                
+            }
+        }
+            
+        stage('OWASP DEPENDENCY') {
+            steps {
+                dependencyCheck additionalArguments: '--scan ./ ', odcInstallation: 'DP'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+        
+         stage('DOCKER BUILD & PUSH') {
+            steps {
+                script{
+                   withDockerRegistry(credentialsId: '76924e46-026c-45cd-b5a3-8909080ec57b', toolName: 'docker') {
+                        
+                        sh "docker build -t todoapp:latest  -f backend/Dockerfile ."
+                        sh "docker tag todoapp:latest sushantkapare1717/todoapp:latest "
+                        sh "docker push sushantkapare1717/todoapp:latest "
+                    }
+                }
+            }
+        }
+        
+        stage('TRIVY SCAN Image') {
+            steps {
+               sh " trivy image sushantkapare1717/todoapp:latest "
+            }
+        }
+        
+         stage('DOCKER DEPLOY ') {
+            steps {
+               script{
+                   withDockerRegistry(credentialsId: '76924e46-026c-45cd-b5a3-8909080ec57b', toolName: 'docker') {
+                        
+                        sh "docker run -d --name to-do-app -p 4000:4000 sushantkapare1717/todoapp:latest "
+                        
+                    }
+               }    
+            }
+        }
+        
+    }
+}

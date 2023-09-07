@@ -1,0 +1,76 @@
+pipeline {
+    agent any
+    
+    tools {
+        jdk 'jdk-17'
+        maven 'maven3.8'
+    }
+    
+    environment  {
+        SCANNER_HOME = tool 'sonar-scanner'
+    }
+    
+    stages {
+        stage('GIT CHECKOUT') {
+            steps {
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/SushantOps/java-docker-genie.git'
+            }
+        }
+        
+        stage('CODE COMPILE') {
+            steps {
+                sh 'mvn clean compile'
+            }
+        }
+        
+        stage('SONARQUBE ANALYSIS') {
+            steps {
+
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.url=13.125.238.196:9000/ -Dsonar.login=squ_257e8dd6999740467c33def8a55a24d2f75664b6 -Dsonar.projectName=docker-desktop \
+                    -Dsonar.java.binaries=. \
+                    -Dsonar.projectKey=docker-desktop '''
+                
+            }
+        }
+        
+        stage('OWASP DEPENDENCY') {
+            steps {
+                dependencyCheck additionalArguments: '--scan ./ ', odcInstallation: 'DP'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+        
+        stage('CODE BUILD') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+        
+        stage('DOCKER BUILD AND PUSH') {
+            steps {
+                script{
+                   
+                   withDockerRegistry(credentialsId: 'f23f2176-5e0d-4a74-be09-112fd6d8e33f') {
+                        sh "docker build -t image2 ."
+                        sh "docker tag image2 sushantkapare1717/docker-desk:latest"
+                        sh "docker push sushantkapare1717/docker-desk:latest"
+                     } 
+                }
+               
+            }
+        }
+        
+        stage('DOCKER DEPLOY') {
+            steps {
+                script{
+                   
+                   withDockerRegistry(credentialsId: 'f23f2176-5e0d-4a74-be09-112fd6d8e33f') {
+                        sh "docker run -d --name docker-desktop -p 8081:8081 sushantkapare1717/docker-desk:latest "
+                        
+                     } 
+                }
+               
+            }
+        }
+    }
+}

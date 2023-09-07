@@ -1,0 +1,80 @@
+*********FULLY-FLEGED SHOPPING-CART PIPELINE **************
+
+pipeline {
+    agent any
+    tools{
+        jdk 'jdk11'
+        maven 'maven3'
+    }
+    environment {
+        SCANNER_HOME=tool 'sonar-scanner'
+    }
+
+    stages {
+        stage('GIT CHECKOUT') {
+            steps {
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/SushantOps/Shopping-Cart.git'
+            }
+        }
+        
+        stage('CODE COMPILE') {
+            steps {
+                sh "mvn clean compile"
+            }
+        }
+        
+        
+        stage('SONARQUBE ANALYSIS') {
+            steps {
+               sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.url=52.78.178.23:9000/ -Dsonar.login=squ_c02dfa6ef86c1d4583d7b4fa01afd2606b284368 -Dsonar.projectName=shopping-cart \
+                    -Dsonar.java.binaries=. \
+                    -Dsonar.projectKey=shopping-cart '''
+                }
+            
+        }
+        stage('CODE BUILD') {
+            steps {
+               sh "mvn clean package -DskipTests=true"
+            }
+        }
+        stage('OWASP DEPENDENCY CHECK') {
+            steps {
+               dependencyCheck additionalArguments: '--scan ./ ', odcInstallation: 'DP'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+        
+        stage('BUILD DOCKER IMAGE') {
+            steps {
+               script{
+                   withDockerRegistry(credentialsId: 'f567108d-457b-474b-944d-0e26b91d041a', toolName: 'docker') {
+                        sh "docker build -t shopping-cart -f docker/Dockerfile ."
+                        sh "docker tag shopping-cart sushantkapare1717/shopping-cart:latest"
+                    }
+               }
+            }
+        }
+        
+        stage('PUSH DOCKER IMAGE') {
+            steps {
+               script{
+                   withDockerRegistry(credentialsId: 'f567108d-457b-474b-944d-0e26b91d041a', toolName: 'docker') {
+                        sh "docker push sushantkapare1717/shopping-cart:latest"
+                       
+                    }
+               }
+            }
+        }
+        
+        stage('DOCKER DEPLOY') {
+            steps {
+               script{
+                   withDockerRegistry(credentialsId: 'f567108d-457b-474b-944d-0e26b91d041a', toolName: 'docker') {
+                        sh "docker run -d --name shopping-catr-v1 -p 8070:8070 sushantkapare1717/shopping-cart "
+                       
+                    }
+               }
+            }
+        }
+    }
+}

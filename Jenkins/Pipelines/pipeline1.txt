@@ -1,0 +1,62 @@
+pipeline {
+    agent any
+    
+    tools{
+        jdk 'jdk11'
+        maven 'maven3'
+    }
+    
+    environment{
+        SCANNER_HOME=tool 'sonar-scanner'
+    }
+
+    stages {
+        stage('GIT CHECKOUT') {
+            steps {
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/SushantOps/Petclinic.git'
+            }
+        }
+        
+        stage('CODE COMPILE') {
+            steps {
+               sh "mvn clean package"
+            }
+        }
+        
+        stage('CODE TEST') {
+            steps {
+               sh "mvn test"
+            }
+        }
+        
+        stage('SONARQUBE ANANLYSIS') {
+            steps {
+              withSonarQubeEnv('sonar-scanner') {
+                   sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Petclinic \
+                   -Dsonar.java.binaries=. \
+                   -Dsonar.projectKey=Petclinic '''
+                    
+                }
+            }
+        }
+        
+        stage('CODE BUILD') {
+            steps {
+               sh "mvn clean package"
+            }
+        }
+        
+        stage('OWASP DEPENDENCY CHECK') {
+            steps {
+               dependencyCheck additionalArguments: '--scan ./ ', odcInstallation: 'DP'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+        
+        stage('DEPLOY') {
+            steps {
+               sh "sudo cp target/petclinic.war /opt/apache-tomcat-9.0.65/webapps"
+            }
+        }
+    }
+}
