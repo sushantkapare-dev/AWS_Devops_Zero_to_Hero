@@ -784,3 +784,15 @@ In this example:
 - The tasks defined under the `tasks` section will be executed in parallel but with a maximum of two hosts at a time. Once the first two hosts complete their tasks, the playbook will move on to the next two, and so on, until all hosts have completed the tasks.
 
 The "serial" keyword is useful in scenarios where you want to ensure a controlled rollout of changes across a large number of hosts. It can help prevent resource contention, network congestion, or other potential issues that may arise when many hosts are updated simultaneously. This keyword provides a balance between parallelism and resource management in Ansible playbooks.
+
+## what is dry-run in ansible
+
+## loop concept in ansible
+
+## Conditinal in playbook
+
+## What is ansible vault?
+
+## What do you mean by roles in ansible?
+
+
