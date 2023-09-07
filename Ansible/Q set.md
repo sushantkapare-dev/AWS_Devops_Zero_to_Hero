@@ -1,3 +1,6 @@
+
+## explain architecure of ansible
+
 ## How does ansible works
 Ansible is an open-source automation tool that is used for configuration management, application deployment, task automation, and orchestration. It is agentless, meaning it doesn't require any software to be installed on the target systems. Instead, Ansible uses SSH (Secure Shell) or other remote execution methods to communicate with and manage remote hosts. Here's a basic overview of how Ansible works:
 
@@ -794,5 +797,16 @@ The "serial" keyword is useful in scenarios where you want to ensure a controlle
 ## What is ansible vault?
 
 ## What do you mean by roles in ansible?
+
+## Can we store the o/p of commands in ansible and how?
+
+## diff ansible modules?
+
+## what is host-key checking in ansible?
+
+## what is regular expression in ansible?
+
+## what is grouping in ansible?
+
 
 
