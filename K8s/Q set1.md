@@ -326,12 +326,66 @@ Here are some of the key capabilities and components of Istio:
 Istio deploys a sidecar proxy (based on Envoy) alongside each microservice in your cluster. This sidecar handles network traffic and enforces policies configured through Istio control plane components, such as Pilot, Mixer, Citadel, and Galley.
 
 ## why we go with containers?
+Containers offer several benefits that make them a popular choice for software development and deployment. Here are some compelling reasons why organizations and developers choose to use containers:
+
+1. **Isolation**: Containers provide process and file system isolation, allowing you to package an application and its dependencies into a self-contained unit. This isolation ensures that changes or updates to one container do not affect others, reducing compatibility issues and conflicts between applications.
+
+2. **Consistency**: Containers encapsulate an application along with its environment and dependencies. This ensures that the application behaves consistently across different development, testing, and production environments, regardless of variations in the underlying infrastructure.
+
+3. **Portability**: Containers are highly portable and can run consistently across various platforms, such as local development machines, cloud providers, and on-premises servers. This portability streamlines the deployment process and minimizes the "it works on my machine" problem.
+
+4. **Resource Efficiency**: Containers share the host operating system's kernel, which makes them lightweight compared to virtual machines. They consume fewer resources and can be started and stopped quickly, enabling efficient resource utilization and scalability.
+
+5. **Scaling**: Containers make it easier to scale applications horizontally by creating multiple instances of the same container. This dynamic scaling is essential for handling variable workloads and ensuring high availability.
+
+6. **Version Control**: Container images can be versioned, making it easy to track changes and roll back to previous versions when issues arise. This enhances version control and simplifies the release management process.
+
+7. **Dependency Management**: Containers allow you to package all dependencies with the application, reducing the risk of compatibility issues and dependency conflicts. This simplifies software distribution and updates.
+
+8. **DevOps and CI/CD**: Containers are well-suited for DevOps practices and continuous integration/continuous deployment (CI/CD) pipelines. They enable automated testing, deployment, and rollback processes, improving development and release workflows.
+
+9. **Security**: Containers can be configured with fine-grained security controls, helping to isolate applications and limit their privileges. Tools like Docker Security Scanning and container orchestration platforms provide security features to further protect containerized applications.
+
+10. **Microservices**: Containers are a natural fit for building and deploying microservices-based architectures. They enable each microservice to run in its own container, facilitating independent development, scaling, and management of microservices.
+
+11. **Resource Isolation**: Containers can be configured to allocate specific CPU and memory resources, ensuring that applications do not monopolize system resources and causing performance degradation for other services.
 
 ## what happen when 2 selectores having same name in namespace?
+In Kubernetes, when you have two or more selectors with the same name within the same namespace, it can lead to potential conflicts and unexpected behavior when managing resources like Services, Network Policies, and Deployments.
+
+Selectors are labels used to match resources with other resources, typically within the context of Services. Here's what can happen when multiple selectors have the same name within a namespace:
+
+1. **Service Confusion**: If you have multiple Services within the same namespace with selectors having the same name, Kubernetes may not be able to determine which Service should route traffic to which Pods. This can lead to traffic being sent to unintended Pods or Services, causing routing issues and disruptions in your application.
+
+2. **Resource Ambiguity**: In other scenarios, if you have multiple resources (e.g., Deployments, Pods) using the same label selector, it can become difficult to identify which resource corresponds to which. This can make resource management and troubleshooting challenging, as it may not be clear which resources are affected when you apply changes or debug issues.
+
+3. **Network Policy Challenges**: If you are using Network Policies to control network access between Pods based on selectors, having multiple selectors with the same name can create ambiguity and unexpected network behavior. Network Policies might not work as expected, leading to security or connectivity issues.
+
+To avoid these issues, it's essential to ensure that selectors within the same namespace have unique names or label combinations to clearly differentiate resources. By giving each resource a unique selector, you can maintain clear and predictable behavior when managing Services, Network Policies, and other resources.
 
 ## what happen when liveness probe is failed?
+When a liveness probe fails in Kubernetes, it signifies that the application running in a container is unresponsive or in an unhealthy state. Kubernetes continuously monitors the container's health using liveness probes, and when a failure occurs, Kubernetes takes action based on the configured probe settings. Typically, the following happens:
+
+1. **Container Restart**: Kubernetes will attempt to restart the container that failed the liveness probe. This is done to give the application a chance to recover from the failure. Kubernetes follows the restart policy defined in the Pod specification, which can be set to "Always" (to always restart), "OnFailure" (to restart only on failure), or "Never" (to never restart).
+
+2. **Automatic Recovery**: If the application inside the container can recover from the issue that caused the liveness probe to fail, the container may become healthy again, and Kubernetes will continue to monitor it.
+
+3. **Manual Intervention**: If the liveness probe continues to fail and the container repeatedly restarts without recovering, it may indicate a more severe or persistent issue. In such cases, it may require manual intervention by the operator or developer to diagnose and resolve the underlying problem.
+
+4. **Pod Status Update**: The status of the Pod will reflect the container's health. If the liveness probe repeatedly fails, the Pod's status will be updated to indicate that the container is not ready. This information can be valuable for monitoring and troubleshooting purposes.
+
+5. **Logs and Metrics**: Kubernetes may capture logs and metrics related to the liveness probe failures, which can be used for diagnosing and troubleshooting issues. These logs and metrics can help identify the cause of the failure and guide the resolution process.
 
 ## what happen when readyness probe is failed?
+When a readiness probe fails in a Kubernetes Pod, it signals to the Kubernetes control plane that the Pod is not ready to accept incoming network traffic or requests. As a result, the Pod is temporarily marked as "not ready" and is removed from service by Kubernetes. This ensures that only Pods that are fully prepared to handle requests are allowed to receive traffic, maintaining the stability and reliability of the application.
+
+The failing readiness probe can be configured to check various aspects of the application, such as making HTTP requests to a specific endpoint or inspecting the status of a service or database within the Pod. When the probe repeatedly fails to return a successful response within the specified time frame, Kubernetes considers the Pod not ready and may take the following actions:
+
+1. **Pod Eviction**: Depending on your Kubernetes configuration and policies, Kubernetes may terminate the Pod with the failing readiness probe. This can trigger a replacement Pod to be scheduled on a healthy node.
+
+2. **Load Balancer Changes**: If the Pod is part of a Service and is managed by a load balancer (like the Kubernetes Service), the load balancer may remove the failing Pod from its pool of available endpoints, preventing traffic from being routed to it until it becomes ready again.
+
+3. **Health Monitoring**: Kubernetes continuously monitors the readiness status of Pods. Once the readiness probe starts passing successfully, the Pod is marked as "ready" and is reintroduced into the pool of available endpoints for incoming requests.
 
 ## Which is better between self managed and namaged clusters?
 
