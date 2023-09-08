@@ -41,3 +41,14 @@ $* :-
 
 ## LVM in linux? 
 
+## Where to store local DNS entry in linux?
+
+## what is Linux file system?
+
+## How to read file in shell?
+
+## How to check file emplty in linux?
+
+## what is signals and trap in Linux?
+
+
