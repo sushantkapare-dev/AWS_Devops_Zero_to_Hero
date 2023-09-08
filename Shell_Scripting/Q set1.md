@@ -161,10 +161,23 @@ For example, to create a local DNS entry for a server with the IP address `192.1
 After adding the entry, your system will resolve the hostname `myserver` to the specified IP address whenever you use it in applications or commands. This is useful for custom or private DNS mappings on your local system. Remember that these entries only affect the local machine and do not impact DNS resolution for other devices on the network.
 
 ## what is Linux file system?
+The Linux file system, often referred to as the "Linux filesystem," is a hierarchical structure used to organize and manage data on a Linux-based operating system. It defines how files and directories are stored, named, and accessed on storage devices such as hard drives, solid-state drives (SSDs), and networked file systems. The Linux filesystem serves as the foundation for storing and retrieving data, and it plays a crucial role in the overall functioning of the operating system.
 
 ## How to read file in shell?
+```
+cat filename.txt
+```
 
 ## How to check file emplty in linux?
+Using stat command:
+The stat command can provide detailed information about a file, including its size. You can use this information to check if a file is empty or not. For example:
+```
+if [ "$(stat -c %s filename.txt)" -eq 0 ]; then
+    echo "The file is empty."
+else
+    echo "The file is not empty."
+fi
+```
 
 ## what is signals and trap in Linux?
 
@@ -197,5 +210,3 @@ After adding the entry, your system will resolve the hostname `myserver` to the 
 ## If root user access removed how do you access it?
 
 ## What is shadow password?
-
-##
