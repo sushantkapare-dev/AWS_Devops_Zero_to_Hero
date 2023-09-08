@@ -46,16 +46,62 @@ Running either of these commands in your terminal will list all open ports on yo
 A shebang, often represented as "#!", is a special character sequence at the beginning of a script or program file in Unix-like operating systems. It specifies the path to the interpreter that should be used to execute the script. When a script with a shebang is run, the operating system uses the specified interpreter to interpret and execute the script's code. This allows for the seamless execution of scripts written in different programming languages without explicitly specifying the interpreter in the command line.
 
 ## How to check linux version?
+```
+cat /etc/os-release
+```
+```
+uname -a
+```
+```
+lsb_release -a
+```
 
 ## Diff between wget and curl command in linux?
+`wget` and `curl` are both command-line tools in Linux used for downloading files from the internet, but they have some key differences. `wget` is primarily designed for non-interactive downloads and excels at recursively downloading entire directories, handling interrupted downloads, and following links within HTML pages. In contrast, `curl` is more versatile and can not only download files but also perform a wide range of network-related tasks, including sending HTTP requests with various methods and headers, making it suitable for scripting and automation. While `wget` is generally simpler to use for basic downloads, `curl` offers more advanced features and flexibility for a broader range of network-related tasks.
 
 ## what is AWK command in linux?
+AWK is a versatile text-processing tool and programming language that is commonly used in Unix and Linux environments. It's designed for processing and manipulating text and is particularly useful for working with structured data like columns and rows. AWK operates on a per-line basis, reading input lines, applying patterns, and performing actions based on those patterns. It allows you to search for specific patterns or conditions within text files and then perform actions, such as printing specific columns, performing mathematical calculations, and much more. AWK scripts consist of pattern-action pairs, making it a powerful tool for text extraction, transformation, and reporting in the Linux command-line environment.
 
 ## How to check free space in linux?
+```
+df -h
+```
 
 ## What is gruop in linux?
+In Linux, a "group" refers to a collection of user accounts that share certain permissions and attributes for file and resource access. Groups are a way to manage and control access to files, directories, and other system resources, allowing multiple users to have similar access rights without specifying permissions for each individual user separately.
 
 ## How to check which user assign to which user?
+In Linux, you can check which groups a user belongs to by using the `groups` command followed by the username you want to check. Here's the command:
+
+```bash
+groups username
+```
+
+Replace "username" with the actual username you want to inquire about. When you run this command, it will list all the groups that the specified user is a member of.
+
+For example, to check the groups for a user named "john," you would run:
+
+```bash
+groups john
+```
+
+The output will display a list of group names that the user "john" belongs to.
+
+If you need to check which users are members of a specific group, you can use the `getent` command followed by the group name. Here's the command:
+
+```bash
+getent group groupname
+```
+
+Replace "groupname" with the name of the group you want to check. This command will list all the users who are members of that group.
+
+For example, to check the members of a group named "developers," you would run:
+
+```bash
+getent group developers
+```
+
+The output will display a list of usernames that are part of the "developers" group.
 
 ## what is 
 $? :-
