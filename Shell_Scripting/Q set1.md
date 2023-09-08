@@ -73,4 +73,12 @@ $* :-
 
 ## What is process and deamon in linux?
 
-## 
+## What do you understand by kernel?
+
+## How to reduce LVM partition in linux?
+
+## If root user access removed how do you access it?
+
+## What is shadow password?
+
+##
