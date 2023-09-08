@@ -104,23 +104,34 @@ getent group developers
 The output will display a list of usernames that are part of the "developers" group.
 
 ## what is 
-$? :-
+$? :-This variable holds the exit status of the last executed command or script. A value of 0 typically indicates success, while non-zero values indicate an error.
 
-$# :- 
+$# :-  This variable holds the number of arguments (parameters) passed to a shell script or command.
 
-$0 :- 
+$0 :- This variable contains the name of the currently running script or command. It's also known as the "zeroth argument."
 
-$$ :- 
+$$ :-  This variable contains the process ID (PID) of the currently running shell or script.
 
-$1 :- 
+$1 :- These variables represent the positional parameters or arguments passed to a shell script or command. $1 holds the first argument,
 
-$2 :- 
+$2 :- $2 holds the second argument, and so on.
 
-$* :-
+$* :-This variable represents all the arguments passed to a shell script or command as a single string, separated by spaces. It's often used to iterate through all the arguments in a loop.
 
 ## write an script for print 1 to 10 no.?
+```
+#!/bin/bash
+
+# Loop from 1 to 10 and print each number on a new line
+for i in {1..10}; do
+  echo $i
+done
+```
 
 ## what is softlink and hardlink in linux?
+In Linux, a softlink (symbolic link) is a pointer to another file or directory that acts as a reference, similar to a shortcut in a graphical user interface. Softlinks are distinct files with their own Inode and permissions and can point to files or directories across different filesystems. They are flexible but can break if the target file is moved or deleted.
+
+On the other hand, a hardlink is a reference to the same underlying data (Inode) as the original file, essentially creating multiple directory entries that point to the same physical storage location. Hardlinks must exist on the same filesystem, and changes to one hardlink are reflected in all others, as they share the same data. They are efficient in terms of storage but lack the flexibility of softlinks.
 
 ## What is inode in linux?
 
