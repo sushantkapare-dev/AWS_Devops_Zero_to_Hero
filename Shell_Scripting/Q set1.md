@@ -134,10 +134,31 @@ In Linux, a softlink (symbolic link) is a pointer to another file or directory t
 On the other hand, a hardlink is a reference to the same underlying data (Inode) as the original file, essentially creating multiple directory entries that point to the same physical storage location. Hardlinks must exist on the same filesystem, and changes to one hardlink are reflected in all others, as they share the same data. They are efficient in terms of storage but lack the flexibility of softlinks.
 
 ## What is inode in linux?
+In Linux, an inode, short for "index node," is a data structure that stores metadata about a file or directory, including information like permissions, ownership, timestamps, and the physical location of data blocks on the storage device. Each file and directory in the filesystem is associated with an inode, and these inodes are used by the operating system to manage and access files efficiently. Inodes are crucial for maintaining the hierarchical structure and attributes of files and directories on a Linux filesystem.
 
 ## LVM in linux? 
+LVM, which stands for Logical Volume Manager, is a technology used in Linux and other Unix-like operating systems to manage storage devices and provide a more flexible and dynamic approach to disk management. LVM abstracts the physical storage devices (such as hard drives or SSDs) into logical volumes, allowing for features like volume resizing, snapshots, and easy management of storage resources.
 
 ## Where to store local DNS entry in linux?
+In Linux, you can store local DNS entries in the `/etc/hosts` file. The `/etc/hosts` file is a plain text file that allows you to manually specify mappings between IP addresses and hostnames, effectively creating local DNS entries that take precedence over DNS resolution from external DNS servers.
+
+Each line in the `/etc/hosts` file typically follows this format:
+
+```
+IP_address   Hostname [Alias1 Alias2 ...]
+```
+
+- `IP_address`: The IP address you want to associate with the hostname.
+- `Hostname`: The fully qualified domain name (FQDN) or hostname you want to resolve to the specified IP address.
+- `[Alias1 Alias2 ...]` (Optional): You can specify aliases or alternate names for the same IP address.
+
+For example, to create a local DNS entry for a server with the IP address `192.168.1.100` and the hostname `myserver`, you would add the following line to your `/etc/hosts` file:
+
+```
+192.168.1.100   myserver
+```
+
+After adding the entry, your system will resolve the hostname `myserver` to the specified IP address whenever you use it in applications or commands. This is useful for custom or private DNS mappings on your local system. Remember that these entries only affect the local machine and do not impact DNS resolution for other devices on the network.
 
 ## what is Linux file system?
 
