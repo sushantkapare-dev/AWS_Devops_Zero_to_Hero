@@ -28,6 +28,37 @@ In Grafana, a "panel" refers to an individual visual element or widget within a 
 In Grafana, a "data source" is a configuration that defines the connection to an external data repository or system from which Grafana retrieves data for visualization. Data sources can include databases like MySQL or InfluxDB, cloud services like AWS CloudWatch, time-series databases like Prometheus, and more. Users configure data sources in Grafana to access, query, and display data within dashboards. Each panel in a dashboard can be associated with a specific data source, allowing users to combine data from multiple sources in a single dashboard for comprehensive monitoring and analysis.
 
 ## How to create templete variable in grafana?
+Creating template variables in Grafana allows you to make your dashboards more dynamic and interactive. These variables can be used to filter and customize data across panels. Here are the steps to create a template variable in Grafana:
+
+1. **Log in to Grafana**: Access your Grafana instance through a web browser and log in if you haven't already.
+
+2. **Create or Edit a Dashboard**: You can either create a new dashboard or edit an existing one where you want to add the template variable.
+
+3. **Edit the Dashboard**: Click the gear icon (⚙️) in the top-right corner of the dashboard to enter edit mode.
+
+4. **Add a New Panel**: If you don't already have a panel where you want to use the template variable, add one by clicking the "Add panel" button. Alternatively, edit an existing panel.
+
+5. **Edit Panel and Query**: In the panel editor, configure your data source and query as usual.
+
+6. **Create the Template Variable**:
+   - Scroll down to the "Visualization" section (or a similar section depending on your panel type).
+   - Find the "Add variable" button and click it.
+
+7. **Configure the Variable**:
+   - Give your variable a name, which will be used to reference it.
+   - Choose the variable type based on your use case. Common types include "Query" (for dynamic data), "Interval" (for time-based intervals), and "Custom" (for predefined values).
+   - Configure the specific settings for your chosen variable type. For example, if you selected "Query," you'll define the data source, query, and other related settings.
+
+8. **Add the Variable to Your Query or Panel**:
+   - In your panel's query, you can use the variable by enclosing its name in double curly braces, like `{{variable_name}}`.
+   - You can also use the variable to customize panel titles, legends, and other settings.
+
+9. **Apply and Save**: Once you've configured the template variable and used it in your panel, click the "Apply" button to see how the variable affects your data. If everything looks as expected, save your dashboard.
+
+10. **Test and Interact**: When viewing your dashboard, you can now interact with the template variable by selecting different values or options, allowing you to dynamically change the data displayed in your panels.
+
+By following these steps, you can create template variables in Grafana to enhance the flexibility and interactivity of your dashboards, making it easier to explore and analyze data from various angles.
 
 ## What are anotation in grafana?
+In Grafana, annotations are markers or notes that you can add to your charts and dashboards to highlight important events, incidents, or data points. Annotations serve as a visual aid for correlating external events with the data displayed on the dashboard, making it easier to understand the context surrounding changes or anomalies in your metrics. They can be manually added or automatically generated based on specific conditions or data, providing valuable context and insight during monitoring and troubleshooting activities. Annotations help users to quickly identify and respond to significant occurrences in their systems or data.
 
