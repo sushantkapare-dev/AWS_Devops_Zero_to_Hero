@@ -51,4 +51,26 @@ $* :-
 
 ## what is signals and trap in Linux?
 
+## how to read array I/P in linux?
 
+## How to count no of lines in files in linux?
+
+## How to find duplicates in file?
+
+## How to taken backup in Linux?
+
+## what is debugging in shell scripting?
+
+## Diff between shell and cmd module in linux?
+
+## What is Cron Expression?
+
+## what is SED in linux?
+
+## what is GREP command?
+
+## How will you manage logs of syetms that generates huge log files everyday?
+
+## What is process and deamon in linux?
+
+## 
