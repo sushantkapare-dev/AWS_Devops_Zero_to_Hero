@@ -407,3 +407,4 @@ It's essential to use these methods responsibly and only for legitimate purposes
 
 ## What is shadow password?
 A shadow password is a security feature in Unix-like operating systems that enhances password protection by storing password hashes and related security information in a separate, more secure file (usually `/etc/shadow`) with restricted access, instead of in the publicly readable `/etc/passwd` file. This separation helps safeguard user password information from unauthorized access, making it more challenging for attackers to crack passwords through brute-force or dictionary attacks.
+
