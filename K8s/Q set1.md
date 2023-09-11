@@ -1275,4 +1275,7 @@ Here are some key considerations and strategies for achieving node group resilie
 ## what is Error code kin k8s?
 In Kubernetes (K8s), error codes are numeric or string identifiers that represent specific issues, failures, or conditions within the system. These error codes are used to convey information about the state of a resource, operation, or component, helping administrators and developers diagnose and troubleshoot problems in the cluster. Error codes often accompany error messages to provide additional context and guidance for resolving issues.
 
+## diff between pod and docker container?
+
+##
 
