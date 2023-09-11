@@ -1279,5 +1279,6 @@ In Kubernetes (K8s), error codes are numeric or string identifiers that represen
 
 ## How to setup RBAC to user or service account?
 
-##
+## what is multi-tenent cluster in k8s
+A multi-tenant cluster in Kubernetes (K8s) refers to a shared computing environment where multiple independent users or organizations can deploy and manage their containerized applications on the same Kubernetes cluster. This cluster is designed to isolate and secure the workloads of different tenants, ensuring resource allocation, access controls, and network policies are in place to prevent interference or unauthorized access between tenants while optimizing resource utilization across the cluster.
 
