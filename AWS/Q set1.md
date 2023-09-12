@@ -52,5 +52,6 @@
 
 ## Types of AMI provided by aws?
 
+## 
 
 
