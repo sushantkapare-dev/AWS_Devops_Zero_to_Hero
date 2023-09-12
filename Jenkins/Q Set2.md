@@ -345,10 +345,10 @@ Only run the steps in post if the current Pipeline’s or stage’s run has a "s
 **unstable**:-
 Only run the steps in post if the current Pipeline’s run has an "unstable" status, usually caused by test failures, code violations, etc. This is typically denoted by yellow in the web UI.
 
-unsuccessful
+**unsuccessful**:-
 Only run the steps in post if the current Pipeline’s or stage’s run has not a "success" status. This is typically denoted in the web UI depending on the status previously mentioned (for stages this may fire if the build itself is unstable).
 
-cleanup
+**cleanup**:-
 Run the steps in this post condition after every other post condition has been evaluated, regardless of the Pipeline or stage’s status.
 
 ```
@@ -437,5 +437,3 @@ Backing up Jenkins is essential to safeguard your configuration, job definitions
 8. **Backup Jenkins Configuration Files** (Optional):
 
    - In addition to the Jenkins home directory, consider backing up configuration files, such as `config.xml`, which contains global Jenkins configuration settings. This file can be found in the `JENKINS_HOME` directory.
-
-## 
