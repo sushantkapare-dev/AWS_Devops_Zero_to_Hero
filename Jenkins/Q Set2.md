@@ -117,13 +117,60 @@ In Jenkins, you can trigger one job to run after another by using build dependen
 
    Some Jenkins plugins provide additional options for triggering jobs. For example, the "Parameterized Trigger Plugin" allows you to pass parameters between jobs, and the "Build Pipeline Plugin" offers a visual way to define and visualize the flow of jobs in a pipeline.
 
-## what are custom plugins you have worked on in jenkins
+## what are custom plugins you have worked on in jenkins?
+As a DevOps engineer, the custom Jenkins plugins I've worked on have primarily focused on enhancing and automating our continuous integration and continuous delivery (CI/CD) pipelines to meet specific organizational needs. Here are a few examples of custom Jenkins plugins and their purposes:
 
-## what are plugins you have worked on in jenkins
+1. **Deployment Orchestrator Plugin**: Developed a custom plugin to streamline the deployment process for our microservices-based applications. This plugin integrated with our internal deployment tools and allowed us to trigger and monitor deployments directly from Jenkins, providing a unified interface for our DevOps teams.
 
-## Have you worked on SED job in jenkins
+2. **Security Scanning Integration Plugin**: Created a custom plugin to integrate various security scanning tools (such as static code analysis, vulnerability scanning, and dependency checks) into our Jenkins pipeline. This plugin automated the scanning process, generated reports, and failed builds if critical vulnerabilities were detected.
 
-## How to add user in jenkins
+3. **Custom Metrics and Monitoring Plugin**: Developed a plugin to collect and visualize custom application metrics during the build and deployment process. This enabled us to monitor application health and performance as part of our CI/CD pipeline and take proactive actions based on metrics thresholds.
+
+4. **Environment Provisioning and Cleanup Plugin**: Designed a plugin to manage the provisioning and cleanup of test environments for our applications. It automated the creation of isolated testing environments, executed tests, and then cleaned up resources after testing was complete, reducing manual effort and resource wastage.
+
+5. **Dynamic Configuration Management Plugin**: Created a plugin that allowed us to dynamically manage application configuration files during deployment. This plugin integrated with our configuration management system and ensured that the correct configuration files were deployed for each environment, reducing configuration-related errors.
+
+6. **Custom Reporting and Notification Plugin**: Built a plugin for generating and distributing custom reports summarizing build and deployment results. This plugin sent reports to stakeholders and team members via email or Slack, providing visibility into the CI/CD process.
+
+7. **Source Control Integration Plugin**: Developed a custom plugin to extend source control integration capabilities. This plugin allowed us to trigger builds and deployments based on specific branch patterns, tag releases, and manage code promotion workflows more effectively.
+
+## Have you worked on SED job in jenkins?
+Yes, as a DevOps engineer, I have worked with Jenkins and utilized the Stream EDitor (SED) command in various Jenkins jobs and pipeline scripts. SED is a powerful text-processing tool that can be employed to manipulate and transform text-based data within Jenkins pipelines. Here are some common use cases where SED has been beneficial:
+
+1. **Environment Variable Manipulation**: I've used SED to modify environment variables within Jenkins jobs. This can be helpful for dynamically configuring settings based on different pipeline stages or conditions. For example, you can replace placeholders in configuration files with actual values using SED.
+
+   ```groovy
+   sh "sed -i 's/REPLACE_ME/${ENV_VARIABLE}/' config-file.conf"
+   ```
+
+2. **Text File Parsing**: SED can be used to extract specific information from log files or other text-based outputs generated during the build process. This data can then be used for further analysis or reporting.
+
+   ```groovy
+   def extractedData = sh(script: "sed -n 's/Pattern to Extract/\\1/p' logfile.txt", returnStdout: true).trim()
+   ```
+
+3. **Dynamic File Generation**: In scenarios where you need to generate configuration files dynamically based on pipeline parameters, SED can be used to replace placeholders in template files with actual values.
+
+   ```groovy
+   sh "sed 's/PLACEHOLDER1/${PARAMETER1}/;s/PLACEHOLDER2/${PARAMETER2}/' template.conf > final.conf"
+   ```
+
+4. **Version Bumping**: I've used SED to automatically increment version numbers or update release notes in project files when creating new builds or releases within Jenkins.
+
+   ```groovy
+   sh "sed -i 's/Version: [0-9]*/Version: ${NEW_VERSION}/' project-file.txt"
+   ```
+
+5. **Text Replacements for Configuration**: SED can be used to make text replacements in configuration files or scripts to adapt them for specific environments, such as development, testing, or production.
+
+   ```groovy
+   sh "sed -i 's/DB_HOST=example.com/DB_HOST=${DB_HOST}/' config.properties"
+   ```
+
+SED is a versatile tool that can be integrated into Jenkins pipelines using shell steps or script blocks. It helps automate text manipulation tasks within Jenkins jobs, making it a valuable component in building efficient and dynamic CI/CD pipelines.
+
+## How to add user in jenkins?
+
 
 ## what parameter req to configure jenkins
 
