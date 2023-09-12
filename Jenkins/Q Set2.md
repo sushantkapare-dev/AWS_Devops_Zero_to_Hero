@@ -282,9 +282,74 @@ pipeline {
 }
 ```
 
-## HOw to run 400 jobs concurrently out of thousend jobs
+## HOw to run 400 jobs concurrently out of thousend jobs?
+Running 400 jobs concurrently out of a thousand jobs in Jenkins requires careful planning and resource management to ensure smooth execution without overloading your Jenkins master and agent nodes. Here's a high-level approach to achieve this:
 
-## what is post-block in jenkins
+1. **Distributed Build Configuration**:
+   - Ensure that your Jenkins environment is properly set up for distributed builds. Have multiple agent nodes available to handle concurrent job execution.
+
+2. **Agent Node Capacity**:
+   - Assess the capacity and resources of your Jenkins agent nodes. Consider factors like CPU, memory, and available disk space to determine how many concurrent jobs each agent can handle.
+
+3. **Labeling Agents**:
+   - Label your Jenkins agent nodes appropriately based on their capabilities or resource capacity. For example, you might have agents labeled as "high-capacity" and "low-capacity" to match the job requirements.
+
+4. **Job Prioritization**:
+   - Categorize your jobs into different priority levels. High-priority jobs should have priority over low-priority ones, ensuring critical tasks are completed first.
+
+5. **Throttle Concurrent Builds**:
+   - Use Jenkins' built-in job throttling options to limit the number of concurrent builds. This can be set globally or on a per-job basis.
+
+6. **Queue Management**:
+   - Configure Jenkins' build queue settings to control how many jobs can be in the queue and how long they can wait. Adjust the "Quiet Period" and "Block build when downstream project is building" settings as needed.
+
+7. **Pipeline Parallelism**:
+   - If your jobs are defined using Jenkins Pipelines, you can take advantage of parallel stages to control concurrency within a single job. This allows you to run multiple steps concurrently without having to create separate jobs for each.
+
+8. **Pipeline Matrix Builds**:
+   - Use matrix builds in Jenkins Pipelines to create job combinations based on defined axes. This can help you manage and parallelize job runs more efficiently.
+
+9. **Load Balancing**:
+   - Implement load balancing if you have multiple Jenkins master nodes. Distribute the job workload across multiple masters to prevent overloading a single instance.
+
+10. **Optimize Job Execution**:
+    - Optimize your jobs to be as efficient as possible. Minimize redundant work, use appropriate caching mechanisms, and parallelize build and test tasks where applicable.
+
+11. **Monitoring and Scaling**:
+    - Continuously monitor your Jenkins environment's performance and resource utilization. If you find that certain resource bottlenecks are limiting your concurrent job capacity, consider scaling your Jenkins infrastructure accordingly.
+
+## what is post-block in jenkins?
+The post section defines one or more additional steps that are run upon the completion of a Pipeline’s or stage’s run (depending on the location of the post section within the Pipeline). 
+
+**always**:-
+Run the steps in the post section regardless of the completion status of the Pipeline’s or stage’s run.
+
+**changed**:-
+Only run the steps in post if the current Pipeline’s run has a different completion status from its previous run.
+
+**fixed**:-
+Only run the steps in post if the current Pipeline’s run is successful and the previous run failed or was unstable.
+
+**regression**:-
+Only run the steps in post if the current Pipeline’s or status is failure, unstable, or aborted and the previous run was successful.
+
+**aborted**:-
+Only run the steps in post if the current Pipeline’s run has an "aborted" status, usually due to the Pipeline being manually aborted. This is typically denoted by gray in the web UI.
+
+**failure**:-
+Only run the steps in post if the current Pipeline’s or stage’s run has a "failed" status, typically denoted by red in the web UI.
+
+**success**:-
+Only run the steps in post if the current Pipeline’s or stage’s run has a "success" status, typically denoted by blue or green in the web UI.
+
+**unstable**:-
+Only run the steps in post if the current Pipeline’s run has an "unstable" status, usually caused by test failures, code violations, etc. This is typically denoted by yellow in the web UI.
+
+unsuccessful
+Only run the steps in post if the current Pipeline’s or stage’s run has not a "success" status. This is typically denoted in the web UI depending on the status previously mentioned (for stages this may fire if the build itself is unstable).
+
+cleanup
+Run the steps in this post condition after every other post condition has been evaluated, regardless of the Pipeline or stage’s status.
 
 ## How to backup in jenkins
 
