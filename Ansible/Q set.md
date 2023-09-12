@@ -1,5 +1,40 @@
 
 ## explain architecure of ansible
+Ansible is an open-source automation tool that is commonly used for configuration management, application deployment, and task automation. Its architecture is designed to be simple, agentless, and easy to use. Here's a high-level overview of the architecture of Ansible:
+
+1. **Control Node**:
+   - The control node is where Ansible is installed and from where automation tasks are executed.
+   - It typically contains the Ansible command-line tools and playbooks (YAML files that define tasks and configurations).
+   - The control node communicates with managed nodes to execute tasks and gather information.
+
+2. **Managed Nodes**:
+   - Managed nodes are the target systems where Ansible performs tasks and configurations.
+   - These nodes can be servers, network devices, or any machine that Ansible can connect to via SSH (Linux) or WinRM (Windows) protocols.
+   - Managed nodes do not require any Ansible-specific software to be installed. Ansible uses SSH or WinRM for remote communication.
+
+3. **Inventory**:
+   - Ansible uses an inventory file to define the list of managed nodes it should work with.
+   - The inventory file can be static (manually configured) or dynamic (generated on the fly from various sources).
+   - It can group nodes for organizational purposes and define variables associated with each node or group.
+
+4. **Playbooks**:
+   - Playbooks are written in YAML and describe a series of tasks, configurations, and roles that Ansible should execute on managed nodes.
+   - Playbooks are the heart of Ansible automation and are used to define the desired state of the managed nodes.
+   - They specify what tasks should be performed on which hosts and in what order.
+
+5. **Modules**:
+   - Ansible uses modules to perform tasks on managed nodes.
+   - Modules are small, standalone scripts that Ansible runs on the managed node and can perform various actions like installing packages, managing services, copying files, and more.
+   - Ansible includes a wide range of built-in modules, and you can also create custom modules when needed.
+
+6. **SSH or WinRM**:
+   - Ansible communicates with managed nodes over SSH for Linux-based systems and WinRM for Windows-based systems.
+   - It securely connects to the managed nodes to execute tasks and transfer files.
+   - Ansible uses SSH keys or username/password authentication for authentication and secure communication.
+
+7. **Control Node Plugins**:
+   - Ansible can be extended using control node plugins, which allow you to customize and extend Ansible's functionality.
+   - Plugins can be used to integrate Ansible with external tools, cloud services, and other automation systems.
 
 ## How does ansible works
 Ansible is an open-source automation tool that is used for configuration management, application deployment, task automation, and orchestration. It is agentless, meaning it doesn't require any software to be installed on the target systems. Instead, Ansible uses SSH (Secure Shell) or other remote execution methods to communicate with and manage remote hosts. Here's a basic overview of how Ansible works:
