@@ -304,30 +304,181 @@ In Amazon RDS (Relational Database Service), you have several options for creati
    - **Read Replica Creation**: Although not traditional backups, Read Replicas in RDS can serve as a form of data redundancy. You can create Read Replicas of your primary database, and they can be promoted to become standalone DB instances in case of a failure or data corruption.
 
 ## How to connect to ec2 when lost pem file?
+If you've lost the PEM (Private Key) file for your Amazon Elastic Compute Cloud (EC2) instance, it can be challenging to regain access because the PEM file is required for authentication. Here are some steps you can take to try to regain access to your EC2 instance:
+
+**Note:** These steps may involve stopping and starting your EC2 instance, which can result in downtime. Proceed with caution, especially if this is a production instance.
+
+1. **Check Local Backup**: First, check your local computer for any backups or copies of the PEM file. Sometimes, users inadvertently save copies of the PEM file in different locations. Look in folders where you might have initially downloaded or saved the PEM file.
+
+2. **Amazon EC2 Key Pairs**: If you initially created your EC2 instance using the Amazon EC2 Key Pairs feature, you can create a new key pair and associate it with your instance. Here's how:
+
+   a. Log in to the AWS Management Console.
+
+   b. Navigate to the EC2 dashboard.
+
+   c. Select your EC2 instance.
+
+   d. Choose "Actions" -> "Instance Settings" -> "Replace IAM Role."
+
+   e. Follow the prompts to create a new key pair. This will create a new PEM file.
+
+   f. Stop your EC2 instance.
+
+   g. Detach the root volume of the instance.
+
+   h. Create a new EC2 instance with the same configuration as your original instance, but use the new key pair during the setup process.
+
+   i. Attach the root volume back to the new instance.
+
+   j. Start the new instance and attempt to SSH into it using the new PEM file.
+
+3. **Snapshot and Recovery**: If you have snapshots of your EC2 instance's root volume (EBS volume), you can create a new instance from a snapshot, then follow the steps above to create a new key pair and associate it with the new instance. This will allow you to access the new instance with the new PEM file.
+
+4. **Support Request**: If none of the above options work, you can contact AWS Support. They may be able to help you regain access to your instance, but this process can be time-consuming and may require you to provide proof of ownership.
+
+5. **Data Backup**: If you have valuable data on your instance, consider creating a backup of your data before attempting any of the above steps. You can do this by creating a snapshot of your EBS volumes or by copying data to an S3 bucket if applicable.
 
 ## what are EBS types in aws?
+Amazon Elastic Block Store (Amazon EBS) is a block storage service provided by AWS that allows you to create and attach block storage volumes to your Amazon EC2 instances. AWS offers several types of EBS volumes, each optimized for different use cases and performance requirements. As of my last knowledge update in September 2021, here are the main types of EBS volumes available:
+
+1. **General Purpose SSD (gp2)**:
+   - Designed for a wide variety of workloads.
+   - Provides a balance of price and performance.
+   - Suitable for boot volumes and small to medium-sized databases.
+
+2. **Provisioned IOPS SSD (io1)**:
+   - Designed for I/O-intensive workloads.
+   - Allows you to specify the exact amount of IOPS (Input/Output Operations Per Second) required.
+   - Suitable for high-performance databases and applications with specific I/O requirements.
+
+3. **Throughput Optimized HDD (st1)**:
+   - Designed for frequently accessed, throughput-intensive workloads.
+   - Offers low-cost storage optimized for large, sequential I/O operations.
+   - Suitable for big data and data warehousing.
+
+4. **Cold HDD (sc1)**:
+   - Designed for less frequently accessed, colder data.
+   - Offers the lowest cost per gigabyte of all EBS volume types.
+   - Suitable for infrequently accessed data and backups.
+
+5. **Magnetic (standard)**:
+   - The original EBS volume type.
+   - Provides cost-effective storage for workloads with light I/O requirements.
+   - Being phased out in favor of newer volume types.
+
+6. **Elastic Volumes**:
+   - Not a standalone volume type but rather a feature that allows you to adjust the volume type and size of an existing EBS volume without detaching it from the EC2 instance.
+
+7. **EBS Multi-Attach**:
+   - Allows a single EBS volume to be attached to multiple EC2 instances concurrently. Useful for scenarios like shared file systems.
+
+8. **io2 and io2 Block Express**:
+   - Introduced as enhancements to the provisioned IOPS SSD (io1) volume type.
+   - Offer even higher durability and more IOPS per GiB compared to io1.
+   - Block Express introduces a more flexible architecture for high-performance storage.
+
+9. **gp3**:
+   - Introduced as an evolution of the gp2 volume type.
+   - Offers better price-to-performance ratio and allows you to independently adjust IOPS and volume size.
+   - Suitable for a wide range of workloads, including boot volumes and databases.
 
 ## what is max capacity of EBS volume?
+1. **General Purpose SSD (gp2)**:
+   - Maximum Volume Size: 16 TiB (tebibytes)
+
+2. **Provisioned IOPS SSD (io1 and io2)**:
+   - Maximum Volume Size: 16 TiB (tebibytes)
+
+3. **Throughput Optimized HDD (st1)**:
+   - Maximum Volume Size: 16 TiB (tebibytes)
+
+4. **Cold HDD (sc1)**:
+   - Maximum Volume Size: 16 TiB (tebibytes)
+
+5. **Magnetic (standard)**:
+   - Maximum Volume Size: 1 TiB (tebibyte)
+
+6. **gp3**:
+   - Maximum Volume Size: 16 TiB (tebibytes)
 
 ## Diff between volume and snapshot in ec2?
+In Amazon EC2, a "volume" is a block storage device that can be attached to an EC2 instance, providing persistent and scalable storage. It can be used to store data, operating systems, or applications. On the other hand, a "snapshot" is a point-in-time copy of a volume that captures its data, including all changes made up to that moment. Snapshots are typically used for data backup, disaster recovery, and creating new volumes, allowing you to replicate and restore volumes quickly and efficiently.
 
 ## can i attach snapshot to ec2 instances?
+No, you cannot directly attach a snapshot to an EC2 instance. Snapshots in Amazon Web Services (AWS) are not meant to be attached directly to EC2 instances like EBS volumes. 
 
 ## Diff between EBS,S3 ans EFS?
+Amazon Web Services (AWS) offers several storage solutions, including Amazon Elastic Block Store (EBS), Amazon Simple Storage Service (S3), and Amazon Elastic File System (EFS). Here's a brief comparison of these services:
+
+1. **EBS (Elastic Block Store)**:
+   - **Type**: Block storage.
+   - **Use Case**: EBS is designed for attaching block-level storage volumes to Amazon EC2 instances. It provides low-latency, high-performance storage that is ideal for running applications, databases, and operating systems.
+   - **Access**: EBS volumes are typically attached to a single EC2 instance at a time, making them suitable for use cases where high-speed, low-latency storage is required for a specific EC2 instance.
+   - **Data Durability**: EBS volumes are replicated within an Availability Zone (AZ) for high durability but are limited to a single AZ.
+   - **Pricing**: You pay for the provisioned capacity of EBS volumes.
+
+2. **S3 (Simple Storage Service)**:
+   - **Type**: Object storage.
+   - **Use Case**: S3 is designed for scalable and durable object storage. It's commonly used for storing and retrieving large amounts of unstructured data, such as images, videos, backups, and data for web applications.
+   - **Access**: S3 allows multiple EC2 instances and external services to access data concurrently, making it suitable for data sharing and distribution.
+   - **Data Durability**: S3 provides high durability by replicating data across multiple Availability Zones within a region.
+   - **Pricing**: You pay for the amount of data stored, data transfer, and optional features like versioning and data lifecycle management.
+
+3. **EFS (Elastic File System)**:
+   - **Type**: Network file storage (NFSv4).
+   - **Use Case**: EFS is designed for shared file storage that can be accessed concurrently by multiple EC2 instances. It's suitable for applications that require shared access to files and data across multiple instances.
+   - **Access**: EFS supports multiple EC2 instances within a VPC, allowing them to share and access files simultaneously. This makes it ideal for scenarios like content management, web hosting, and developer environments.
+   - **Data Durability**: EFS replicates data across multiple Availability Zones within a region for high durability and availability.
+   - **Pricing**: You pay for the amount of data stored in EFS, as well as data transfer and optional features like lifecycle management.
 
 ## Diff between SG and NACL?
+Security Groups act as virtual firewalls for Amazon EC2 instances and operate at the instance level. They allow you to control inbound and outbound traffic by specifying rules that permit or deny traffic based on IP addresses, ports, and protocols. Security Groups are stateful, meaning if you allow outbound traffic to a specific IP and port, the corresponding inbound traffic from that IP and port is automatically allowed.
+
+Network Access Control Lists, on the other hand, are stateless and operate at the subnet level. They provide an additional layer of network security by controlling traffic entering and leaving subnets. NACL rules are evaluated in order, and you explicitly define rules to allow or deny traffic based on source and destination IP addresses, ports, and protocols. NACLs are more granular and can be used to control traffic at a broader network level than SGs.
 
 ## can i attach one SG to multiple instances?
+Yes, you can attach one Security Group (SG) to multiple Amazon EC2 instances in Amazon Web Services (AWS). Security Groups are designed to be reusable and allow you to define rules that control inbound and outbound traffic for one or more instances.
+
+When you create or modify a Security Group, you can specify which EC2 instances should be associated with that Security Group. You can associate multiple instances with the same SG, making it a convenient way to apply consistent security policies to a group of instances. This is especially useful when you want to allow or restrict network traffic for multiple instances with similar requirements, such as instances serving the same application or having similar roles.
+
+To associate a Security Group with multiple EC2 instances:
+
+1. Open the AWS Management Console.
+
+2. Navigate to the EC2 dashboard.
+
+3. In the left sidebar, select "Security Groups."
+
+4. Choose the Security Group you want to associate with multiple instances.
+
+5. In the "Inbound" and "Outbound" tabs, define the rules for allowing or denying traffic as needed.
+
+6. Go to the "Actions" menu and select "Edit inbound rules" or "Edit outbound rules" to modify the rules if necessary.
+
+7. In the "Instances" tab of the Security Group details, you can add or remove instances from the Security Group by clicking "Edit inbound rules" or "Edit outbound rules" and specifying the instances.
 
 ## can i attach one NACL to multiple instances?
+In Amazon Web Services (AWS), Network Access Control Lists (NACLs) operate at the subnet level, and each subnet can be associated with only one NACL at a time. Unlike Security Groups, which can be associated with multiple instances, a single NACL applies to all instances within the associated subnet.
+
+Therefore, you cannot directly attach one NACL to multiple instances in the same way you associate Security Groups with multiple instances. If you need to apply different network access control rules to different instances within the same subnet, you would typically do so at the instance level using Security Groups or firewall software installed on the instances themselves.
 
 ## what is subnet?
+A subnet, short for "subnetwork," is a logically segmented portion of an IP network. It allows network administrators to divide a larger network into smaller, isolated segments to improve network management, security, and performance. Subnets are defined by a contiguous range of IP addresses and are typically associated with a specific geographic or logical grouping of devices within a larger network, such as those within a data center or a virtual private cloud (VPC) in cloud computing environments like Amazon Web Services (AWS).
 
 ## Diff between internet gateway and NAT gateway?
+An Internet Gateway and a NAT (Network Address Translation) Gateway serve different purposes in AWS networking. An Internet Gateway allows resources within a Virtual Private Cloud (VPC) to connect directly to the public internet, enabling inbound and outbound internet communication for instances with public IP addresses. In contrast, a NAT Gateway is used to facilitate outbound internet connectivity for private instances within a VPC by translating their private IP addresses to a public IP address. NAT Gateways do not allow inbound internet traffic directly to instances; they are primarily used for scenarios where instances need to access the internet for software updates, but you want to maintain a level of security by preventing incoming connections from the internet.
 
 ## Diff between stop instances and on-demand instances?
+"Stop instances" and "On-Demand instances" refer to different aspects of Amazon EC2 instances in AWS. "Stop instances" is an action that can be performed on EC2 instances, which temporarily halts the running instances, preserving their configuration and data, and they can later be started again. On the other hand, "On-Demand instances" are a pricing model for EC2 instances, where you pay for compute capacity on an hourly or second-by-second basis without any upfront fees or long-term commitments. In summary, "stop instances" is an operational action to pause running instances, while "On-Demand instances" is a billing model for flexible and on-demand access to EC2 compute resources.
 
 ## what is boot time for amazon instance store?
+The boot time for an Amazon EC2 instance with instance store (also known as ephemeral storage) volumes can vary depending on several factors, including the instance type, the operating system, and the size of the instance store volumes.
+
+In general, instances with instance store volumes typically have faster boot times compared to instances using Amazon EBS (Elastic Block Store) volumes because instance store volumes are directly attached to the physical host where the EC2 instance runs. This results in quicker data access during the boot process.
+
+For most instances, the boot time is relatively quick, often taking just a few minutes. However, it's important to note that instance store volumes are ephemeral, meaning they are not designed for long-term data storage. Any data stored on instance store volumes is lost when the instance is stopped or terminated.
+
+To get more precise boot time estimates for specific instance types and configurations, you may refer to AWS documentation or perform tests in your specific environment. Keep in mind that the exact boot time can still vary depending on various factors and conditions.
 
 ## is it possible to vertical scaling on instances?
 
