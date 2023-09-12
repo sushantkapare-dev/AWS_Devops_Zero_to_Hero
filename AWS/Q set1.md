@@ -481,8 +481,20 @@ For most instances, the boot time is relatively quick, often taking just a few m
 To get more precise boot time estimates for specific instance types and configurations, you may refer to AWS documentation or perform tests in your specific environment. Keep in mind that the exact boot time can still vary depending on various factors and conditions.
 
 ## is it possible to vertical scaling on instances?
+Vertical scaling, also known as "scaling up" or "resizing," is the process of increasing or decreasing the compute capacity (CPU, memory, storage, etc.) of an individual server or virtual machine. In the context of Amazon EC2 instances, vertical scaling is possible to some extent, but it has limitations.
+
+Here's what you can and cannot do with vertical scaling in EC2:
+
+**You can increase instance size**: You can vertically scale an EC2 instance by stopping it, changing its instance type to one with more CPU, memory, and storage resources, and then starting it again. This allows you to increase the capacity of a single instance to handle more demanding workloads.
+
+**You can't exceed the instance type's maximum limits**: Each EC2 instance type has defined limits on CPU, memory, and other resources. When vertically scaling, you cannot exceed these predefined limits for a given instance type. If you need more capacity than a particular instance type can provide, you may need to consider horizontal scaling, which involves adding more instances to your application architecture.
+
+**You may need to plan for downtime**: Vertical scaling typically requires stopping and restarting the EC2 instance. This can result in downtime for your application while the instance is being resized. To minimize downtime, you can implement high availability strategies such as using Auto Scaling groups with rolling updates or by using features like Amazon RDS Read Replicas for database scaling.
+
+**Cost implications**: Larger instance types with more resources are generally more expensive. Be mindful of the cost implications when vertically scaling, as you'll be billed based on the selected instance type's pricing.
 
 ## Diff between vertical and scaling instances?
+Vertical scaling and horizontal scaling are two different approaches to increasing the capacity of a system. Vertical scaling, also known as "scaling up," involves upgrading an individual server or instance by adding more resources (e.g., CPU, memory) to handle increased workloads. In contrast, horizontal scaling, also known as "scaling out," involves adding more instances or servers to a system to distribute the workload across multiple machines, accommodating increased demand by increasing the number of computing units rather than the resources of a single unit. Vertical scaling is typically limited by the capacity of a single server and may result in downtime during upgrades, while horizontal scaling provides more flexibility, better fault tolerance, and can accommodate larger-scale growth by adding more instances as needed.
 
 ## 
 
