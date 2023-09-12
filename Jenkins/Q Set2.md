@@ -1,4 +1,5 @@
 ## what is master and slave in jenkins?
+In Jenkins, the terms "master" and "slave" refer to the architecture used for distributed builds and workload management. The "master" is the central Jenkins server that manages job scheduling, configuration, and user interactions, while "slaves" are remote machines or nodes that execute build jobs delegated by the master. This distributed setup allows Jenkins to distribute workloads, improve scalability, and execute builds on various platforms, enhancing overall efficiency and resource utilization.
 
 ## If master job is failed then what will you do in jenkins
 
