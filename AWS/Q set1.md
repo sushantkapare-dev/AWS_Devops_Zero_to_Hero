@@ -303,6 +303,36 @@ In Amazon RDS (Relational Database Service), you have several options for creati
 5. **Read Replicas**:
    - **Read Replica Creation**: Although not traditional backups, Read Replicas in RDS can serve as a form of data redundancy. You can create Read Replicas of your primary database, and they can be promoted to become standalone DB instances in case of a failure or data corruption.
 
+## How to connect to ec2 when lost pem file?
+
+## what are EBS types in aws?
+
+## what is max capacity of EBS volume?
+
+## Diff between volume and snapshot in ec2?
+
+## can i attach snapshot to ec2 instances?
+
+## Diff between EBS,S3 ans EFS?
+
+## Diff between SG and NACL?
+
+## can i attach one SG to multiple instances?
+
+## can i attach one NACL to multiple instances?
+
+## what is subnet?
+
+## Diff between internet gateway and NAT gateway?
+
+## Diff between stop instances and on-demand instances?
+
+## what is boot time for amazon instance store?
+
+## is it possible to vertical scaling on instances?
+
+## Diff between vertical and scaling instances?
+
 ## 
 
 
