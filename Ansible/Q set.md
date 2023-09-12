@@ -1,5 +1,6 @@
 
 ## explain architecure of ansible
+![Ansible Architecture](https://www.interviewbit.com/blog/wp-content/uploads/2022/06/Ansible-Architecture-1024x560.png)
 Ansible is an open-source automation tool that is commonly used for configuration management, application deployment, and task automation. Its architecture is designed to be simple, agentless, and easy to use. Here's a high-level overview of the architecture of Ansible:
 
 1. **Control Node**:
