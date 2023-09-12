@@ -52,6 +52,18 @@
 
 ## Types of AMI provided by aws?
 
+## what is amazon EMR?
+
+## How to cnnect EBS volume to multiple instance (No)
+
+## What is th use of lifecycle hooks in autoscaling?
+
+## what is amazon kinesis firehose?
+
+## what is methods of encrypted data in s3?
+
+## Types of backup in RDS?
+
 ## 
 
 
