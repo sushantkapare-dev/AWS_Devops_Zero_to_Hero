@@ -135,5 +135,5 @@ Serverless Container Management: Fargate provides a serverless computing model f
 Simplified Operations: If you want to reduce operational overhead and focus more on application development, Fargate abstracts away the need to manage the underlying instances.
 Scalability: Fargate makes it easier to scale your containers as needed without the need to manage the scaling process manually.
 
-Q23: Can we use EFS as the root volume?
+## Q23: Can we use EFS as the root volume?
 No, we can’t use only EBS can be used as the root volume
