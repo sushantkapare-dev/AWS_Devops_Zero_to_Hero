@@ -420,31 +420,6 @@ Writing Ansible playbooks effectively requires following best practices to ensur
 12. **Continuous Integration/Continuous Deployment (CI/CD)**:
     - Integrate Ansible into your CI/CD pipeline to automate testing and deployment.
 
-## Why ansible-galexy used in ansible
-Ansible Galaxy is a web platform and command-line tool that serves as a centralized repository for sharing, distributing, and managing Ansible roles and collections. It is a valuable resource in the Ansible ecosystem for several reasons:
-
-1. **Role and Collection Distribution**: Ansible Galaxy provides a convenient way to distribute Ansible roles and collections. Authors and contributors can publish their roles and collections to Galaxy, making them readily available to the Ansible community.
-
-2. **Role and Collection Discovery**: Ansible Galaxy offers a searchable catalog of roles and collections. Users can easily discover pre-built roles and collections that suit their needs without reinventing the wheel.
-
-3. **Community Collaboration**: Galaxy fosters collaboration within the Ansible community. Developers can contribute to existing roles and collections, improving their functionality, documentation, and reliability.
-
-4. **Versioning and Updates**: Galaxy tracks versions of roles and collections, making it easier to manage dependencies and ensure compatibility with different Ansible versions.
-
-5. **Dependency Resolution**: Ansible roles often depend on other roles or collections. Galaxy helps manage these dependencies, allowing users to automatically install and use the required roles and collections when provisioning infrastructure or deploying applications.
-
-6. **Metadata and Documentation**: Galaxy enforces structured metadata for roles and collections, including information like role descriptions, author information, and compatibility details. This metadata makes it easier for users to assess the quality and suitability of a role or collection.
-
-7. **Installation and Updates**: The `ansible-galaxy` command-line tool allows users to install roles and collections directly from Galaxy. It can also be used to update installed roles and collections to newer versions.
-
-8. **Scalability and Reusability**: Ansible Galaxy promotes the reuse of roles and collections, saving time and effort. Users can leverage community-contributed roles and collections to build their own automation playbooks and infrastructure as code.
-
-9. **Quality Control**: Roles and collections on Galaxy often undergo community scrutiny and testing, leading to higher-quality automation content.
-
-10. **Integration with Ansible Automation Hub**: Galaxy is tightly integrated with Ansible Automation Hub, an enterprise-level platform for managing and distributing Ansible content. This integration provides additional features and support for organizations.
-
-In summary, Ansible Galaxy is a valuable resource for Ansible users and automation engineers. It simplifies role and collection distribution, encourages collaboration, and helps users discover, manage, and reuse Ansible automation content effectively. It is an essential part of the Ansible ecosystem for building, sharing, and maintaining infrastructure automation.
-
 ## How to manage and solve errors in ansible
 Managing and solving errors in Ansible is a crucial part of working with the automation tool. Ansible provides various mechanisms to help you identify, understand, and resolve errors efficiently. Here are some steps to manage and solve errors in Ansible:
 
@@ -496,18 +471,6 @@ Managing and solving errors in Ansible is a crucial part of working with the aut
 
 16. **Update Ansible and Modules**:
     - Ensure that you are using an up-to-date version of Ansible and that your modules are also up to date.
-
-17. **Test Incrementally**:
-    - If you're working on a complex playbook, build and test it incrementally to catch errors early.
-
-18. **Documentation and Comments**:
-    - Keep your playbook well-documented and include comments to explain the logic and intent. This will help you and others understand the code.
-
-19. **Logs and Output**:
-    - Review the Ansible logs and output to get more information about what went wrong.
-
-20. **Consider Ansible Roles and Collections**:
-    - If a task is too complex or error-prone, consider using Ansible roles or collections created by the community. They may already handle the task more reliably.
 
 ## How do you used ansible fact?
 Ansible facts are system-related variables and information collected by Ansible from remote hosts when a playbook is executed. These facts provide valuable information about the target hosts and can be used within playbooks to make automation more dynamic and adaptable to the specific environment. Here's how you can use Ansible facts:
