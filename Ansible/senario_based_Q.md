@@ -49,12 +49,18 @@ By running these playbooks, you can automate the process of security hardening, 
 
 To design an Ansible playbook for automatic scaling, you can:
 
-Define Scaling Metrics: Determine the metrics that indicate a need for scaling, such as CPU usage or incoming requests per second.
-Set Thresholds: Define threshold values for these metrics, above which scaling is required.
-Write Playbook Tasks: In your playbook, include tasks to provision new instances, adjust load balancer configurations, and configure necessary services.
-Implement Auto-Scaling Logic: Use Ansible’s conditional statements to evaluate metrics against thresholds and trigger scaling actions.
-Testing: Test the playbook’s logic to ensure it scales resources accurately.
-Monitoring: Integrate monitoring tools to track the effectiveness of your auto-scaling playbook and make adjustments as needed.
+**Define Scaling Metrics:**
+Determine the metrics that indicate a need for scaling, such as CPU usage or incoming requests per second.
+**Set Thresholds:** 
+Define threshold values for these metrics, above which scaling is required.
+**Write Playbook Tasks:**
+In your playbook, include tasks to provision new instances, adjust load balancer configurations, and configure necessary services.
+**Implement Auto-Scaling Logic:**
+Use Ansible’s conditional statements to evaluate metrics against thresholds and trigger scaling actions.
+**Testing:**
+Test the playbook’s logic to ensure it scales resources accurately.
+**Monitoring:**
+Integrate monitoring tools to track the effectiveness of your auto-scaling playbook and make adjustments as needed.
 
 ## Scenario 1: Configuring Web Servers
 Question: You are tasked with setting up and configuring web servers for a new project. The servers should have Nginx installed, a custom website deployed, and a firewall rule to allow incoming HTTP traffic. Design an Ansible playbook to achieve this.
