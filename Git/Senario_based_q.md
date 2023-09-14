@@ -47,5 +47,38 @@ git clone -b master --single-branch --dept 1 <git url>
 ```
 
 ## < git diff head ~ 3 > meaning of it?
+Look into the changes in last "3" commits.
 
 ## when branch is push to remote repo. and remove from all of the member local machine so how will be recover it ?
+If a branch has been pushed to a remote repository and then deleted from all members' local machines, you can still recover it from the remote repository as long as it hasn't been deleted from the remote repository. Here's how you can recover a branch:
+
+1. **Check the Remote Repository:**
+   - Confirm that the branch still exists in the remote repository. You can do this by visiting the repository on the hosting platform (e.g., GitHub, GitLab, Bitbucket) or by using the following command:
+
+   ```bash
+   git ls-remote --heads origin
+   ```
+
+   Replace `origin` with the name of your remote if it's different.
+
+2. **Fetch the Branch:**
+   - If the branch is still in the remote repository, you can fetch it to your local repository using:
+
+   ```bash
+   git fetch origin <branch_name>:<branch_name>
+   ```
+
+   Replace `<branch_name>` with the name of the branch you want to recover. This command will fetch the branch from the remote repository and create or update a local branch with the same name.
+
+3. **Checkout the Branch:**
+   - After fetching the branch, you can switch to it using the `git checkout` command:
+
+   ```bash
+   git checkout <branch_name>
+   ```
+
+   Now, you should have the branch recovered locally.
+
+If the branch has been deleted from the remote repository as well, then the recovery process becomes more challenging. In such cases, you may need to rely on backups or contact the repository administrators to see if they have a backup of the branch.
+
+It's important to maintain good Git practices, including regularly pushing branches to the remote repository and considering branch deletion carefully, as remote branches can be recovered more easily than deleted local branches.
