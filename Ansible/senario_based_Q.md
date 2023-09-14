@@ -243,17 +243,6 @@ inventory = /path/to/aws_inventory.py
 ```
 Now, whenever you run Ansible commands, it will dynamically fetch the current state of your AWS instances and perform tasks on them accordingly.
 
-## Question: What are Ansible Vaults, and how can they enhance security in automation?
-
-Ansible Vaults allow you to encrypt sensitive data, such as passwords and API keys, before storing them in your playbooks or roles. This ensures that sensitive information remains secure, even when sharing playbooks via version control systems. To encrypt and decrypt files using Ansible Vaults, you can use commands like ansible-vault create and ansible-vault edit.
-
-## Question: How can I manage dynamic inventories in Ansible?
-
-Dynamic inventories allow you to manage hosts dynamically based on external sources like cloud providers or databases. Ansible supports various dynamic inventory scripts that generate inventory based on your infrastructure. You can create custom scripts or use existing ones like the AWS EC2 dynamic inventory script to automatically discover and manage hosts.
-
-## Question: What is Ansible Galaxy, and how can it streamline playbook development?
-Answer: Ansible Galaxy is a hub for sharing, reusing, and collaborating on Ansible content. It provides pre-built roles and playbooks that can save you time and effort during playbook development. You can install roles directly from Ansible Galaxy using the ansible-galaxy command, and even contribute your own roles to the community.
-
 ## Question: How can I troubleshoot SSH connectivity issues in Ansible?
 SSH connectivity is crucial for Ansible to communicate with target hosts. If you encounter SSH issues, first ensure that the target hosts are accessible from the Ansible control node using SSH manually. Check the SSH configuration, firewall rules, and the SSH key used for authentication. The -vvv flag with the ansible command provides verbose output for debugging.
 
