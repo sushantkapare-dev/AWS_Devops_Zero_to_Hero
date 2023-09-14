@@ -4,4 +4,6 @@
 
 ## How to clone olny last commit in git?
 
-## 
+## < git diff head ~ 3 > meaning of it?
+
+## when branch is push to remote repo. and remove from all of the member local machine so how will be recover it ?
