@@ -28,4 +28,12 @@
 
 ## what is git reflog?
 
+## what is tag in git?
+
+## Diff between git commit and git push?
+
+## what is git submodule?
+
+## what is head in git?
+
 ## 
