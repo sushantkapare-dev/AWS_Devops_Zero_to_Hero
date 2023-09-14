@@ -1,13 +1,13 @@
 ## **Q1: Can we attach multiple target groups in one LB?**
 Yes, we can attach multiple target groups in one LB
 
-**Q2: How to create an internal load balancer?**
+## **Q2: How to create an internal load balancer?**
 There are 2 types of load balancers. One is internet-facing and other one is internal, just define the type while creating it.
 
-**Q3: How to resize the EBS volume?**
+## **Q3: How to resize the EBS volume?**
 Go to edit the volume and select modify the volume and change the size, IOPS, etc.
 
-**Q4: Can we attach the same EBS volumes to multiple instances?**
+## **Q4: Can we attach the same EBS volumes to multiple instances?**
 No, we can’t attach. We need to use the EFS for that.
 
 ## Q5: What is the transit gateway in AWS?
