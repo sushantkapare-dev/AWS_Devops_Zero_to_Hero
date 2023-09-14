@@ -22,13 +22,19 @@ Ansible provides a powerful solution through playbooks. You can create playbooks
 
 To set up a continuous deployment pipeline with Ansible, you can follow these steps:
 
-Source Control Integration: Integrate your source code repository (e.g., Git) with a Continuous Integration/Continuous Deployment (CI/CD) tool like Jenkins or GitLab CI.
-Build & Test: Configure your CI/CD tool to build and test your application code.
-Ansible Playbook: Create an Ansible playbook that describes how to deploy your application. This includes copying files, setting up environments, and restarting services.
-Artifact Management: Store the built application artifacts in a repository.
-Deployment Stage: In your CI/CD pipeline, use Ansible to deploy the artifacts to the target servers based on triggers (e.g., code commits).
-Testing & Verification: Implement automated tests to verify the deployment’s success.
-Monitoring & Rollback: Set up monitoring to detect any issues post-deployment. If issues arise, use Ansible to roll back to a previous version.
+**Source Control Integration:** Integrate your source code repository (e.g., Git) with a Continuous Integration/Continuous Deployment (CI/CD) tool like Jenkins or GitLab CI.
+
+**Build & Test:** Configure your CI/CD tool to build and test your application code.
+
+**Ansible Playbook:** Create an Ansible playbook that describes how to deploy your application. This includes copying files, setting up environments, and restarting services.
+
+**Artifact Management:** Store the built application artifacts in a repository.
+
+**Deployment Stage:** In your CI/CD pipeline, use Ansible to deploy the artifacts to the target servers based on triggers (e.g., code commits).
+
+**Testing & Verification:** Implement automated tests to verify the deployment’s success.
+
+**Monitoring & Rollback:** Set up monitoring to detect any issues post-deployment. If issues arise, use Ansible to roll back to a previous version.
 
 ## Q7: In a cloud environment with constantly changing instances, how can Ansible’s dynamic inventory management assist you in automating tasks?
 
@@ -51,16 +57,22 @@ To design an Ansible playbook for automatic scaling, you can:
 
 **Define Scaling Metrics:**
 Determine the metrics that indicate a need for scaling, such as CPU usage or incoming requests per second.
+
 **Set Thresholds:** 
 Define threshold values for these metrics, above which scaling is required.
+
 **Write Playbook Tasks:**
 In your playbook, include tasks to provision new instances, adjust load balancer configurations, and configure necessary services.
+
 **Implement Auto-Scaling Logic:**
 Use Ansible’s conditional statements to evaluate metrics against thresholds and trigger scaling actions.
+
 **Testing:**
 Test the playbook’s logic to ensure it scales resources accurately.
+
 **Monitoring:**
 Integrate monitoring tools to track the effectiveness of your auto-scaling playbook and make adjustments as needed.
+
 
 ## Scenario 1: Configuring Web Servers
 Question: You are tasked with setting up and configuring web servers for a new project. The servers should have Nginx installed, a custom website deployed, and a firewall rule to allow incoming HTTP traffic. Design an Ansible playbook to achieve this.
