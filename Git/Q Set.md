@@ -6,4 +6,20 @@
 
 ## what is git rebase?
 
-## 
+## what is git merge?
+
+## how to resolve conflict in git?
+
+## Diff between git fetch and git pull?
+
+## what is git cherrypick?
+
+## How to create and delete git branch?
+
+## what is git stash and diff stages in stash ?
+
+## what is status code 200, 400, 500?
+
+## Diff between git revert and reset?
+
+##
