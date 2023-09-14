@@ -22,4 +22,10 @@
 
 ## Diff between git revert and reset?
 
-##
+## it is possible to push code from one local repo to other repo in git ?
+
+## what is git squash?
+
+## what is git reflog?
+
+## 
