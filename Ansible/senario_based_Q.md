@@ -250,7 +250,7 @@ SSH connectivity is crucial for Ansible to communicate with target hosts. If you
 Several factors could lead to this situation. First, ensure that the tasks are correctly defined in your playbook. Verify that the inventory is correctly configured and the target hosts are listed. Double-check the conditionals and loops in your playbook for correctness. Using the --check flag with the ansible-playbook command can help identify what changes would be made without actually applying them.
 
 ## Question: How can I perform a rolling update of services using Ansible?
-To achieve a rolling update, you can use Ansible’s serial keyword in your playbook. This controls the number of hosts that are updated simultaneously. By gradually updating hosts, you can maintain service availability during the update process.
+To achieve a rolling update, you can use Ansible’s **serial** keyword in your playbook. This controls the number of hosts that are updated simultaneously. By gradually updating hosts, you can maintain service availability during the update process.
 
 ## Question: What strategies can I employ to manage secrets in Ansible playbooks?
 Managing secrets is critical. Alongside Ansible Vaults, consider using tools like HashiCorp Vault or external credential management systems. Another approach is to utilize environment variables stored securely on the control node.
