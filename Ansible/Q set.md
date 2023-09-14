@@ -379,76 +379,46 @@ Writing Ansible playbooks effectively requires following best practices to ensur
    - Use a well-structured directory layout for your playbooks and roles. Ansible Galaxy's recommended directory structure is a good starting point.
    - Separate playbooks by functionality or purpose.
 
-2. **Use Descriptive Names**:
-   - Give your playbooks and tasks descriptive names to make their purpose clear.
-   - Use comments to explain complex or non-obvious steps.
-
-3. **Modularize with Roles**:
+2. **Modularize with Roles**:
    - Use Ansible roles to modularize your playbooks and promote code reuse.
    - Each role should have a clear and specific purpose, making it easier to maintain and share.
 
-4. **Use YAML Syntax Properly**:
+3. **Use YAML Syntax Properly**:
    - YAML syntax is sensitive to indentation. Ensure proper indentation to avoid errors.
    - Avoid using tabs; use spaces for indentation (typically two spaces).
 
-5. **Use Variables and Templates**:
+4. **Use Variables and Templates**:
    - Use variables for configuration values that might change across environments.
    - Utilize Jinja2 templates for dynamic configuration files.
 
-6. **Use Ansible Vault for Secrets**:
+5. **Use Ansible Vault for Secrets**:
    - Store sensitive information like passwords and API keys in Ansible Vault for secure encryption.
    - Don't store secrets in plain text within playbooks or roles.
 
-7. **Limit Hosts Properly**:
+6. **Limit Hosts Properly**:
    - Use inventory files or patterns to target specific hosts or groups.
    - Be cautious when using wildcards to avoid unintentional changes to multiple hosts.
 
-8. **Task and Role Ordering**:
-   - Consider the order of tasks and roles in your playbooks to ensure dependencies are met.
-   - Use handlers to trigger actions only when necessary.
-
-9. **Use Ansible Modules**:
+7. **Use Ansible Modules**:
    - Leverage Ansible modules whenever possible instead of running shell commands.
    - Modules are idempotent, which helps maintain the desired state of the system.
 
-10. **Error Handling and Handlers**:
+8. **Error Handling and Handlers**:
     - Implement error handling and use handlers to manage changes only when needed.
     - Use the `failed_when` and `changed_when` attributes to control task behavior based on conditions.
 
-11. **Testing and Dry Runs**:
-    - Use `--check` and `--diff` options to perform dry runs and see potential changes before applying them.
-    - Utilize Ansible's built-in testing tools like `ansible-lint` and `ansible-playbook --syntax-check`.
-
-12. **Documentation**:
-    - Document your playbooks, roles, and variables clearly.
-    - Use inline comments for clarification.
-    - Consider using tools like Sphinx or Markdown to generate documentation.
-
-13. **Version Control**:
+9. **Version Control**:
     - Store your playbooks and roles in a version control system (e.g., Git) for collaboration, version history, and disaster recovery.
 
-14. **Idempotence and Repeatability**:
-    - Ensure your playbooks are idempotent, meaning they can be run multiple times without causing unintended changes.
-    - Test your playbooks thoroughly to ensure repeatability across different environments.
-
-15. **Backup and Recovery**:
+10. **Backup and Recovery**:
     - Implement backup and recovery strategies, especially when making critical changes.
-
-16. **Performance Considerations**:
-    - Be mindful of performance when dealing with large inventories or executing complex tasks. Optimize when necessary.
-
-17. **Security**:
+    - 
+11. **Security**:
     - Follow security best practices, such as limiting privileges and access where necessary.
     - Keep your Ansible control machine and target hosts secure.
 
-18. **Continuous Integration/Continuous Deployment (CI/CD)**:
+12. **Continuous Integration/Continuous Deployment (CI/CD)**:
     - Integrate Ansible into your CI/CD pipeline to automate testing and deployment.
-
-19. **Review and Refactor**:
-    - Periodically review and refactor your playbooks and roles to keep them up-to-date and efficient.
-
-20. **Community and Documentation**:
-    - Refer to Ansible's official documentation and community resources for guidance and best practices.
 
 ## Why ansible-galexy used in ansible
 Ansible Galaxy is a web platform and command-line tool that serves as a centralized repository for sharing, distributing, and managing Ansible roles and collections. It is a valuable resource in the Ansible ecosystem for several reasons:
