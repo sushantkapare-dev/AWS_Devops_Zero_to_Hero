@@ -31,52 +31,42 @@ Consider creating a user-defined bridge network using docker network create.
 Make sure both containers are attached to the same bridge network.
 Use environment variables or a configuration file to specify the Redis connection details in the web application.
 
-Scenario 2: Custom Bridge Network
+## Scenario 2: Custom Bridge Network
 You have a microservices architecture, with each service running in a separate Docker container. By default, Docker creates a bridge network for communication between containers. However, to enhance security and control, you decide to create a custom bridge network that allows communication only between specific containers.
-
-Hint:
 
 Create a new bridge network using docker network create.
 Start containers with the --network flag to attach them to the custom bridge network.
 Containers in the custom bridge network can communicate with each other using container names or IP addresses.
 
-Scenario 3: Docker Compose
+## Scenario 3: Docker Compose
 You are managing a complex application with multiple services, each requiring different configurations. Manually running each service with its specific settings becomes cumbersome. Your goal is to use Docker Compose to manage the services efficiently.
-
-Hint:
 
 Create a docker-compose.yml file defining the services, networks, and volumes required.
 Specify environment variables, ports, and volume bindings for each service in the Compose file.
 Use the docker-compose up command to start and manage the entire application stack.
 
-Scenario 4: Load Balancing
+## Scenario 4: Load Balancing
 You are deploying a web application in a Docker swarm with multiple instances of the same service to achieve load balancing. You need to set up a load balancer to distribute incoming requests evenly among all running containers.
-
-Hint:
 
 Utilize the built-in Docker swarm mode for orchestration and scaling.
 Define the desired number of replicas for the service to scale it horizontally.
 Use a reverse proxy/load balancer (like Nginx or Traefik) in front of the Docker swarm to distribute incoming traffic.
 
-Scenario 5: Service Rolling Update
+## Scenario 5: Service Rolling Update
 Your application is running as a service in a Docker swarm, and you need to update it to the latest version without any downtime. Implement a rolling update strategy for the service.
-
-Hint:
 
 Use the docker service update command to apply rolling updates.
 Specify the desired image version/tag in the update command.
 Docker swarm will ensure that old containers are replaced with new ones one at a time, avoiding service downtime.
 
-Scenario 6: High Availability
+## Scenario 6: High Availability
 You are designing a high-availability architecture for a critical application using Docker containers. The architecture must ensure that the application remains available even if some of the Docker hosts fail.
-
-Hint:
 
 Implement a multi-node Docker swarm cluster with manager and worker nodes.
 Use the --replicas flag while deploying services to ensure redundancy.
 Configure external storage (like NFS) for storing critical data to avoid data loss in case of container/host failure.
 
-Scenario 1: Load Balancing with Docker Swarm
+## Scenario 1: Load Balancing with Docker Swarm
 You are tasked with deploying a high-traffic web application using Docker Swarm. The application consists of multiple containers that serve as web servers. To ensure high availability and optimal performance, you must implement load balancing. How would you achieve this?
 
 Solution: Docker Swarm comes with built-in load balancing. By leveraging Docker’s ingress routing mesh, you can distribute incoming traffic evenly among the replicated services. You can deploy the application using the following steps:
@@ -89,7 +79,7 @@ Create a Docker service for your web application:
 docker service create --replicas <number_of_replicas> --name <service_name> <image_name>
 Docker Swarm will automatically distribute incoming requests to the available replicas, ensuring load balancing across the nodes.
 
-Scenario 2: Optimizing Docker Image Size
+## Scenario 2: Optimizing Docker Image Size
 Your team has developed a microservices-based application, and you need to containerize each service. However, some of the Docker images are large, and you want to optimize them to reduce deployment time and resource consumption. How can you achieve this?
 
 Solution: To optimize Docker image size, follow these best practices:
@@ -98,7 +88,8 @@ Use Alpine-based Images: Choose Alpine Linux as the base image for your containe
 Multi-stage Builds: Utilize multi-stage builds to create a smaller final image. This involves using separate build and runtime stages, copying only necessary artifacts from the build stage to the final stage.
 Minimize Layers: Limit the number of layers in your Dockerfile. Each instruction in a Dockerfile creates a new layer, so combining commands can reduce the overall image size.
 Remove Unnecessary Dependencies: Ensure that you only include dependencies required for your application to function. Remove any unnecessary packages or files after installation.
-Scenario 3: Managing Persistent Data
+
+## Scenario 3: Managing Persistent Data
 You are deploying a stateful application using Docker containers, and you need to ensure that data persists even if a container fails or is rescheduled. How can you manage persistent data in Docker?
 
 Solution: To manage persistent data in Docker, consider the following approaches:
@@ -111,7 +102,8 @@ docker run -v <volume_name>:<container_path> <image_name>
 2. Docker Bind Mounts: If you need to use a specific directory on the host machine for data persistence, utilize Docker bind mounts. Bind mounts link a directory or file on the host to a directory in the container.
 
 docker run -v /host/path:/container/path <image_name>
-Scenario 4: Network Connectivity between Containers
+
+## Scenario 4: Network Connectivity between Containers
 You are running multiple containers that need to communicate with each other over the network. How can you set up network connectivity between Docker containers?
 
 Solution: Docker provides a default bridge network that allows containers to communicate with each other. Containers on the same network can reach each other using container names as hostnames.
