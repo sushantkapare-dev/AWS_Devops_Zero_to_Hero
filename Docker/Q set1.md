@@ -1081,6 +1081,5 @@ Checking the health of containers is an essential aspect of managing and monitor
 
 ## what is Canary deployment in docker?
 A Canary deployment in the context of Docker and containerized applications is a deployment strategy used to release a new version of an application gradually and with controlled risk. It involves rolling out the new version to only a subset of users or servers, typically a small percentage, to test its stability and performance before making it available to the entire user base or infrastructure. This approach helps to catch potential issues early and ensure a smooth transition to the new version.
-----------------------------------------------
 
 [wihout 'docker0' networking container not communiate with host machine ]
