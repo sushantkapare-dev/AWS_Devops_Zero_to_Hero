@@ -156,7 +156,7 @@ Managing secrets and configuration in a Kubernetes cluster is a critical aspect 
 6. **Secret Management Tools**:
    Consider using secret management tools like Sealed Secrets (which uses asymmetric encryption to store secrets in your Git repository) or Kubeconfig Manager to enhance secret management capabilities.
 
-**Can you discuss your experience with tools such as ConfigMap and Secret?**
+# Can you discuss your experience with tools such as ConfigMap and Secret?
 **ConfigMaps**:
 
 1. **Application Configuration**:
