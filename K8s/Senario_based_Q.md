@@ -388,3 +388,119 @@ As a DevOps engineer in this project, my primary responsibilities included:
 6. **Security Compliance**: Ensuring that the cluster met security compliance standards and regulations relevant to our industry was an ongoing challenge.
 
 7. **Documentation and Knowledge Sharing**: Maintaining up-to-date documentation and sharing knowledge within the team to ensure everyone understood the architecture and best practices was essential but often overlooked.
+
+# 1. What is the purpose of Kubernetes Namespaces, and how do they work?
+Kubernetes Namespaces provide a way to logically partition resources within a cluster. They enable multiple teams or projects to share a Kubernetes cluster while ensuring resource isolation. By default, resources are created in the “default” namespace.
+
+To create a new namespace:
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-namespace
+  ```
+# 2.Explain the differences between a Deployment and a StatefulSet in Kubernetes.
+Deployments are suitable for stateless applications and manage replica sets for scaling and rolling updates. StatefulSets are designed for stateful applications like databases, ensuring stable network identities and ordered pod creation.
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app-container
+        image: my-app:v1
+StatefulSet Example:
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: my-database
+spec:
+  replicas: 3
+  serviceName: my-database
+  selector:
+    matchLabels:
+      app: my-database
+  template:
+    metadata:
+      labels:
+        app: my-database
+    spec:
+      containers:
+      - name: database
+        image: my-database:v1
+```
+        
+# 3. What are the various types of Kubernetes objects, and explain their purpose?
+In Kubernetes, objects are the building blocks used to deploy, manage, and monitor applications and resources. Some common Kubernetes objects include:
+
+Pods: The smallest deployable units in Kubernetes that represent one or more containers.
+ReplicaSets: Ensures a specified number of replicas of a Pod are running at any given time, providing high availability and scaling.
+Deployments: A declarative way to manage ReplicaSets and update applications to a new version without downtime.
+Services: An abstraction that defines a logical set of Pods and a policy to access them, enabling communication between Pods.
+ConfigMaps and Secrets: Used to manage configuration data and sensitive information, respectively.
+StatefulSets: Manages stateful applications, providing guarantees about the ordering and uniqueness of Pods.
+DaemonSets: Ensures a copy of a Pod is running on each node in the cluster.
+Jobs and CronJobs: Used to run batch processes and scheduled tasks.
+
+# 4. How do you achieve High Availability (HA) in Kubernetes?
+High Availability in Kubernetes ensures that applications remain available and operational even if some components fail. To achieve HA, consider the following practices:
+
+Deploying multiple replicas of critical components: For example, running multiple replicas of application Pods using ReplicaSets or Deployments.
+Using readiness and liveness probes: These probes determine the health of containers, helping Kubernetes make informed decisions during scaling and failover.
+Cluster Node redundancy: Run Kubernetes nodes across multiple availability zones or regions to prevent a single point of failure.
+Horizontal Pod Autoscaler (HPA): Automatically scales the number of Pods based on CPU utilization or custom metrics, ensuring the desired performance under varying loads.
+Minimizing single points of failure: By utilizing tools like Kubernetes Master HA (with multiple Master nodes) and etcd cluster for data storage, you can enhance the cluster’s resilience.
+
+# 5. What is a Kubernetes Ingress, and how does it differ from a Service?
+In Kubernetes, an Ingress is an API object that manages external access to services within the cluster. It allows external traffic to reach services by acting as a reverse proxy and forwarding requests to the appropriate services based on the rules defined. Key differences between Ingress and Service are:
+
+Layer: Ingress operates at the application layer (Layer 7) of the OSI model, while Service operates at the transport layer (Layer 4).
+Traffic routing: Ingress can route traffic based on domain names, paths, or other request attributes, providing more advanced routing options.
+SSL termination: Ingress can handle SSL termination and secure connections, which is not natively provided by Kubernetes Services.
+Single entry point: Ingress allows you to expose multiple services through a single external IP and port combination.
+
+# 6 . How can you scale applications in Kubernetes manually and automatically?
+Scaling applications in Kubernetes can be done manually and automatically:
+
+Manual scaling: You can manually scale a Deployment or ReplicaSet by updating the replica count. For example, using the kubectl scale command to increase or decrease the number of replicas.
+Automatic scaling: Kubernetes provides Horizontal Pod Autoscaler (HPA) to automatically adjust the number of replicas based on CPU utilization or custom metrics. You can define HPA using the kubectl autoscale command or YAML configuration.
+
+# 7. What is a Liveness Probe, and why is it important?
+A Liveness Probe is a crucial aspect of Kubernetes health checks. It is a diagnostic tool used to determine whether a container within a pod is alive and functioning properly. Liveness Probes help Kubernetes to recognize and handle scenarios where an application may have entered a non-responsive or faulty state.
+
+The probe works by periodically sending an HTTP request to a specified endpoint within the container. If the container responds with a success status code (2xx or 3xx), Kubernetes considers the container healthy. If, however, the container does not respond within a specified timeout period or returns a failure status code (4xx or 5xx), Kubernetes will take corrective action, such as restarting the container.
+
+Liveness Probes are essential to maintain the reliability and availability of applications running in Kubernetes clusters, ensuring that users have access to healthy and responsive services.
+
+# 8. Explain the concept of Network Policies in Kubernetes.
+Network Policies in Kubernetes are a set of rules that control the communication between pods within a cluster. By default, Kubernetes allows unrestricted communication between all pods, but Network Policies enable fine-grained control over which pods can communicate with each other.
+
+Network Policies define ingress and egress rules based on various attributes such as pod labels, namespaces, and IP addresses. These rules help to isolate and secure applications within the cluster, preventing unauthorized access and reducing the attack surface.
+
+It’s important to note that Network Policies are only enforced if the Kubernetes network plugin supports them. Examples of network plugins that support Network Policies include Calico and Cilium.
+
+# 9. How can you scale Kubernetes nodes horizontally?
+Horizontal scaling in Kubernetes involves increasing or decreasing the number of nodes in a cluster to accommodate changing workloads. To scale nodes horizontally, you can follow these steps:
+
+a) Manually: You can manually add or remove nodes from your cluster using the Kubernetes control plane or cloud provider’s management console. This approach is suitable for occasional scaling needs.
+
+b) Autoscaling: Kubernetes offers built-in support for cluster autoscaling. You can configure the Kubernetes Horizontal Pod Autoscaler (HPA) to automatically adjust the number of nodes based on CPU utilization, custom metrics, or other performance indicators. The HPA will automatically create new nodes or terminate existing ones as needed.
+
+c) Node Pools (in cloud providers): Some cloud providers offer the concept of node pools, where you can define multiple sets of nodes with different characteristics. By creating an autoscaling node pool, the cloud provider will manage node scaling for you based on predefined rules.
+
+# 10 . What are Custom Resource Definitions (CRDs) in Kubernetes, and how do they extend Kubernetes functionality?
+Custom Resource Definitions (CRDs) extend the Kubernetes API and enable users to define and manage their custom resources. Essentially, CRDs allow you to define new resource types, just like built-in Kubernetes resources like Deployments and Services.
+
+CRDs enable you to create custom controllers that can watch and react to changes in these custom resources. This capability unlocks the potential for extending Kubernetes to manage new types of applications and workloads that are not natively supported.
+
+For example, if you need to manage a new type of resource, such as a custom load balancer or database, you can define a CRD to represent that resource. Then, you can create a custom controller to handle the resource’s lifecycle, allowing Kubernetes to manage it like any other native resource.
+
+CRDs play a significant role in Kubernetes operators, which are powerful, domain-specific controllers that simplify the management of complex applications.
