@@ -504,3 +504,54 @@ CRDs enable you to create custom controllers that can watch and react to changes
 For example, if you need to manage a new type of resource, such as a custom load balancer or database, you can define a CRD to represent that resource. Then, you can create a custom controller to handle the resource’s lifecycle, allowing Kubernetes to manage it like any other native resource.
 
 CRDs play a significant role in Kubernetes operators, which are powerful, domain-specific controllers that simplify the management of complex applications.
+
+# Question 1: What is the Kubernetes Control Plane, and how does it work?
+The Kubernetes Control Plane comprises a set of components that manage and regulate the cluster’s overall state. It includes the following key components:
+
+kube-apiserver: Serves as the central API for Kubernetes, responsible for validating and processing requests from clients.
+kube-controller-manager: Manages various controllers that handle node, replication, and endpoints controllers, ensuring the desired state of the cluster.
+kube-scheduler: Assigns pods to nodes based on resource availability and various constraints.
+etcd: A distributed key-value store that stores the entire cluster’s configuration data.
+The control plane continuously watches the cluster’s state, making adjustments as required to ensure the desired state is maintained.
+
+# Question 2: What are Custom Resources in Kubernetes, and why are they useful?
+Custom Resources (CRs) in Kubernetes allow users to define their custom API resources and controllers. They extend the Kubernetes API to accommodate new kinds of objects beyond the built-in resources like pods, deployments, and services. CRs are particularly useful when you need to add domain-specific abstractions and manage applications that require specialized handling.
+
+# Question 3: Explain Horizontal Pod Autoscaling (HPA) in Kubernetes.
+Horizontal Pod Autoscaling is a Kubernetes feature that dynamically adjusts the number of replicas of a pod based on observed CPU utilization or custom metrics. It ensures that an application can handle varying levels of traffic and resource demands efficiently. The HPA controller monitors the specified metrics and automatically scales the number of pods up or down, maintaining the desired target CPU utilization.
+
+# Question 4: Describe the difference between a StatefulSet and a Deployment in Kubernetes.
+StatefulSet and Deployment are both controllers used for managing pods, but they serve different purposes:
+
+Deployment: Designed for stateless applications, it ensures a set of identical pods are running and manages rolling updates and rollbacks.
+StatefulSet: Tailored for stateful applications, it maintains the identity of each pod, providing stable network identities and storage volumes. Pods in a StatefulSet are created in a predictable order and have unique identities.
+
+# Question 5: How can you achieve multi-tenancy in Kubernetes clusters?
+Achieving multi-tenancy in Kubernetes involves creating isolated namespaces for different tenants. Each namespace acts as a virtual cluster within the main Kubernetes cluster. By properly configuring resource quotas, role-based access control (RBAC), and network policies, you can ensure that tenants have segregated resources and limited access to only their namespaces.
+
+# Question 6: What are Taints and Tolerations in Kubernetes, and how do they work together?
+Taints and Tolerations are mechanisms in Kubernetes that help control pod placement on nodes.
+
+Taints: A taint is a label applied to a node to repel certain pods from being scheduled onto it. Nodes can be tainted to indicate they should only accept specific pods or pods with certain tolerations.
+Tolerations: A toleration is a property specified in a pod’s configuration that allows it to be scheduled on nodes with specific taints. Pods with matching tolerations will ignore the taints and be scheduled on the tainted nodes.
+
+# Question 7: Explain the concept of Operators in Kubernetes.
+Operators are a method of packaging, deploying, and managing Kubernetes applications using custom resources and controllers. They extend Kubernetes’ capabilities to automate complex application-specific operations. Operators encapsulate domain knowledge and automate tasks such as software installation, configuration, and scaling. They are especially valuable when managing stateful applications and databases in Kubernetes.
+
+# Question 8: How does Kubernetes handle storage for containerized applications?
+Kubernetes provides several storage options for containers:
+
+Persistent Volumes (PVs) and Persistent Volume Claims (PVCs): PVs are storage resources provisioned by administrators, while PVCs are requested by users to use those PVs. PVCs allow pods to access storage that persists beyond the pod’s lifecycle.
+Storage Classes: Storage Classes define different storage configurations like performance characteristics and reclaim policies. They provide dynamic provisioning of PVs when requested by PVCs.
+StatefulSets: As mentioned earlier, StatefulSets are useful for stateful applications and databases that require stable storage identities.
+
+# Question 9: How can you secure communication between different components in a Kubernetes cluster?
+
+To secure communication between components in a Kubernetes cluster, you can:
+
+Enable TLS encryption for the Kubernetes API server to ensure secure communication with kubelet, kube-proxy, and other components.
+Implement network policies to control the traffic flow between pods, ensuring only necessary communications are allowed.
+Use RBAC to define granular access controls, restricting permissions to sensitive resources.
+
+# Question 10: What is the role of kube-proxy in Kubernetes, and how does it work?
+kube-proxy is a network proxy that runs on each node in the cluster. Its primary role is to maintain network rules that allow network communication to and from pods. It facilitates load balancing for services by managing virtual IPs and routing traffic to the appropriate backend pods based on the service’s defined rules.
