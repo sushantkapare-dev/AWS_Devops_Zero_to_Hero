@@ -555,3 +555,76 @@ Use RBAC to define granular access controls, restricting permissions to sensitiv
 
 # Question 10: What is the role of kube-proxy in Kubernetes, and how does it work?
 kube-proxy is a network proxy that runs on each node in the cluster. Its primary role is to maintain network rules that allow network communication to and from pods. It facilitates load balancing for services by managing virtual IPs and routing traffic to the appropriate backend pods based on the service’s defined rules.
+
+# 1 . What is a Pod Disruption Budget (PDB) in Kubernetes, and why is it essential?
+A Pod Disruption Budget (PDB) is a resource provided by Kubernetes to ensure high availability and stability during maintenance or node failures. It defines the maximum number of pods that can be simultaneously unavailable in a deployment. By setting a PDB, you restrict the number of pod disruptions and prevent downtime beyond a specific threshold. This prevents scenarios where too many pods of a critical application go down simultaneously, risking application instability or potential failures.
+
+# 2. What is the Kubernetes Secret and ConfigMap, and how do they differ?
+Kubernetes Secret and ConfigMap are used to manage sensitive information and configuration data separately. The main differences between them are:
+
+Kubernetes Secret is used to store sensitive data, such as passwords, API tokens, or TLS certificates, in an encoded or encrypted format. It ensures data security and confidentiality.
+ConfigMap, on the other hand, is used to store configuration data, like environment variables, strings, or configuration files, in plain text. It does not provide data encryption but is ideal for non-sensitive information.
+
+# 3. Explain the concept of ResourceQuota in Kubernetes and how to implement it.
+ResourceQuota is a Kubernetes feature used to limit the resource consumption of namespaces or individual users within a namespace. It helps prevent resource exhaustion and ensures fair resource allocation in a multi-tenant cluster. To implement ResourceQuota:
+
+Define a ResourceQuota manifest with specific limits for CPU, memory, storage, and other resources.
+Apply the ResourceQuota to the desired namespace using kubectl apply -f.
+
+# 4. What are PodSecurityPolicies (PSPs) in Kubernetes, and why are they essential?
+PodSecurityPolicies (PSPs) are a cluster-level resource in Kubernetes that control the actions and capabilities available to pods. They define a set of rules that pods must adhere to before they are admitted and executed in the cluster. PSPs are essential for implementing security best practices, preventing privilege escalation, and mitigating risks associated with potentially malicious or vulnerable containers.
+
+# 5. How can you manage rolling back to a previous version of a Kubernetes Deployment?
+Kubernetes allows you to manage rolling back to a previous version of a Deployment using the following steps:
+
+Retrieve the revision history of the Deployment using the kubectl rollout history command.
+Roll back to the desired revision using the kubectl rollout undo command with the appropriate revision number.
+Monitor the status of the rollback using kubectl rollout status.
+If required, pause the automatic rollout using kubectl rollout pause and resume it using kubectl rollout resume after verification.
+
+# 6. How can you configure an external database with a Kubernetes application?
+To configure an external database with a Kubernetes application, follow these steps:
+
+Database Setup: Set up the external database (e.g., MySQL, PostgreSQL) on a separate server or use managed database services like Amazon RDS or Google Cloud SQL.
+Database Credentials: Create Kubernetes Secrets to store the database credentials securely. This prevents exposing sensitive information in the configuration files.
+Application Configuration: Modify your application’s configuration to read database connection details from the Kubernetes Secret rather than hardcoding them.
+Kubernetes Deployment: Create a Deployment manifest for your application, and ensure that the Secrets containing database credentials are mounted as environment variables or as files inside the Pods.
+Service Discovery: If the external database is not using a public IP, create a Kubernetes Service that acts as a load balancer or provides a stable DNS name for the external database’s endpoint.
+RBAC and Network Policies: For security, configure Role-Based Access Control (RBAC) and Network Policies to control access to the database from the application Pods.
+
+# 7. How can you perform a canary deployment in Kubernetes?
+Canary deployment is a deployment strategy where a new version of an application is rolled out to a small subset of users or Pods to validate its performance before rolling it out to the entire user base. In Kubernetes, you can achieve canary deployments using the following steps:
+
+Create Canary Deployment: Create a new Deployment with the new version of your application. This Deployment should have a smaller number of replicas, representing the canary group.
+Traffic Routing: Use Kubernetes Service with Service Type LoadBalancer or NodePort, or an Ingress resource, to route a portion of traffic to the canary Deployment while the majority of the traffic goes to the stable version.
+Monitoring and Validation: Monitor the performance and behavior of the canary Deployment. Use metrics, logs, and user feedback to validate the new version’s stability and correctness.
+Gradual Promotion: If the canary Deployment performs well, gradually increase the number of replicas in the canary group and decrease the replicas in the stable version until all traffic is routed to the new version.
+Rollback: In case of issues, quickly rollback by redirecting all traffic back to the stable version.
+
+# 8. How can you integrate Kubernetes with an external logging and monitoring system?
+Integrating Kubernetes with an external logging and monitoring system is crucial for gaining insights into the cluster’s health, performance, and resource utilization. Here are the steps to achieve this integration:
+
+Container Logging: Configure each container to write logs to stdout/stderr. Kubernetes automatically collects these logs.
+Log Aggregation: Use a centralized logging system like Elasticsearch, Fluentd, and Kibana (EFK) or Prometheus and Grafana to collect, aggregate, and visualize logs from all containers.
+Monitoring Agent: Deploy a monitoring agent (e.g., Prometheus Node Exporter) as a DaemonSet on each node to collect system-level metrics and node-specific data.
+Prometheus Adapter: If you’re using Prometheus for monitoring, consider using the Prometheus Adapter to enable custom metrics and Horizontal Pod Autoscaler (HPA) support.
+Service Monitors: Define ServiceMonitor resources to automatically discover and monitor applications exposed via Kubernetes Services.
+Alerting: Set up alerting rules to trigger notifications in case of abnormal behavior or threshold breaches.
+
+# 9. Explain the concept of “Pod Priority” and “PriorityClass” in Kubernetes.
+Pod Priority and PriorityClass are features introduced in Kubernetes to prioritize the scheduling of Pods on nodes based on their importance or criticality.
+
+Pod Priority: Pod Priority is a numeric value associated with a Pod that indicates its relative importance. The higher the priority value, the more important the Pod. Kubernetes uses the Pod Priority value to make scheduling decisions. Pods with higher priorities are preferred to be scheduled first.
+
+PriorityClass: PriorityClass is a Kubernetes resource that defines a mapping between a human-readable name and a numeric value. This allows administrators to assign meaningful names to priority levels. When creating a Pod, you can specify the PriorityClass name, and Kubernetes automatically assigns the corresponding priority value to the Pod.
+
+Additionally, administrators can define default PriorityClasses to be used when Pods don’t specify any specific PriorityClass. This helps avoid scenarios where important Pods are accidentally scheduled with low priority.
+
+# 10. How can you secure communication between Pods in a Kubernetes cluster?
+Securing communication between Pods in a Kubernetes cluster is essential to protect sensitive data and prevent unauthorized access. Here are some methods to achieve this:
+
+Network Policies: Implement Kubernetes Network Policies to define the rules for communication between Pods based on labels and namespaces. This allows you to restrict access between Pods, only allowing specific Pods to communicate with each other.
+Use Private Network: Ensure that your Kubernetes cluster is set up on a private network, and all traffic is encrypted.
+TLS Certificates: Use TLS certificates to secure communication between Pods and services. For example, you can set up an Ingress controller with TLS termination to ensure encrypted traffic.
+Service Accounts: Use Kubernetes Service Accounts to authenticate communication between Pods. Ensure that only authorized Service Accounts can access specific resources.
+Secrets Management: Store sensitive information like API keys, passwords, or database credentials in Kubernetes Secrets. Mount these Secrets as volumes or environment variables in your Pods securely.
