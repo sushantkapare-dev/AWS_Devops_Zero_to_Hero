@@ -70,9 +70,14 @@ Kube-proxy: Kube-proxy is the network proxy that runs on each node in the cluste
 Container Runtime: The container runtime is responsible for pulling the images and starting containers. Kubernetes supports multiple container runtimes, including Docker, rkt, and CRI-O.
 ![image](https://github.com/SushantOps/AWS_Devops_Questions_and_Answers/assets/109059766/e704a326-e9f2-4de1-9c28-13d18f8295d7)
 
-Also there are some other Questions ,
-How do you manage secrets and configuration in a Kubernetes cluster? Can you discuss your experience with tools such as ConfigMap and Secret?
-Can you discuss your experience with using Kubernetes auto-scaling, such as horizontal pod auto-scaling (HPA) or vertical pod auto-scaling (VPA)?
-Can you explain how you would use Kubernetes role-based access control (RBAC) to secure a cluster and its resources?
-Can you discuss how you would diagnose and debug issues with a Kubernetes application, such as slow performance or resource utilization problems?
-Can you walk us through a recent project you worked on using Kubernetes, highlighting your role and responsibilities and the key challenges you faced?
+**How do you manage secrets and configuration in a Kubernetes cluster?**
+
+**Can you discuss your experience with tools such as ConfigMap and Secret?**
+
+**Can you discuss your experience with using Kubernetes auto-scaling, such as horizontal pod auto-scaling (HPA) or vertical pod auto-scaling (VPA)?**
+
+**Can you explain how you would use Kubernetes role-based access control (RBAC) to secure a cluster and its resources?**
+
+**Can you discuss how you would diagnose and debug issues with a Kubernetes application, such as slow performance or resource utilization problems?**
+
+**Can you walk us through a recent project you worked on using Kubernetes, highlighting your role and responsibilities and the key challenges you faced?**
