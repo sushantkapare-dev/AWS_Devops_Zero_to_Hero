@@ -70,7 +70,7 @@ Kube-proxy: Kube-proxy is the network proxy that runs on each node in the cluste
 Container Runtime: The container runtime is responsible for pulling the images and starting containers. Kubernetes supports multiple container runtimes, including Docker, rkt, and CRI-O.
 ![image](https://github.com/SushantOps/AWS_Devops_Questions_and_Answers/assets/109059766/e704a326-e9f2-4de1-9c28-13d18f8295d7)
 
-**How do you manage secrets and configuration in a Kubernetes cluster?**
+# How do you manage secrets and configuration in a Kubernetes cluster?
 Managing secrets and configuration in a Kubernetes cluster is a critical aspect of ensuring the security and reliability of your applications. Kubernetes provides several mechanisms for handling secrets and configuration, and you can choose the one that best fits your requirements. Here are some common methods:
 
 1. **Kubernetes Secrets**:
@@ -188,10 +188,10 @@ Managing secrets and configuration in a Kubernetes cluster is a critical aspect 
 5. **Role-Based Access Control (RBAC)**:
    Secrets should be carefully managed to prevent unauthorized access. Kubernetes RBAC can be used to control who has permission to create, update, or access Secrets within the cluster.
 
-**Can you discuss your experience with using Kubernetes auto-scaling, such as horizontal pod auto-scaling (HPA) or vertical pod auto-scaling (VPA)?**
+# Can you discuss your experience with using Kubernetes auto-scaling, such as horizontal pod auto-scaling (HPA) or vertical pod auto-scaling (VPA)?
 
-**Can you explain how you would use Kubernetes role-based access control (RBAC) to secure a cluster and its resources?**
+# Can you explain how you would use Kubernetes role-based access control (RBAC) to secure a cluster and its resources?
 
-**Can you discuss how you would diagnose and debug issues with a Kubernetes application, such as slow performance or resource utilization problems?**
+# Can you discuss how you would diagnose and debug issues with a Kubernetes application, such as slow performance or resource utilization problems?
 
-**Can you walk us through a recent project you worked on using Kubernetes, highlighting your role and responsibilities and the key challenges you faced?**
+# Can you walk us through a recent project you worked on using Kubernetes, highlighting your role and responsibilities and the key challenges you faced?
