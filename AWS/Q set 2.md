@@ -137,3 +137,4 @@ Scalability: Fargate makes it easier to scale your containers as needed without 
 
 ## Q23: Can we use EFS as the root volume?
 No, we can’t use only EBS can be used as the root volume
+
