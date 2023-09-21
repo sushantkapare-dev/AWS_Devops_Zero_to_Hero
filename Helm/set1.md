@@ -2,4 +2,6 @@
 
 ## what is helm chart?
 
+## How helmchart help us to manage k8s cluster?
+
 ## 
