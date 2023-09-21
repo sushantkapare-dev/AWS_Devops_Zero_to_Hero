@@ -4,4 +4,6 @@
 
 ## How helmchart help us to manage k8s cluster?
 
+## How to install helm-chart?
+
 ## 
