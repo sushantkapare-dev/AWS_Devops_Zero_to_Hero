@@ -6,4 +6,6 @@
 
 ## How to install helm-chart?
 
+## what is helm chart architure?
+
 ## 
