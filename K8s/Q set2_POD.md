@@ -66,9 +66,23 @@ In this case, the Pod's container is limited to using a maximum of 512 MiB of me
 Resource requests and limits are specified using appropriate units (e.g., "Mi" for mebibytes and "m" for millicores). These settings help Kubernetes make scheduling decisions and ensure that Pods operate within resource constraints. It's important to configure resource requirements carefully to avoid resource contention and optimize resource utilization within your cluster.
 
 ##  What happens if a Pod's primary container fails? How does Kubernetes handle Pod restarts?
+If a Pod's primary container fails in Kubernetes, the Pod itself is considered failed, and Kubernetes initiates a process to handle Pod restarts based on its restart policy. By default, Pods have a restart policy of "Always," which means that when the primary container terminates, Kubernetes automatically restarts the entire Pod, including all its containers. This ensures that the primary container and any sidecar containers are restarted together. Kubernetes can also be configured to use different restart policies like "OnFailure" or "Never," depending on your application's requirements. Additionally, Kubernetes provides features like readiness and liveness probes, which allow you to define specific conditions for container health. If a container repeatedly fails these probes, Kubernetes can automatically replace the problematic Pod with a new one to maintain application reliability.
+
 ##  Explain the purpose of Init Containers in a Pod. When might you use them?
+Init Containers in a Kubernetes Pod serve the purpose of preparing the environment or performing setup tasks before the main application containers start running. They are useful when your application requires some initialization steps like data loading, configuration setup, or waiting for a specific service to become available. Init Containers run to completion one at a time, in order, before the primary application containers are initiated. This ensures that the environment is properly configured, and dependencies are satisfied, guaranteeing a smoother and more reliable startup for your application. Common use cases include database schema migrations, downloading assets or configurations, or waiting for external services to be ready before launching the main application.
+
 ##  How can you access the logs of containers within a Pod?
+To access the logs of containers within a Pod in Kubernetes, you can use the `kubectl logs` command followed by the Pod name and the container name (if there are multiple containers in the Pod). For example: 
+
+```
+kubectl logs <pod-name> -c <container-name>
+```
+
+This command retrieves the logs of the specified container within the Pod and displays them in your terminal. You can also use flags such as `-f` for real-time streaming of logs or `-n <namespace>` to specify a particular namespace if the Pod is not in the default namespace. Accessing logs is essential for debugging, monitoring, and troubleshooting containerized applications in Kubernetes.
+
 ##  What is a Sidecar container in a Pod, and how does it relate to the primary container?
+A Sidecar container in a Kubernetes Pod is an additional container that runs alongside the primary container, sharing the same network and storage resources. The Sidecar container is closely related to the primary container and is used to enhance or extend its functionality without modifying the primary container's code. It can perform tasks such as logging, monitoring, security, or data synchronization, ensuring that these functions are decoupled from the main application, making the primary container more modular and promoting efficient resource sharing within the Pod. This architecture simplifies maintenance, scalability, and management of complex containerized applications in Kubernetes.
+
 ##  What is a PodSpec, and where is it used in Kubernetes resources?
 ##  How do you share storage between containers within the same Pod?
 ##  What are VolumeMounts and Volumes in the context of Pods?
