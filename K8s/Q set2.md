@@ -1,5 +1,6 @@
 
 ##  What is a Kubernetes Pod, and why is it important in Kubernetes?
+
 ##  Can a Pod have multiple containers? Explain use cases for multi-container Pods.
 ##  What is the main difference between a Pod and a container in Kubernetes?
 ##  How do you define resource requirements (CPU and memory) for a Pod?
