@@ -116,3 +116,4 @@ docker network create <network_name>
 
 docker run --network=<network_name> <image_name>
 Now, the containers using the same custom network can communicate with each other via their container names.
+
