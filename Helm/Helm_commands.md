@@ -61,3 +61,9 @@
    ```bash
    helm template my-app ./my-chart
    ```
+## Some other commands:-
+
+```
+helm list -a
+```
+
