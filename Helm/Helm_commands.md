@@ -25,9 +25,10 @@
    ```bash
    helm list
    ```
+
    ```
-helm list -a
-```
+    helm list -a
+   ```
 
 5. **helm delete**: This command is used to uninstall and delete a release.
 
