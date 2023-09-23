@@ -34,3 +34,85 @@ Helm charts help manage Kubernetes clusters by simplifying the deployment and ma
 ## what is helm chart architure?
 ![image](https://github.com/SushantOps/AWS_Devops_Questions_and_Answers/assets/109059766/ddf801f1-a2fd-4245-8ab5-dba287c2ffb3)
 
+Helm chart architecture consists of several components and directories that define and structure the Kubernetes resources and configurations needed to deploy an application. Here's an overview of the key elements in a Helm chart:
+
+1. **Chart.yaml**:
+   - This file contains metadata about the Helm chart, such as its name, version, and description.
+   - Example:
+     ```yaml
+     name: myapp
+     version: 1.0.0
+     description: My sample application
+     ```
+
+2. **values.yaml**:
+   - This file holds default configuration values that can be overridden when deploying the chart.
+   - Values defined here are used as templates throughout the chart templates.
+   - Example:
+     ```yaml
+     replicaCount: 2
+     image:
+       repository: myapp
+       tag: 1.2.3
+     ```
+
+3. **templates/**:
+   - This directory contains Kubernetes YAML templates that define the resources needed for your application.
+   - Helm uses Go templates to inject values from `values.yaml` into these templates.
+   - Common resources include Deployments, Services, ConfigMaps, and Ingresses.
+   - Example template (e.g., `deployment.yaml`):
+     ```yaml
+     apiVersion: apps/v1
+     kind: Deployment
+     metadata:
+       name: {{ .Release.Name }}-deployment
+     spec:
+       replicas: {{ .Values.replicaCount }}
+       template:
+         spec:
+           containers:
+             - name: {{ .Chart.Name }}
+               image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+     ```
+
+4. **helpers.tpl** (optional):
+   - This file contains reusable Go templates and functions that can be used within other templates.
+   - It helps keep chart templates DRY (Don't Repeat Yourself).
+   - Example:
+     ```go
+     {{/* Reusable template to create a ConfigMap */}}
+     {{- define "myapp.configmap" -}}
+     apiVersion: v1
+     kind: ConfigMap
+     metadata:
+       name: {{ .Release.Name }}-configmap
+     data:
+       key1: value1
+       key2: value2
+     {{- end -}}
+     ```
+
+5. **charts/** (optional):
+   - This directory is used for storing dependencies on other Helm charts.
+   - Helm can manage and deploy these dependencies alongside your main chart.
+   - Example:
+     ```
+     charts/
+     ├── common/
+     └── frontend/
+     ```
+
+6. **charts.lock** and **charts.yaml** (optional):
+   - These files are used to track and manage chart dependencies, similar to a package manager's lockfile and metadata file.
+
+7. **README.md** (optional):
+   - This file can provide documentation and usage instructions for the Helm chart.
+
+8. **LICENSE** (optional):
+   - This file contains the licensing information for the Helm chart.
+
+9. **tests/** (optional):
+   - This directory can contain test files and scripts to verify the correctness of the chart's deployment.
+
+Helm uses these components to package, deploy, and manage applications on Kubernetes clusters. It provides a convenient way to customize configurations, manage dependencies, and version control your application deployments, making it easier to maintain complex Kubernetes setups and promote reusability of application configurations.
+
