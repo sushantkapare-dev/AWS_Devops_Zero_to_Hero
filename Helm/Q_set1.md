@@ -30,8 +30,6 @@ Helm charts help manage Kubernetes clusters by simplifying the deployment and ma
 7. **RBAC and Security**: Helm 3 introduced support for Kubernetes RBAC, enhancing security by limiting access to resources based on role-based access control policies. This aligns Helm with Kubernetes security best practices, making it a safer choice for managing clusters.
 
 8. **Ecosystem Integration**: Helm has a vibrant ecosystem with a wide range of community-contributed charts for popular applications and services. This allows users to quickly adopt and deploy common solutions within their Kubernetes clusters without the need for extensive manual configuration.
-   
-## How to install helm-chart?
 
 ## what is helm chart architure?
 ![image](https://github.com/SushantOps/AWS_Devops_Questions_and_Answers/assets/109059766/ddf801f1-a2fd-4245-8ab5-dba287c2ffb3)
