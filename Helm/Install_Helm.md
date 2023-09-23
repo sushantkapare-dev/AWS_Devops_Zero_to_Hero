@@ -13,3 +13,10 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.
 sudo apt-get update
 sudo apt-get install helm
 ```
+
+# From Source (Linux, macOS)
+```
+$ git clone https://github.com/helm/helm.git
+$ cd helm
+$ make
+```
