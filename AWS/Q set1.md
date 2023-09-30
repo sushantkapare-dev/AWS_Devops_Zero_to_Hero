@@ -496,6 +496,12 @@ Here's what you can and cannot do with vertical scaling in EC2:
 ## Diff between vertical and scaling instances?
 Vertical scaling and horizontal scaling are two different approaches to increasing the capacity of a system. Vertical scaling, also known as "scaling up," involves upgrading an individual server or instance by adding more resources (e.g., CPU, memory) to handle increased workloads. In contrast, horizontal scaling, also known as "scaling out," involves adding more instances or servers to a system to distribute the workload across multiple machines, accommodating increased demand by increasing the number of computing units rather than the resources of a single unit. Vertical scaling is typically limited by the capacity of a single server and may result in downtime during upgrades, while horizontal scaling provides more flexibility, better fault tolerance, and can accommodate larger-scale growth by adding more instances as needed.
 
+## diff between ec2 and aws autoscaling?
+
+## diff betwee launch templete and launch configuration?
+
 ## 
+
+
 
 
