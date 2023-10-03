@@ -497,13 +497,11 @@ Here's what you can and cannot do with vertical scaling in EC2:
 Vertical scaling and horizontal scaling are two different approaches to increasing the capacity of a system. Vertical scaling, also known as "scaling up," involves upgrading an individual server or instance by adding more resources (e.g., CPU, memory) to handle increased workloads. In contrast, horizontal scaling, also known as "scaling out," involves adding more instances or servers to a system to distribute the workload across multiple machines, accommodating increased demand by increasing the number of computing units rather than the resources of a single unit. Vertical scaling is typically limited by the capacity of a single server and may result in downtime during upgrades, while horizontal scaling provides more flexibility, better fault tolerance, and can accommodate larger-scale growth by adding more instances as needed.
 
 ## diff between ec2 and aws autoscaling?
+Amazon EC2 (Elastic Compute Cloud) is a web service that provides resizable compute capacity in the form of virtual servers, known as instances, which you can manually provision and manage according to your needs. AWS Auto Scaling, on the other hand, is a service that automatically adjusts the number of EC2 instances in a group to maintain application availability and performance based on predefined scaling policies. While EC2 instances are static and require manual scaling, AWS Auto Scaling dynamically manages the scaling of instances to optimize resource utilization and ensure application responsiveness, helping to reduce operational overhead and enhance fault tolerance for your applications.
 
 ## diff betwee launch templete and launch configuration?
+A launch template and a launch configuration are both used in AWS Auto Scaling to define the configuration of instances that are automatically launched to meet scaling needs, but they have some key differences. A launch template is more flexible and feature-rich as it allows you to specify versioning and parameterize instance configurations, making it easier to maintain and update settings across multiple Auto Scaling groups. In contrast, a launch configuration is older and more straightforward, offering fewer customization options and no versioning, which can lead to manual updates across Auto Scaling groups when configuration changes are needed. Therefore, launch templates are generally recommended for more modern and versatile Auto Scaling configurations, while launch configurations are still used in some legacy setups.
 
 ## vertical scaling is possible in Lambda?
-
-##
-
-
-
+No, vertical scaling, which involves increasing the compute resources (e.g., CPU or memory) of a single instance, is not possible in AWS Lambda. Lambda is a serverless compute service that automatically handles the scaling of functions by creating and managing separate instances for each execution, and you are billed based on the number of invocations and the duration of each invocation, rather than the size of the instance. If you need more compute power for a Lambda function, you would typically adjust the allocated memory, which also affects CPU and network capacity, but this is done at the function level, not by vertically scaling a single instance.
 
