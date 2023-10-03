@@ -500,7 +500,9 @@ Vertical scaling and horizontal scaling are two different approaches to increasi
 
 ## diff betwee launch templete and launch configuration?
 
-## 
+## vertical scaling is possible in Lambda?
+
+##
 
 
 
