@@ -408,3 +408,6 @@ It's essential to use these methods responsibly and only for legitimate purposes
 ## What is shadow password?
 A shadow password is a security feature in Unix-like operating systems that enhances password protection by storing password hashes and related security information in a separate, more secure file (usually `/etc/shadow`) with restricted access, instead of in the publicly readable `/etc/passwd` file. This separation helps safeguard user password information from unauthorized access, making it more challenging for attackers to crack passwords through brute-force or dictionary attacks.
 
+## Copy a file from 1 machine to the other using scripting( yes we can use Gdrive too😂). Also can we run multiple bash scripts in parallel?
+
+## We are running short on storage and as per the sys admin there are 25GB of blank files created by previous employees, 𝘄𝗿𝗶𝘁𝗲 𝗮 𝘀𝗰𝗿𝗶𝗽𝘁 𝘁𝗼 𝗱𝗲𝗹𝗲𝘁𝗲 𝗮𝗹𝗹 𝘀𝘂𝗰𝗵 𝗳𝗶𝗹𝗲𝘀.
