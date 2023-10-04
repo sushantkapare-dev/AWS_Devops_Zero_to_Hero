@@ -42,5 +42,3 @@ But somehow the status of PVC is still not changed to Bound, can you suggest som
 
 ## 𝗖𝗮𝗻 𝘄𝗲 𝗽𝗶𝗻𝗴 𝗮 𝗦𝗲𝗿𝘃𝗶𝗰𝗲 𝗼𝗯𝗷𝗲𝗰𝘁 𝗶𝗻 𝗞𝘂𝗯𝗲𝗿𝗻𝗲𝘁𝗲𝘀? If yes then which service, else how can we know if the service is up and running?
 
-## 𝗖𝗮𝗻 𝘄𝗲 𝘂𝘀𝗲 𝘁𝗵𝗲 𝗸𝗲𝘆𝘄𝗼𝗿𝗱𝘀 𝘀𝘂𝗰𝗵 𝗮𝘀 𝗙𝗥𝗢𝗠, 𝗥𝗨𝗡, 𝗖𝗢𝗣𝗬 𝗶𝗻 𝗹𝗼𝘄𝗲𝗿𝗰𝗮𝘀𝗲 𝗳𝗼𝗿 𝘄𝗿𝗶𝘁𝗶𝗻𝗴 𝗮 𝗱𝗼𝗰𝗸𝗲𝗿𝗳𝗶𝗹𝗲? Also, can you share the maximum number of containers that you can run on a single host?
-
