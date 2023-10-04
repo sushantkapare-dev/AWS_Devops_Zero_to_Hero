@@ -817,6 +817,5 @@ The output of this playbook will be a cow (or other animal) saying the message i
 
 Please note that while `cowsay` can be fun for demonstrations or playful use cases, it's not a standard part of Ansible's functionality and is typically not used in production playbooks.
 
-## 
 
 
