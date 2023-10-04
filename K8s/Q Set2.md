@@ -43,7 +43,12 @@ The "kubectl create node" command is not a standard Kubernetes command and is no
 
 ## 𝗗𝗲𝘀𝗶𝗴𝗻 𝗮 𝗥𝗲𝗰𝗼𝗺𝗺𝗲𝗻𝗱𝗮𝘁𝗶𝗼𝗻 𝗲𝗻𝗴𝗶𝗻𝗲 just by using Cloud services and specify the reason for picking them.
 
-## 𝗖𝗮𝗻 𝘄𝗲 𝗰𝗵𝗮𝗻𝗴𝗲 𝘁𝗵𝗲 𝗥𝘂𝗻 𝗧𝗶𝗺𝗲 𝗼𝗳 𝗮 𝗰𝗼𝗻𝘁𝗮𝗶𝗻𝗲𝗿If yes then how? If no then why not?
+## 𝗖𝗮𝗻 𝘄𝗲 𝗰𝗵𝗮𝗻𝗴𝗲 𝘁𝗵𝗲 𝗥𝘂𝗻 𝗧𝗶𝗺𝗲 𝗼𝗳 𝗮 𝗰𝗼𝗻𝘁𝗮𝗶𝗻𝗲𝗿?If yes then how? If no then why not?
+No, we cannot change the run time of a container directly. 
+
+The run time of a container is determined by the environment in which it is executed, such as a container orchestrator like Docker, Kubernetes, or a serverless platform like AWS Lambda. These environments provide the infrastructure and resources necessary for containers to run and manage their execution.
+
+To change the run time of a container, you would need to modify the configuration or parameters of the environment in which the container is deployed. For example, if you're using Docker, you can modify the container's settings in the Docker Compose or Docker Swarm configuration. If you're using Kubernetes, you can modify the pod specification. If you're using a serverless platform, you can adjust the configuration for the serverless function.
 
 ## You want to 𝗱𝗲𝘀𝗶𝗴𝗻 𝗮 𝗛𝗔 𝗰𝗹𝘂𝘀𝘁𝗲𝗿 with the total nodes count of 20.What should be the number of 𝗺𝗮𝘀𝘁𝗲𝗿 node and 𝘄𝗼𝗿𝗸𝗲𝗿 node to achieve it?
 
