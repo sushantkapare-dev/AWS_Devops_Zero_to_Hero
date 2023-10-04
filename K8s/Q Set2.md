@@ -51,6 +51,22 @@ The run time of a container is determined by the environment in which it is exec
 To change the run time of a container, you would need to modify the configuration or parameters of the environment in which the container is deployed. For example, if you're using Docker, you can modify the container's settings in the Docker Compose or Docker Swarm configuration. If you're using Kubernetes, you can modify the pod specification. If you're using a serverless platform, you can adjust the configuration for the serverless function.
 
 ## You want to 𝗱𝗲𝘀𝗶𝗴𝗻 𝗮 𝗛𝗔 𝗰𝗹𝘂𝘀𝘁𝗲𝗿 with the total nodes count of 20.What should be the number of 𝗺𝗮𝘀𝘁𝗲𝗿 node and 𝘄𝗼𝗿𝗸𝗲𝗿 node to achieve it?
+Designing a High Availability (HA) cluster with a total node count of 20 depends on your specific requirements and the technology stack you are using. HA clusters are typically designed to ensure continuous operation even in the face of hardware failures or other issues. The specific number of master and worker nodes can vary based on factors like your application's resource requirements, redundancy goals, and tolerance for failures.
+
+In a typical Kubernetes cluster, you might have a few master nodes for control plane components and the rest as worker nodes for running your application workloads. Here's a simplified example of how you might distribute the nodes:
+
+1. Master Nodes: Master nodes typically run control plane components like the API server, etcd, and the controller manager. You usually have multiple master nodes (usually an odd number for fault tolerance, like 3 or 5) for redundancy. Let's say you decide to have 5 master nodes for high availability.
+
+2. Worker Nodes: Worker nodes are where your application workloads run. The number of worker nodes depends on the resource requirements of your applications and the desired level of redundancy. Let's say you want to have 15 worker nodes to handle your application workloads.
+
+So, in this scenario:
+
+- Number of Master Nodes = 5
+- Number of Worker Nodes = 15
+
+This totals to 20 nodes in your cluster, which meets your requirement.
+
+Please note that this is a simplified example, and the actual design of your HA cluster may involve additional considerations such as load balancing, network topology, storage requirements, and more. Additionally, the choice of technology stack (e.g., Kubernetes, Docker Swarm, etc.) and the cloud or on-premises infrastructure you're using can also influence the design of your HA cluster.
 
 ## 𝗪𝗿𝗶𝘁𝗲 𝗮 𝘀𝗵𝗲𝗹𝗹 𝘀𝗰𝗿𝗶𝗽𝘁 𝘁𝗼 𝗹𝗶𝘀𝘁 𝗱𝗼𝘄𝗻 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗿𝗲𝘀𝗼𝘂𝗿𝗰𝗲𝘀 𝗶𝗻 𝗮 𝗽𝗿𝗼𝗷𝗲𝗰𝘁(𝗰𝗹𝗼𝘂𝗱) 𝗮𝗻𝗱 𝗶𝗳 𝘁𝗵𝗲 𝘁𝗶𝗺𝗲 𝗱𝘂𝗿𝗮𝘁𝗶𝗼𝗻 𝗲𝘅𝗰𝗲𝗲𝗱𝘀 𝟮 𝗵𝗼𝘂𝗿, 𝗱𝗲𝗹𝗲𝘁𝗲 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗿𝗲𝘀𝗼𝘂𝗿𝗰𝗲𝘀.
 
