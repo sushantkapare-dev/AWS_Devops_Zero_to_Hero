@@ -1083,3 +1083,5 @@ Checking the health of containers is an essential aspect of managing and monitor
 A Canary deployment in the context of Docker and containerized applications is a deployment strategy used to release a new version of an application gradually and with controlled risk. It involves rolling out the new version to only a subset of users or servers, typically a small percentage, to test its stability and performance before making it available to the entire user base or infrastructure. This approach helps to catch potential issues early and ensure a smooth transition to the new version.
 
 [wihout 'docker0' networking container not communiate with host machine ]
+
+## 𝗖𝗮𝗻 𝘄𝗲 𝘂𝘀𝗲 𝘁𝗵𝗲 𝗸𝗲𝘆𝘄𝗼𝗿𝗱𝘀 𝘀𝘂𝗰𝗵 𝗮𝘀 𝗙𝗥𝗢𝗠, 𝗥𝗨𝗡, 𝗖𝗢𝗣𝗬 𝗶𝗻 𝗹𝗼𝘄𝗲𝗿𝗰𝗮𝘀𝗲 𝗳𝗼𝗿 𝘄𝗿𝗶𝘁𝗶𝗻𝗴 𝗮 𝗱𝗼𝗰𝗸𝗲𝗿𝗳𝗶𝗹𝗲? Also, can you share the maximum number of containers that you can run on a single host?
