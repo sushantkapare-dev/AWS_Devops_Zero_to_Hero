@@ -225,3 +225,40 @@ LICENSE: The LICENSE file specifies the licensing terms for the chart, helping u
 ## What is the purpose of Helm’s templating engine, and how does it enable customization of Kubernetes manifests for different environments?
 
 Helm’s templating engine is a crucial component that allows you to customize Kubernetes manifests for different environments and configurations. The primary purpose of Helm’s templating engine is to enable parameterization and dynamic generation of Kubernetes resources, making it easier to manage and deploy applications across various environments.
+
+## Explain the difference between `helm install`, `helm upgrade`, and `helm rollback` commands in Helm, and when would you use each of them?
+
+1. **`helm install`**:
+— Purpose: This command is used to deploy a new Helm release into a Kubernetes cluster.
+— Usage: `helm install [RELEASE_NAME] [CHART] [flags]`
+— Key Points:
+— `RELEASE_NAME`: A unique name for the release. It allows you to identify and manage this specific instance of the chart.
+— `CHART`: The name or path to the Helm chart you want to install.
+— Flags: You can specify flags to customize the installation, such as setting values, providing a namespace, or enabling dry-run mode.
+
+When to Use:
+— Use `helm install` when you want to deploy a new instance of a Helm chart for the first time. It creates a new release with the given name in the specified namespace.
+
+2. **`helm upgrade`**:
+— Purpose: This command is used to upgrade an existing Helm release to a new version or with modified configuration.
+— Usage: `helm upgrade [RELEASE_NAME] [CHART] [flags]`
+— Key Points:
+— `RELEASE_NAME`: The name of the release you want to upgrade.
+— `CHART`: The name or path to the updated Helm chart you want to use for the upgrade.
+— Flags: Similar to `helm install`, you can provide flags to customize the upgrade, including values, namespace, and others.
+
+When to Use:
+— Use `helm upgrade` when you want to update an existing Helm release to a new version of the chart or make configuration changes. It performs an in-place upgrade of the release.
+
+3. **`helm rollback`**:
+— Purpose: This command is used to roll back a release to a previous version or state.
+— Usage: `helm rollback [RELEASE_NAME] [REVISION] [flags]`
+— Key Points:
+— `RELEASE_NAME`: The name of the release you want to roll back.
+— `REVISION`: The revision number or version of the release to which you want to roll back. You can find the available revisions using `helm list — history [RELEASE_NAME]`.
+— Flags: You can specify flags like namespace and other options as needed.
+
+When to Use:
+— Use `helm rollback` when you need to revert a release to a previous known good state or version. It’s helpful for recovering from failed upgrades or for quickly restoring a working release.
+
+
