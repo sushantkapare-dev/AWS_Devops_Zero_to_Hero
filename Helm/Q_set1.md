@@ -295,3 +295,35 @@ DESCRIPTION: This optional column contains a brief description of the release. I
 ## Explain the purpose of Helm release management, including how to delete a Helm release and associated resources safely.
 
 Helm release management is a critical aspect of deploying and managing applications in Kubernetes using Helm. A Helm release represents an instance of a Helm chart deployed to a Kubernetes cluster, and managing releases involves various actions such as installation, upgrading, rollback, and deletion. Helm provides commands to perform these actions safely and efficiently.
+
+## What is a Helm chart repository, and how does it facilitate the distribution and sharing of Helm charts?
+
+A Helm chart repository is a centralized location where Helm charts are stored and made available for distribution, sharing, and consumption by the Helm community or within an organization. It serves as a catalog of Helm charts, making it easier for users to discover, access, and deploy applications in Kubernetes clusters. Chart repositories facilitate distribution and sharing by providing a structured and versioned way to package, store, and retrieve charts. Users can easily search for charts, download specific versions, and benefit from the collective expertise of the Helm community, promoting best practices and code reuse in Kubernetes application deployment.
+
+## How can you add a custom Helm chart repository and install charts from it?
+
+To add a custom Helm chart repository and install charts from it, you need to follow these steps:
+
+Create or Locate Your Custom Chart Repository:
+You can either create your own Helm chart repository or use an existing one, depending on your requirements.
+If you’re creating your own repository, you can use tools like ChartMuseum to set up a private Helm chart repository.
+2. Add the Custom Repository to Helm:
+
+To add your custom repository to Helm, you can use the helm repo add command. Replace [REPO_NAME] with a unique name for your repository and [REPO_URL] with the URL of your repository.
+helm repo add [REPO_NAME] [REPO_URL]
+3. Update the Repository List:
+
+After adding the custom repository, update Helm’s local repository cache to make sure it’s aware of the new repository and its available charts.
+helm repo update
+4. Search for Charts:
+
+You can now search for charts available in your custom repository using the helm search repo command.
+```
+helm search repo [REPO_NAME]/[CHART_NAME]
+```
+5. Install Charts from the Custom Repository:
+
+To install a chart from your custom repository, you can use the helm install command followed by the repository name and chart name.
+```
+helm install [RELEASE_NAME] [REPO_NAME]/[CHART_NAME]
+```
