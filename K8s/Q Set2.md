@@ -136,6 +136,86 @@ When it comes to reducing the cost of running applications on a Kubernetes clust
 ## Our application is deployed on a Cloud based Instance and is connected with a Cloud based Database, 𝗰𝗮𝗻 𝘆𝗼𝘂 𝗰𝗮𝗹𝗰𝘂𝗹𝗮𝘁𝗲 𝘁𝗵𝗲 𝘁𝗼𝘁𝗮𝗹 𝗦𝗟𝗔 𝗳𝗼𝗿 𝗼𝘂𝗿 𝗮𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻?
 
 ## 𝗛𝗼𝘄 𝘄𝗶𝗹𝗹 𝘆𝗼𝘂 𝗺𝗮𝗸𝗲 𝘀𝘂𝗿𝗲 𝘁𝗵𝗮𝘁 𝘁𝗵𝗲 𝗶𝗺𝗮𝗴𝗲𝘀 𝗳𝗿𝗼𝗺 𝗮 𝘀𝗽𝗲𝗰𝗶𝗳𝗶𝗰 𝗿𝗲𝗴𝗶𝘀𝘁𝗿𝘆 𝗮𝗿𝗲𝗻’𝘁 𝗯𝗲𝗶𝗻𝗴 𝘂𝘀𝗲𝗱 𝗶𝗻 𝗮𝗻𝘆 𝗼𝗳 𝘁𝗵𝗲 𝗰𝗹𝘂𝘀𝘁𝗲𝗿 𝗿𝗲𝘀𝗼𝘂𝗿𝗰𝗲(you can use any open source tool).
+Creating assurance or validation that the images used in your Kubernetes cluster are sourced from secure and trusted registries is a crucial part of securing your containerized applications. There are several open-source tools you can use to help ensure that only trusted images are being used in your cluster. One popular tool for this purpose is "Trivy." Trivy is a vulnerability scanner for containers and has a Kubernetes integration that can be used to enforce image security policies.
+
+Here's how you can use Trivy to ensure secure images in your Kubernetes cluster:
+
+**Step 1: Install Trivy**
+
+You can install Trivy by following the instructions provided on its GitHub repository: https://github.com/aquasecurity/trivy
+
+**Step 2: Create Image Security Policies**
+
+Before deploying your applications, define image security policies. These policies specify which images are allowed or disallowed based on their vulnerabilities.
+
+Here's an example policy in YAML format:
+
+```yaml
+apiVersion: security.aquasec.com/v1alpha1
+kind: ClusterImagePolicy
+metadata:
+  name: my-image-policy
+spec:
+  repositories:
+    - name: "*"
+      reject:
+        - type: Vulnerability
+          severities: [HIGH, CRITICAL]
+```
+
+In this example, the policy named "my-image-policy" rejects images with HIGH or CRITICAL vulnerabilities.
+
+**Step 3: Deploy Trivy as a Kubernetes Admission Controller**
+
+Trivy can be deployed as a Kubernetes Admission Controller. This controller intercepts image creation requests and validates them against your defined policies.
+
+Here's an example of deploying Trivy as an Admission Controller:
+
+```yaml
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  name: trivy-webhook
+webhooks:
+  - name: trivy-webhook.security.aquasec.com
+    clientConfig:
+      service:
+        name: trivy-admission-controller
+        namespace: trivy
+        path: "/"
+      caBundle: <your_ca_bundle>
+    rules:
+      ...
+```
+
+**Step 4: Deploy the Admission Controller**
+
+You'll need to deploy the Trivy Admission Controller as a Kubernetes Deployment in your cluster:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trivy-admission-controller
+  namespace: trivy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trivy-admission-controller
+  template:
+    metadata:
+      labels:
+        app: trivy-admission-controller
+    spec:
+      containers:
+        - name: trivy-admission-controller
+          image: aquasec/admission-controller:latest
+```
+
+**Step 5: Monitor and Enforce Image Security**
+
+With Trivy and the Admission Controller in place, Kubernetes will enforce your image security policies, preventing containers with disallowed vulnerabilities from running.
 
 ## 𝗪𝗲 𝗿𝘂𝗻 𝗮𝗹𝗹 𝗼𝘂𝗿 𝗽𝗿𝗶𝗼𝗿𝗶𝘁𝘆 𝘁𝗮𝘀𝗸𝘀 𝗼𝗻 𝗮 𝗡𝗼𝗱𝗲 𝘄𝗶𝘁𝗵 𝘁𝗵𝗲 𝘀𝗮𝗺𝗲 𝗰𝗮𝗽𝗮𝗯𝗶𝗹𝗶𝘁𝗶𝗲𝘀 𝗮𝘀 𝘁𝗵𝗲 𝗔𝗽𝗽𝗹𝗲 𝗠𝟮 𝗰𝗵𝗶𝗽 (𝟴 𝗖𝗼𝗿𝗲 𝗖𝗣𝗨, 𝟭𝟬 𝗖𝗼𝗿𝗲 𝗖𝗣𝗨). 𝗢𝗻𝗲 𝗣𝗿𝗶𝗼𝗿𝗶𝘁𝘆 𝘁𝗮𝘀𝗸 𝗽𝗼𝗽 𝘂𝗽𝘀 𝟭𝟬 𝗺𝗶𝗻𝘀 𝗯𝗲𝗳𝗼𝗿𝗲 𝘆𝗼𝘂𝗿 𝗰𝗹𝗼𝗰𝗸 𝗼𝘂𝘁 𝘁𝗶𝗺𝗲 𝗮𝗻𝗱 𝘆𝗼𝘂 𝗮𝗿𝗲 𝗮𝗹𝗼𝗻𝗲 𝗶𝗻 𝘁𝗵𝗲 𝗼𝗳𝗳𝗶𝗰𝗲, discuss the approach through which you will make sure that the workload is deployed on the same node.
 
