@@ -226,6 +226,7 @@ With Trivy and the Admission Controller in place, Kubernetes will enforce your i
 ## 𝗬𝗼𝘂𝗿 𝗶𝗻𝗳𝗿𝗮 𝘁𝗲𝗮𝗺 𝗿𝗲𝘀𝗲𝗿𝘃𝗲𝗱 𝗮 𝗣𝗲𝗿𝘀𝗶𝘀𝘁𝗲𝗻𝘁 𝗩𝗼𝗹𝘂𝗺𝗲 𝗳𝗼𝗿 𝘆𝗼𝘂 𝘄𝗶𝘁𝗵 𝘀𝗽𝗲𝗰𝘀 𝗼𝗳 𝘀𝘁𝗼𝗿𝗮𝗴𝗲 𝗮𝘀 𝟭𝟬𝗚𝗶 𝗮𝗻𝗱 𝗔𝗰𝗰𝗲𝘀𝘀 𝗠𝗼𝗱𝗲𝘀 𝗮𝘀 𝗥𝗲𝗮𝗱𝗪𝗿𝗶𝘁𝗲𝗠𝗮𝗻𝘆. You tried attaching the volume with the persistent volume claim with a storage request of 50Gi and Access Modes of ReadWriteOnce.But somehow the status of PVC is still not changed to Bound, can you suggest some solutions?
 
 ## 𝗔𝗿𝗲 𝘀𝗲𝗰𝗿𝗲𝘁𝘀 𝗶𝗻 𝗞𝘂𝗯𝗲𝗿𝗻𝗲𝘁𝗲𝘀 𝗲𝗻𝗰𝗿𝘆𝗽𝘁𝗲𝗱 𝗯𝘆 𝗱𝗲𝗳𝗮𝘂𝗹𝘁? If yes then what’s the algorithm used, if not then what’s the real use?
+ it's important to note that while secrets are encrypted at rest, they are decrypted in memory when accessed by Pods. Therefore, you should also consider implementing proper RBAC (Role-Based Access Control) and network security policies to restrict unauthorized access to secrets within your cluster. Additionally, consider using tools like HashiCorp Vault or other secrets management solutions for more advanced secrets management, including key rotation and access control.
 
 ## 𝗡𝗲𝘁𝘄𝗼𝗿𝗸 𝗽𝗼𝗹𝗶𝗰𝗶𝗲𝘀 𝗶𝗻 𝗸𝟴𝘀 𝗼𝗽𝗲𝗿𝗮𝘁𝗲 𝗮𝘁 𝘄𝗵𝗶𝗰𝗵 𝗹𝗮𝘆𝗲𝗿 𝗼𝗳 𝗻𝗲𝘁𝘄𝗼𝗿𝗸𝘀? And if it operates at LayerX, what other alternates are used to control traffic at LayerY? Treat X and Y as integers.
 
