@@ -8,4 +8,8 @@
 
 ## How do you handle bug at production level?
 
-##
+## Explain the CI-CD in your project?
+
+## How do you support/collabrated with various team?
+
+## 
