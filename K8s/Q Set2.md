@@ -112,8 +112,6 @@ This totals to 20 nodes in your cluster, which meets your requirement.
 
 Please note that this is a simplified example, and the actual design of your HA cluster may involve additional considerations such as load balancing, network topology, storage requirements, and more. Additionally, the choice of technology stack (e.g., Kubernetes, Docker Swarm, etc.) and the cloud or on-premises infrastructure you're using can also influence the design of your HA cluster.
 
-## 𝗪𝗿𝗶𝘁𝗲 𝗮 𝘀𝗵𝗲𝗹𝗹 𝘀𝗰𝗿𝗶𝗽𝘁 𝘁𝗼 𝗹𝗶𝘀𝘁 𝗱𝗼𝘄𝗻 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗿𝗲𝘀𝗼𝘂𝗿𝗰𝗲𝘀 𝗶𝗻 𝗮 𝗽𝗿𝗼𝗷𝗲𝗰𝘁(𝗰𝗹𝗼𝘂𝗱) 𝗮𝗻𝗱 𝗶𝗳 𝘁𝗵𝗲 𝘁𝗶𝗺𝗲 𝗱𝘂𝗿𝗮𝘁𝗶𝗼𝗻 𝗲𝘅𝗰𝗲𝗲𝗱𝘀 𝟮 𝗵𝗼𝘂𝗿, 𝗱𝗲𝗹𝗲𝘁𝗲 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗿𝗲𝘀𝗼𝘂𝗿𝗰𝗲𝘀.
-
 ## Suggest 𝟱 𝗺𝗲𝗮𝘀𝘂𝗿𝗲𝘀 𝘁𝗼 𝗿𝗲𝗱𝘂𝗰𝗲 𝘁𝗵𝗲 𝗰𝗼𝘀𝘁 of the application running on a Kubernetes cluster.
 When it comes to reducing the cost of running applications on a Kubernetes cluster, there are several strategies and best practices you can consider. Here are five measures to help you reduce the cost of your Kubernetes-based application:
 
