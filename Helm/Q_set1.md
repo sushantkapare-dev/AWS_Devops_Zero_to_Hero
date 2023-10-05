@@ -310,11 +310,15 @@ If you’re creating your own repository, you can use tools like ChartMuseum to 
 2. Add the Custom Repository to Helm:
 
 To add your custom repository to Helm, you can use the helm repo add command. Replace [REPO_NAME] with a unique name for your repository and [REPO_URL] with the URL of your repository.
+```
 helm repo add [REPO_NAME] [REPO_URL]
+```
 3. Update the Repository List:
 
 After adding the custom repository, update Helm’s local repository cache to make sure it’s aware of the new repository and its available charts.
+```
 helm repo update
+```
 4. Search for Charts:
 
 You can now search for charts available in your custom repository using the helm search repo command.
@@ -327,3 +331,7 @@ To install a chart from your custom repository, you can use the helm install com
 ```
 helm install [RELEASE_NAME] [REPO_NAME]/[CHART_NAME]
 ```
+
+## Explain the process of packaging a Helm chart and creating a Helm chart archive for distribution.
+
+To package a Helm chart, use the `helm package` command. This creates a Helm chart archive (`.tgz` file) containing all the necessary chart files and dependencies. The archive can be distributed to others or added to a chart repository.
