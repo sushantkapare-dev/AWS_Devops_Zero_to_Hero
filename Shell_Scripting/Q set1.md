@@ -411,3 +411,5 @@ A shadow password is a security feature in Unix-like operating systems that enha
 ## Copy a file from 1 machine to the other using scripting( yes we can use Gdrive too😂). Also can we run multiple bash scripts in parallel?
 
 ## We are running short on storage and as per the sys admin there are 25GB of blank files created by previous employees, 𝘄𝗿𝗶𝘁𝗲 𝗮 𝘀𝗰𝗿𝗶𝗽𝘁 𝘁𝗼 𝗱𝗲𝗹𝗲𝘁𝗲 𝗮𝗹𝗹 𝘀𝘂𝗰𝗵 𝗳𝗶𝗹𝗲𝘀.
+
+## 𝗪𝗿𝗶𝘁𝗲 𝗮 𝘀𝗵𝗲𝗹𝗹 𝘀𝗰𝗿𝗶𝗽𝘁 𝘁𝗼 𝗹𝗶𝘀𝘁 𝗱𝗼𝘄𝗻 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗿𝗲𝘀𝗼𝘂𝗿𝗰𝗲𝘀 𝗶𝗻 𝗮 𝗽𝗿𝗼𝗷𝗲𝗰𝘁(𝗰𝗹𝗼𝘂𝗱) 𝗮𝗻𝗱 𝗶𝗳 𝘁𝗵𝗲 𝘁𝗶𝗺𝗲 𝗱𝘂𝗿𝗮𝘁𝗶𝗼𝗻 𝗲𝘅𝗰𝗲𝗲𝗱𝘀 𝟮 𝗵𝗼𝘂𝗿, 𝗱𝗲𝗹𝗲𝘁𝗲 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗿𝗲𝘀𝗼𝘂𝗿𝗰𝗲𝘀.
