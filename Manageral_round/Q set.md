@@ -12,4 +12,3 @@
 
 ## How do you support/collabrated with various team?
 
-## 
