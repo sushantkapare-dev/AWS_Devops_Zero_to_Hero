@@ -274,9 +274,13 @@ Commonly used flags with helm list:
 When you run helm list, you'll typically see output similar to the following columns:
 
 **NAME**: This column displays the name of each Helm release. The release name is used to identify and manage a specific instance of a Helm chart.
+
 **NAMESPACE**: This column indicates the Kubernetes namespace in which the release is deployed. If you use the --all-namespaces flag, this column shows the namespaces for each release.
+
 **REVISION**: The revision number represents the version or state of the release. It increments with each upgrade or rollback of the release. You can use this number to reference a specific release version when performing actions like rollbacks.
+
 **UPDATED**: This column shows the date and time when the release was last updated or installed. It provides a timestamp for the most recent Helm operation on the release.
+
 **STATUS**: The status column describes the current state of the release. Common status values include:
 **DEPLOYED**: The release is successfully deployed.
 **FAILED**: The release encountered issues during installation or upgrade.
