@@ -185,14 +185,15 @@ Creating a Helm chart involves following a specific directory structure and defi
 Step 1: Create a New Chart
 
 You can create a new Helm chart using the helm create command. For example:
-
+```
 helm create mychart
+```
 This command will create a new directory named mychart, which serves as the root directory for your Helm chart.
 
 Step 2: Modify the Chart Files
 
 Once you have created the chart, navigate to the chart’s directory (mychart in this example) and modify the necessary files and templates to suit your application. Here's the structure of a basic Helm chart directory:
-
+```
 mychart/
   ├── Chart.yaml
   ├── values.yaml
@@ -207,6 +208,7 @@ mychart/
   ├── files/
   ├── README.md
   ├── LICENSE
+ ``` 
 Let’s break down the key components and their roles:
 
 Chart.yaml: This file contains metadata about the chart, such as its name, version, description, and other information.
