@@ -96,40 +96,6 @@ There are two main types of Jenkins Pipelines:
 
 Both Declarative and Scripted Pipelines can accomplish the same tasks, but the choice between them depends on your specific requirements and your team's familiarity with Groovy scripting. Declarative Pipelines are generally easier to read and write, making them a good choice for straightforward workflows, while Scripted Pipelines offer more advanced capabilities for complex and customized workflows.
 
-## Explain process of Jenkins
-Jenkins is a popular open-source automation server that is used for building, testing, and deploying software. It follows a well-defined process to facilitate continuous integration and continuous delivery (CI/CD) of software projects. Here's an overview of the typical process of Jenkins:
-
-1. **Version Control Integration**:
-   - Developers work on code changes and push their code to a version control system (e.g., Git, SVN). Jenkins is integrated with the version control system and monitors these repositories for changes.
-
-2. **Triggering a Build**:
-   - When code changes are pushed to the version control system, Jenkins is configured to automatically detect these changes and trigger a build process. This is often referred to as a "build job" or "build pipeline."
-
-3. **Building the Code**:
-   - Jenkins retrieves the latest code changes from the version control system.
-   - It initiates a build process, which typically involves compiling source code, generating executable artifacts, and performing any necessary build tasks, such as dependency management.
-
-4. **Automated Testing**:
-   - After a successful build, Jenkins runs automated tests against the newly built code. This includes unit tests, integration tests, and any other tests that ensure the code functions as expected.
-   - If any tests fail, Jenkins can mark the build as failed and notify the development team.
-
-5. **Artifact Storage**:
-   - Jenkins can store build artifacts (e.g., binaries, deployment packages) in a designated location, making them available for later stages of the deployment process.
-
-6. **Deployment (Optional)**:
-   - Depending on the CI/CD pipeline configuration, Jenkins may initiate deployment processes to various environments (e.g., development, staging, production) after successful testing.
-   - Deployment can include activities like pushing code to servers, provisioning cloud resources, and configuring services.
-
-7. **Notifications and Reports**:
-   - Jenkins provides notifications and reports on the build and test results, which can be sent to team members or integrated into collaboration tools like Slack or email.
-
-8. **Logging and Monitoring**:
-   - Jenkins logs all activities, including build and deployment steps. This information can be invaluable for troubleshooting and auditing.
-
-9. **Continuous Integration and Continuous Delivery (CI/CD)**:
-   - Jenkins ensures that code changes are continuously integrated and, if applicable, continuously deployed to various environments.
-   - In a full CI/CD setup, Jenkins can automate the entire process, including promoting code changes through multiple environments until they reach production.
-
 10. **Customization and Extensibility**:
     - Jenkins offers extensive customization options through its pipeline configuration, plugins, and scripting capabilities. Teams can tailor Jenkins to their specific needs and workflows.
 
