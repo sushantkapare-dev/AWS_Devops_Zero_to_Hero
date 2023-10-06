@@ -92,13 +92,9 @@ As a DevOps engineer, the custom Jenkins plugins I've worked on have primarily f
 
 3. **Custom Metrics and Monitoring Plugin**: Developed a plugin to collect and visualize custom application metrics during the build and deployment process. This enabled us to monitor application health and performance as part of our CI/CD pipeline and take proactive actions based on metrics thresholds.
 
-4. **Environment Provisioning and Cleanup Plugin**: Designed a plugin to manage the provisioning and cleanup of test environments for our applications. It automated the creation of isolated testing environments, executed tests, and then cleaned up resources after testing was complete, reducing manual effort and resource wastage.
+4. **Custom Reporting and Notification Plugin**: Built a plugin for generating and distributing custom reports summarizing build and deployment results. This plugin sent reports to stakeholders and team members via email or Slack, providing visibility into the CI/CD process.
 
-5. **Dynamic Configuration Management Plugin**: Created a plugin that allowed us to dynamically manage application configuration files during deployment. This plugin integrated with our configuration management system and ensured that the correct configuration files were deployed for each environment, reducing configuration-related errors.
-
-6. **Custom Reporting and Notification Plugin**: Built a plugin for generating and distributing custom reports summarizing build and deployment results. This plugin sent reports to stakeholders and team members via email or Slack, providing visibility into the CI/CD process.
-
-7. **Source Control Integration Plugin**: Developed a custom plugin to extend source control integration capabilities. This plugin allowed us to trigger builds and deployments based on specific branch patterns, tag releases, and manage code promotion workflows more effectively.
+5. **Source Control Integration Plugin**: Developed a custom plugin to extend source control integration capabilities. This plugin allowed us to trigger builds and deployments based on specific branch patterns, tag releases, and manage code promotion workflows more effectively.
 
 ## Have you worked on SED job in jenkins?
 Yes, as a DevOps engineer, I have worked with Jenkins and utilized the Stream EDitor (SED) command in various Jenkins jobs and pipeline scripts. SED is a powerful text-processing tool that can be employed to manipulate and transform text-based data within Jenkins pipelines. Here are some common use cases where SED has been beneficial:
