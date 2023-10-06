@@ -195,19 +195,15 @@ Handling secrets securely in Jenkins is crucial to protect sensitive information
    - Jenkins includes a built-in Credentials Plugin that allows you to securely store and manage various types of secrets, including usernames and passwords, SSH keys, and secret text (e.g., API tokens).
    - To use this plugin, go to "Manage Jenkins" > "Manage Credentials," and then you can add, update, or delete credentials. You can associate these credentials with specific jobs or use them in your pipeline scripts.
 
-2. **Jenkins Credential Binding Plugin**:
-   - The Credential Binding Plugin is an extension of the Credentials Plugin that provides a way to bind secrets to environment variables or files. This is useful for securely passing secrets to build steps or scripts within your Jenkins jobs.
-   - You can configure credential bindings in the job's configuration page under "Build Environment."
-
-3. **Using Environment Variables**:
+2. **Using Environment Variables**:
    - Jenkins allows you to define environment variables that can store secrets. These can be added in the job configuration or directly in pipeline scripts.
    - While this method is simple, it may not be as secure as using the Credentials Plugin since environment variables can potentially be exposed in logs or other ways.
 
-4. **External Secret Management Tools**:
+3. **External Secret Management Tools**:
    - For higher security and more advanced use cases, consider using external secret management tools like HashiCorp Vault or AWS Secrets Manager. These tools can store and manage secrets separately from Jenkins and provide access control and auditing features.
    - Jenkins can integrate with these external secret management tools using plugins or custom scripts.
 
-5. **Jenkinsfile Credentials**:
+4. **Jenkinsfile Credentials**:
    - In Jenkins pipeline scripts (defined in Jenkinsfiles), you can use the `withCredentials` step to securely access and use secrets. This step allows you to bind credentials to variables for use within the pipeline script and ensures they are securely masked in logs.
    - Example:
      ```groovy
@@ -216,22 +212,8 @@ Handling secrets securely in Jenkins is crucial to protect sensitive information
      }
      ```
 
-6. **Secret Files and File Credentials**:
+5. **Secret Files and File Credentials**:
    - If you need to handle secrets stored in files, you can use the File Credentials Plugin. This allows you to securely manage secret files (e.g., SSL certificates, private keys) and reference them in your Jenkins jobs.
-
-7. **Use of Credentials Plugin in Freestyle Jobs**:
-   - In Freestyle projects, you can configure build steps to use credentials stored in the Credentials Plugin by selecting the appropriate credential from the dropdown menu in the job configuration.
-
-When handling secrets in Jenkins, it's important to follow best practices, including:
-
-- Regularly rotate secrets.
-- Restrict access to credentials based on the principle of least privilege.
-- Avoid hardcoding secrets in scripts or job configurations.
-- Use credential IDs rather than directly exposing secret values in your scripts.
-- Monitor and audit the use of credentials.
-- Keep Jenkins and all plugins up to date to benefit from security enhancements.
-
-By following these practices and using Jenkins' built-in security features and plugins, you can effectively manage secrets while maintaining a high level of security in your CI/CD processes.
 
 ## What would you do if deployed app has failuer 
 When a deployed application experiences a failure, it's essential to take a systematic approach to diagnose and resolve the issue. Here are the general steps to follow:
