@@ -261,27 +261,26 @@ When a deployed application experiences a failure, it's essential to take a syst
 ## Diff bet CI , CD and Continious deployment
 Continuous Integration (CI), Continuous Delivery (CD), and Continuous Deployment (CD) are related concepts in the field of software development and DevOps, but they have distinct purposes and workflows. Here are the key differences between them:
 
-Continuous Integration (CI):
-
-Purpose: CI focuses on automating the process of integrating code changes from multiple developers into a shared repository multiple times a day.
+**Continuous Integration (CI)**:
+**Purpose:** CI focuses on automating the process of integrating code changes from multiple developers into a shared repository multiple times a day.
 Workflow: Developers frequently commit their code changes to a version control system (e.g., Git), triggering an automated CI process.
 Key Activities:
 Automated builds: The CI server compiles code, runs tests, and generates artifacts.
 Automated testing: A suite of tests (e.g., unit tests, integration tests) is executed to ensure that new code changes do not break existing functionality.
 Immediate feedback: Developers receive feedback on the quality of their code changes, helping them catch and fix issues early.
 Deployment: CI typically doesn't involve deploying code to production. Its primary goal is to ensure code quality and compatibility.
-Continuous Delivery (CD):
 
-Purpose: CD extends the CI process by automating the delivery of code to different environments (e.g., staging, pre-production) in a consistent and reliable manner, making it ready for manual testing and eventual deployment.
+**Continuous Delivery (CD)**:
+**Purpose:** CD extends the CI process by automating the delivery of code to different environments (e.g., staging, pre-production) in a consistent and reliable manner, making it ready for manual testing and eventual deployment.
 Workflow: After passing CI, code changes are automatically deployed to a staging environment for further testing and validation.
 Key Activities:
 Automated deployment to staging: Code changes are automatically deployed to a staging environment, mimicking the production environment as closely as possible.
 Manual testing and approval: Teams can perform additional testing in the staging environment, and stakeholders can review the changes.
 Deployment pipelines: CD uses deployment pipelines to automate and manage the flow of code through various stages of testing and validation.
 Deployment: In CD, deployments to production are typically manual and require human approval. The focus is on having the code ready for deployment at any time.
-Continuous Deployment (CD):
 
-Purpose: CD takes automation a step further by deploying code changes to production automatically, without manual intervention, once they have passed all tests and validations.
+**Continuous Deployment (CD)**:
+**Purpose:** CD takes automation a step further by deploying code changes to production automatically, without manual intervention, once they have passed all tests and validations.
 Workflow: Code changes that pass CI and CD stages are automatically deployed to production.
 Key Activities:
 Fully automated deployments: Code changes that successfully navigate the CI/CD pipeline are automatically deployed to production without human intervention.
