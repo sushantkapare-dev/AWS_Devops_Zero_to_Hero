@@ -725,33 +725,3 @@ The `agent` directive allows you to tailor the execution environment for each st
 
 ## what is Pipeline-as-code
 Pipeline-as-code is a concept in DevOps and continuous integration/continuous delivery (CI/CD) that involves defining and managing your software delivery pipelines as code. Instead of configuring and managing your CI/CD pipelines through a graphical user interface or a web-based dashboard, you use code to define, version, and automate your pipeline configurations.
-
-## Diff between freestyle and pipeline project
-Freestyle projects and Pipeline projects are two different ways to create and manage build and automation jobs in Jenkins. They have distinct characteristics and are suitable for different use cases. Here are the key differences between Freestyle and Pipeline projects:
-
-**Freestyle Projects:**
-
-1. **GUI-Driven:** Freestyle projects are created and configured using Jenkins' graphical user interface (GUI). This means you configure the build and automation steps by selecting options and filling out forms in the Jenkins web interface.
-
-2. **Limited Reusability:** Freestyle projects do not inherently support code reuse or version control. Each configuration is specific to a single job, making it harder to apply consistent configurations across multiple jobs.
-
-3. **Simple Builds:** They are well-suited for simple and straightforward build and automation tasks, where the workflow can be easily defined through the GUI without complex logic.
-
-4. **Limited Error Handling:** Error handling in Freestyle projects can be less robust compared to Pipeline projects. It may be more challenging to handle failures and retries effectively.
-
-5. **Harder to Track Changes:** Changes to the job configuration are not easily tracked or versioned, which can make it harder to manage changes over time, especially in a collaborative environment.
-
-**Pipeline Projects (Pipeline as Code):**
-
-1. **Scripted Pipelines:** Pipeline projects use scripted pipelines defined in code, typically using the Groovy DSL (Domain-Specific Language). These pipelines are stored in version control systems like Git.
-
-2. **Code Reusability:** Pipeline code can be reused across multiple jobs, making it easier to maintain consistent build and automation processes.
-
-3. **Complex Workflows:** Pipeline projects are ideal for complex and dynamic workflows where you need to define conditional logic, parallel execution, and advanced error handling.
-
-4. **Version Control:** Pipeline code is versioned in your VCS, allowing you to track changes, collaborate with team members, and roll back to previous pipeline configurations if needed.
-
-5. **Extensibility:** You can easily integrate custom scripts, plugins, and external tools into your pipeline code, providing more flexibility and extensibility.
-
-6. **Modern Best Practice:** Pipeline as Code is considered a best practice in modern DevOps and CI/CD practices due to its automation, traceability, and the ability to define complex build and deployment pipelines.
-
