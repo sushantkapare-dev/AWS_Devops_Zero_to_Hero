@@ -15,12 +15,6 @@ Git is a distributed version control system (DVCS) designed to track changes in 
 
 **7. Security**: Git provides data integrity through cryptographic hashing. Changes to the code are checksummed, so any unauthorized modifications can be detected.
 
-**8. Flexibility**: Git is not limited to just code; it can be used to manage any type of files, making it versatile for various purposes, including documentation, configuration files, and more.
-
-**9. Open Source**: Git is open source software, which means it's free to use and has a large and active community of contributors. This ensures ongoing development, support, and a wide range of tools and integrations.
-
-**10. Extensibility**: Git can be extended with plugins and custom scripts, allowing developers to tailor it to their specific needs and workflows.
-
 ## what is stages in git?
 In Git, the "staging area," also known as the "index," is a critical concept that plays a central role in the version control process. The staging area is an intermediate step between your working directory and the Git repository (local or remote). It allows you to selectively choose which changes from your working directory should be included in the next commit. Here's how the staging area works:
 
