@@ -154,43 +154,25 @@ Configuring Jenkins involves setting various parameters and configurations to ta
 
 2. **Jenkins Home Directory**: Specify the directory where Jenkins stores its configuration files, build artifacts, and other data.
 
-3. **Authentication and Authorization**:
-   - Configure security settings, including user authentication methods (e.g., local database, LDAP, or single sign-on).
-   - Set up authorization strategies to control user access and permissions within Jenkins.
+3. **Plugins**: Install and configure the necessary plugins to extend Jenkins functionality, such as source code management plugins, build tools, deployment integrations, and notification plugins.
 
-4. **Plugins**: Install and configure the necessary plugins to extend Jenkins functionality, such as source code management plugins, build tools, deployment integrations, and notification plugins.
+4. **Node/Agent Configuration**: If using Jenkins in a distributed setup, configure Jenkins agents (formerly known as slaves) to execute build jobs. Specify agent labels and connection details.
 
-5. **Node/Agent Configuration**: If using Jenkins in a distributed setup, configure Jenkins agents (formerly known as slaves) to execute build jobs. Specify agent labels and connection details.
+5. **Global Tool Configuration**: Configure global tools for build and automation processes, such as setting up JDK installations, Docker installations, and other development tools..
 
-6. **Global Tool Configuration**: Configure global tools for build and automation processes, such as setting up JDK installations, Docker installations, and other development tools.
+6. **Build Parameters**: Define build parameters that allow users to customize job runs by providing input values (e.g., version numbers, target environments) during job execution.
 
-7. **Global Environment Variables**: Define global environment variables that can be accessed by all Jenkins jobs. These can include variables for paths, credentials, or custom settings.
+7. **Build Triggers**: Specify build triggers, such as periodic builds, webhook triggers, or triggers based on code commits.
 
-8. **Workspace Settings**: Configure workspace cleanup and retention policies to manage disk space effectively.
+8. **Notification and Reporting**: Configure email notification settings and reporting tools to alert stakeholders about build and deployment results.
 
-9. **Job/Project Creation**: Define and configure Jenkins jobs or projects to automate your build, test, and deployment processes. Configure job-specific parameters, build triggers, and post-build actions.
+9. **Security and Credentials**: Manage security credentials for accessing external systems, such as databases, cloud services, and repositories. Use the Jenkins Credential Provider for secure credential management.
 
-10. **SCM Integration**: Set up integrations with your version control system (e.g., Git, SVN) by configuring SCM credentials, repository URLs, and branch management.
+10. **Backup and Restore**: Establish a backup and restore strategy for Jenkins data and configurations to prevent data loss.
 
-11. **Build Parameters**: Define build parameters that allow users to customize job runs by providing input values (e.g., version numbers, target environments) during job execution.
+11. **Logging and Monitoring**: Set up logging and monitoring solutions to track Jenkins performance, job execution, and server health.
 
-12. **Build Triggers**: Specify build triggers, such as periodic builds, webhook triggers, or triggers based on code commits.
-
-13. **Notification and Reporting**: Configure email notification settings and reporting tools to alert stakeholders about build and deployment results.
-
-14. **Security and Credentials**: Manage security credentials for accessing external systems, such as databases, cloud services, and repositories. Use the Jenkins Credential Provider for secure credential management.
-
-15. **Backup and Restore**: Establish a backup and restore strategy for Jenkins data and configurations to prevent data loss.
-
-16. **Logging and Monitoring**: Set up logging and monitoring solutions to track Jenkins performance, job execution, and server health.
-
-17. **Proxy and Networking**: Configure proxy settings if Jenkins needs to access external resources through a proxy server. Adjust network settings as needed.
-
-18. **Custom Scripting**: Implement custom Groovy scripts or pipeline scripts to automate specific tasks and define complex build and deployment workflows.
-
-19. **User Management**: Manage user accounts and permissions, including adding users, configuring roles, and defining access control policies.
-
-20. **Plugin Updates**: Regularly update Jenkins and its plugins to ensure security and access the latest features and bug fixes.
+12. **Plugin Updates**: Regularly update Jenkins and its plugins to ensure security and access the latest features and bug fixes.
 
 ## where do you store your artifact and dependency in jenkins?
 In Jenkins, artifacts and dependencies are typically stored in the Jenkins workspace and, optionally, in artifact repositories or artifact management systems. Here's a breakdown of where these components are stored:
