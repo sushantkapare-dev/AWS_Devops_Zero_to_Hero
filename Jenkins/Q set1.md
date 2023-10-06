@@ -19,21 +19,19 @@ Jenkins is an open-source automation server and continuous integration/continuou
 ## Feature of Jenkins
 Key features and functionalities of Jenkins include:
 
-Automation: Jenkins allows you to automate repetitive tasks in the software development lifecycle, such as building code, running tests, and deploying applications.
+**Automation**: Jenkins allows you to automate repetitive tasks in the software development lifecycle, such as building code, running tests, and deploying applications.
 
-Integration: Jenkins can be integrated with various version control systems (e.g., Git, Subversion), build tools (e.g., Maven, Gradle), testing frameworks, and deployment platforms, making it a versatile tool that can adapt to different development environments.
+**Integration**: Jenkins can be integrated with various version control systems (e.g., Git, Subversion), build tools (e.g., Maven, Gradle), testing frameworks, and deployment platforms, making it a versatile tool that can adapt to different development environments.
 
-Pipeline Support: Jenkins supports the creation of complex workflows and pipelines, often defined as code in the form of Jenkinsfiles. These pipelines can define the entire CI/CD process, including building, testing, and deployment, in a structured and maintainable way.
+**Pipeline Support**: Jenkins supports the creation of complex workflows and pipelines, often defined as code in the form of Jenkinsfiles. These pipelines can define the entire CI/CD process, including building, testing, and deployment, in a structured and maintainable way.
 
-Plugins: Jenkins has a vast ecosystem of plugins that extend its functionality. There are plugins for integrating with cloud platforms, databases, container orchestration tools, and more, allowing you to customize and extend Jenkins to meet your specific needs.
+**Plugins**: Jenkins has a vast ecosystem of plugins that extend its functionality. There are plugins for integrating with cloud platforms, databases, container orchestration tools, and more, allowing you to customize and extend Jenkins to meet your specific needs.
 
-Scalability: Jenkins can be distributed across multiple machines to handle large-scale CI/CD processes. This distributed architecture allows you to scale Jenkins to accommodate growing development teams and workloads.
+**Scalability**: Jenkins can be distributed across multiple machines to handle large-scale CI/CD processes. This distributed architecture allows you to scale Jenkins to accommodate growing development teams and workloads.
 
-Extensibility: Jenkins is highly extensible, and you can develop custom plugins and extensions to tailor it to your organization's requirements.
+**Security**: Jenkins provides security features to control access, manage user credentials, and secure sensitive data used in the CI/CD process.
 
-Security: Jenkins provides security features to control access, manage user credentials, and secure sensitive data used in the CI/CD process.
-
-Community and Support: Jenkins has a large and active open-source community, which means you can find extensive documentation, tutorials, and community-contributed plugins. There are also commercial solutions and support options available for Jenkins.
+**Community and Support**: Jenkins has a large and active open-source community, which means you can find extensive documentation, tutorials, and community-contributed plugins. There are also commercial solutions and support options available for Jenkins.
 
 ## what is jenkins Pipeline and Diff types of Pipeline
 Jenkins Pipeline is a powerful and flexible feature that allows you to define and automate your software delivery process as code. It enables you to create, visualize, and manage continuous integration and continuous delivery (CI/CD) pipelines within Jenkins. Jenkins Pipeline is often used to define complex workflows that involve building, testing, and deploying applications. These pipelines can be version-controlled, shared, and reused across different projects and teams.
