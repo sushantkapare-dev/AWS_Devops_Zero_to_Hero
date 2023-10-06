@@ -111,26 +111,6 @@ Yes, as a DevOps engineer, I have worked with Jenkins and utilized the Stream ED
    def extractedData = sh(script: "sed -n 's/Pattern to Extract/\\1/p' logfile.txt", returnStdout: true).trim()
    ```
 
-3. **Dynamic File Generation**: In scenarios where you need to generate configuration files dynamically based on pipeline parameters, SED can be used to replace placeholders in template files with actual values.
-
-   ```groovy
-   sh "sed 's/PLACEHOLDER1/${PARAMETER1}/;s/PLACEHOLDER2/${PARAMETER2}/' template.conf > final.conf"
-   ```
-
-4. **Version Bumping**: I've used SED to automatically increment version numbers or update release notes in project files when creating new builds or releases within Jenkins.
-
-   ```groovy
-   sh "sed -i 's/Version: [0-9]*/Version: ${NEW_VERSION}/' project-file.txt"
-   ```
-
-5. **Text Replacements for Configuration**: SED can be used to make text replacements in configuration files or scripts to adapt them for specific environments, such as development, testing, or production.
-
-   ```groovy
-   sh "sed -i 's/DB_HOST=example.com/DB_HOST=${DB_HOST}/' config.properties"
-   ```
-
-SED is a versatile tool that can be integrated into Jenkins pipelines using shell steps or script blocks. It helps automate text manipulation tasks within Jenkins jobs, making it a valuable component in building efficient and dynamic CI/CD pipelines.
-
 ## How to add user in jenkins?
 To add a user in Jenkins, you typically need administrative access to the Jenkins instance. Here are the steps to add a user in Jenkins:
 
