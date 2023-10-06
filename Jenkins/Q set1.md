@@ -558,14 +558,6 @@ In Jenkins Pipeline, you can parameterize your pipeline by defining parameters t
 
    This Scripted Pipeline example achieves the same result as the Declarative Pipeline example but uses a different syntax. The parameters are defined within the `properties` block.
 
-3. **Running the Pipeline**:
-
-   When you run the pipeline, Jenkins will prompt you for parameter values based on the parameter definitions. Users running the pipeline can provide values for these parameters.
-
-You can also run the pipeline using the Jenkins REST API or by triggering it via another job or automation, in which case you would need to provide parameter values programmatically.
-
-Parameterizing your Jenkins Pipeline allows you to create more flexible and reusable build and deployment processes that can adapt to different scenarios and environments.
-
 ## what is jenkins shared liberary
 In Jenkins, a **Shared Library** (also known as Jenkins Shared Pipeline Library or Jenkins Pipeline Shared Library) is a powerful feature that allows you to centralize and reuse common code and functionality across multiple Jenkins pipelines or jobs. It promotes code reuse, maintainability, and consistency in your Jenkins automation.
 
