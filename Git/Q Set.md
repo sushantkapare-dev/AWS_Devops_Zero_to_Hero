@@ -88,7 +88,7 @@ Resolving conflicts in Git occurs when two or more branches have made conflictin
 8. **Test:** After resolving conflicts and completing the merge or rebase, it's essential to thoroughly test your changes to ensure that they work as expected.
 
 9. **Push or Share:** If you resolved conflicts during a merge or rebase on a shared branch, push your changes to the remote repository to make them available to others.
-10. 
+ 
 ## Diff between git fetch and git pull?
 **git fetch**:- downloads new data from the remote repository, including branches and commits, but doesn't automatically merge these changes into your current branch, allowing you to review and decide how to integrate them.
  
