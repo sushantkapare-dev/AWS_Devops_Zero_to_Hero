@@ -415,3 +415,4 @@ A shadow password is a security feature in Unix-like operating systems that enha
 ## 𝗪𝗿𝗶𝘁𝗲 𝗮 𝘀𝗵𝗲𝗹𝗹 𝘀𝗰𝗿𝗶𝗽𝘁 𝘁𝗼 𝗹𝗶𝘀𝘁 𝗱𝗼𝘄𝗻 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗿𝗲𝘀𝗼𝘂𝗿𝗰𝗲𝘀 𝗶𝗻 𝗮 𝗽𝗿𝗼𝗷𝗲𝗰𝘁(𝗰𝗹𝗼𝘂𝗱) 𝗮𝗻𝗱 𝗶𝗳 𝘁𝗵𝗲 𝘁𝗶𝗺𝗲 𝗱𝘂𝗿𝗮𝘁𝗶𝗼𝗻 𝗲𝘅𝗰𝗲𝗲𝗱𝘀 𝟮 𝗵𝗼𝘂𝗿, 𝗱𝗲𝗹𝗲𝘁𝗲 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗿𝗲𝘀𝗼𝘂𝗿𝗰𝗲𝘀.
 
 ## what is Linux loader?
+The Linux loader, often referred to as the bootloader, is a small program that initiates the process of loading the Linux operating system into computer memory during the system's startup. Its primary function is to locate the Linux kernel on the storage device, load it into RAM, and pass control to the kernel, thus enabling the operating system to start and run on the hardware. Popular bootloaders for Linux systems include GRUB (GRand Unified Bootloader) and LILO (LInux LOader).
