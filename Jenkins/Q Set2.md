@@ -221,25 +221,16 @@ Running 400 jobs concurrently out of a thousand jobs in Jenkins requires careful
 4. **Job Prioritization**:
    - Categorize your jobs into different priority levels. High-priority jobs should have priority over low-priority ones, ensuring critical tasks are completed first.
 
-5. **Throttle Concurrent Builds**:
-   - Use Jenkins' built-in job throttling options to limit the number of concurrent builds. This can be set globally or on a per-job basis.
-
-6. **Queue Management**:
+5. **Queue Management**:
    - Configure Jenkins' build queue settings to control how many jobs can be in the queue and how long they can wait. Adjust the "Quiet Period" and "Block build when downstream project is building" settings as needed.
 
-7. **Pipeline Parallelism**:
+6. **Pipeline Parallelism**:
    - If your jobs are defined using Jenkins Pipelines, you can take advantage of parallel stages to control concurrency within a single job. This allows you to run multiple steps concurrently without having to create separate jobs for each.
 
-8. **Pipeline Matrix Builds**:
-   - Use matrix builds in Jenkins Pipelines to create job combinations based on defined axes. This can help you manage and parallelize job runs more efficiently.
-
-9. **Load Balancing**:
+7. **Load Balancing**:
    - Implement load balancing if you have multiple Jenkins master nodes. Distribute the job workload across multiple masters to prevent overloading a single instance.
 
-10. **Optimize Job Execution**:
-    - Optimize your jobs to be as efficient as possible. Minimize redundant work, use appropriate caching mechanisms, and parallelize build and test tasks where applicable.
-
-11. **Monitoring and Scaling**:
+8. **Monitoring and Scaling**:
     - Continuously monitor your Jenkins environment's performance and resource utilization. If you find that certain resource bottlenecks are limiting your concurrent job capacity, consider scaling your Jenkins infrastructure accordingly.
 
 ## what is post-block in jenkins?
