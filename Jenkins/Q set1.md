@@ -407,19 +407,9 @@ In Jenkins, you can trigger builds in various ways based on different events and
    - Jenkins can be configured to trigger a build when a dependency or external resource changes. This is often used in scenarios where a library or artifact is updated, and dependent projects need to rebuild.
    - The "Build after other projects are built" option allows you to specify dependencies between jobs.
 
-7. **Pipeline Triggers (Pipeline DSL)**:
-   - Jenkins Pipeline jobs can define custom triggers within their scripted or declarative scripts. These triggers can be based on specific conditions, external events, or custom logic.
-   - For example, you can set up a pipeline to trigger a deployment stage when certain criteria are met.
-
-8. **Parameterized Builds**:
+7. **Parameterized Builds**:
    - Jenkins supports parameterized builds, allowing you to define parameters (e.g., build parameters, environment variables) for a job.
    - Builds can be triggered with specific parameter values, making it possible to customize each build run.
-
-9. **Remote API and CLI Triggers**:
-   - You can use the Jenkins Remote API or the Jenkins Command Line Interface (CLI) to trigger builds programmatically. This is often useful for automation and integration with other tools and systems.
-
-10. **Conditional Triggers**:
-    - Jenkins can be configured to trigger builds conditionally based on specific criteria. For example, a build might only be triggered if a certain file or condition is met.
 
 ## what is credential plugin in jenkins
 The "Credentials Plugin" in Jenkins is a core plugin that provides a secure and centralized way to manage various types of credentials, such as usernames and passwords, SSH private keys, secret text, and more. It plays a crucial role in Jenkins' security and automation features. Here's an overview of the Jenkins Credentials Plugin:
