@@ -409,8 +409,93 @@ It's essential to use these methods responsibly and only for legitimate purposes
 A shadow password is a security feature in Unix-like operating systems that enhances password protection by storing password hashes and related security information in a separate, more secure file (usually `/etc/shadow`) with restricted access, instead of in the publicly readable `/etc/passwd` file. This separation helps safeguard user password information from unauthorized access, making it more challenging for attackers to crack passwords through brute-force or dictionary attacks.
 
 ## Copy a file from 1 machine to the other using scripting( yes we can use Gdrive too😂). Also can we run multiple bash scripts in parallel?
+To copy a file from one machine to another using scripting, you can use various methods, including `scp` for secure copy over SSH or utilizing cloud storage services like Google Drive. Below, I'll provide examples for both methods.
+
+**Method 1: Using scp (Secure Copy over SSH)**
+
+You can use `scp` to securely copy a file from one machine to another over SSH. Here's a basic script for that:
+
+```bash
+#!/bin/bash
+
+# Source and destination information
+source_file="/path/to/source/file"
+destination_server="username@destination_server:/path/to/destination/"
+
+# Copy the file using scp
+scp "$source_file" "$destination_server"
+```
+
+Make sure to replace `/path/to/source/file` with the actual path of the file you want to copy and provide the appropriate username, destination server, and destination path.
+
+**Method 2: Using Google Drive**
+
+To copy a file using Google Drive, you can use the `gdrive` command-line utility. First, you need to install and authenticate `gdrive`:
+
+1. Install `gdrive` on both machines by following the instructions on the GitHub page: https://github.com/prasmussen/gdrive
+
+2. Authenticate `gdrive` on both machines by running `gdrive list` and following the prompts to authorize your Google Drive account.
+
+Once `gdrive` is set up, you can use it to upload and download files.
+
+```bash
+#!/bin/bash
+
+# Source and destination information
+source_file="/path/to/source/file"
+destination_folder="Google Drive Folder Name"
+
+# Upload the file to Google Drive
+gdrive upload -p "$destination_folder" "$source_file"
+```
+
+In this script, replace `/path/to/source/file` with the actual path of the file you want to upload, and specify the name of the destination folder on Google Drive.
+
+As for running multiple Bash scripts in parallel, yes, you can do that. You can use the `&` operator to run commands or scripts in the background, allowing multiple scripts to run concurrently. For example:
+
+```bash
+#!/bin/bash
+
+# Run script1 in the background
+./script1.sh &
+
+# Run script2 in the background
+./script2.sh &
+```
+
+This will start `script1.sh` and `script2.sh` concurrently. Just be cautious when running scripts in parallel, as they may interfere with each other if they access shared resources or have dependencies.
 
 ## We are running short on storage and as per the sys admin there are 25GB of blank files created by previous employees, 𝘄𝗿𝗶𝘁𝗲 𝗮 𝘀𝗰𝗿𝗶𝗽𝘁 𝘁𝗼 𝗱𝗲𝗹𝗲𝘁𝗲 𝗮𝗹𝗹 𝘀𝘂𝗰𝗵 𝗳𝗶𝗹𝗲𝘀.
+To delete all zero-size (blank) files in a directory, you can use the `find` command in conjunction with the `rm` (remove) command in a shell script. Here's a simple script to achieve this:
+
+```bash
+#!/bin/bash
+
+# Specify the directory where you want to search for zero-size files
+directory="/path/to/directory"
+
+# Use the find command to locate zero-size files in the specified directory
+# and delete them using the rm command
+find "$directory" -type f -size 0 -exec rm {} \;
+```
+
+Make sure to replace `/path/to/directory` with the actual path to the directory where you want to search for and delete zero-size files.
+
+This script uses the `find` command to locate all files (`-type f`) with a size of 0 bytes (`-size 0`) in the specified directory and its subdirectories. The `-exec` option is used to execute the `rm` command on each matching file to delete it.
+
+After creating the script, you can make it executable using the `chmod` command:
+
+```bash
+chmod +x delete_empty_files.sh
+```
+
+Then, you can run the script to delete all zero-size files in the specified directory:
+
+```bash
+./delete_empty_files.sh
+```
+
+Please use this script with caution, as it will permanently delete all zero-size files in the specified directory and its subdirectories. Make sure you have a backup or are absolutely certain you want to remove these files.
 
 ## 𝗪𝗿𝗶𝘁𝗲 𝗮 𝘀𝗵𝗲𝗹𝗹 𝘀𝗰𝗿𝗶𝗽𝘁 𝘁𝗼 𝗹𝗶𝘀𝘁 𝗱𝗼𝘄𝗻 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗿𝗲𝘀𝗼𝘂𝗿𝗰𝗲𝘀 𝗶𝗻 𝗮 𝗽𝗿𝗼𝗷𝗲𝗰𝘁(𝗰𝗹𝗼𝘂𝗱) 𝗮𝗻𝗱 𝗶𝗳 𝘁𝗵𝗲 𝘁𝗶𝗺𝗲 𝗱𝘂𝗿𝗮𝘁𝗶𝗼𝗻 𝗲𝘅𝗰𝗲𝗲𝗱𝘀 𝟮 𝗵𝗼𝘂𝗿, 𝗱𝗲𝗹𝗲𝘁𝗲 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗿𝗲𝘀𝗼𝘂𝗿𝗰𝗲𝘀.
 ```
