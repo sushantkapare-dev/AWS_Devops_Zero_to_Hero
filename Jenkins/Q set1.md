@@ -664,27 +664,6 @@ pipeline {
 
 In the example above, the "Unit Tests" and "Integration Tests" stages will run concurrently.
 
-2. **Concurrency Control**: You can also control the level of concurrency. For example, you can use the `max-parallel` parameter to limit the number of concurrent branches. This is useful if you have limited resources or want to prevent overloading your build environment.
-
-```groovy
-stage('Parallel Stages') {
-    parallel(max-parallel: 2) {
-        stage('Unit Tests') {
-            steps {
-                // Run unit tests
-            }
-        }
-        stage('Integration Tests') {
-            steps {
-                // Run integration tests
-            }
-        }
-    }
-}
-```
-
-In the above example, only two branches (i.e., "Unit Tests" and "Integration Tests") will run concurrently.
-
 Parallel stages in Jenkins are particularly useful for breaking down complex build and deployment processes into smaller, manageable units that can be executed concurrently, thus reducing the overall build time and improving efficiency.
 
 ## what is agent directive in pipeline
