@@ -258,14 +258,6 @@ When a deployed application experiences a failure, it's essential to take a syst
     - After the incident is resolved, conduct a post-incident review (also known as a post-mortem) to analyze the incident's causes and impact.
     - Identify lessons learned and develop strategies to prevent similar incidents in the future.
 
-11. **Documentation**:
-    - Document the incident, including the timeline of events, actions taken, and their outcomes. This documentation can be valuable for future reference and for improving incident response processes.
-
-12. **Preventive Measures**:
-    - Implement preventive measures based on the lessons learned from the incident. This might include improving monitoring, updating documentation, enhancing testing procedures, or revising deployment practices.
-
-Remember that incident response is an iterative process, and continuous improvement is key to building a more resilient application. Analyze failures to identify systemic weaknesses and proactively address them to reduce the likelihood of future incidents.
-
 ## Diff bet CI , CD and Continious deployment
 Continuous Integration (CI), Continuous Delivery (CD), and Continuous Deployment (CD) are related concepts in the field of software development and DevOps, but they have distinct purposes and workflows. Here are the key differences between them:
 
