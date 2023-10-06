@@ -22,15 +22,6 @@ When a bug is discovered in a production environment, it's crucial to have a wel
 7. **Monitor and Verify:**
    - After deploying the hotfix to production, closely monitor the system to verify that the bug is indeed fixed and that no new issues have been introduced. This may involve continuous monitoring, logging, and alerting.
 
-8. **Communication:**
-   - Throughout this process, maintain clear communication with stakeholders, including customers, about the bug, its resolution, and any potential downtime or disruptions.
-
-9. **Long-term Fix:**
-   - While the hotfix addresses the immediate issue, it's important to plan for a more comprehensive, long-term fix as part of your regular development cycle to prevent similar issues from occurring in the future.
-
-10. **Documentation:**
-    - Document the bug, the hotfix, and the long-term solution (if applicable) in your project's documentation to ensure that the knowledge is shared with the team and can be referred to in the future.
-
 Remember that the hotfix branch is temporary and should only contain changes related to the specific bug. Once the fix is successfully deployed and verified in production, you can consider merging the changes from the hotfix branch into your regular development branches to ensure that the fix is included in future releases.
 
 ## you have a,b,c,d,e files in staging area and dont want file 'd' in staging to local repository how?
