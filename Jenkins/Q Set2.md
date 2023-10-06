@@ -83,20 +83,6 @@ In Jenkins, you can trigger one job to run after another by using build dependen
    }
    ```
 
-4. **Groovy Scripts (Scripted Pipeline)**:
-
-   In a scripted Jenkins Pipeline, you can use Groovy scripts to control job triggering based on conditions, outcomes, or parameters. This gives you fine-grained control over job execution.
-
-   ```groovy
-   if (currentBuild.resultIsBetterOrEqualTo('SUCCESS')) {
-       build job: 'DownstreamJob'
-   }
-   ```
-
-5. **Plugins**:
-
-   Some Jenkins plugins provide additional options for triggering jobs. For example, the "Parameterized Trigger Plugin" allows you to pass parameters between jobs, and the "Build Pipeline Plugin" offers a visual way to define and visualize the flow of jobs in a pipeline.
-
 ## what are custom plugins you have worked on in jenkins?
 As a DevOps engineer, the custom Jenkins plugins I've worked on have primarily focused on enhancing and automating our continuous integration and continuous delivery (CI/CD) pipelines to meet specific organizational needs. Here are a few examples of custom Jenkins plugins and their purposes:
 
