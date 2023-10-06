@@ -441,12 +441,6 @@ The "Credentials Plugin" in Jenkins is a core plugin that provides a secure and 
 5. **Plugin Integration**:
    - Many other Jenkins plugins leverage the Credentials Plugin for authentication and secure data storage. For example, plugins for source code management systems, cloud providers, and container orchestration platforms often integrate with the Credentials Plugin to securely store authentication tokens.
 
-6. **Secret Masking**:
-   - Jenkins can be configured to automatically mask (redact) sensitive information, such as passwords or API keys, in build logs and console output. This helps prevent the accidental exposure of secrets in logs.
-
-7. **Credential Binding**:
-   - The Credential Binding Plugin, an extension of the Credentials Plugin, allows you to bind credentials to environment variables or files. This is useful for securely passing credentials to build steps or scripts within your Jenkins jobs.
-
 ## How to execute pipeline execution to multiple agents
 In Jenkins, you can execute a pipeline on multiple agents to distribute work across multiple nodes or build agents. This is useful for parallelizing tasks and improving the overall efficiency of your CI/CD pipeline. To execute a pipeline on multiple agents, you can use the `parallel` step in a Jenkins Pipeline. Here's how you can do it:
 
