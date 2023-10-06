@@ -163,21 +163,7 @@ It's important to maintain good Git practices, including regularly pushing branc
 
 Remember that the Git workflow can vary based on the project's size and complexity, so adapt your approach accordingly.
 
-## Scenario 5: Git Hooks
-
-**Question:** Can you explain how Git hooks work and provide an example of how you might use a pre-commit hook in a development workflow?
-
-**Answer:** Git hooks are scripts that Git runs at specific points in the Git workflow. A `pre-commit` hook, for instance, is executed before a commit is made. Here's how you might use a `pre-commit` hook:
-
-1. **Pre-commit Hook Creation:** Create a script, such as `pre-commit.sh`, and place it in the `.git/hooks` directory of your Git repository.
-
-2. **Script Functionality:** In the script, you can add checks or tests that must pass before a commit is allowed. For example, you can use linting tools to ensure code quality, run unit tests to confirm that code changes don't break existing functionality, or check for code style compliance.
-
-3. **Failures Prevent Commits:** If the checks fail in the `pre-commit` hook, the commit is blocked, and Git provides feedback to the developer, indicating what needs to be fixed.
-
-4. **Benefits:** `pre-commit` hooks help maintain code quality and consistency across the project and reduce the likelihood of introducing bugs or issues through commits.
-
-## Scenario 6: Git Submodules
+## Scenario 5: Git Submodules
 
 **Question:** Explain what Git submodules are and provide an example of when you might use them in a DevOps context.
 
@@ -197,7 +183,7 @@ In this case:
 
 Git submodules provide a structured way to manage complex projects with dependencies on external repositories, ensuring version compatibility and easy updates.
 
-## Scenario 7: Git Workflows in a Distributed Team
+## Scenario 6: Git Workflows in a Distributed Team
 
 **Question:** You are working with a distributed DevOps team spread across different time zones. How would you organize your Git workflow to ensure smooth collaboration and minimize conflicts?
 
