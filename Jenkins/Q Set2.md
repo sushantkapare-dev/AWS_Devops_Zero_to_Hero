@@ -15,8 +15,6 @@ In Jenkins, the terms "master" and "slave" refer to the architecture used for di
 6. **Monitor and Alerting**: Set up monitoring and alerting for Jenkins to proactively notify you of job failures. This can help you address issues as soon as they occur, reducing downtime.
 
 ## what are the plugins used in jenkins?
-Jenkins is highly extensible through plugins, which allow users to add functionality and integrations to meet their specific needs. There are thousands of Jenkins plugins available for various purposes. Here are some common categories of plugins used in Jenkins:
-
 1. **Source Code Management (SCM) Plugins**: These plugins enable Jenkins to integrate with version control systems like Git, SVN, Mercurial, and others. Examples include the Git Plugin, Subversion Plugin, and GitHub Plugin.
 
 2. **Build Tool Plugins**: These plugins support various build tools, such as Apache Maven, Gradle, Ant, and more. They facilitate the build and compilation process. Examples include the Maven Integration Plugin and Gradle Plugin.
@@ -33,15 +31,7 @@ Jenkins is highly extensible through plugins, which allow users to add functiona
 
 8. **Pipeline and Workflow Plugins**: Jenkins Pipeline is a powerful feature for defining build and deployment workflows as code. Various plugins support pipeline development, including Pipeline Plugin and Blue Ocean Plugin.
 
-9. **SCM Hosting Service Integration**: Plugins that connect Jenkins with hosted SCM services like GitHub, Bitbucket, GitLab, and more. These plugins streamline integration and trigger builds on code changes.
-
-10. **Database and Persistence Plugins**: Plugins that enable Jenkins to interact with databases and store build artifacts. Examples include ArtifactDeployer Plugin and Database Plugin.
-
-11. **Utility Plugins**: Miscellaneous plugins that offer additional features and utilities. Examples include Parameterized Trigger Plugin and Copy Artifact Plugin.
-
-12. **Version Control System (VCS) Branch Source Plugins**: These plugins facilitate multibranch pipeline projects by automatically discovering branches in your VCS and creating Jenkins jobs for them. Examples include GitHub Branch Source Plugin and Bitbucket Branch Source Plugin.
-
-13. **Artifact Management Plugins**: Plugins for managing and publishing build artifacts to repositories. Examples include Artifactory Plugin and Nexus Repository Manager Plugin.
+9. **Artifact Management Plugins**: Plugins for managing and publishing build artifacts to repositories. Examples include Artifactory Plugin and Nexus Repository Manager Plugin.
 
 ## If 1st stage failed then there is any possibility to other execute?
 In a Jenkins pipeline, whether subsequent stages execute after the failure of the first stage depends on how you've defined your pipeline and its error-handling mechanisms. Here are some common scenarios:
