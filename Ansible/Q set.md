@@ -37,15 +37,11 @@ Ansible is a powerful automation tool with a wide range of features that make it
 
 3. **Idempotent**: Ansible promotes idempotent execution, ensuring that tasks are only executed if necessary. This prevents unnecessary changes and helps maintain a desired state of the infrastructure.
 
-4. **Declarative Language**: Ansible playbooks describe the desired state of the system rather than specifying step-by-step instructions, making it more abstract and less prone to errors.
+4. **Parallel Execution**: Ansible can execute tasks on multiple hosts in parallel, which improves efficiency and reduces the time required to manage large infrastructures.
 
-5. **Extensible**: Ansible is extensible through custom modules and plugins, allowing you to extend its functionality to meet your specific needs.
+5. **Inventory Management**: You can define inventories that group hosts and assign variables to them. Inventories can be static or dynamic, depending on your needs.
 
-6. **Parallel Execution**: Ansible can execute tasks on multiple hosts in parallel, which improves efficiency and reduces the time required to manage large infrastructures.
-
-7. **Inventory Management**: You can define inventories that group hosts and assign variables to them. Inventories can be static or dynamic, depending on your needs.
-
-8. **Role-Based Organization**: Ansible promotes a role-based organization of playbooks, making it easier to reuse and share automation code.
+6. **Role-Based Organization**: Ansible promotes a role-based organization of playbooks, making it easier to reuse and share automation code.
 
 ## what is ansible galexy
 Ansible Galaxy is a central repository for Ansible roles, which are reusable collections of automation tasks and configurations. It allows Ansible users to easily discover, share, and reuse roles created by the community, streamlining the automation process. With Galaxy, users can search for roles, view documentation, and install them into their Ansible projects, saving time and effort in developing automation solutions. It promotes collaboration and standardization within the Ansible ecosystem, making it a valuable resource for automating various IT tasks and configurations.
