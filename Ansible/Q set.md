@@ -240,6 +240,8 @@ The Ansible configuration file, often referred to as ansible.cfg, is a configura
 The ansible.cfg file is optional, and if it doesn't exist, Ansible will use its built-in defaults. When a ansible.cfg file is present, Ansible will read it and apply the settings defined within.
 
 ## What are modules which are used in your project?
+In Ansible, modules are small, self-contained scripts or plugins that serve as the building blocks for defining automation tasks. Each module is designed to perform a specific action, such as managing files, configuring services, or executing commands, and they are responsible for carrying out tasks on remote systems, making Ansible a versatile and extensible tool for orchestrating IT infrastructure and automation workflows.
+
 In a typical DevOps project, the choice of Ansible modules depends on the specific tasks and requirements of the project. Here are some examples of Ansible modules that might be used in a DevOps project:
 
 **Package Management**: Modules like yum, apt, or dnf can be used to ensure that the required software packages are installed on target servers.
