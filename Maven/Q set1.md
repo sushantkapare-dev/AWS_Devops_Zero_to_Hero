@@ -31,18 +31,6 @@ Maven and Ant are both build automation tools used in software development, but 
    
    - Ant: Ant requires a deeper understanding of XML and build scripting, which may have a steeper learning curve for beginners.
 
-6. Community and Support:
-
-   - Maven: Maven has a larger and more active community, which means there are more resources, plugins, and documentation available.
-   
-   - Ant: Ant's community and development have slowed down over the years, and it may not have as much up-to-date support and resources.
-
-7. Popularity:
-
-   - Maven: Maven has been widely adopted in the Java ecosystem and is often the default choice for Java projects.
-   
-   - Ant: While Ant is still used, its popularity has waned in favor of more modern build tools like Maven and Gradle.
-
 ## what is multi-module project in maven
 In Maven, a multi-module project, also known as a multi-module build or a multi-module project structure, refers to a project that is organized into multiple interconnected subprojects or modules. These modules are typically related to each other and are built together as part of a larger project. Maven provides a way to manage such projects efficiently by allowing you to define a hierarchical structure for your project.
 
