@@ -16,8 +16,7 @@ Artifact archival takes in a pattern for matching target files. Similarly, it al
 archiveArtifacts artifacts: ‘output/*.txt’, excludes: ‘output/specific_file.txt’
 The above command will archive all the text files from the output folder except specific_file.txt
 
-## 4. How can we share information between different build steps or
-stages in a Jenkins Job?
+## 4. How can we share information between different build steps or stages in a Jenkins Job?
 Every build step or stage will be running in its process and hence sharing information between two different build steps is not so direct. We can use either a File, a Database Entry, an Environment Variable, etc. to share info from one build step to another or a post-build action.
 
 ## 5. How code coverage is measured/tracked using Jenkins in a CI environment?
