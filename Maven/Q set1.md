@@ -81,19 +81,15 @@ Here's how dependency management works in Maven:
 
 3. **Downloading Dependencies**: Maven automatically downloads the required JAR files (and their transitive dependencies) and stores them in a local repository on your machine. These downloaded dependencies are cached locally for future builds, reducing the need to re-download them.
 
-4. **Classpath Integration**: Maven adds the downloaded dependencies to the project's classpath during compilation and execution. This allows you to use the classes and resources from these dependencies in your code.
+4. **Version Management**: Maven helps manage dependency versions by allowing you to specify version ranges, specific versions, or even exclude certain transitive dependencies. This ensures that your project uses compatible versions of libraries and minimizes version conflicts.
 
-5. **Version Management**: Maven helps manage dependency versions by allowing you to specify version ranges, specific versions, or even exclude certain transitive dependencies. This ensures that your project uses compatible versions of libraries and minimizes version conflicts.
+5. **Parent POM and Inheritance**: In multi-module projects (where you have a parent project and child modules), you can manage dependencies in the parent POM. Child modules inherit these dependencies, simplifying management across multiple modules.
 
-6. **Scopes**: Dependencies can have different scopes, such as compile, test, runtime, and provided. These scopes define when and how a dependency is used. For example, compile dependencies are needed for compilation and runtime, while test dependencies are only required during testing.
-
-7. **Parent POM and Inheritance**: In multi-module projects (where you have a parent project and child modules), you can manage dependencies in the parent POM. Child modules inherit these dependencies, simplifying management across multiple modules.
-
-8. **Plugin Integration**: Maven integrates with plugins, such as the Maven Compiler Plugin and the Maven Surefire Plugin, to ensure that dependencies are properly used during compilation, testing, and other phases of the build lifecycle.
+6. **Plugin Integration**: Maven integrates with plugins, such as the Maven Compiler Plugin and the Maven Surefire Plugin, to ensure that dependencies are properly used during compilation, testing, and other phases of the build lifecycle.
 
 By using Maven's dependency management, you can easily declare, resolve, and incorporate external libraries into your project, ensuring that your application has all the necessary components and that version conflicts are minimized. This simplifies the process of building, maintaining, and sharing Java projects, as well as enhancing their reliability and consistency.
 
-## Transitive dependecy i maven
+## what is Transitive dependecy in maven?
 In Maven, transitive dependencies are dependencies that are automatically included in your project because they are required by one or more of your project's direct dependencies. These indirect dependencies are not explicitly declared in your project's POM (Project Object Model) file but are pulled in by Maven to ensure that your project can function correctly with its declared dependencies.
 
 Here's how transitive dependencies work in Maven:
