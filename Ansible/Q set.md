@@ -278,23 +278,6 @@ Here's an example of how to use the `fetch` module in an Ansible playbook:
         dest: /path/on/control/machine/  # Local destination path on the control machine
 ```
 
-In this playbook:
-
-- `src` is the path to the file on the remote node that you want to fetch.
-- `dest` is the local destination directory on the Ansible control machine where the fetched file will be stored.
-
-You should replace `your_target_group` with the appropriate Ansible inventory group or the hostname of the remote node you want to fetch the file from.
-
-When you run this playbook, Ansible will copy the specified file from the remote node(s) to the specified destination directory on the control machine.
-
-Here's an example command to run the playbook:
-
-```bash
-ansible-playbook fetch_file.yml
-```
-
-Make sure that the Ansible control machine has the necessary permissions to access the remote file, and the destination directory is writable. Additionally, ensure that the SSH connectivity and Ansible configuration are properly set up to access the remote nodes.
-
 ## What are the best practices to write ansible playbook?
 Writing Ansible playbooks effectively requires following best practices to ensure that your automation is maintainable, readable, and robust. Here are some best practices for writing Ansible playbooks:
 
