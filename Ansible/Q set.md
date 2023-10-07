@@ -47,10 +47,6 @@ Ansible is an open-source automation tool that is used for configuration managem
 
 8. **Idempotent Execution**: Ansible's default behavior is idempotent, meaning it ensures that tasks are only executed if they need to be. If a task has already been completed and has not changed, Ansible won't repeat it unless instructed otherwise.
 
-9. **Reporting and Output**: Ansible provides detailed output and status information about each task's execution. This makes it easy to identify any issues or failures in your automation.
-
-10. **Automation and Orchestration**: Ansible can be used for both automation (performing routine tasks) and orchestration (coordinating multiple tasks across multiple hosts). It can also integrate with other tools and services to create more complex automation workflows.
-
 ## Features of ansible
 Ansible is a powerful automation tool with a wide range of features that make it popular for managing and configuring IT infrastructure. Here are some key features of Ansible:
 
@@ -69,26 +65,6 @@ Ansible is a powerful automation tool with a wide range of features that make it
 7. **Inventory Management**: You can define inventories that group hosts and assign variables to them. Inventories can be static or dynamic, depending on your needs.
 
 8. **Role-Based Organization**: Ansible promotes a role-based organization of playbooks, making it easier to reuse and share automation code.
-
-9. **Task and Handler System**: Ansible allows you to define tasks and handlers, where tasks represent actions to be taken, and handlers are triggered when a task notifies them.
-
-10. **Templating**: Ansible supports Jinja2 templating, which allows you to create dynamic configuration files based on variables and facts.
-
-11. **Conditional Execution**: Playbooks can use conditionals to determine whether a task should be executed based on specific criteria, such as the host's OS or a variable value.
-
-12. **Error Handling**: Ansible provides error handling and retries for tasks, allowing you to define how to handle failures gracefully.
-
-13. **Integration**: Ansible can integrate with various version control systems, cloud providers, and other third-party tools and services, making it a versatile part of your DevOps toolchain.
-
-14. **Reporting and Logging**: Ansible generates detailed reports and logs, helping you monitor the execution of playbooks and troubleshoot any issues.
-
-15. **Community and Documentation**: Ansible has a large and active community, with extensive documentation, tutorials, and a repository of pre-built roles and playbooks available on Ansible Galaxy.
-
-16. **Scalability**: Ansible can scale to manage both small and large infrastructures, and it can be used for configuration management, application deployment, and orchestration tasks.
-
-17. **Cross-Platform Support**: While Ansible is primarily associated with managing Linux-based systems, it also supports Windows systems and network devices, making it suitable for heterogeneous environments.
-
-18. **Security**: Ansible takes security seriously, with features like vaults for encrypting sensitive data and secure methods for handling credentials and SSH keys.
 
 ## what is ansible galexy
 Ansible Galaxy is a central repository for Ansible roles, which are reusable collections of automation tasks and configurations. It allows Ansible users to easily discover, share, and reuse roles created by the community, streamlining the automation process. With Galaxy, users can search for roles, view documentation, and install them into their Ansible projects, saving time and effort in developing automation solutions. It promotes collaboration and standardization within the Ansible ecosystem, making it a valuable resource for automating various IT tasks and configurations.
