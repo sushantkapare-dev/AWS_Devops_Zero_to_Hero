@@ -350,37 +350,26 @@ Writing Ansible playbooks effectively requires following best practices to ensur
    - Use Ansible roles to modularize your playbooks and promote code reuse.
    - Each role should have a clear and specific purpose, making it easier to maintain and share.
 
-3. **Use YAML Syntax Properly**:
-   - YAML syntax is sensitive to indentation. Ensure proper indentation to avoid errors.
-   - Avoid using tabs; use spaces for indentation (typically two spaces).
-
-4. **Use Variables and Templates**:
+3. **Use Variables and Templates**:
    - Use variables for configuration values that might change across environments.
    - Utilize Jinja2 templates for dynamic configuration files.
 
-5. **Use Ansible Vault for Secrets**:
+4. **Use Ansible Vault for Secrets**:
    - Store sensitive information like passwords and API keys in Ansible Vault for secure encryption.
    - Don't store secrets in plain text within playbooks or roles.
 
-6. **Limit Hosts Properly**:
-   - Use inventory files or patterns to target specific hosts or groups.
-   - Be cautious when using wildcards to avoid unintentional changes to multiple hosts.
-
-7. **Use Ansible Modules**:
+5. **Use Ansible Modules**:
    - Leverage Ansible modules whenever possible instead of running shell commands.
    - Modules are idempotent, which helps maintain the desired state of the system.
 
-8. **Version Control**:
-    - Store your playbooks and roles in a version control system (e.g., Git) for collaboration, version history, and disaster recovery.
-
-9. **Backup and Recovery**:
+6. **Backup and Recovery**:
     - Implement backup and recovery strategies, especially when making critical changes.
     - 
-10. **Security**:
+7. **Security**:
     - Follow security best practices, such as limiting privileges and access where necessary.
     - Keep your Ansible control machine and target hosts secure.
 
-11. **Continuous Integration/Continuous Deployment (CI/CD)**:
+8. **Continuous Integration/Continuous Deployment (CI/CD)**:
     - Integrate Ansible into your CI/CD pipeline to automate testing and deployment.
 
 ## How to manage and solve errors in ansible
@@ -389,50 +378,32 @@ Managing and solving errors in Ansible is a crucial part of working with the aut
 1. **Enable Debugging**:
    - Use the `-vvv` (or `--verbose`) option with the `ansible-playbook` or `ansible` command to increase the verbosity level. This can help you see more detailed output, which may contain information about what caused the error.
 
-2. **Review Error Messages**:
-   - Carefully read the error messages provided by Ansible. They often include information about the task, module, and line number where the error occurred.
-
-3. **Check Syntax**:
+2. **Check Syntax**:
    - Ensure that your YAML syntax is correct. YAML is indentation-sensitive, so even a small indentation error can cause issues. Use online YAML validators if needed.
 
-4. **Verify Inventory**:
+3. **Verify Inventory**:
    - Check your inventory file or dynamic inventory script to ensure that hostnames or IP addresses are correctly defined and reachable.
 
-5. **Inventory Hostnames and SSH Configuration**:
+4. **Inventory Hostnames and SSH Configuration**:
    - Ensure that the hostnames or IPs in your inventory match the hosts defined in your playbook.
    - Verify SSH connectivity to the target hosts. Ensure SSH keys and credentials are correct.
 
-6. **Module Documentation**:
-   - Consult the official Ansible module documentation (available online) to understand how to use modules correctly. Each module has specific parameters and requirements.
-
-7. **Use Debugging Modules**:
+5. **Use Debugging Modules**:
    - Ansible provides debugging modules like `debug` and `assert`. Insert these modules into your playbook to print variable values or to assert certain conditions before proceeding.
 
-8. **Check Variables**:
+6. **Check Variables**:
    - Review the variables you're using in your playbook. Ensure they are defined, correctly named, and contain the expected values.
 
-9. **Check Playbook Logic**:
+7. **Check Playbook Logic**:
    - Review the playbook logic, including conditions, loops, and task ordering. Ensure that tasks are structured correctly and are not conflicting with each other.
 
-10. **Idempotence and State**:
+8. **Idempotence and State**:
     - Ansible is idempotent, meaning it should not make changes if the target system is already in the desired state. Check if your tasks are designed to be idempotent.
 
-11. **Role and Role Dependencies**:
+9. **Role and Role Dependencies**:
     - If you're using roles, verify that role dependencies are correctly defined in your `requirements.yml` file or role metadata.
 
-12. **Roles and Files Paths**:
-    - Ensure that paths to files and templates within your roles are correct and that files actually exist.
-
-13. **Use Error Handling**:
-    - Implement error handling in your playbook using `failed_when` and `changed_when` to specify under what conditions a task should fail or be considered changed.
-
-14. **Version Compatibility**:
-    - Check the compatibility of your Ansible version with the modules and features you are using. Some modules or features might require a specific Ansible version.
-
-15. **Community Resources**:
-    - Search online forums, GitHub issues, and Ansible community resources for solutions to common errors. Others may have encountered and resolved similar issues.
-
-16. **Update Ansible and Modules**:
+10. **Update Ansible and Modules**:
     - Ensure that you are using an up-to-date version of Ansible and that your modules are also up to date.
 
 ## How do you used ansible fact?
