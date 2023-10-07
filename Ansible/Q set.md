@@ -200,16 +200,6 @@ Dynamic inventory in Ansible refers to an inventory source that is generated dyn
 
 5. **Hybrid and Multi-Cloud Environments**: In hybrid or multi-cloud setups, dynamic inventory allows you to manage hosts across different cloud providers and on-premises infrastructure seamlessly.
 
-Here's how dynamic inventory works:
-
-1. **External Script or Plugin**: Ansible can execute an external script or plugin, often written in a language like Python or Bash, to fetch information about the hosts and groups dynamically. This script can query cloud APIs, CMDBs, or other data sources to build the inventory.
-
-2. **JSON or YAML Output**: The dynamic inventory script typically produces output in JSON or YAML format. This output describes the hosts and their attributes, group memberships, and any associated variables.
-
-3. **Usage in Playbooks**: Dynamic inventory is used in Ansible playbooks by specifying the inventory script as the source of the inventory. This is done using the `-i` or `--inventory` command-line option when running Ansible commands.
-
-4. **Example Usage**: For instance, to use an AWS dynamic inventory script, you might run Ansible commands like `ansible-playbook -i aws_ec2.py my_playbook.yml`, where `aws_ec2.py` is the dynamic inventory script provided by Ansible for AWS.
-
 ## what is tags in ansible and why used
 In Ansible, tags are labels or markers that you can assign to specific tasks within a playbook. Tags provide a way to selectively run or skip tasks based on their associated tags when you execute the playbook. Tags are a valuable feature in Ansible because they allow you to control which tasks are executed during a playbook run, making it possible to run only the tasks that are relevant to your current task or troubleshooting scenario.
 
