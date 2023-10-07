@@ -231,6 +231,3 @@ When combined, GAVS provides a unique identifier for a specific artifact in the 
 - Packaging: `jar`
 
 This information specifies the exact version of the "my-library" artifact produced by the "com.example" group, and it indicates that the artifact is packaged as a JAR file. Maven uses these coordinates to fetch the correct artifact from remote repositories, manage dependencies, and ensure that the right versions are used in your project.
-
-## 
-
