@@ -70,6 +70,14 @@ Ansible Tower, now known as Red Hat Ansible Automation Platform, is a commercial
 
 ## what is ad-hoc commands in ansible
 Ad-hoc commands in Ansible are one-off, on-the-fly commands that you can run directly from the command line without the need to create a complete Ansible playbook or automation script. These commands are particularly useful for quickly performing tasks or gathering information on remote hosts. Ad-hoc commands are written in a specific format and are executed using the ansible command-line tool. 
+Ping all hosts in the "web" group:
+```
+ansible web -m ping
+```
+Install the Apache web server package on a single host:
+```
+ansible webserver1 -m yum -a "name=httpd state=present"
+```
 
 ## diff between playbook and play
 a playbook is a container for organizing and sequencing multiple plays, while a play is a unit of work within a playbook that specifies a set of tasks to be executed on a specific group of hosts. Playbooks are used for orchestrating complex automation workflows, while plays are used for defining and managing specific tasks on target hosts. Playbooks provide a structured approach to building and managing automation, allowing you to create reusable and organized automation scripts.
