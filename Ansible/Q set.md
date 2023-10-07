@@ -223,32 +223,13 @@ Handling secrets securely in Ansible is crucial to maintain the confidentiality 
    - **Usage**:
      - To encrypt a file or variable: Use the `ansible-vault` command to create or edit an encrypted file. For example, `ansible-vault create secret.yml` or `ansible-vault edit secret.yml`.
      - To use a vault-encrypted file in a playbook: Include the vault password file or prompt for the vault password when running a playbook. For example, `ansible-playbook my_playbook.yml --ask-vault-pass`.
-   - **Pros**:
-     - Encryption ensures sensitive data remains secure.
-     - Integration with Ansible is seamless.
-   - **Cons**:
-     - Managing and sharing the vault password securely is essential.
-     - Secrets are stored within Ansible files, which may not meet all security requirements.
 
 2. **External Vault Tools**:
    - **Purpose**: Use external secret management tools, such as HashiCorp Vault, CyberArk Conjur, or AWS Secrets Manager, to store and retrieve secrets. Ansible interacts with these tools to fetch secrets at runtime.
-   - **Usage**: Integrate Ansible with the external secret management tool by using Ansible modules or plugins provided by the tool.
-   - **Pros**:
-     - Centralized management of secrets.
-     - Enhanced security features offered by the external tool.
-   - **Cons**:
-     - Complexity in setting up and maintaining the external tool.
-     - Requires integration effort with Ansible.
 
 3. **Environment Variables**:
    - **Purpose**: Store secrets as environment variables on the control node or target hosts. Ansible tasks can access these variables when needed.
    - **Usage**: Define environment variables within playbooks or as part of the host's configuration.
-   - **Pros**:
-     - Easy to implement.
-     - No direct storage of secrets within Ansible files.
-   - **Cons**:
-     - Requires care in managing and securing environment variables.
-     - Limited to simple secrets and may not be suitable for all use cases.
 
 ## can we  use ansible as IaC rather than other IaC tools?
 Yes, Ansible can be used as an Infrastructure as Code (IaC) tool to manage and provision infrastructure, just like other dedicated IaC tools such as Terraform, AWS CloudFormation, or Azure Resource Manager (ARM) templates. While Ansible is primarily known for configuration management and automation, it can also serve as an effective IaC tool for certain use cases.
