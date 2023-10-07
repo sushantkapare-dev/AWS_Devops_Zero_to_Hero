@@ -213,9 +213,7 @@ Ansible achieves parallel execution in the following ways:
 
 1. **Concurrent Task Execution**: Ansible can execute multiple tasks on different target hosts simultaneously, as long as the tasks are independent and don't have dependencies on each other. This parallelism is managed by Ansible's control node, which sends tasks to target hosts and monitors their progress.
 
-2. **Forks Configuration**: You can control the degree of parallelism by configuring the `forks` setting in your Ansible configuration (`ansible.cfg`) or by specifying it on the command line using the `-f` or `--forks` option. The `forks` setting determines how many parallel processes Ansible should use to execute tasks. For example, to run up to 10 tasks in parallel, you can set `forks = 10` in your configuration file or use `ansible-playbook -f 10` when running playbooks.
-
-3. **Host Groups**: Ansible can parallelize tasks within individual host groups defined in your inventory. For example, if you have two host groups, you can configure Ansible to execute tasks on hosts within each group in parallel.
+2. **Host Groups**: Ansible can parallelize tasks within individual host groups defined in your inventory. For example, if you have two host groups, you can configure Ansible to execute tasks on hosts within each group in parallel.
 
 ## How to handle  secret in ansible?
 Handling secrets securely in Ansible is crucial to maintain the confidentiality and integrity of sensitive information such as passwords, API tokens, SSH keys, and other credentials. Ansible provides several mechanisms for managing secrets, and the choice of method depends on your specific use case and security requirements. Here are some common approaches to handling secrets in Ansible:
