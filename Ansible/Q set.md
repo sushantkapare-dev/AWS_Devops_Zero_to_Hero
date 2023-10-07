@@ -28,25 +28,6 @@ Ansible is an open-source automation tool that is commonly used for configuratio
    - Modules are small, standalone scripts that Ansible runs on the managed node and can perform various actions like installing packages, managing services, copying files, and more.
    - Ansible includes a wide range of built-in modules, and you can also create custom modules when needed.
 
-## How does ansible works
-Ansible is an open-source automation tool that is used for configuration management, application deployment, task automation, and orchestration. It is agentless, meaning it doesn't require any software to be installed on the target systems. Instead, Ansible uses SSH (Secure Shell) or other remote execution methods to communicate with and manage remote hosts. Here's a basic overview of how Ansible works:
-
-1. **Inventory**: Ansible starts with an inventory file, which is a list of all the hosts or servers you want to manage. This file can be in various formats, including INI-style, YAML, or even generated dynamically. The inventory file typically contains information such as hostnames or IP addresses, SSH connection details, and groupings of hosts.
-
-2. **Playbooks**: Playbooks are written in YAML and are used to define a set of tasks that Ansible should perform on the target hosts. Playbooks can include multiple plays, each consisting of a set of tasks. Tasks can be things like installing software packages, copying files, configuring settings, or running custom scripts.
-
-3. **Modules**: Ansible uses modules to perform specific tasks on the target hosts. Modules are small, standalone scripts or programs that Ansible invokes. There are built-in modules for common tasks like managing files, installing packages, or creating users. You can also create custom modules if needed.
-
-4. **Ad-Hoc Commands**: In addition to playbooks, Ansible allows you to run ad-hoc commands directly from the command line. These commands are useful for quick, one-off tasks or for tasks that don't require a full playbook.
-
-5. **Control Node**: The machine from which you run Ansible commands or execute playbooks is called the "control node." Ansible does not require a dedicated control node; you can use any machine with Ansible installed.
-
-6. **SSH Connection**: Ansible connects to the target hosts using SSH by default. It requires SSH access and credentials to connect to the remote servers. Ansible can also work with other connection methods, such as WinRM for managing Windows machines.
-
-7. **Task Execution**: Ansible sends the tasks defined in the playbook to the target hosts one by one. It executes these tasks in parallel across multiple hosts, making it efficient for managing large infrastructures.
-
-8. **Idempotent Execution**: Ansible's default behavior is idempotent, meaning it ensures that tasks are only executed if they need to be. If a task has already been completed and has not changed, Ansible won't repeat it unless instructed otherwise.
-
 ## Features of ansible
 Ansible is a powerful automation tool with a wide range of features that make it popular for managing and configuring IT infrastructure. Here are some key features of Ansible:
 
