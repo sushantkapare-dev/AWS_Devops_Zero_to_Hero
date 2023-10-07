@@ -1,6 +1,4 @@
 ## can you create custom repo in nexus
-I can certainly provide you with information on how to create a custom repository in Nexus Repository Manager, which is a popular artifact repository manager. However, please note that the specific steps and options may vary depending on the version of Nexus you are using, as my knowledge is based on information available up to September 2021.
-
 To create a custom repository in Nexus Repository Manager, you generally need to follow these steps:
 
 1. **Access Nexus Repository Manager:** Log in to your Nexus Repository Manager instance using a web browser. The URL and login credentials will depend on your specific setup.
