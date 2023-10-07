@@ -443,40 +443,6 @@ Ansible facts are system-related variables and information collected by Ansible 
 
    This task installs the "my-package" package only on RedHat-based systems.
 
-4. **Custom Facts**:
-   - In addition to built-in facts, you can create custom facts by defining variables within your playbook or by using external scripts and tools. Custom facts can provide additional information that is specific to your environment.
-
-   ```yaml
-   - name: Set a Custom Fact
-     set_fact:
-       my_custom_fact: "This is a custom fact."
-   ```
-
-   You can then access `my_custom_fact` like any other fact within your playbook.
-
-5. **Using Facts in Templates**:
-   - Ansible facts can be used in templates to dynamically generate configuration files. For example, you can use facts to insert host-specific information into configuration files.
-
-   ```yaml
-   - name: Template Configuration File
-     template:
-       src: my_template.j2
-       dest: /etc/myapp/my_config.conf
-   ```
-
-   In the Jinja2 template (`my_template.j2`), you can use Ansible facts like `{{ ansible_hostname }}` or `{{ ansible_default_ipv4.address }}` to customize the configuration file.
-
-6. **Using Facts in Inventory**:
-   - You can also define custom facts directly in your Ansible inventory files to associate specific facts with hosts or groups of hosts.
-
-   ```ini
-   [web_servers]
-   server1 ansible_host=192.168.1.10 my_custom_fact=webserver
-   server2 ansible_host=192.168.1.11 my_custom_fact=webserver
-   ```
-
-   In this example, we've associated the custom fact `my_custom_fact` with the "web_servers" group.
-
 ## How to manage order of execution in playbook
 In Ansible, you can control the order of execution in a playbook using various techniques and keywords. The order in which tasks are executed is important to ensure that dependencies are met and that the playbook runs smoothly. Here are some ways to manage the order of execution in an Ansible playbook:
 
