@@ -329,15 +329,6 @@ Managing and solving errors in Ansible is a crucial part of working with the aut
 7. **Check Playbook Logic**:
    - Review the playbook logic, including conditions, loops, and task ordering. Ensure that tasks are structured correctly and are not conflicting with each other.
 
-8. **Idempotence and State**:
-    - Ansible is idempotent, meaning it should not make changes if the target system is already in the desired state. Check if your tasks are designed to be idempotent.
-
-9. **Role and Role Dependencies**:
-    - If you're using roles, verify that role dependencies are correctly defined in your `requirements.yml` file or role metadata.
-
-10. **Update Ansible and Modules**:
-    - Ensure that you are using an up-to-date version of Ansible and that your modules are also up to date.
-
 ## How do you used ansible fact?
 Ansible facts are system-related variables and information collected by Ansible from remote hosts when a playbook is executed. These facts provide valuable information about the target hosts and can be used within playbooks to make automation more dynamic and adaptable to the specific environment. Here's how you can use Ansible facts:
 
