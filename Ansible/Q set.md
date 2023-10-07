@@ -285,30 +285,23 @@ Writing Ansible playbooks effectively requires following best practices to ensur
    - Use a well-structured directory layout for your playbooks and roles. Ansible Galaxy's recommended directory structure is a good starting point.
    - Separate playbooks by functionality or purpose.
 
-2. **Modularize with Roles**:
-   - Use Ansible roles to modularize your playbooks and promote code reuse.
-   - Each role should have a clear and specific purpose, making it easier to maintain and share.
-
-3. **Use Variables and Templates**:
+2. **Use Variables and Templates**:
    - Use variables for configuration values that might change across environments.
    - Utilize Jinja2 templates for dynamic configuration files.
 
-4. **Use Ansible Vault for Secrets**:
+3. **Use Ansible Vault for Secrets**:
    - Store sensitive information like passwords and API keys in Ansible Vault for secure encryption.
    - Don't store secrets in plain text within playbooks or roles.
 
-5. **Use Ansible Modules**:
+4. **Use Ansible Modules**:
    - Leverage Ansible modules whenever possible instead of running shell commands.
    - Modules are idempotent, which helps maintain the desired state of the system.
-
-6. **Backup and Recovery**:
-    - Implement backup and recovery strategies, especially when making critical changes.
     - 
-7. **Security**:
+5. **Security**:
     - Follow security best practices, such as limiting privileges and access where necessary.
     - Keep your Ansible control machine and target hosts secure.
 
-8. **Continuous Integration/Continuous Deployment (CI/CD)**:
+6. **Continuous Integration/Continuous Deployment (CI/CD)**:
     - Integrate Ansible into your CI/CD pipeline to automate testing and deployment.
 
 ## How to manage and solve errors in ansible
