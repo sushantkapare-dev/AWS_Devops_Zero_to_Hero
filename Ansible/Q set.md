@@ -370,21 +370,17 @@ Writing Ansible playbooks effectively requires following best practices to ensur
    - Leverage Ansible modules whenever possible instead of running shell commands.
    - Modules are idempotent, which helps maintain the desired state of the system.
 
-8. **Error Handling and Handlers**:
-    - Implement error handling and use handlers to manage changes only when needed.
-    - Use the `failed_when` and `changed_when` attributes to control task behavior based on conditions.
-
-9. **Version Control**:
+8. **Version Control**:
     - Store your playbooks and roles in a version control system (e.g., Git) for collaboration, version history, and disaster recovery.
 
-10. **Backup and Recovery**:
+9. **Backup and Recovery**:
     - Implement backup and recovery strategies, especially when making critical changes.
     - 
-11. **Security**:
+10. **Security**:
     - Follow security best practices, such as limiting privileges and access where necessary.
     - Keep your Ansible control machine and target hosts secure.
 
-12. **Continuous Integration/Continuous Deployment (CI/CD)**:
+11. **Continuous Integration/Continuous Deployment (CI/CD)**:
     - Integrate Ansible into your CI/CD pipeline to automate testing and deployment.
 
 ## How to manage and solve errors in ansible
