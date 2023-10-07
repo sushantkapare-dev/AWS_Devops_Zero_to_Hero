@@ -25,12 +25,6 @@ Maven and Ant are both build automation tools used in software development, but 
    
    - Ant: Ant provides greater flexibility and control over build processes. You have full control over how tasks are executed and can customize the build process to meet specific project requirements.
 
-5. Learning Curve:
-
-   - Maven: Maven's convention-based approach can make it easier for new developers to get started quickly, especially if they are working on projects that adhere to Maven's conventions.
-   
-   - Ant: Ant requires a deeper understanding of XML and build scripting, which may have a steeper learning curve for beginners.
-
 ## what is multi-module project in maven
 In Maven, a multi-module project, also known as a multi-module build or a multi-module project structure, refers to a project that is organized into multiple interconnected subprojects or modules. These modules are typically related to each other and are built together as part of a larger project. Maven provides a way to manage such projects efficiently by allowing you to define a hierarchical structure for your project.
 
@@ -44,11 +38,7 @@ Here are the key characteristics and benefits of a multi-module project in Maven
 
 4. **Code Reuse:** You can reuse code across modules within the same project. This is particularly useful for sharing libraries, common utilities, or configuration settings among multiple parts of your project.
 
-5. **Separation of Concerns:** Each module can represent a specific concern or component of your application, making it easier to manage and understand large and complex projects.
-
-6. **Parallel Development:** Different teams or developers can work on different modules independently. They can focus on their specific areas of expertise without affecting other parts of the project.
-
-7. **Deployment:** Multi-module projects can simplify the deployment process by allowing you to package and deploy all modules together as a cohesive unit or individually, depending on your needs.
+5. **Parallel Development:** Different teams or developers can work on different modules independently. They can focus on their specific areas of expertise without affecting other parts of the project.
 
 To create a multi-module project in Maven, you typically set up a parent project and define child modules within the parent's POM (Project Object Model) file. The parent POM can inherit common configurations and dependencies, while each child module can specify its unique settings.
 
