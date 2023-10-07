@@ -28,15 +28,6 @@ Ansible is an open-source automation tool that is commonly used for configuratio
    - Modules are small, standalone scripts that Ansible runs on the managed node and can perform various actions like installing packages, managing services, copying files, and more.
    - Ansible includes a wide range of built-in modules, and you can also create custom modules when needed.
 
-6. **SSH or WinRM**:
-   - Ansible communicates with managed nodes over SSH for Linux-based systems and WinRM for Windows-based systems.
-   - It securely connects to the managed nodes to execute tasks and transfer files.
-   - Ansible uses SSH keys or username/password authentication for authentication and secure communication.
-
-7. **Control Node Plugins**:
-   - Ansible can be extended using control node plugins, which allow you to customize and extend Ansible's functionality.
-   - Plugins can be used to integrate Ansible with external tools, cloud services, and other automation systems.
-
 ## How does ansible works
 Ansible is an open-source automation tool that is used for configuration management, application deployment, task automation, and orchestration. It is agentless, meaning it doesn't require any software to be installed on the target systems. Instead, Ansible uses SSH (Secure Shell) or other remote execution methods to communicate with and manage remote hosts. Here's a basic overview of how Ansible works:
 
@@ -816,6 +807,3 @@ In this example, the playbook first ensures that the `cowsay` package is install
 The output of this playbook will be a cow (or other animal) saying the message in a speech bubble, displayed in the terminal.
 
 Please note that while `cowsay` can be fun for demonstrations or playful use cases, it's not a standard part of Ansible's functionality and is typically not used in production playbooks.
-
-
-
