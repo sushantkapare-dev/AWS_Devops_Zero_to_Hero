@@ -142,11 +142,7 @@ In Maven, a build lifecycle is a series of phases that define the sequence in wh
 
    - **site**: Generates project documentation, reports, and a project website.
    - **site-deploy**: Deploys the project website to a remote server.
-
-Each phase in a lifecycle represents a specific step in the build process, and they are executed in order. For example, when you run a Maven command like `mvn clean install`, Maven will execute the `clean` phase followed by the `validate`, `compile`, `test`, `package`, `verify`, `install`, and `deploy` phases in that order.
-
-You can also bind custom goals (plugins) to specific phases in the build lifecycle. This allows you to extend the default build process to include additional tasks that are specific to your project.
-
+   - 
 Maven plugins are responsible for carrying out the tasks associated with each phase of the build lifecycle. For example, the Maven Compiler Plugin handles the compilation of source code during the `compile` phase, and the Maven Surefire Plugin is responsible for running unit tests during the `test` phase.
 
 ## What is POM 
