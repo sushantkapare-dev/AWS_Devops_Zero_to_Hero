@@ -496,26 +496,7 @@ In Ansible, you can control the order of execution in a playbook using various t
 
    In this example, the "webserver" role's tasks will be executed before the "database" role's tasks.
 
-5. **Dependencies Between Plays**:
-   - If you have multiple plays in your playbook, you can control their order by specifying dependencies using the `pre_tasks` and `post_tasks` keywords. `pre_tasks` run before the main tasks of a play, and `post_tasks` run afterward.
-
-   ```yaml
-   - name: First Play
-     hosts: my_group
-     pre_tasks:
-       - name: Initial tasks before main tasks
-         # ...
-
-     tasks:
-       - name: Main tasks
-         # ...
-
-     post_tasks:
-       - name: Cleanup or final tasks
-         # ...
-   ```
-
-6. **Using Conditionals**:
+5. **Using Conditionals**:
    - You can use conditional statements (`when` keyword) in tasks to control whether a task is executed based on certain conditions. This allows you to skip or include tasks dynamically.
 
    ```yaml
@@ -632,19 +613,13 @@ Ansible provides a wide range of modules to perform various automation tasks on 
 6. **Monitoring Modules:**
    - Monitoring modules enable integration with various monitoring and logging tools, such as Nagios, Prometheus, and ELK Stack. Examples include `nagios`, `prometheus_alert`, and `elasticsearch`.
 
-7. **Windows Modules:**
-   - Ansible supports Windows systems, and these modules allow you to manage Windows-specific tasks, like configuring Windows features, managing services, and running PowerShell scripts. Examples include `win_feature`, `win_service`, and `win_shell`.
-
-8. **Security Modules:**
+7. **Security Modules:**
    - These modules help with security-related tasks, such as managing SSH keys, configuring firewalls, and handling SSL certificates. Examples include `ssh_keygen`, `ufw`, and `openssl_certificate`.
 
-9. **File and Text Modules:**
+8. **File and Text Modules:**
    - Modules in this category are used for working with files and text data, including file manipulation, templating, and searching. Examples include `file`, `template`, and `lineinfile`.
 
-10. **Package and Software Modules:**
-    - These modules allow you to install, update, and remove software packages and repositories on various platforms. Examples include `yum`, `apt`, and `chocolatey`.
-
-11. **Custom Modules:**
+9. **Custom Modules:**
     - You can also create custom Ansible modules to perform specialized tasks that are not covered by the built-in modules. Custom modules provide flexibility in automation.
 
 ## what is host-key checking in ansible?
