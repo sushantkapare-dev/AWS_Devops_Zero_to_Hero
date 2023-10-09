@@ -41,14 +41,8 @@ Child Module Installation
 ## What exactly is Terraform D, and how does it function?
 Ans: Terraform D is a Windows plugin compatible with nearly all in-service systems. The terraform init looks for plugins in the following directory by default.
  
-## Can I add policies to Terraform Enterprise's open-source or pro versions?
-Ans: Policies cannot be added to Terraform Enterprise's open-source description. The same is true for the Enterprise Pro edition. Terraform Enterprise's best version could only contact the watch policies.
- 
 ## What are Modules in Terraform?
 Ans: A module in Terraform is a container for multiple resources used concurrently. Every Terraform that includes resources mentioned in .tf files requires the root module.
- 
-## Is it possible to use Terraform with callbacks on Azure? Sending a callback to, say, a logging system, a trigger, or other events?
-Ans: Yes. This can be accomplished using Azure Event Hubs. This feature is now available in the Terraform AzureRM provider. Terraform's Azure supplier offers users straightforward functionality. Microsoft Azure Cloud Shell includes a pre-configured Terraform occurrence.
  
 ## What exactly do you mean by Terraform providers?
 Ans: Providers are Terraform plugins that allow it to interact with cloud providers, SaaS providers, and other APIs. The terraform configurations must declare which providers they require for Terraform to install and use. Some Terraform providers require configuration before use, such as endpoint URLs or cloud regions.
