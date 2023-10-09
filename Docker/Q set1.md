@@ -474,24 +474,6 @@ Isolating networks between containers in Docker is a common requirement, especia
      docker run -d --network=host --name container2 myimage2
      ```
 
-4. **Use Macvlan Network Mode**:
-
-   - The Macvlan network mode allows containers to have their own unique MAC addresses and IP addresses on the physical network. Containers in this mode can communicate with external devices on the same network but are isolated from each other.
-
-   - Example:
-     ```bash
-     # Create a Macvlan network
-     docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 my_macvlan_network
-
-     # Run container1 on the Macvlan network
-     docker run -d --network=my_macvlan_network --name container1 myimage1
-
-     # Run container2 on the Macvlan network
-     docker run -d --network=my_macvlan_network --name container2 myimage2
-     ```
-
-By using these methods, you can isolate networks between containers based on your specific requirements, whether you need complete isolation or controlled communication between containers. Custom networks, in particular, offer a flexible way to define network boundaries and control connectivity in your Docker environment.
-
 ## Realtime challenges with docker
 Docker is a powerful tool for containerization, but like any technology, it comes with its own set of challenges. Here are some common real-time challenges that users and organizations may face when working with Docker:
 
