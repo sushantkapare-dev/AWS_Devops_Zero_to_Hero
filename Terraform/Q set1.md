@@ -29,7 +29,9 @@ Finally, the third step is to apply, which is concerned with developing a repeat
 **Terraform Cloud**: Terraform Cloud is a hosted service provided by HashiCorp that offers additional features such as remote state storage, collaboration tools, and a graphical user interface for managing Terraform workspaces.
  
 ## What exactly is IAC?
-Ans: This is one of the most basic and frequently asked terraform interview questions.IAC (Infrastructure as Code) enables you to build, change, and manage your infrastructure using code rather than manual processes. The configuration files are created based on the specifications of your infrastructure, and these configurations can be edited and distributed securely within an organisation.
+IAC stands for Infrastructure as Code. It is a concept and practice in software engineering and IT operations where infrastructure provisioning and management are treated as code. In other words, IAC involves defining, configuring, and managing infrastructure resources and environments using code, just like software applications are developed and maintained.
+
+IAC tools and frameworks, such as Terraform, Ansible, Puppet, Chef, and AWS CloudFormation, facilitate the practice of Infrastructure as Code by providing the necessary abstractions, automation capabilities, and integrations with various infrastructure platforms and services. These tools allow infrastructure teams to manage complex infrastructure at scale, improve collaboration with development teams, and reduce the time and effort required to provision and maintain infrastructure resources.
  
 ## When can we use the terraform init command?
 Ans: We can use the terraform init command for the following cases:
