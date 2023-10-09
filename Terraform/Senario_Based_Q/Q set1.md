@@ -105,3 +105,86 @@ resource "azurerm_network_interface" "example" {
   resource_group_name = "example-resources"
 }
 ```
+
+Q: How can Terraform use modules to manage reusable configurations?
+
+Modules allow you to create reusable components in Terraform. For example, you can create a module to provision an AWS S3 bucket:
+```
+# s3_bucket_module/main.tf
+variable "bucket_name" {}
+variable "region" {}
+
+resource "aws_s3_bucket" "example" {
+  bucket = var.bucket_name
+  acl    = "private"
+  region = var.region
+}
+```
+Then, you can use this module in your main configuration:
+```
+provider "aws" {
+  region = "us-east-1"
+}
+
+module "s3_bucket" {
+  source     = "./s3_bucket_module"
+  bucket_name = "example-bucket"
+  region     = "us-east-1"
+}
+```
+
+Q: How can Terraform manage infrastructure across different stages of development, such as development, testing, and production?
+
+Terraform allows you to use workspaces to manage different stages of your infrastructure. For example, you can create workspaces for development, testing, and production:
+```
+terraform workspace new development
+terraform workspace new testing
+terraform workspace new production
+```
+Then, you can have separate configurations for each workspace
+```
+provider "aws" {
+  region = "us-east-1"
+}
+
+# Development configuration
+terraform {
+  workspace "development"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "DevInstance"
+  }
+}
+
+# Testing configuration
+terraform {
+  workspace "testing"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.medium"
+  tags = {
+    Name = "TestInstance"
+  }
+}
+
+# Production configuration
+terraform {
+  workspace "production"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.large"
+  tags = {
+    Name = "ProdInstance"
+  }
+}
+```
+
+
