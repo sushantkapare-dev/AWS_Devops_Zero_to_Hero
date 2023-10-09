@@ -148,31 +148,46 @@ In Terraform, you can inject dependencies from modules other than `.tfvars` file
    In this example, the `module2` module depends on `module1` and references the output value `module1.example_output` in the `example_resource` configuration.
  
 ## Explain the concept of a null resource in the context of Terraform.
-Ans: The null resource allows you to create provisioners that aren't directly linked to any existing resource. Because a null resource behaves the same as any other resource, you can configure provisioners, connection details, and other meta-parameters the same way. This gives you more control over when provisioners in the dependency graph execute.
- 
-## Can you give some examples of how Sentinel policies can be used?
-Ans: Sentinels are a great way to use Terraform to apply various rules. A few examples are provided below:
-Limit the cloud provider's capabilities.
-Examine the audit trail of Terraform Cloud operations.
-You can restrict how modules are used in the Private Module Registry.
-Make clear ownership of resources a requirement.
-Only specific resources, services, or data sources are forbidden.
-Make resource labeling a requirement.
+In Terraform, a "null_resource" is a special resource type that represents a resource with no real associated infrastructure. It serves as a mechanism for triggering actions or running arbitrary provisioning logic within a Terraform configuration, even when there's no actual resource to manage. The null_resource is often used for tasks like running local scripts, making HTTP requests, or executing custom provisioning steps that don't correspond to a tangible infrastructure resource.
  
 ## How do I write down a variable that changes due to an external source or during “Terraform apply”?
-Ans: You use it as follows: variable "my_var" { }
+In Terraform, you can define variables that can be dynamically updated during a `terraform apply` operation based on external data or other sources. This allows you to parameterize your infrastructure configurations and make them more flexible. To achieve this, you can use a combination of input variables, data sources, and possibly local values or expressions. Here's how you can do it:
+
+1. **Input Variables**: Define input variables in your Terraform configuration to represent the values that may change during `terraform apply`. Input variables allow you to parameterize your configurations.
+
+   ```hcl
+   variable "external_data" {
+     description = "An example variable for external data"
+   }
+   ```
+
+2. **Data Sources**: Use Terraform data sources to fetch the external data or values that you want to use to set the variable. Data sources allow you to query external systems, APIs, or resources to obtain dynamic information.
+
+   ```hcl
+   data "external_data_source" "example" {
+     # Configuration to fetch external data
+   }
+   ```
  
 ## Which command can be used to see a preview of the Terraform execution plan?
-Ans: Terraform plan command will generate the execution plan for the infrastructure changes Terraform will make.
+Ans: **Terraform plan** command will generate the execution plan for the infrastructure changes Terraform will make.
  
 ## In the Terraform cloud, which command is used to create new workspaces?
-Ans: To create a new workspace, use the terraform workspace new <workspace-name> command.
- 
+Ans: To create a new workspace, use the command
+```
+terraform workspace new <workspace-name>
+```
+
 ## Which command is used to validate the syntax of Terraform configuration files?
-Ans: Terraform validate is used to check whether a configuration is syntactically correct and internally consistent.
+Ans: **Terraform validate** is used to check whether a configuration is syntactically correct and internally consistent.
  
 ## Which command can be used to match the Terraform state to the actual real-world infrastructure?
-Ans: To reconcile Terraform state with actual real-world infrastructure, use the terraform apply -refresh-only command. It is the new replacement for the terraform refresh command, which is now deprecated.
+In Terraform, the terraform import command is used to match the Terraform state to the actual real-world infrastructure. This command is used when you have pre-existing infrastructure resources that were not initially managed by Terraform, and you want to start managing them with Terraform without recreating or modifying the existing resources.
+
+Here's the basic syntax for using the terraform import command:
+```
+terraform import <Terraform_resource_type>.<Terraform_resource_name> <provider_resource_id>
+```
  
 # Highlight some come differences between Terraform and Ansible.  
 
