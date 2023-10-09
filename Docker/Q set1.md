@@ -430,12 +430,6 @@ Here are some of the common networking types in Docker:
 5. **None Network**:
    - In the "none" network mode, a container does not have any network interfaces. This means it cannot communicate with the network or other containers unless you explicitly add network interfaces.
 
-6. **Custom User-Defined Networks**:
-   - Docker allows you to create custom user-defined networks using the `docker network create` command. These networks are useful for organizing and isolating containers based on your application's requirements.
-
-7. **Bridge Network with Port Mapping**:
-   - Containers attached to the default bridge network can communicate with the host and external networks if you configure port mapping. Port mapping allows you to expose container ports to the host, enabling external access to services running in containers.
-
 ## can you explain how to isolate n/w between containers
 Isolating networks between containers in Docker is a common requirement, especially when you want to ensure that containers cannot directly communicate with each other. Docker provides several networking options to achieve this isolation. Here are some methods to isolate networks between containers:
 
