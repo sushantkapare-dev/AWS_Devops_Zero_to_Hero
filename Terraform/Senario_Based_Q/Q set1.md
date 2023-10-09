@@ -1,4 +1,4 @@
-Q: How can Terraform help in provisioning infrastructure resources on AWS?
+## Q: How can Terraform help in provisioning infrastructure resources on AWS?
 
 Terraform allows you to define infrastructure as code, and with the AWS provider, you can easily provision and manage AWS resources. For example, you can create an AWS EC2 instance using Terraform:
 ```
@@ -15,7 +15,7 @@ resource "aws_instance" "example" {
 }
 ```
 
-Q: How can Terraform handle infrastructure changes safely?
+## Q: How can Terraform handle infrastructure changes safely?
 
 Terraform uses a state file to track the current state of your infrastructure. When you modify your Terraform configuration, it will compare the new state with the previous state and create a plan to apply the changes safely. For instance, you can update the instance type of the existing AWS EC2 instance:
 ```
@@ -28,7 +28,7 @@ resource "aws_instance" "example" {
 }
 ```
 
-Q: How can Terraform manage different environments, such as development, staging, and production?
+## Q: How can Terraform manage different environments, such as development, staging, and production?
 
 Terraform allows you to use variable files to customize configurations for different environments. For example, you can use a separate dev.tfvars file for the development environment:
 ```
@@ -55,7 +55,7 @@ resource "aws_instance" "example" {
 }
 ```
 
-Q: How can Terraform provision resources on multiple cloud providers simultaneously?
+## Q: How can Terraform provision resources on multiple cloud providers simultaneously?
 
 Terraform supports multiple cloud providers, and you can define resources for each provider in the same configuration. For example, provisioning an Azure Virtual Machine along with an AWS EC2 instance:
 ```
@@ -106,7 +106,7 @@ resource "azurerm_network_interface" "example" {
 }
 ```
 
-Q: How can Terraform use modules to manage reusable configurations?
+## Q: How can Terraform use modules to manage reusable configurations?
 
 Modules allow you to create reusable components in Terraform. For example, you can create a module to provision an AWS S3 bucket:
 ```
@@ -133,7 +133,7 @@ module "s3_bucket" {
 }
 ```
 
-Q: How can Terraform manage infrastructure across different stages of development, such as development, testing, and production?
+## Q: How can Terraform manage infrastructure across different stages of development, such as development, testing, and production?
 
 Terraform allows you to use workspaces to manage different stages of your infrastructure. For example, you can create workspaces for development, testing, and production:
 ```
