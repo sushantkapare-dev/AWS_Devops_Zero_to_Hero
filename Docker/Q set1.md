@@ -121,14 +121,6 @@ A Docker image registry is a centralized repository for storing and sharing Dock
 
 3. **Search and Discovery**: Registries offer search and discovery features, making it easy to find images by name, tags, or other metadata.
 
-4. **Versioning**: Registries support versioning of images using tags. This allows users to specify which version of an image they want to pull.
-
-5. **Webhooks**: Some registries support webhooks, which trigger events (e.g., on image push) that can be used to automate workflows, such as triggering CI/CD pipelines.
-
-6. **Replication**: Enterprise-level registries often support replication to mirror images across different regions or data centers for redundancy and performance.
-
-7. **Scalability**: Registries are designed to scale and handle a large number of images, users, and requests.
-
 ## What is docker-compose
 Docker Compose is a tool for defining and running multi-container Docker applications. It allows you to define a multi-container application in a single file called a "docker-compose.yml" file, which specifies the services, networks, and volumes needed for your application. Docker Compose simplifies the process of managing complex, multi-container applications and orchestrating their deployment.
 
@@ -136,18 +128,11 @@ Docker Compose is a tool for defining and running multi-container Docker applica
 In Docker, a namespace is a Linux kernel feature that provides process isolation and resource separation. Namespaces allow multiple processes to run on a single host while isolating them from each other. Docker leverages namespaces to create containers, ensuring that each container has its own isolated environment, including its own file system, network interfaces, and process tree.
 
 Docker uses several namespaces to achieve this isolation, including:
-
 1. **PID Namespace**: This namespace isolates the process IDs (PIDs) of containers. Each container has its own PID namespace, which means that processes running inside a container are isolated from processes outside the container. From inside a container, the process IDs start from 1, making it appear as if the container has its own init process.
 
 2. **Network Namespace**: The network namespace isolates network-related resources such as network interfaces, routing tables, and firewall rules. Each container has its own network namespace, allowing containers to have their own network stack and IP addresses. Docker can create virtual Ethernet pairs to connect containers within the same network namespace or bridge containers to the host network.
 
 3. **Mount Namespace**: The mount namespace isolates the file system mounts for containers. Each container has its own isolated file system, which is typically layered on top of the host's file system using the Union File System (UnionFS). This allows containers to have their own isolated file system without affecting the host or other containers.
-
-4. **UTS Namespace**: The UTS namespace isolates the hostname and domain name of containers. This means that each container can have its own hostname and domain name, providing further isolation.
-
-5. **IPC Namespace**: The IPC namespace isolates inter-process communication (IPC) mechanisms like System V IPC and POSIX message queues. Containers in different IPC namespaces cannot directly communicate via these mechanisms.
-
-6. **User Namespace**: The user namespace allows mapping of user and group IDs between the container and the host. This provides a level of user privilege isolation, allowing non-root users inside a container to have different user and group IDs than the host.
 
 ## What is dockerhub
 Docker Hub is a cloud-based platform provided by Docker, Inc. that serves as a public registry for Docker images. It is one of the most popular and widely used container image registries in the Docker ecosystem. Docker Hub allows developers and organizations to publish, store, and share Docker images, making it easier to distribute containerized applications and components.
@@ -155,19 +140,19 @@ Docker Hub is a cloud-based platform provided by Docker, Inc. that serves as a p
 ## Diff between COPY and ADD cmd in Dockerfile
 In a Dockerfile, both the COPY and ADD commands are used to copy files and directories from the host system into the image being built. However, there are some key differences between the two commands:
 
-Purpose:
+**Purpose**:
 
 COPY: The primary purpose of the COPY command is to copy files and directories from the host system to the image. It is a straightforward and predictable command that copies files and directories as-is without any additional processing.
 
 ADD: The ADD command, in addition to copying files and directories, has some extra capabilities. It can also perform additional tasks like extracting compressed archives (e.g., .tar, .zip) and fetching remote resources (e.g., URLs) and then copying them into the image. This added functionality makes ADD more versatile but also potentially more complex.
 
-Caching:
+**Caching**:
 
 COPY: The COPY command is subject to Docker's build cache. If the source files haven't changed, Docker can reuse the cached layer during subsequent builds, which can speed up the build process.
 
 ADD: The ADD command, because of its additional functionality, is less predictable in terms of caching. If you use ADD to fetch remote resources or extract archives, Docker may not be able to effectively cache the operation, which can result in slower builds.
 
-Usage Recommendations:
+**Usage Recommendations**:
 
 COPY: Use COPY when you simply want to copy files and directories from the host to the image. It's a good choice for straightforward file copying operations where you don't need the extra features of ADD. It also helps maintain better caching behavior.
 
