@@ -2,7 +2,8 @@
 Terraform is an open-source infrastructure as code (IAC) tool developed by HashiCorp. It is used for provisioning and managing infrastructure resources in a declarative and automated way. Terraform allows you to define your infrastructure and services using a domain-specific language (DSL) called HashiCorp Configuration Language (HCL) or JSON. With Terraform, you can describe the desired state of your infrastructure, and it will automatically create, update, or delete resources to match that desired state.
 
 ## Diff between Terraform , Pulimi and aws cloud-formation
-**Terraform:**
+**Terraform**:--
+
 **Syntax**: Terraform uses its own domain-specific language (DSL) called HashiCorp Configuration Language (HCL), which is a declarative language for defining infrastructure resources and their configurations.
 
 **Multi-Cloud Support**: Terraform is known for its multi-cloud support. It can manage resources across various cloud providers (e.g., AWS, Azure, Google Cloud), as well as on-premises infrastructure and other platforms.
@@ -11,20 +12,25 @@ Terraform is an open-source infrastructure as code (IAC) tool developed by Hashi
 
 **Community and Ecosystem**: Terraform has a large and active community, which has contributed to a wide range of available modules and resources.
 
-Pulumi:
-Syntax: Pulumi uses general-purpose programming languages like Python, TypeScript, and others to define infrastructure. This means you can leverage the full power of these languages to describe your infrastructure.
-Multi-Cloud Support: Like Terraform, Pulumi also supports multiple cloud providers, enabling you to manage resources across different clouds.
-State Management: Pulumi uses a stack-based approach for managing state. Each stack corresponds to a particular deployment environment, making it easier to manage different configurations for the same infrastructure.
-Programming Language Flexibility: Pulumi's use of programming languages allows for more flexibility and code reuse. It also enables easier integration with existing codebases.
-Community and Ecosystem: While Pulumi has a growing community, it may not be as extensive as Terraform's, which means there might be fewer community-contributed resources and modules available.
+**Pulumi**:--
 
-AWS CloudFormation:
-Syntax: AWS CloudFormation uses JSON or YAML templates to describe infrastructure. It follows a declarative approach similar to Terraform.
-AWS-Centric: CloudFormation is tightly integrated with AWS services and is primarily focused on managing AWS resources. It doesn't provide the same multi-cloud support as Terraform or Pulumi.
-Stack Management: CloudFormation uses stacks to manage infrastructure. Each stack represents a collection of AWS resources and their configurations.
-Integration with AWS Services: CloudFormation provides deep integration with AWS services, including the ability to create custom resources and define stack outputs.
-AWS Managed Services: AWS offers managed services like AWS CloudFormation StackSets and AWS Cloud Development Kit (CDK) to complement CloudFormation for more advanced use cases.
+**Syntax**: Pulumi uses general-purpose programming languages like Python, TypeScript, and others to define infrastructure. This means you can leverage the full power of these languages to describe your infrastructure.
 
+**Multi-Cloud Support**: Like Terraform, Pulumi also supports multiple cloud providers, enabling you to manage resources across different clouds.
+
+**State Management**: Pulumi uses a stack-based approach for managing state. Each stack corresponds to a particular deployment environment, making it easier to manage different configurations for the same infrastructure.
+
+**Community and Ecosystem**: While Pulumi has a growing community, it may not be as extensive as Terraform's, which means there might be fewer community-contributed resources and modules available.
+
+**AWS CloudFormation**:--
+
+**Syntax**: AWS CloudFormation uses JSON or YAML templates to describe infrastructure. It follows a declarative approach similar to Terraform.
+
+**AWS-Centric**: CloudFormation is tightly integrated with AWS services and is primarily focused on managing AWS resources. It doesn't provide the same multi-cloud support as Terraform or Pulumi.
+
+**Stack Management**: CloudFormation uses stacks to manage infrastructure. Each stack represents a collection of AWS resources and their configurations.
+
+**Integration with AWS Services**: CloudFormation provides deep integration with AWS services, including the ability to create custom resources and define stack outputs.
 
 ## what is terraform resorces and how to use it
 In Terraform, resources are the fundamental building blocks used to define and manage infrastructure components. Resources represent the various cloud or infrastructure objects you want to create and configure, such as virtual machines, networks, storage, databases, and more. You declare resources in your Terraform configuration files, specifying their type, attributes, and settings. Terraform then uses these configurations to create, update, or delete the corresponding resources to match your desired infrastructure state.
@@ -493,4 +499,3 @@ I recently worked on a project to deploy a high-availability web application acr
 - Cost Management: Running resources in multiple regions can increase costs, so we closely monitored usage and optimized where possible.
 
 Overall, the project demonstrated the power of Terraform in managing complex multi-region AWS deployments and improving the reliability and scalability of the web application.
-
