@@ -1,5 +1,5 @@
 ## What do you know about terraform?
-Ans: Terraform is a DevOps application that helps us create infrastructure and cloud data centres while keeping track of what was created and where. It is a tool that helps us build infrastructure safely and efficiently. Terraform can manage both popular service providers and custom in-house solutions.
+Terraform is an open-source infrastructure as code (IaC) tool developed by HashiCorp. It is designed to help automate the provisioning and management of infrastructure resources such as virtual machines, networks, storage, databases, and more, in a declarative and version-controlled manner. Terraform is widely used by DevOps and infrastructure teams to create, modify, and destroy infrastructure resources across various cloud providers and on-premises environments.
  
 ## What steps comprise Terraform's core workflow?
 Ans: Terraform's core workflow consists of three steps:
