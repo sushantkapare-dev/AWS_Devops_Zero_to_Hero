@@ -83,13 +83,9 @@ Docker containers and virtual machines (VMs) are both technologies used for virt
 
 3. **Portability:** Docker containers are highly portable. They package an application and its dependencies into a single image that can run consistently on any system that supports Docker, regardless of the underlying infrastructure.
 
-4. **Start-up Time:** Containers have a fast start-up time, typically measured in seconds. This makes them suitable for microservices architectures and dynamic scaling.
+4. **Resource Efficiency:** Because containers share the host OS kernel and use less overhead, they are more resource-efficient than VMs. Multiple containers can run on the same host without significant performance degradation.
 
-5. **Resource Efficiency:** Because containers share the host OS kernel and use less overhead, they are more resource-efficient than VMs. Multiple containers can run on the same host without significant performance degradation.
-
-6. **Dependency Management:** Docker uses a Dockerfile and images to manage dependencies and define the application's environment. This simplifies the management of dependencies and ensures consistency across different environments.
-
-7. **Ecosystem:** Docker has a robust ecosystem of tools and services for container orchestration, management, and deployment, such as Docker Compose, Docker Swarm, and Kubernetes (when used in conjunction with Docker containers).
+5. **Dependency Management:** Docker uses a Dockerfile and images to manage dependencies and define the application's environment. This simplifies the management of dependencies and ensures consistency across different environments.
 
 **Virtual Machines (VMs):**
 
@@ -99,19 +95,12 @@ Docker containers and virtual machines (VMs) are both technologies used for virt
 
 3. **Portability:** VMs are less portable than containers. Moving VMs between different hypervisors or cloud providers can be challenging due to differences in hardware and virtualization technologies.
 
-4. **Start-up Time:** VMs have a slower start-up time compared to containers, typically measured in minutes. This makes them less suitable for dynamic scaling and rapid deployment.
+4. **Resource Efficiency:** VMs consume more resources (CPU, memory, and storage) compared to containers because of the duplicated OS instances.
 
-5. **Resource Efficiency:** VMs consume more resources (CPU, memory, and storage) compared to containers because of the duplicated OS instances.
-
-6. **Dependency Management:** VMs rely on traditional methods for managing dependencies, such as configuration management tools (e.g., Puppet or Chef) and custom OS images.
-
-7. **Ecosystem:** VMs have their own ecosystem of virtualization technologies and management tools, such as VMware, VirtualBox, and various cloud-based hypervisors.
+5. **Dependency Management:** VMs rely on traditional methods for managing dependencies, such as configuration management tools (e.g., Puppet or Chef) and custom OS images.
 
 ## What is docker images and docker image registry
-Docker images and Docker image registries are fundamental components of the Docker container ecosystem. They play crucial roles in packaging, distributing, and running containerized applications. Here's an explanation of each:
-
 **Docker Images:**
-
 A Docker image is a lightweight, standalone, and executable package that contains all the necessary code, libraries, dependencies, and configuration required to run an application. Docker images serve as the blueprint for creating Docker containers. Key characteristics of Docker images include:
 
 1. **Immutable**: Docker images are typically immutable, meaning they don't change after they're built. If changes are needed, a new image version is created.
@@ -120,11 +109,7 @@ A Docker image is a lightweight, standalone, and executable package that contain
 
 3. **Versioned**: Docker images can have multiple versions, identified by tags. Tags provide a way to label and manage different versions or variants of the same image.
 
-4. **Reproducible**: Docker images are designed to be reproducible, ensuring that you can create the same image with the same configuration and code on different systems.
-
-5. **Base Images**: Images can be based on other images. Many images are built on top of base images, which provide a common foundation (e.g., official Linux distributions) for building custom applications.
-
-6. **Dockerfile**: Docker images are typically created from a Dockerfile, which is a text file that contains a series of instructions for building the image. These instructions include copying files, installing software, and setting environment variables.
+4. **Base Images**: Images can be based on other images. Many images are built on top of base images, which provide a common foundation (e.g., official Linux distributions) for building custom applications.
 
 **Docker Image Registries:**
 
