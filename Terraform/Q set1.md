@@ -60,9 +60,6 @@ Local utilities, for instance generating random numbers for unique resource name
 ## What exactly is a Terraform cloud?
 Ans: The Terraform cloud is a platform that enables teams to collaborate on Terraform projects on-demand or in response to specific circumstances. It is inextricably linked to Terraform's processes and data. A private registry hosts Terraform modules.
  
-## Describe in detail Oracle Cloud Infrastructure.
-Ans: Oracle Cloud is a cloud computing service that provides storage, servers, applications, services, and networks via a global network of managed data centers managed by Oracle Corporation. These services are available at all times via the Internet.
- 
 ## What exactly is a "terraform backend"?
 Ans: Any Terraform setup can include a backend, which defines two key things:
 Where are surgeries performed?
@@ -121,15 +118,8 @@ The Terraform code will no longer manage the resource if it is destroyed.
 By removing API resources.
 Importing action will also help with resource depletion.
  
-## What are some of Terraform Azure Provider's most recent considerations?
-Ans: New data resources, such as Azure batch certificate, which aids in certificate administration, are included in recent editions. In networking, this resource is used to control the prefix. The Azure app service has been improved, and bugs have been addressed.
- 
 ## If something goes wrong, how will you manage and regulate rollbacks?
 Ans: To make the previous code version the new and current one in your VCS, you must recommit it. This would launch the terraform run command, which would run the previous code. Because Terraform is more declarative, you'll make certain that everything in the code returns to its original state. If the state file was corrupted, you would suggest using Terraform Enterprise's State Rollback feature.
-
-
-# Frequently Asked Questions
-
 
 ## What are all the command lines that can be asked in Terraform Interview?
 All the command lines from where terraform interview questions can arise are
