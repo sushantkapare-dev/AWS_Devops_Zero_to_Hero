@@ -2,7 +2,7 @@
 
 Answer: Docker enables the easy creation of containerized application instances that can run independently on any environment. By containerizing components of the web application, such as the web server, application server, and database, Docker allows you to replicate and deploy multiple instances of the same container on different hosts. With Docker’s orchestration tools like Docker Swarm or Kubernetes, you can manage these containers across a cluster of machines. This way, you can scale the web application horizontally by adding more containers as needed to meet the increasing demand.
 
-# Question 2: How can Docker facilitate the migration to a microservices architecture?
+## Question 2: How can Docker facilitate the migration to a microservices architecture?
 
 Answer: Docker is an excellent choice for implementing a microservices architecture. By breaking down the monolithic application into smaller, specialized microservices, each functionality can be encapsulated within a Docker container. Docker containers offer a lightweight, isolated environment, which ensures that each microservice runs independently without interfering with others. This isolation simplifies the deployment and management of individual services. Moreover, Docker Compose can be used to define multi-container applications, making it easier to run and test different microservices together.
 
