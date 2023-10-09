@@ -175,7 +175,7 @@ Containers in Docker do not typically restart by themselves automatically unless
 
 4. **Monitoring and Alerting**: Implement monitoring and alerting solutions to detect container failures or other issues. When a failure is detected, an external system can trigger actions like restarting the container.
 
-**What are Docker Volumes?**
+## What are Docker Volumes?
 
 Docker volumes are directories or filesystems that are managed by Docker and associated with one or more containers. They can be used to:
 
@@ -187,7 +187,7 @@ Docker volumes are directories or filesystems that are managed by Docker and ass
 
 4. **Manage Data Separately**: Volumes are separate from the container's file system, which means you can manage data independently of the container's lifecycle.
 
-**Where to Store Docker Volumes:**
+## Where to Store Docker Volumes?
 
 Docker volumes can be stored in various locations on the host system, depending on your use case and requirements:
 
@@ -212,7 +212,7 @@ Docker volumes can be stored in various locations on the host system, depending 
 
 3. **External Storage Solutions**: For more advanced use cases, you can use external storage solutions like network-attached storage (NAS) or cloud storage for Docker volumes. This allows you to store data on remote or distributed storage systems while still using Docker volumes to manage it.
 
-## What is diff docker component
+## What is diff docker component?
 Docker is a containerization platform that consists of several key components that work together to enable the creation, deployment, and management of containers. Here are the core Docker components:
 
 1. **Docker Daemon (dockerd)**:
@@ -241,9 +241,6 @@ Docker is a containerization platform that consists of several key components th
 
 9. **Dockerfile**:
    - A Dockerfile is a text file that contains instructions for building a Docker Image. It specifies the base image, environment variables, application code, dependencies, and other configuration details. Docker uses the Dockerfile to create a reproducible image.
-
-10. **Docker Swarm (optional)**:
-    - Docker Swarm is Docker's native clustering and orchestration solution. It allows you to create and manage a swarm of Docker nodes, turning them into a single virtual Docker host. Swarm provides features for scaling, load balancing, and high availability.
 
 ## Diff between CMD and ENTRYPOINT in docker
 In a Dockerfile, both `CMD` and `ENTRYPOINT` are used to specify the command that will be executed when a container is run. However, they have different purposes and behaviors:
