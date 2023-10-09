@@ -35,9 +35,11 @@ To enable state file versioning, you need to choose a compatible remote state ba
 ## Question 4: What are Terraform modules, and how do they benefit infrastructure management?
 Terraform modules are self-contained packages of Terraform configurations that encapsulate specific pieces of infrastructure or reusable components. They provide a way to organize, reuse, and share Terraform configurations across multiple projects. Some benefits of using Terraform modules include:
 
-Abstraction and Reusability: Modules allow you to abstract complex infrastructure patterns into reusable components, reducing duplication and promoting consistency.
-Encapsulation: Modules hide implementation details, making it easier to consume the infrastructure they define.
-Versioning and Distribution: Modules can be versioned, enabling you to manage dependencies effectively and share them through version control systems or module registries.
+**Abstraction and Reusability**: Modules allow you to abstract complex infrastructure patterns into reusable components, reducing duplication and promoting consistency.
+
+**Encapsulation**: Modules hide implementation details, making it easier to consume the infrastructure they define.
+
+**Versioning and Distribution**: Modules can be versioned, enabling you to manage dependencies effectively and share them through version control systems or module registries.
 
 ## Question 5: How can you pass variables to Terraform modules?
 Variables can be passed to Terraform modules using the module block in the root configuration. For example:
