@@ -282,3 +282,131 @@ terraform {
 ```
 After initializing the configuration with terraform init, Terraform will store the state remotely in the specified S3 bucket, enabling a team to work on the same infrastructure collaboratively.
 
+## Scenario 1: You are working on a project that involves deploying an AWS EC2 instance using Terraform. Your team wants to ensure that the instance is automatically terminated and recreated if it becomes unhealthy. How would you achieve this using Terraform?
+
+To achieve automatic termination and recreation of an AWS EC2 instance when it becomes unhealthy, you can use an Auto Scaling Group (ASG) with a Health Check configured. The ASG will monitor the health of instances and automatically replace any unhealthy ones. Here’s an example Terraform code to set up the ASG:
+```
+resource "aws_launch_template" "example" {
+  name          = "example-launch-template"
+  image_id      = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+
+  // Additional configuration for the instance, like security groups, tags, etc.
+}
+
+resource "aws_autoscaling_group" "example" {
+  name                 = "example-asg"
+  max_size             = 3
+  min_size             = 1
+  desired_capacity     = 2
+  health_check_grace_period = 300 // Optional: Allows a grace period for instance initialization
+  health_check_type    = "EC2"
+
+  launch_template {
+    id      = aws_launch_template.example.id
+    version = "$Latest"
+  }
+
+  // Additional configuration for the ASG, like subnets, load balancers, etc.
+}
+```
+In this example, we define an AWS Launch Template with the desired configuration for the EC2 instance, including the AMI, instance type, and other optional settings. Then, we create an Auto Scaling Group that references the Launch Template. The health_check_type is set to "EC2," which means that the ASG will rely on EC2 status checks to determine the health of the instances.
+
+## Scenario 2: You are deploying resources on Azure using Terraform. Your team wants to make use of managed identities to access Azure resources securely. How can you incorporate managed identities into your Terraform configuration?
+
+To use managed identities in your Terraform configuration for accessing Azure resources securely, you can define an Azure Provider block with use_msi (Managed Service Identity) set to true. This will allow Terraform to automatically use the managed identity associated with the resource during deployment. Here's an example:
+```
+provider "azurerm" {
+  features {}
+
+  use_msi = true // Enable Managed Service Identity for the Azure Provider
+
+  // Additional configuration for authentication, like subscription_id, tenant_id, etc.
+}
+
+resource "azurerm_resource_group" "example" {
+  name     = "example-resource-group"
+  location = "East US"
+}
+```
+In this example, we enable Managed Service Identity (use_msi = true) in the Azure Provider block. When Terraform runs, it will use the managed identity of the environment to authenticate with Azure and deploy the resource group.
+
+Please note that to use managed identities, the environment where Terraform is executed must have the necessary permissions to access the Azure resources specified in the Terraform configuration.
+
+## Scenario 3: You are managing multiple environments (e.g., development, staging, production) for your application infrastructure using Terraform. You want to maintain separate state files for each environment to avoid potential conflicts. How can you configure Terraform to achieve this separation?
+
+To maintain separate state files for different environments, you can leverage Terraform’s workspace feature. Workspaces allow you to create multiple instances of the same infrastructure with isolated state files. Here’s an example of how to use workspaces:
+```
+provider "aws" {
+  region = "us-east-1"
+}
+
+terraform {
+  backend "s3" {
+    bucket = "my-terraform-state-bucket"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
+variable "environment" {}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "ExampleInstance-${var.environment}"
+  }
+}
+```
+
+In this example, the Terraform backend is configured to store the state file in an S3 bucket. The variable "environment" allows you to specify the environment (e.g., "development," "staging," "production") for each workspace. When you execute Terraform commands, you can select the appropriate workspace using the following commands:
+```
+terraform workspace new development
+terraform workspace new staging
+terraform workspace new production
+```
+After creating the workspaces, you can select the desired workspace for your current session:
+```
+terraform workspace select development
+terraform workspace select staging
+terraform workspace select production
+```
+Each workspace will have its state file, ensuring that changes to one environment do not impact the others.
+
+## Scenario 4:You work for a software development company, and your team is in charge of deploying and managing the company’s infrastructure on various cloud providers. Your company recently decided to use Terraform to provision infrastructure. You need to create a Terraform configuration to deploy a simple web application on AWS. The application consists of an EC2 instance running a web server, an S3 bucket to store static files, and an RDS database for data storage. How would you design the Terraform configuration for this scenario?
+To provision the infrastructure as described, you can create a main.tf file with the following content:
+```
+# Configure AWS provider
+provider "aws" {
+  region = "us-east-1"
+}
+
+# Create an EC2 instance
+resource "aws_instance" "web_server" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "WebServer"
+  }
+}
+
+# Create an S3 bucket
+resource "aws_s3_bucket" "static_files_bucket" {
+  bucket = "my-static-files-bucket"
+  acl    = "private"
+}
+
+# Create an RDS database
+resource "aws_db_instance" "database" {
+  identifier            = "my-database-instance"
+  engine                = "mysql"
+  instance_class        = "db.t2.micro"
+  allocated_storage     = 20
+  username              = "db_user"
+  password              = "db_password"
+  publicly_accessible   = false
+  skip_final_snapshot   = true
+}
+```
+In this configuration, the AWS provider is specified with the region “us-east-1.” We then define three resources: aws_instance, aws_s3_bucket, and aws_db_instance, representing the EC2 instance, S3 bucket, and RDS database, respectively. You can use the appropriate AMI ID for your preferred AWS region, and ensure you replace the placeholder values like bucket names, usernames, and passwords with actual values.
