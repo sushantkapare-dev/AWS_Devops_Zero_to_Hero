@@ -2,13 +2,14 @@
 Terraform is an open-source infrastructure as code (IAC) tool developed by HashiCorp. It is used for provisioning and managing infrastructure resources in a declarative and automated way. Terraform allows you to define your infrastructure and services using a domain-specific language (DSL) called HashiCorp Configuration Language (HCL) or JSON. With Terraform, you can describe the desired state of your infrastructure, and it will automatically create, update, or delete resources to match that desired state.
 
 ## Diff between Terraform , Pulimi and aws cloud-formation
+**Terraform:**
+**Syntax**: Terraform uses its own domain-specific language (DSL) called HashiCorp Configuration Language (HCL), which is a declarative language for defining infrastructure resources and their configurations.
 
-Terraform:
-Syntax: Terraform uses its own domain-specific language (DSL) called HashiCorp Configuration Language (HCL), which is a declarative language for defining infrastructure resources and their configurations.
-Multi-Cloud Support: Terraform is known for its multi-cloud support. It can manage resources across various cloud providers (e.g., AWS, Azure, Google Cloud), as well as on-premises infrastructure and other platforms.
-State Management: Terraform uses a state file to keep track of the current infrastructure state, which allows for tracking changes and performing updates.
-Provider Ecosystem: Terraform has a rich ecosystem of providers, which are plugins that enable you to interact with different cloud and infrastructure platforms.
-Community and Ecosystem: Terraform has a large and active community, which has contributed to a wide range of available modules and resources.
+**Multi-Cloud Support**: Terraform is known for its multi-cloud support. It can manage resources across various cloud providers (e.g., AWS, Azure, Google Cloud), as well as on-premises infrastructure and other platforms.
+
+**State Management**: Terraform uses a state file to keep track of the current infrastructure state, which allows for tracking changes and performing updates.
+
+**Community and Ecosystem**: Terraform has a large and active community, which has contributed to a wide range of available modules and resources.
 
 Pulumi:
 Syntax: Pulumi uses general-purpose programming languages like Python, TypeScript, and others to define infrastructure. This means you can leverage the full power of these languages to describe your infrastructure.
