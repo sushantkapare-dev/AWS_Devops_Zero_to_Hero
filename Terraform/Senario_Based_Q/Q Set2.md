@@ -1,0 +1,2 @@
+## Question 1: How do you handle resource dependencies in Terraform?
+Terraform automatically manages dependencies between resources based on the resource relationships defined in the configuration. However, in some cases, you might have a custom dependency requirement that isn’t automatically detected. In such cases, you can use the “depends_on” attribute to explicitly define the dependency between resources. For example:
