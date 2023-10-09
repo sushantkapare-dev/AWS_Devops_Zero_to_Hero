@@ -1,4 +1,4 @@
-# Question:- How can Docker help in scaling the web application efficiently?
+## Question:- How can Docker help in scaling the web application efficiently?
 
 Answer: Docker enables the easy creation of containerized application instances that can run independently on any environment. By containerizing components of the web application, such as the web server, application server, and database, Docker allows you to replicate and deploy multiple instances of the same container on different hosts. With Docker’s orchestration tools like Docker Swarm or Kubernetes, you can manage these containers across a cluster of machines. This way, you can scale the web application horizontally by adding more containers as needed to meet the increasing demand.
 
