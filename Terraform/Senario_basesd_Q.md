@@ -28,3 +28,30 @@ resource "aws_instance" "example" {
 }
 ```
 
+Q: How can Terraform manage different environments, such as development, staging, and production?
+
+Terraform allows you to use variable files to customize configurations for different environments. For example, you can use a separate dev.tfvars file for the development environment:
+```
+# dev.tfvars
+instance_count = 2
+instance_type = "t2.micro"
+```
+```
+# main.tf
+provider "aws" {
+  region = "us-east-1"
+}
+
+variable "instance_count" {}
+variable "instance_type" {}
+
+resource "aws_instance" "example" {
+  count         = var.instance_count
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = var.instance_type
+  tags = {
+    Name = "ExampleInstance-${count.index}"
+  }
+}
+```
+
