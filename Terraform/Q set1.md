@@ -116,7 +116,36 @@ terraform {
 ```
  
 ## How can you inject dependencies from modules other than .tfvars files or CLI arguments?
-Ans: The default Terraform method would be to use remote-state to lookup the outputs of other modules. In the community, it is also common to use terragrunt, a tool for explicitly injecting variables between modules.
+In Terraform, you can inject dependencies from modules other than `.tfvars` files or CLI arguments by using Terraform's built-in mechanism for module outputs and variable references. This allows you to create a structured and modular approach to defining dependencies between different parts of your infrastructure code. Here's how you can do it:
+
+1. **Module Outputs**: Modules can define output values that represent data or resource attributes that you want to share with other parts of your configuration. These outputs act as a way to export data from a module.
+
+   Example of a module with an output:
+
+   ```hcl
+   # Module in module1/main.tf
+   output "example_output" {
+     value = aws_instance.example.id
+   }
+   ```
+
+2. **Dependency Module**: In another module or configuration where you want to inject this dependency, you can reference the output of the module using the `module` block.
+
+   Example of using the output from the `module1` module:
+
+   ```hcl
+   # Module in module2/main.tf
+   module "module1" {
+     source = "./module1"
+   }
+
+   resource "example_resource" "example" {
+     depends_on = [module.module1]
+     instance_id = module.module1.example_output
+   }
+   ```
+
+   In this example, the `module2` module depends on `module1` and references the output value `module1.example_output` in the `example_resource` configuration.
  
 ## Explain the concept of a null resource in the context of Terraform.
 Ans: The null resource allows you to create provisioners that aren't directly linked to any existing resource. Because a null resource behaves the same as any other resource, you can configure provisioners, connection details, and other meta-parameters the same way. This gives you more control over when provisioners in the dependency graph execute.
