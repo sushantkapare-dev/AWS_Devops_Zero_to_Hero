@@ -341,12 +341,6 @@ Transferring a file from one container to another in Docker can be achieved usin
      cat /host/shared/myfile.txt
      ```
 
-4. **Using a Network Service or API**:
-
-   - In some cases, you may transfer files between containers using network services or APIs. For example, you can run a web server in one container to serve files and make HTTP requests to download those files from another container.
-
-   - This method may involve more complex setup and is suitable when the other methods are not feasible.
-
 ## Diff between Dockerfile , Docker-compose and Docker-swarm
 Dockerfile, Docker Compose, and Docker Swarm are three distinct components in the Docker ecosystem, each serving a different purpose and offering unique functionality. Here's a comparison of these three components:
 
