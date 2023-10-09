@@ -72,11 +72,6 @@ The Docker lifecycle refers to the various stages and processes involved in work
 9. **Cleaning Up**:
    - It's important to clean up unused containers and images to save disk space. You can use commands like `docker system prune` and `docker container prune` for this purpose.
 
-10. **Retiring and Archiving**:
-    - Eventually, containers and images may need to be retired or archived when they are no longer in use.
-
-Understanding and effectively managing these stages in the Docker lifecycle is essential for containerized application development and deployment. Docker simplifies the process of creating, running, and managing containers, making it a popular choice for containerization in DevOps and application deployment workflows.
-
 ## Tell me about docker container and diff from VM
 Docker containers and virtual machines (VMs) are both technologies used for virtualization and isolation, but they have some fundamental differences in how they achieve these goals. Here's an overview of Docker containers and how they differ from VMs:
 
