@@ -7,9 +7,8 @@ The first step is to write, which includes developing infrastructure in code (co
 The second step is to plan ahead to see how the changes will look before implementing them. 
 Finally, the third step is to apply, which is concerned with developing a repeatable infrastructure.    
 
-
 ## Discuss some critical features of Terraform.
-Declarative Configuration: Terraform uses a declarative syntax to define infrastructure resources, which means you specify what you want the infrastructure to look like, rather than writing scripts that describe how to achieve that state.
+**Declarative Configuration**: Terraform uses a declarative syntax to define infrastructure resources, which means you specify what you want the infrastructure to look like, rather than writing scripts that describe how to achieve that state.
 
 **Multi-Cloud and Multi-Provider Support**: Terraform supports multiple cloud providers, including AWS, Azure, Google Cloud, and many others. It also supports on-premises and other infrastructure providers, allowing you to manage hybrid or multi-cloud environments.
 
@@ -34,9 +33,9 @@ Ans: This is one of the most basic and frequently asked terraform interview ques
  
 ## When can we use the terraform init command?
 Ans: We can use the terraform init command for the following cases:
-Plugin Installation
-Backend Initialization
-Child Module Installation
+**Plugin Installation**
+**Backend Initialization**
+**Child Module Installation**
  
 ## What exactly is Terraform D, and how does it function?
 Ans: Terraform D is a Windows plugin compatible with nearly all in-service systems. The terraform init looks for plugins in the following directory by default.
