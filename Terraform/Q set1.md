@@ -1,6 +1,3 @@
-
-# Terraform Interview Questions
-
 ## What do you know about terraform?
 Ans: Terraform is a DevOps application that helps us create infrastructure and cloud data centres while keeping track of what was created and where. It is a tool that helps us build infrastructure safely and efficiently. Terraform can manage both popular service providers and custom in-house solutions.
  
