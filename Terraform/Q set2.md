@@ -241,23 +241,6 @@ resource "aws_instance" "example" {
 ```
 In this case, aws_instance.example depends implicitly on aws_security_group.example_sg because it references it in the security_groups attribute.
 
-**Using Output Values**:
-You can use output values to pass information about one resource to another. This is useful for establishing dependencies and sharing information between resources or modules.
-```
-output "instance_id" {
-  value = aws_instance.example.id
-}
-
-resource "aws_security_group_rule" "example" {
-  type = "ingress"
-  # Depends on the instance ID
-  security_group_id = aws_security_group.example_sg.id
-  # Use output from aws_instance.example
-  source_security_group_id = aws_instance.example.id
-}
-```
-In this example, the aws_security_group_rule resource depends on the aws_instance resource because it uses the instance's ID as a source for the security group rule.
-
 **Module Dependencies**:
 If you are using Terraform modules, you can establish dependencies between modules by referencing output values from one module in the configuration of another module.
 ```module "vpc" {
@@ -278,7 +261,8 @@ terraform taint <resource_address>
 ```
 It's important to exercise caution when tainting resources, as it can lead to the recreation of resources, which may result in downtime or other disruptions. Tainting should be used judiciously and in situations where it is necessary to bring a resource back to a consistent and desired state.
 
-## What is terraform state rollback
+## What is terraform state rollback?
+The usual way to represent "rolling back" in Terraform is to put your configuration in version control and commit before each change, and then you can use your version control system's features to revert to an older configuration if needed
 
 ## Do you think Terraform is platform-agnostic
 Terraform is designed to be platform-agnostic in the sense that it can be used to provision and manage infrastructure resources on a wide range of cloud and on-premises platforms without being tied to a specific cloud provider or technology stack. It achieves this platform-agnosticism through the use of "providers."
@@ -339,8 +323,8 @@ You can set TF_LOG to one of the log levels (in order of decreasing verbosity) T
 
 Setting TF_LOG to JSON outputs logs at the TRACE level or higher, and uses a parseable JSON encoding as the formatting.
 
-## what comand to reconsile the actual state and desired state
-In Terraform, the command to reconcile the actual state of your infrastructure with the desired state defined in your configuration files is the terraform apply command. This command is used to create, update, or delete resources as needed to bring the infrastructure in line with your configuration.
+## what command to reconsile the actual state and desired state
+In Terraform, the command to reconcile the actual state of your infrastructure with the desired state defined in your configuration files is the **terraform apply** command. This command is used to create, update, or delete resources as needed to bring the infrastructure in line with your configuration.
 
 ## what is Templete file in data source in terraform
 In Terraform, the template_file data source is used to render a template file and retrieve its content as a variable that can be used within your Terraform configuration. This can be helpful when you need to generate dynamic configuration files or scripts as part of your infrastructure provisioning process.
@@ -421,33 +405,7 @@ Please note that the above code assumes that the server has appropriate director
 **Apply Terraform Configuration**:
 Run terraform apply to execute the Terraform configuration, which will render the configuration files and potentially apply the installation and configuration steps if you've set up the shell provisioner accordingly.
 
-## Key feature of terraform
-
-**Key features and concepts of Terraform include**:
-
-Declarative Configuration: You define your infrastructure's desired state in configuration files, specifying the resources you need and their properties. Terraform takes care of figuring out how to make the actual infrastructure match this desired state.
-
-Provider-Based: Terraform supports a wide range of cloud providers (e.g., AWS, Azure, Google Cloud), as well as various other infrastructure platforms (e.g., Docker, Kubernetes, on-premises servers). Each provider has its own set of resources and configurations that you can manage.
-
-Resource Management: Terraform allows you to create, update, and delete infrastructure resources such as virtual machines, networks, storage, databases, and more. Resources are defined in Terraform configuration files.
-
-Dependency Management: You can define dependencies between resources to ensure they are created or destroyed in the correct order.
-
-State Management: Terraform maintains a state file that keeps track of the current state of your infrastructure. This state file is used to plan and apply changes, and it helps Terraform understand what needs to be updated or recreated.
-
-Plan and Apply: Terraform follows a two-step process. First, you run terraform plan to preview the changes that will be applied to your infrastructure. Then, you execute terraform apply to make those changes. This ensures you can review and approve changes before they are applied.
-
-Modularity and Reusability: Terraform configurations can be organized into modules, allowing you to reuse and share infrastructure code. This promotes modularity and makes it easier to manage complex infrastructures.
-
-Version Control: Terraform configurations are typically stored in version control systems (e.g., Git) to track changes, collaborate with others, and maintain an audit trail.
-
-## Define IAC 
-IAC stands for "Infrastructure as Code." It is a software engineering approach and practice that allows infrastructure and environments to be defined, configured, and managed using code and automation tools. Instead of manually setting up servers, networks, and other infrastructure components, IAC enables you to describe and deploy infrastructure using code, making it more predictable, repeatable, and scalable.
-
-## What is "terraform D"
-Terraform D is a Windows plugin compatible with nearly all in-service systems. The terraform init looks for plugins in the following directory by default.
-
-## Explain recent project you have work on
+## Explain recent project you have work on:- 
 
 **Project: AWS Multi-Region High Availability Web Application Deployment**
 
@@ -489,5 +447,3 @@ I recently worked on a project to deploy a high-availability web application acr
 
 - Cross-Region Latency: Managing data replication and latency between regions required careful consideration.
 - Cost Management: Running resources in multiple regions can increase costs, so we closely monitored usage and optimized where possible.
-
-Overall, the project demonstrated the power of Terraform in managing complex multi-region AWS deployments and improving the reliability and scalability of the web application.
