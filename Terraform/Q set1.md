@@ -9,11 +9,25 @@ Finally, the third step is to apply, which is concerned with developing a repeat
 
 
 ## Discuss some critical features of Terraform.
-Ans: Terraform assists us in dealing with our frameworks as code and developing them when required. The key features are:
-A control centre that permits clients to notice capacities.
-The capacity to interpret HCL code into JSON design.
-A setup language that upholds the introduction.
-A module count that monitors the number of modules applied to the frameworks.
+Declarative Configuration: Terraform uses a declarative syntax to define infrastructure resources, which means you specify what you want the infrastructure to look like, rather than writing scripts that describe how to achieve that state.
+
+**Multi-Cloud and Multi-Provider Support**: Terraform supports multiple cloud providers, including AWS, Azure, Google Cloud, and many others. It also supports on-premises and other infrastructure providers, allowing you to manage hybrid or multi-cloud environments.
+
+**Dependency Resolution**: Terraform automatically manages resource dependencies, ensuring that resources are created, updated, or destroyed in the correct order to maintain a consistent state.
+
+**State Management**: Terraform maintains a state file that keeps track of the current state of your infrastructure. This state allows Terraform to determine what changes need to be made to reach the desired state and avoid unnecessary modifications.
+
+**Plan and Apply**: Terraform provides a two-step process for making changes to your infrastructure. First, you generate an execution plan to preview changes without actually applying them. Then, you apply the plan to make the desired changes to your infrastructure.
+
+**Modular Configuration**: Terraform allows you to organize your infrastructure code into reusable modules, which can simplify configuration management and promote best practices.
+
+**Terraform Providers**: Providers are plugins that enable Terraform to interact with various infrastructure platforms. Terraform has a rich ecosystem of providers that cover a wide range of cloud, infrastructure, and service providers.
+
+**Input Variables and Outputs**: Terraform supports input variables and output values, making it easy to parameterize your configurations and share information between different parts of your infrastructure code.
+
+**Versioning and Collaboration**: Terraform integrates with version control systems like Git, allowing teams to collaborate on infrastructure code and manage changes over time.
+
+**Terraform Cloud**: Terraform Cloud is a hosted service provided by HashiCorp that offers additional features such as remote state storage, collaboration tools, and a graphical user interface for managing Terraform workspaces.
  
 ## What exactly is IAC?
 Ans: This is one of the most basic and frequently asked terraform interview questions.IAC (Infrastructure as Code) enables you to build, change, and manage your infrastructure using code rather than manual processes. The configuration files are created based on the specifications of your infrastructure, and these configurations can be edited and distributed securely within an organisation.
