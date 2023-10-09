@@ -21,10 +21,13 @@ resource "aws_instance" "web_server" {
 ## Question 2: What are the benefits of using remote state management in Terraform?
 Remote state management in Terraform offers several advantages, especially in a collaborative or large-scale infrastructure setup. Some key benefits include:
 
-Consistency and Reliability: Centralized state management ensures all team members work with the latest version of the state file, reducing the chances of conflicting changes.
-Concurrency and Locking: Remote state backends provide locking mechanisms to prevent concurrent modifications, avoiding potential data corruption.
-Secure Storage: Many remote backends, like Terraform Cloud, AWS S3, or HashiCorp Consul, offer robust security features to protect sensitive infrastructure data.
-Terraform Collaboration: Remote state allows teams to collaborate efficiently by sharing state files without compromising security.
+**Consistency and Reliability**: Centralized state management ensures all team members work with the latest version of the state file, reducing the chances of conflicting changes.
+
+**Concurrency and Locking**: Remote state backends provide locking mechanisms to prevent concurrent modifications, avoiding potential data corruption.
+
+**Secure Storage**: Many remote backends, like Terraform Cloud, AWS S3, or HashiCorp Consul, offer robust security features to protect sensitive infrastructure data.
+
+**Terraform Collaboration**: Remote state allows teams to collaborate efficiently by sharing state files without compromising security.
 
 ## Question 3: How can you enable versioning on a Terraform state file?
 To enable state file versioning, you need to choose a compatible remote state backend. For instance, if you’re using AWS S3 as your backend, versioning can be enabled directly in the S3 bucket. By default, S3 buckets support versioning, and you can enable it using the AWS Management Console or the AWS CLI.
