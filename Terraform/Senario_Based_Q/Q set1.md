@@ -187,4 +187,98 @@ resource "aws_instance" "example" {
 }
 ```
 
+## Q: How can Terraform handle dependencies between resources?
+
+Terraform automatically manages resource dependencies based on the configuration. For example, if you have an AWS RDS database that depends on an EC2 security group, Terraform will create the security group before the RDS database:
+```
+resource "aws_security_group" "example" {
+  name_prefix = "example-"
+}
+
+resource "aws_db_instance" "example" {
+  engine           = "mysql"
+  instance_class   = "db.t2.micro"
+  allocated_storage = 20
+  identifier_suffix = "example"
+  vpc_security_group_ids = [aws_security_group.example.id]
+}
+```
+
+## Q: How can Terraform manage secrets or sensitive information?
+
+Terraform supports input variables, and you can use environment variables or files to provide sensitive information like passwords or API keys. For example, you can use environment variables to set the AWS access and secret keys:
+```
+provider "aws" {
+  region     = "us-east-1"
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
+}
+```
+you can provide the values using environment variables:
+```
+export TF_VAR_aws_access_key="your_access_key"
+export TF_VAR_aws_secret_key="your_secret_key"
+```
+
+## Q: How can Terraform handle resource dependencies across different modules?
+
+Terraform allows you to define explicit dependencies between resources across different modules using module outputs. For example, if you have a VPC module that creates a VPC, and a separate EC2 module that requires the VPC ID:
+```
+# VPC module (vpc_module/main.tf)
+resource "aws_vpc" "example" {
+  cidr_block = "10.0.0.0/16"
+}
+
+output "vpc_id" {
+  value = aws_vpc.example.id
+}
+```
+```
+# EC2 module (ec2_module/main.tf)
+variable "vpc_id" {}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+  vpc_security_group_ids = [aws_security_group.example.id]
+  subnet_id     = aws_subnet.example.id
+}
+
+resource "aws_security_group" "example" {
+  # ... security group rules ...
+}
+
+resource "aws_subnet" "example" {
+  vpc_id = var.vpc_id
+}
+```
+Then, in your main configuration, you can pass the VPC ID from the VPC module to the EC2 module:
+```
+provider "aws" {
+  region = "us-east-1"
+}
+
+module "vpc" {
+  source = "./vpc_module"
+}
+
+module "ec2" {
+  source  = "./ec2_module"
+  vpc_id = module.vpc.vpc_id
+}
+```
+
+## Q: How can Terraform handle remote state management?
+
+Terraform allows you to store the state file remotely for collaboration and consistency. You can use backend configurations to specify the remote state storage. For example, using AWS S3 as the backend:
+```
+terraform {
+  backend "s3" {
+    bucket = "example-tfstate-bucket"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+```
+After initializing the configuration with terraform init, Terraform will store the state remotely in the specified S3 bucket, enabling a team to work on the same infrastructure collaboratively.
 
