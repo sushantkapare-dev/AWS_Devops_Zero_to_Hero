@@ -185,12 +185,6 @@ As a DevOps engineer working with Kubernetes (K8s), my role involves managing th
 
 9. **Backup and Disaster Recovery:** I plan and implement backup and disaster recovery strategies for K8s workloads and data. This ensures data resilience and business continuity in case of failures.
 
-10. **Troubleshooting and Support:** I assist development teams in troubleshooting issues related to application deployments and K8s infrastructure. I also provide support during incidents and outages to restore services quickly.
-
-11. **Documentation and Training:** I maintain documentation for deployment procedures, configurations, and best practices. I also provide training to development teams on K8s concepts and best practices.
-
-12. **Stay Informed:** The world of K8s and DevOps is ever-evolving. I continuously stay informed about new K8s features, best practices, and emerging technologies to ensure that our K8s infrastructure remains up-to-date and efficient.
-
 ## How can you create cluster?
 Creating a Kubernetes cluster, whether managed in the cloud or on-premises, involves several steps and considerations. I'll provide a high-level overview of the process for both scenarios:
 
@@ -236,8 +230,6 @@ Creating an on-premises Kubernetes cluster typically involves more manual steps 
 
 9. **Monitoring and Management:** Implement monitoring and logging solutions (e.g., Prometheus, Grafana, ELK stack) and backup strategies to ensure cluster reliability and recoverability.
 
-Creating an on-premises Kubernetes cluster typically requires more planning, hardware provisioning, and manual setup compared to managed cloud offerings. The exact steps may vary depending on your specific on-premises infrastructure and requirements.
-
 ## what is affinity, tent and toleration?
 In the context of Kubernetes, affinity, taints, and tolerations are mechanisms used to influence the scheduling and placement of pods on nodes within a cluster. They help you define rules and constraints for how pods should be distributed across the available nodes.
 
@@ -280,8 +272,6 @@ A node is a working machine in Kubernetes cluster which is also known as a minio
 
 4. **EndpointSlices:** In more recent Kubernetes versions, Kube-proxy has transitioned to using EndpointSlices, which improves scalability and performance when managing a large number of endpoints (Pods).
 
-In summary, Kube-proxy is responsible for managing network routing, load balancing, and service discovery within a Kubernetes cluster. It ensures that traffic to Services reaches the appropriate Pods, regardless of the node on which they are running.
-
 **CNI (Container Networking Interface):**
 
 1. **Network Plugin System:** CNI is an interface and standard for connecting container runtimes (e.g., Docker, containerd) to various network plugins. It provides a consistent way to configure networking for containers and Pods.
@@ -309,14 +299,6 @@ Here are some of the key capabilities and components of Istio:
 
 5. **Observability:** Istio offers robust observability tools, including distributed tracing (with Jaeger or Zipkin), metrics collection (with Prometheus), and Grafana dashboards. These tools help you gain insights into the behavior of your microservices and troubleshoot issues.
 
-6. **Traffic Telemetry:** Istio collects telemetry data about network traffic between services. This data can be used to monitor performance, detect anomalies, and generate alerts.
-
-7. **Fault Injection and Testing:** Istio allows you to inject faults and delays into your services for testing purposes. This helps you simulate real-world conditions and verify how your applications handle failures.
-
-8. **Extensible:** Istio is highly extensible and can be integrated with other tools and platforms. You can use custom Envoy filters, web assembly (Wasm) modules, and adapters to extend Istio's functionality.
-
-Istio deploys a sidecar proxy (based on Envoy) alongside each microservice in your cluster. This sidecar handles network traffic and enforces policies configured through Istio control plane components, such as Pilot, Mixer, Citadel, and Galley.
-
 ## why we go with containers?
 Containers offer several benefits that make them a popular choice for software development and deployment. Here are some compelling reasons why organizations and developers choose to use containers:
 
@@ -332,16 +314,6 @@ Containers offer several benefits that make them a popular choice for software d
 
 6. **Version Control**: Container images can be versioned, making it easy to track changes and roll back to previous versions when issues arise. This enhances version control and simplifies the release management process.
 
-7. **Dependency Management**: Containers allow you to package all dependencies with the application, reducing the risk of compatibility issues and dependency conflicts. This simplifies software distribution and updates.
-
-8. **DevOps and CI/CD**: Containers are well-suited for DevOps practices and continuous integration/continuous deployment (CI/CD) pipelines. They enable automated testing, deployment, and rollback processes, improving development and release workflows.
-
-9. **Security**: Containers can be configured with fine-grained security controls, helping to isolate applications and limit their privileges. Tools like Docker Security Scanning and container orchestration platforms provide security features to further protect containerized applications.
-
-10. **Microservices**: Containers are a natural fit for building and deploying microservices-based architectures. They enable each microservice to run in its own container, facilitating independent development, scaling, and management of microservices.
-
-11. **Resource Isolation**: Containers can be configured to allocate specific CPU and memory resources, ensuring that applications do not monopolize system resources and causing performance degradation for other services.
-
 ## what happen when 2 selectores having same name in namespace?
 In Kubernetes, when you have two or more selectors with the same name within the same namespace, it can lead to potential conflicts and unexpected behavior when managing resources like Services, Network Policies, and Deployments.
 
@@ -352,8 +324,6 @@ Selectors are labels used to match resources with other resources, typically wit
 2. **Resource Ambiguity**: In other scenarios, if you have multiple resources (e.g., Deployments, Pods) using the same label selector, it can become difficult to identify which resource corresponds to which. This can make resource management and troubleshooting challenging, as it may not be clear which resources are affected when you apply changes or debug issues.
 
 3. **Network Policy Challenges**: If you are using Network Policies to control network access between Pods based on selectors, having multiple selectors with the same name can create ambiguity and unexpected network behavior. Network Policies might not work as expected, leading to security or connectivity issues.
-
-To avoid these issues, it's essential to ensure that selectors within the same namespace have unique names or label combinations to clearly differentiate resources. By giving each resource a unique selector, you can maintain clear and predictable behavior when managing Services, Network Policies, and other resources.
 
 ## what happen when liveness probe is failed?
 When a liveness probe fails in Kubernetes, it signifies that the application running in a container is unresponsive or in an unhealthy state. Kubernetes continuously monitors the container's health using liveness probes, and when a failure occurs, Kubernetes takes action based on the configured probe settings. Typically, the following happens:
@@ -445,22 +415,6 @@ As a DevOps engineer working on Kubernetes (K8s) projects, troubleshooting is a 
 8. **Monitoring and Alerts**:
    - Set up monitoring and alerting tools (e.g., Prometheus, Grafana) to proactively detect and respond to issues.
    - Created custom alerts and dashboards to track specific application metrics.
-
-9. **Security Vulnerabilities**:
-   - Conducted security scans and vulnerability assessments on container images.
-   - Patched or updated vulnerable images and applied security best practices.
-
-10. **Cluster Upgrades**:
-    - Planned and executed Kubernetes cluster upgrades.
-    - Resolved issues related to API changes and deprecated features.
-
-11. **Continuous Integration/Continuous Deployment (CI/CD)**:
-    - Debugged pipeline failures and integration issues with Kubernetes deployments.
-    - Ensured that CI/CD workflows are aligned with K8s best practices.
-
-12. **Logs and Auditing**:
-    - Set up centralized log collection and analysis using tools like Elasticsearch, Fluentd, and Kibana (EFK) or Loki and Grafana.
-    - Conducted auditing and compliance checks to ensure adherence to security and organizational policies.
 
 ## How trffic outside reach to pod ingress way?
 In Kubernetes, traffic from outside the cluster reaches a Pod through the Ingress resource, which acts as an entry point or a traffic router for incoming requests. Here's how traffic from outside the cluster reaches a Pod through Ingress:
