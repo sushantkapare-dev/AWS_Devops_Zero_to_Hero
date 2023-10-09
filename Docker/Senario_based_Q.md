@@ -84,7 +84,7 @@ Solution: To optimize Docker image size, follow these best practices:
 
 Solution: To manage persistent data in Docker, consider the following approaches:
 
-**Docker Volumes: Use Docker volumes to store data externally from the containers. Volumes are independent of container lifecycles, making them ideal for persistent storage. Create a volume using:
+**Docker Volumes**: Use Docker volumes to store data externally from the containers. Volumes are independent of container lifecycles, making them ideal for persistent storage. Create a volume using:
 ```
 docker volume create <volume_name>
 ```
@@ -92,7 +92,7 @@ Then, mount the volume to your container using:
 ```
 docker run -v <volume_name>:<container_path> <image_name>
 ```
-2. Docker Bind Mounts: If you need to use a specific directory on the host machine for data persistence, utilize Docker bind mounts. Bind mounts link a directory or file on the host to a directory in the container.
+**Docker Bind Mounts**: If you need to use a specific directory on the host machine for data persistence, utilize Docker bind mounts. Bind mounts link a directory or file on the host to a directory in the container.
 ```
 docker run -v /host/path:/container/path <image_name>
 ```
