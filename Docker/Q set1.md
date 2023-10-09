@@ -175,37 +175,6 @@ Containers in Docker do not typically restart by themselves automatically unless
 
 4. **Monitoring and Alerting**: Implement monitoring and alerting solutions to detect container failures or other issues. When a failure is detected, an external system can trigger actions like restarting the container.
 
-## what is docker-volume and where to store?
-In Docker, a "volume" refers to a mechanism that allows data to persist across containers and be shared between containers. It's a way to manage and store data separately from the container itself, ensuring that the data survives even if the container is stopped, removed, or replaced. Docker volumes are useful for scenarios where you need to store configuration files, databases, logs, or any other data that needs to be preserved or shared among containers.
-
-Here are some key points about Docker volumes:
-
-1. **Persistence**: Volumes provide a way to persist data generated or used by containers. When a container is removed, the data in the volume is not deleted, making it suitable for databases or other data that should survive container lifecycle changes.
-
-2. **Shareability**: Volumes can be shared between multiple containers. This is useful when you have multiple containers that need access to the same data.
-
-3. **Docker Manageable**: Docker manages volumes, ensuring their availability and integrity. You can create, list, inspect, and remove volumes using Docker commands.
-
-4. **Types of Volumes**: Docker supports various types of volumes, including local volumes (which store data on the host machine), named volumes (which have a user-friendly name associated with them), and bind mounts (which directly map a host file or directory into a container).
-
-To create a Docker volume, you can use the `docker volume create` command. For example:
-
-```bash
-docker volume create myvolume
-```
-
-This creates a named volume called "myvolume."
-
-To use a volume in a container, you can specify it in the `docker run` command with the `-v` or `--volume` option. For example:
-
-```bash
-docker run -d --name mycontainer -v myvolume:/path/in/container myimage
-```
-
-In this command, the "myvolume" volume is mounted at the specified path inside the container.
-
-Where to store Docker volumes depends on your use case and requirements. Docker manages the storage location for named volumes, and they are typically stored within the Docker data directory on the host machine. You can check the location of Docker volumes using the `docker volume inspect` command.
-
 **What are Docker Volumes?**
 
 Docker volumes are directories or filesystems that are managed by Docker and associated with one or more containers. They can be used to:
