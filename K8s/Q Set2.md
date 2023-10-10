@@ -19,23 +19,6 @@ To make your container image more secure and reduce its size, consider the follo
 5. Clean Up Temporary Files:
    Remove temporary files, cache, and artifacts created during the build process. This can be done in the same Dockerfile to minimize image size.
 
-To further reduce the size of the container image:
-
-6. Enable Docker Image Layer Caching:
-   Utilize layer caching in your CI/CD pipeline to avoid re-downloading and rebuilding layers that have not changed. This can significantly speed up the build process.
-
-7. Use a .dockerignore File:
-   Create a `.dockerignore` file to specify which files and directories should be excluded from the image. This prevents unnecessary files from being included, reducing the image size.
-
-8. Compress Artifacts:
-   Compress static assets and resources before adding them to the image. This can help reduce the overall image size without sacrificing functionality.
-
-9. Optimize Image Layers:
-   Group related commands in your Dockerfile to take advantage of layer caching and minimize the number of layers in your final image.
-
-10. Remove Unnecessary Services:
-    Disable or remove any services or daemons running inside the container that are not required for your application to function properly.
-
 ## What’s the difference between 𝗸𝘂𝗯𝗲𝗰𝘁𝗹 𝗰𝗼𝗿𝗱𝗼𝗻 𝗻𝗼𝗱𝗲 and 𝗸𝘂𝗯𝗲𝗰𝘁𝗹 𝗱𝗿𝗮𝗶𝗻 𝗻𝗼𝗱𝗲 command.
 The "kubectl create node" command is not a standard Kubernetes command and is not used for creating nodes in a cluster. On the other hand, the "kubectl drain node" command is used to safely evict all the pods from a node, which prepares the node for maintenance or removal. It ensures that the workloads running on the node are gracefully moved to other nodes in the cluster, maintaining application availability during node maintenance or decommissioning.
 
