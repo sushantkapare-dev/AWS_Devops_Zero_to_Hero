@@ -4,19 +4,19 @@ Ingress Controller is a crucial component in Kubernetes that manages incoming tr
 ## Tell 𝟱 𝗯𝗲𝘀𝘁 𝗽𝗿𝗮𝗰𝘁𝗶𝗰𝗲𝘀 to make your Container Image 𝗺𝗼𝗿𝗲 𝘀𝗲𝗰𝘂𝗿𝗲 and also suggest some ways to 𝗿𝗲𝗱𝘂𝗰𝗲 𝘁𝗵𝗲 𝘀𝗶𝘇𝗲 of the Container image.
 To make your container image more secure and reduce its size, consider the following best practices:
 
-1. Use a Minimal Base Image:
+**1. Use a Minimal Base Image**:
    Start with a minimal base image like Alpine Linux or a distroless image. These images have fewer unnecessary packages and are smaller in size, reducing the attack surface and image size.
 
-2. Minimize Installed Packages:
+**2. Minimize Installed Packages**:
    Only install the necessary packages and dependencies required for your application to run. Remove any unnecessary tools or libraries that are not needed at runtime.
 
-3. Apply Security Updates:
+**3. Apply Security Updates**:
    Regularly update your base image and application dependencies to include the latest security patches. Set up automated processes to keep your image up to date.
 
-4. Implement Multi-Stage Builds:
+**4. Implement Multi-Stage Builds**:
    Use multi-stage Docker builds to separate the build environment from the runtime environment. This allows you to build your application in one stage and copy only the necessary artifacts into the final image, reducing the image size.
 
-5. Clean Up Temporary Files:
+**5. Clean Up Temporary Files**:
    Remove temporary files, cache, and artifacts created during the build process. This can be done in the same Dockerfile to minimize image size.
 
 ## What’s the difference between 𝗸𝘂𝗯𝗲𝗰𝘁𝗹 𝗰𝗼𝗿𝗱𝗼𝗻 𝗻𝗼𝗱𝗲 and 𝗸𝘂𝗯𝗲𝗰𝘁𝗹 𝗱𝗿𝗮𝗶𝗻 𝗻𝗼𝗱𝗲 command.
