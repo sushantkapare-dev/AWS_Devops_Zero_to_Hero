@@ -6,7 +6,7 @@ Once the Docker image is in the registry, the next step is to create a Kubernete
 ## Question-2: Can you explain how you would set up a highly available Kubernetes cluster?
 Setting up a highly available Kubernetes cluster requires careful planning and attention to detail. To ensure high availability, it’s important to choose a cloud provider (AWS, Azure, GCP or on-premises) infrastructure that supports redundancy and fault tolerance. The cluster should have a minimum of three nodes to allow for redundancy in case one or two nodes fail. Setting up a load balancer to distribute traffic across the nodes and configuring Kubernetes to use a highly available etcd cluster to store configuration data are also important steps. Additionally, monitoring and alerting tools should be set up to quickly identify and respond to issues. Finally, having a disaster recovery plan in place with regular backups and procedures for restoring the cluster is critical. Overall, with proper planning and attention to detail, a highly available Kubernetes cluster can provide a reliable and scalable platform for deploying and managing containerized applications.
 
-## Question-3: Can you discuss your experience with using Kubernetes network plugins such as Calico, Flannel, or Weave Net?**
+## Question-3: Can you discuss your experience with using Kubernetes network plugins such as Calico, Flannel, or Weave Net?
 Kubernetes network plugins, such as Calico, Flannel, and Weave Net, are essential components of a Kubernetes cluster that enable communication between the various components of the cluster, such as pods, nodes, and services.
 
 Calico is a popular network plugin that provides network security, network segmentation, and network policy enforcement. It is known for its high performance and ease of use, making it a popular choice for many Kubernetes deployments.
@@ -16,7 +16,7 @@ Flannel is another popular network plugin that provides network overlay support 
 Weave Net is a third popular network plugin that provides a fully featured network fabric for Kubernetes. It is known for its support for multiple networking modes, such as VLAN and overlay networking, and for its support for encrypted and unencrypted network traffic.
 
 
-**Question-5: Can you explain how you would configure resource limits and requests in a Kubernetes cluster to ensure that resources are used efficiently?**
+## Question-4: Can you explain how you would configure resource limits and requests in a Kubernetes cluster to ensure that resources are used efficiently?
 Configuring resource limits and requests in a Kubernetes cluster is an important aspect of ensuring that resources are used efficiently. Resource limits and requests are used to control the amount of CPU, memory, and other resources that a pod can use.
 
 To configure resource limits and requests, the following steps can be followed:
@@ -36,7 +36,7 @@ resources:
 
 4. Tune the resource limits and requests based on the resource utilization of the pods. If a pod is consistently hitting its resource limits, it may be necessary to increase the limits, while if a pod is consistently underutilizing its resources, it may be possible to reduce the limits or requests.
 
-**Question-6:Can you explain how you would use Kubernetes role-based access control (RBAC) to secure a cluster and its resources?**
+## Question-6:Can you explain how you would use Kubernetes role-based access control (RBAC) to secure a cluster and its resources?
 Role-based access control (RBAC) is an important security feature in Kubernetes that allows administrators to manage and control access to the cluster and its resources. RBAC allows administrators to define who can perform specific actions on specific resources within a cluster.
 
 Here are the steps to set up RBAC in a Kubernetes cluster:
