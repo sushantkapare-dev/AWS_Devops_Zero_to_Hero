@@ -79,19 +79,11 @@ Remember that if an init container fails, the pod will not start, and Kubernetes
 3. **Startup Probe**: A startup probe is a specialized probe introduced in Kubernetes 1.16 and later. It's used to determine when a container has successfully started and is ready to receive traffic. Startup probes are useful for scenarios where the container takes some time to initialize or warm up, and you want to delay marking it as "ready" until it's truly prepared to serve requests.
 
 ## What is CRD in k8s?
-In Kubernetes (K8s), a Custom Resource Definition (CRD) is an extension mechanism that allows you to define custom resources and their schema within a K8s cluster. CRDs enable you to extend the Kubernetes API and create custom resources that are specific to your applications or use cases. These custom resources can then be managed like built-in K8s resources, such as pods, services, or deployments.
+In Kubernetes (K8s), a CRD stands for Custom Resource Definition. CRDs are a way to extend the Kubernetes API and add custom resources to your cluster. They allow you to define and use custom resources, which are objects that have specific behaviors and can be managed through the Kubernetes API server, just like built-in resources such as Pods, Services, and ConfigMaps.
 
-Here are some key points about CRDs:
+CRDs enable you to define your own resource types and their schema. These custom resources can represent application-specific objects, configurations, or any other data that is not natively supported by Kubernetes. Once you define a CRD, you can create instances of your custom resources, and controllers can be developed to manage and reconcile the state of these custom resources, allowing you to automate tasks related to your specific applications.
 
-1. **Definition of Custom Resources:** With CRDs, you define your custom resources by specifying their names, structure (schema), and additional validation rules. This schema defines the structure and characteristics of your custom resources, including their fields and data types.
-
-2. **Custom Resource Instances:** Once you've defined a CRD, you can create instances of your custom resources, which are sometimes referred to as Custom Resource Objects (CROs). These instances conform to the schema you defined in the CRD.
-
-3. **Kubectl Support:** Kubectl, the command-line tool for interacting with Kubernetes clusters, provides commands for creating, updating, and managing custom resources just like it does for built-in resources. For example, you can use `kubectl create`, `kubectl get`, `kubectl describe`, and `kubectl delete` to work with custom resources.
-
-4. **Operators and Controllers:** CRDs are often used in conjunction with Operators or Controllers. An Operator is a custom controller that watches for changes to custom resources and takes actions based on those changes. For example, you could create a custom resource for a specific application, and an Operator could automatically deploy and manage instances of that application based on the custom resource specifications.
-
-5. **Custom Resource Use Cases:** CRDs are incredibly versatile and can be used for various purposes, such as defining custom application configurations, managing stateful applications, creating network policies, and more. They're particularly useful for automating complex operational tasks that involve custom logic.
+For example, you might define a CRD for a custom "Database" resource, which includes fields like name, storage size, and configuration. Then, you can create instances of this custom resource to represent different database instances in your cluster, and you can develop a controller to provision and manage these databases based on the desired state specified in the custom resources.
 
 Here's a simplified example of how you might define a Custom Resource Definition for a fictional "WebApp" resource:
 
@@ -130,10 +122,10 @@ Once you've defined the CRD, you can create instances of `WebApp` resources in y
 
 ## what is namespace and resource quota?
 **Namespace**:
-A namespace in Kubernetes is a logical partition or virtual cluster within a physical Kubernetes cluster. It allows you to create isolated environments for your applications and resources.
+A Namespace in Kubernetes is a virtual partition within a cluster that allows you to logically isolate and group resources. It provides a scope for naming and organizing objects such as Pods, Services, ConfigMaps, and more. Namespaces help in managing and organizing resources in a multi-tenant or multi-environment cluster, providing a level of isolation and access control.
 
 **Resource Quota**:
-Resource quotas in Kubernetes are used to limit the amount of CPU, memory, and other resources that can be consumed by objects (e.g., pods, services) within a namespace. They help prevent individual applications or teams from consuming all available cluster resources and ensure fair sharing of resources.
+Resource Quota, on the other hand, is a Kubernetes feature that allows you to set resource limits on the amount of CPU, memory, and other resources that can be consumed by objects within a specific Namespace. Resource Quotas help prevent resource exhaustion and ensure fair resource allocation among different teams or applications sharing the same cluster, enforcing usage constraints and avoiding one Namespace from consuming all available resources.
 
 ## What is pod?
 In Kubernetes, a Pod is the smallest deployable unit that represents a single instance of a running process in a cluster. A Pod can contain one or more containers, which are tightly coupled and share the same network namespace, storage, and other resources. Pods are the basic building blocks for deploying applications in Kubernetes, and they serve as the fundamental unit of deployment
