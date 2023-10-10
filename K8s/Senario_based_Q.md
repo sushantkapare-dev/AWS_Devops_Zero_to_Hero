@@ -47,20 +47,6 @@ Assign roles to users and service accounts: Once roles have been defined and rol
 Validate RBAC rules: After RBAC rules have been defined and role bindings have been created, administrators can validate the RBAC rules by attempting to perform actions with a user or service account that has been assigned a role. This can be done using the Kubernetes API or through the use of kubectl.
 Monitor and enforce RBAC rules: Administrators should regularly monitor and enforce RBAC rules to ensure that they are functioning correctly and that users and service accounts have the correct level of access to the cluster and its resources.
 
-**Question-7: Explain Kubernetes architecture and its components.**
-Kubernetes is a highly scalable and extensible open-source platform for managing containerized applications. The Kubernetes system consists of several components that work together to provide a complete solution for deploying, scaling, and managing containerized applications.
-
-Here are some of the key components in a Kubernetes cluster:
-
-API server: The API server is the central component in a Kubernetes cluster. It is responsible for managing the state of the cluster and exposing the Kubernetes API. The API server is the endpoint for all requests to the Kubernetes cluster.
-Etcd: Etcd is a distributed key-value store that is used to store the configuration data for the Kubernetes cluster. This data includes information about nodes, pods, and services.
-Controller Manager: The controller manager is responsible for managing the state of the cluster. It watches the API server for changes and takes action to ensure that the desired state is maintained.
-Scheduler: The scheduler is responsible for scheduling pods to run on specific nodes in the cluster. It takes into account the resource requirements of each pod, as well as the available resources on each node, to determine the best node for each pod to run on.
-Kubelet: The kubelet is the agent that runs on each node in the cluster. It is responsible for ensuring that the containers in a pod are running and healthy.
-Kube-proxy: Kube-proxy is the network proxy that runs on each node in the cluster. It is responsible for routing traffic from the network to the correct pods in the cluster.
-Container Runtime: The container runtime is responsible for pulling the images and starting containers. Kubernetes supports multiple container runtimes, including Docker, rkt, and CRI-O.
-![image](https://github.com/SushantOps/AWS_Devops_Questions_and_Answers/assets/109059766/e704a326-e9f2-4de1-9c28-13d18f8295d7)
-
 # How do you manage secrets and configuration in a Kubernetes cluster?
 Managing secrets and configuration in a Kubernetes cluster is a critical aspect of ensuring the security and reliability of your applications. Kubernetes provides several mechanisms for handling secrets and configuration, and you can choose the one that best fits your requirements. Here are some common methods:
 
