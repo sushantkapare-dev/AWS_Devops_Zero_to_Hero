@@ -3,9 +3,6 @@ Deploying an application in a Kubernetes cluster involves several steps that ens
 
 Once the Docker image is in the registry, the next step is to create a Kubernetes deployment. This involves writing a YAML file that describes the desired state of the application, such as the number of replicas and the Docker image to use. The deployment is then applied to the cluster using the kubectl apply command. After the deployment has been applied, it can be verified using the kubectl get command to ensure that the desired number of replicas are running and available.
 
-## Can you explain how you would set up a highly available Kubernetes cluster?
-Setting up a highly available Kubernetes cluster requires careful planning and attention to detail. To ensure high availability, it’s important to choose a cloud provider (AWS, Azure, GCP or on-premises) infrastructure that supports redundancy and fault tolerance. The cluster should have a minimum of three nodes to allow for redundancy in case one or two nodes fail. Setting up a load balancer to distribute traffic across the nodes and configuring Kubernetes to use a highly available etcd cluster to store configuration data are also important steps. Additionally, monitoring and alerting tools should be set up to quickly identify and respond to issues. Finally, having a disaster recovery plan in place with regular backups and procedures for restoring the cluster is critical. Overall, with proper planning and attention to detail, a highly available Kubernetes cluster can provide a reliable and scalable platform for deploying and managing containerized applications.
-
 ## Can you discuss your experience with using Kubernetes network plugins such as Calico, Flannel, or Weave Net?
 Kubernetes network plugins, such as Calico, Flannel, and Weave Net, are essential components of a Kubernetes cluster that enable communication between the various components of the cluster, such as pods, nodes, and services.
 
@@ -47,124 +44,6 @@ Assign roles to users and service accounts: Once roles have been defined and rol
 Validate RBAC rules: After RBAC rules have been defined and role bindings have been created, administrators can validate the RBAC rules by attempting to perform actions with a user or service account that has been assigned a role. This can be done using the Kubernetes API or through the use of kubectl.
 Monitor and enforce RBAC rules: Administrators should regularly monitor and enforce RBAC rules to ensure that they are functioning correctly and that users and service accounts have the correct level of access to the cluster and its resources.
 
-# How do you manage secrets and configuration in a Kubernetes cluster?
-Managing secrets and configuration in a Kubernetes cluster is a critical aspect of ensuring the security and reliability of your applications. Kubernetes provides several mechanisms for handling secrets and configuration, and you can choose the one that best fits your requirements. Here are some common methods:
-
-1. **Kubernetes Secrets**:
-   Kubernetes has a built-in resource called `Secret` for storing sensitive information such as API keys, passwords, and tokens. You can create a Secret and then mount it as a volume or use it as environment variables in your pods.
-
-   Example of creating a Secret:
-   ```yaml
-   apiVersion: v1
-   kind: Secret
-   metadata:
-     name: my-secret
-   data:
-     username: <base64-encoded-username>
-     password: <base64-encoded-password>
-   ```
-
-   Example of using a Secret in a Pod:
-   ```yaml
-   apiVersion: v1
-   kind: Pod
-   metadata:
-     name: my-pod
-   spec:
-     containers:
-     - name: my-container
-       image: my-image
-       env:
-       - name: USERNAME
-         valueFrom:
-           secretKeyRef:
-             name: my-secret
-             key: username
-       - name: PASSWORD
-         valueFrom:
-           secretKeyRef:
-             name: my-secret
-             key: password
-   ```
-
-2. **External Secrets**:
-   For more advanced secret management, you can use tools like HashiCorp Vault or external secret management controllers like the External Secrets Operator to integrate with external secret management systems. These tools allow you to centralize secret management and dynamically fetch secrets when needed.
-
-3. **ConfigMaps**:
-   While Secrets are intended for sensitive data, you can use ConfigMaps to manage non-sensitive configuration data, such as environment variables, configuration files, or command-line arguments. ConfigMaps are similar to Secrets but without the encryption.
-
-   Example of creating a ConfigMap:
-   ```yaml
-   apiVersion: v1
-   kind: ConfigMap
-   metadata:
-     name: my-config
-   data:
-     app.properties: |
-       key1=value1
-       key2=value2
-   ```
-
-   Example of using a ConfigMap in a Pod:
-   ```yaml
-   apiVersion: v1
-   kind: Pod
-   metadata:
-     name: my-pod
-   spec:
-     containers:
-     - name: my-container
-       image: my-image
-       volumeMounts:
-       - name: config-volume
-         mountPath: /etc/config
-     volumes:
-     - name: config-volume
-       configMap:
-         name: my-config
-   ```
-
-4. **Helm**:
-   If you're using Helm for managing your Kubernetes applications, you can use Helm values files to store configuration and secrets. Helm allows you to template your Kubernetes manifests and inject values at deployment time.
-
-5. **Encryption and RBAC**:
-   Ensure that RBAC (Role-Based Access Control) is properly configured to restrict access to secrets and configuration. Additionally, consider encrypting the secrets at rest in your Kubernetes cluster.
-
-6. **Secret Management Tools**:
-   Consider using secret management tools like Sealed Secrets (which uses asymmetric encryption to store secrets in your Git repository) or Kubeconfig Manager to enhance secret management capabilities.
-
-# Can you discuss your experience with tools such as ConfigMap and Secret?
-**ConfigMaps**:
-
-1. **Application Configuration**:
-   ConfigMaps are incredibly useful for storing configuration data that applications need at runtime. This could include environment variables, configuration files, or any settings that your application requires. For example, you can store database connection strings, feature flags, or even the URL of external services.
-
-2. **Pod Configuration**:
-   ConfigMaps can be mounted as volumes or used as environment variables in pod definitions. This allows you to update configuration settings without redeploying your application. This flexibility is especially valuable when dealing with microservices that share a common codebase but require different configurations.
-
-3. **Managing Multiple Environments**:
-   ConfigMaps can be used to manage configurations for different environments (e.g., development, staging, production) by creating separate ConfigMaps for each environment. This simplifies the process of promoting code from one environment to another.
-
-4. **Kubernetes Resource Configuration**:
-   ConfigMaps can also be used to configure other Kubernetes resources, such as specifying resource limits and requests for CPU and memory. This makes it easier to adjust resource allocation for pods and containers.
-
-**Secrets**:
-
-1. **Sensitive Data Management**:
-   Secrets are designed specifically for managing sensitive information like API keys, passwords, and tokens. Using Secrets ensures that this critical data is stored securely and not easily accessible to unauthorized users or applications.
-
-2. **Pod Integration**:
-   Just like ConfigMaps, Secrets can be mounted as volumes or used as environment variables in pod definitions. This enables secure access to sensitive data within your application without exposing the actual secret values in your configuration files.
-
-3. **Automated Deployment Pipelines**:
-   In continuous integration and continuous deployment (CI/CD) pipelines, Secrets can be injected into Kubernetes pods at runtime. This means that you can keep sensitive information out of your version control system and avoid accidental exposure.
-
-4. **Secret Rotation**:
-   Managing secrets also involves secret rotation practices. Regularly updating secrets and ensuring that applications can seamlessly use the updated secrets is crucial for security. Kubernetes supports this by allowing you to update a Secret's data, and pods will automatically receive the updated values.
-
-5. **Role-Based Access Control (RBAC)**:
-   Secrets should be carefully managed to prevent unauthorized access. Kubernetes RBAC can be used to control who has permission to create, update, or access Secrets within the cluster.
-
 # Can you discuss your experience with using Kubernetes auto-scaling, such as horizontal pod auto-scaling (HPA) or vertical pod auto-scaling (VPA)?
 **Horizontal Pod Auto-scaling (HPA)**:
 
@@ -199,85 +78,6 @@ Managing secrets and configuration in a Kubernetes cluster is a critical aspect 
 
 5. **Integration with Admission Controllers**:
    To use VPA effectively, I've configured admission controllers to enable automatic updates of pod resource requests and limits based on VPA recommendations.
-
-# Can you explain how you would use Kubernetes role-based access control (RBAC) to secure a cluster and its resources?
-Kubernetes Role-Based Access Control (RBAC) is a crucial feature for securing a cluster and its resources by controlling who can perform what actions within the cluster. As a DevOps engineer, I've used RBAC extensively to enforce least privilege access and ensure that only authorized users and processes can interact with the Kubernetes API and resources. Here's a step-by-step guide on how to use RBAC to secure a Kubernetes cluster:
-
-1. **Enable RBAC**:
-   Ensure that RBAC is enabled in your Kubernetes cluster. Most modern Kubernetes distributions have RBAC enabled by default, but you should verify this in your cluster configuration.
-
-2. **Create Service Accounts**:
-   Start by creating service accounts for your applications and processes. Service accounts are used to provide permissions to pods and applications running in your cluster.
-
-   ```yaml
-   apiVersion: v1
-   kind: ServiceAccount
-   metadata:
-     name: my-app-service-account
-   ```
-
-3. **Define Cluster Roles and Role Bindings**:
-   Cluster roles and role bindings are the building blocks of RBAC policies. Cluster roles specify a set of permissions (verbs) on specific resources (e.g., pods, services), while role bindings associate these roles with users or service accounts.
-
-   ```yaml
-   apiVersion: rbac.authorization.k8s.io/v1
-   kind: ClusterRole
-   metadata:
-     name: my-app-cluster-role
-   rules:
-   - apiGroups: [""]
-     resources: ["pods"]
-     verbs: ["get", "list", "create", "delete"]
-
-   ---
-   
-   apiVersion: rbac.authorization.k8s.io/v1
-   kind: ClusterRoleBinding
-   metadata:
-     name: my-app-cluster-role-binding
-   subjects:
-   - kind: ServiceAccount
-     name: my-app-service-account
-     namespace: default
-   roleRef:
-     kind: ClusterRole
-     name: my-app-cluster-role
-     apiGroup: rbac.authorization.k8s.io
-   ```
-
-4. **Create Namespaced Roles and Role Bindings (Optional)**:
-   If you want to limit access to specific namespaces, you can create namespaced roles and role bindings instead of cluster-wide ones.
-
-5. **Test Permissions**:
-   Before deploying your applications, it's essential to test the permissions to ensure they are working as expected. You can use `kubectl auth can-i` to check if a user or service account has specific permissions.
-
-   ```bash
-   kubectl auth can-i get pods --as=system:serviceaccount:default:my-app-service-account
-   ```
-
-6. **Grant Access to Users or Service Accounts**:
-   To grant access to your service accounts or users, create role bindings that associate them with the appropriate roles.
-
-   ```yaml
-   apiVersion: rbac.authorization.k8s.io/v1
-   kind: RoleBinding
-   metadata:
-     name: my-app-role-binding
-     namespace: default
-   subjects:
-   - kind: ServiceAccount
-     name: my-app-service-account
-   roleRef:
-     kind: Role
-     name: my-app-role
-     apiGroup: rbac.authorization.k8s.io
-   ```
-
-7. **Limit Permissions as Needed**:
-   Always follow the principle of least privilege. Only grant the permissions that are necessary for each user or service account. Avoid using cluster-wide roles unless they are genuinely required.
-
-8. **Regularly Review and Audit RBAC Policies**:
-   RBAC is an ongoing process. Periodically review and audit your RBAC policies to ensure they remain aligned with your security requirements and organizational needs.
 
 # Can you discuss how you would diagnose and debug issues with a Kubernetes application, such as slow performance or resource utilization problems?
 
@@ -366,103 +166,11 @@ As a DevOps engineer in this project, my primary responsibilities included:
 
 7. **Documentation and Knowledge Sharing**: Maintaining up-to-date documentation and sharing knowledge within the team to ensure everyone understood the architecture and best practices was essential but often overlooked.
 
-# 1. What is the purpose of Kubernetes Namespaces, and how do they work?
-Kubernetes Namespaces provide a way to logically partition resources within a cluster. They enable multiple teams or projects to share a Kubernetes cluster while ensuring resource isolation. By default, resources are created in the “default” namespace.
-
-To create a new namespace:
-```
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: my-namespace
-  ```
-# 2.Explain the differences between a Deployment and a StatefulSet in Kubernetes.
-Deployments are suitable for stateless applications and manage replica sets for scaling and rolling updates. StatefulSets are designed for stateful applications like databases, ensuring stable network identities and ordered pod creation.
-```
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: my-app
-spec:
-  replicas: 3
-  template:
-    metadata:
-      labels:
-        app: my-app
-    spec:
-      containers:
-      - name: my-app-container
-        image: my-app:v1
-StatefulSet Example:
-
-apiVersion: apps/v1
-kind: StatefulSet
-metadata:
-  name: my-database
-spec:
-  replicas: 3
-  serviceName: my-database
-  selector:
-    matchLabels:
-      app: my-database
-  template:
-    metadata:
-      labels:
-        app: my-database
-    spec:
-      containers:
-      - name: database
-        image: my-database:v1
-```
-        
-# 3. What are the various types of Kubernetes objects, and explain their purpose?
-In Kubernetes, objects are the building blocks used to deploy, manage, and monitor applications and resources. Some common Kubernetes objects include:
-
-Pods: The smallest deployable units in Kubernetes that represent one or more containers.
-ReplicaSets: Ensures a specified number of replicas of a Pod are running at any given time, providing high availability and scaling.
-Deployments: A declarative way to manage ReplicaSets and update applications to a new version without downtime.
-Services: An abstraction that defines a logical set of Pods and a policy to access them, enabling communication between Pods.
-ConfigMaps and Secrets: Used to manage configuration data and sensitive information, respectively.
-StatefulSets: Manages stateful applications, providing guarantees about the ordering and uniqueness of Pods.
-DaemonSets: Ensures a copy of a Pod is running on each node in the cluster.
-Jobs and CronJobs: Used to run batch processes and scheduled tasks.
-
-# 4. How do you achieve High Availability (HA) in Kubernetes?
-High Availability in Kubernetes ensures that applications remain available and operational even if some components fail. To achieve HA, consider the following practices:
-
-Deploying multiple replicas of critical components: For example, running multiple replicas of application Pods using ReplicaSets or Deployments.
-Using readiness and liveness probes: These probes determine the health of containers, helping Kubernetes make informed decisions during scaling and failover.
-Cluster Node redundancy: Run Kubernetes nodes across multiple availability zones or regions to prevent a single point of failure.
-Horizontal Pod Autoscaler (HPA): Automatically scales the number of Pods based on CPU utilization or custom metrics, ensuring the desired performance under varying loads.
-Minimizing single points of failure: By utilizing tools like Kubernetes Master HA (with multiple Master nodes) and etcd cluster for data storage, you can enhance the cluster’s resilience.
-
-# 5. What is a Kubernetes Ingress, and how does it differ from a Service?
-In Kubernetes, an Ingress is an API object that manages external access to services within the cluster. It allows external traffic to reach services by acting as a reverse proxy and forwarding requests to the appropriate services based on the rules defined. Key differences between Ingress and Service are:
-
-Layer: Ingress operates at the application layer (Layer 7) of the OSI model, while Service operates at the transport layer (Layer 4).
-Traffic routing: Ingress can route traffic based on domain names, paths, or other request attributes, providing more advanced routing options.
-SSL termination: Ingress can handle SSL termination and secure connections, which is not natively provided by Kubernetes Services.
-Single entry point: Ingress allows you to expose multiple services through a single external IP and port combination.
-
 # 6 . How can you scale applications in Kubernetes manually and automatically?
 Scaling applications in Kubernetes can be done manually and automatically:
 
 Manual scaling: You can manually scale a Deployment or ReplicaSet by updating the replica count. For example, using the kubectl scale command to increase or decrease the number of replicas.
 Automatic scaling: Kubernetes provides Horizontal Pod Autoscaler (HPA) to automatically adjust the number of replicas based on CPU utilization or custom metrics. You can define HPA using the kubectl autoscale command or YAML configuration.
-
-# 7. What is a Liveness Probe, and why is it important?
-A Liveness Probe is a crucial aspect of Kubernetes health checks. It is a diagnostic tool used to determine whether a container within a pod is alive and functioning properly. Liveness Probes help Kubernetes to recognize and handle scenarios where an application may have entered a non-responsive or faulty state.
-
-The probe works by periodically sending an HTTP request to a specified endpoint within the container. If the container responds with a success status code (2xx or 3xx), Kubernetes considers the container healthy. If, however, the container does not respond within a specified timeout period or returns a failure status code (4xx or 5xx), Kubernetes will take corrective action, such as restarting the container.
-
-Liveness Probes are essential to maintain the reliability and availability of applications running in Kubernetes clusters, ensuring that users have access to healthy and responsive services.
-
-# 8. Explain the concept of Network Policies in Kubernetes.
-Network Policies in Kubernetes are a set of rules that control the communication between pods within a cluster. By default, Kubernetes allows unrestricted communication between all pods, but Network Policies enable fine-grained control over which pods can communicate with each other.
-
-Network Policies define ingress and egress rules based on various attributes such as pod labels, namespaces, and IP addresses. These rules help to isolate and secure applications within the cluster, preventing unauthorized access and reducing the attack surface.
-
-It’s important to note that Network Policies are only enforced if the Kubernetes network plugin supports them. Examples of network plugins that support Network Policies include Calico and Cilium.
 
 # 9. How can you scale Kubernetes nodes horizontally?
 Horizontal scaling in Kubernetes involves increasing or decreasing the number of nodes in a cluster to accommodate changing workloads. To scale nodes horizontally, you can follow these steps:
@@ -473,54 +181,11 @@ b) Autoscaling: Kubernetes offers built-in support for cluster autoscaling. You 
 
 c) Node Pools (in cloud providers): Some cloud providers offer the concept of node pools, where you can define multiple sets of nodes with different characteristics. By creating an autoscaling node pool, the cloud provider will manage node scaling for you based on predefined rules.
 
-# 10 . What are Custom Resource Definitions (CRDs) in Kubernetes, and how do they extend Kubernetes functionality?
-Custom Resource Definitions (CRDs) extend the Kubernetes API and enable users to define and manage their custom resources. Essentially, CRDs allow you to define new resource types, just like built-in Kubernetes resources like Deployments and Services.
-
-CRDs enable you to create custom controllers that can watch and react to changes in these custom resources. This capability unlocks the potential for extending Kubernetes to manage new types of applications and workloads that are not natively supported.
-
-For example, if you need to manage a new type of resource, such as a custom load balancer or database, you can define a CRD to represent that resource. Then, you can create a custom controller to handle the resource’s lifecycle, allowing Kubernetes to manage it like any other native resource.
-
-CRDs play a significant role in Kubernetes operators, which are powerful, domain-specific controllers that simplify the management of complex applications.
-
-# Question 1: What is the Kubernetes Control Plane, and how does it work?
-The Kubernetes Control Plane comprises a set of components that manage and regulate the cluster’s overall state. It includes the following key components:
-
-kube-apiserver: Serves as the central API for Kubernetes, responsible for validating and processing requests from clients.
-kube-controller-manager: Manages various controllers that handle node, replication, and endpoints controllers, ensuring the desired state of the cluster.
-kube-scheduler: Assigns pods to nodes based on resource availability and various constraints.
-etcd: A distributed key-value store that stores the entire cluster’s configuration data.
-The control plane continuously watches the cluster’s state, making adjustments as required to ensure the desired state is maintained.
-
-# Question 2: What are Custom Resources in Kubernetes, and why are they useful?
-Custom Resources (CRs) in Kubernetes allow users to define their custom API resources and controllers. They extend the Kubernetes API to accommodate new kinds of objects beyond the built-in resources like pods, deployments, and services. CRs are particularly useful when you need to add domain-specific abstractions and manage applications that require specialized handling.
-
-# Question 3: Explain Horizontal Pod Autoscaling (HPA) in Kubernetes.
-Horizontal Pod Autoscaling is a Kubernetes feature that dynamically adjusts the number of replicas of a pod based on observed CPU utilization or custom metrics. It ensures that an application can handle varying levels of traffic and resource demands efficiently. The HPA controller monitors the specified metrics and automatically scales the number of pods up or down, maintaining the desired target CPU utilization.
-
-# Question 4: Describe the difference between a StatefulSet and a Deployment in Kubernetes.
-StatefulSet and Deployment are both controllers used for managing pods, but they serve different purposes:
-
-Deployment: Designed for stateless applications, it ensures a set of identical pods are running and manages rolling updates and rollbacks.
-StatefulSet: Tailored for stateful applications, it maintains the identity of each pod, providing stable network identities and storage volumes. Pods in a StatefulSet are created in a predictable order and have unique identities.
-
 # Question 5: How can you achieve multi-tenancy in Kubernetes clusters?
 Achieving multi-tenancy in Kubernetes involves creating isolated namespaces for different tenants. Each namespace acts as a virtual cluster within the main Kubernetes cluster. By properly configuring resource quotas, role-based access control (RBAC), and network policies, you can ensure that tenants have segregated resources and limited access to only their namespaces.
 
-# Question 6: What are Taints and Tolerations in Kubernetes, and how do they work together?
-Taints and Tolerations are mechanisms in Kubernetes that help control pod placement on nodes.
-
-Taints: A taint is a label applied to a node to repel certain pods from being scheduled onto it. Nodes can be tainted to indicate they should only accept specific pods or pods with certain tolerations.
-Tolerations: A toleration is a property specified in a pod’s configuration that allows it to be scheduled on nodes with specific taints. Pods with matching tolerations will ignore the taints and be scheduled on the tainted nodes.
-
 # Question 7: Explain the concept of Operators in Kubernetes.
 Operators are a method of packaging, deploying, and managing Kubernetes applications using custom resources and controllers. They extend Kubernetes’ capabilities to automate complex application-specific operations. Operators encapsulate domain knowledge and automate tasks such as software installation, configuration, and scaling. They are especially valuable when managing stateful applications and databases in Kubernetes.
-
-# Question 8: How does Kubernetes handle storage for containerized applications?
-Kubernetes provides several storage options for containers:
-
-Persistent Volumes (PVs) and Persistent Volume Claims (PVCs): PVs are storage resources provisioned by administrators, while PVCs are requested by users to use those PVs. PVCs allow pods to access storage that persists beyond the pod’s lifecycle.
-Storage Classes: Storage Classes define different storage configurations like performance characteristics and reclaim policies. They provide dynamic provisioning of PVs when requested by PVCs.
-StatefulSets: As mentioned earlier, StatefulSets are useful for stateful applications and databases that require stable storage identities.
 
 # Question 9: How can you secure communication between different components in a Kubernetes cluster?
 
@@ -530,23 +195,8 @@ Enable TLS encryption for the Kubernetes API server to ensure secure communicati
 Implement network policies to control the traffic flow between pods, ensuring only necessary communications are allowed.
 Use RBAC to define granular access controls, restricting permissions to sensitive resources.
 
-# Question 10: What is the role of kube-proxy in Kubernetes, and how does it work?
-kube-proxy is a network proxy that runs on each node in the cluster. Its primary role is to maintain network rules that allow network communication to and from pods. It facilitates load balancing for services by managing virtual IPs and routing traffic to the appropriate backend pods based on the service’s defined rules.
-
 # 1 . What is a Pod Disruption Budget (PDB) in Kubernetes, and why is it essential?
 A Pod Disruption Budget (PDB) is a resource provided by Kubernetes to ensure high availability and stability during maintenance or node failures. It defines the maximum number of pods that can be simultaneously unavailable in a deployment. By setting a PDB, you restrict the number of pod disruptions and prevent downtime beyond a specific threshold. This prevents scenarios where too many pods of a critical application go down simultaneously, risking application instability or potential failures.
-
-# 2. What is the Kubernetes Secret and ConfigMap, and how do they differ?
-Kubernetes Secret and ConfigMap are used to manage sensitive information and configuration data separately. The main differences between them are:
-
-Kubernetes Secret is used to store sensitive data, such as passwords, API tokens, or TLS certificates, in an encoded or encrypted format. It ensures data security and confidentiality.
-ConfigMap, on the other hand, is used to store configuration data, like environment variables, strings, or configuration files, in plain text. It does not provide data encryption but is ideal for non-sensitive information.
-
-# 3. Explain the concept of ResourceQuota in Kubernetes and how to implement it.
-ResourceQuota is a Kubernetes feature used to limit the resource consumption of namespaces or individual users within a namespace. It helps prevent resource exhaustion and ensures fair resource allocation in a multi-tenant cluster. To implement ResourceQuota:
-
-Define a ResourceQuota manifest with specific limits for CPU, memory, storage, and other resources.
-Apply the ResourceQuota to the desired namespace using kubectl apply -f.
 
 # 4. What are PodSecurityPolicies (PSPs) in Kubernetes, and why are they essential?
 PodSecurityPolicies (PSPs) are a cluster-level resource in Kubernetes that control the actions and capabilities available to pods. They define a set of rules that pods must adhere to before they are admitted and executed in the cluster. PSPs are essential for implementing security best practices, preventing privilege escalation, and mitigating risks associated with potentially malicious or vulnerable containers.
@@ -597,7 +247,7 @@ PriorityClass: PriorityClass is a Kubernetes resource that defines a mapping bet
 
 Additionally, administrators can define default PriorityClasses to be used when Pods don’t specify any specific PriorityClass. This helps avoid scenarios where important Pods are accidentally scheduled with low priority.
 
-# 10. How can you secure communication between Pods in a Kubernetes cluster?
+#  How can you secure communication between Pods in a Kubernetes cluster?
 Securing communication between Pods in a Kubernetes cluster is essential to protect sensitive data and prevent unauthorized access. Here are some methods to achieve this:
 
 Network Policies: Implement Kubernetes Network Policies to define the rules for communication between Pods based on labels and namespaces. This allows you to restrict access between Pods, only allowing specific Pods to communicate with each other.
