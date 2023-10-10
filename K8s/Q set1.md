@@ -14,6 +14,8 @@ There are several reasons why Kubernetes is widely adopted and considered essent
 6. **Rolling Updates and Rollbacks:** Kubernetes supports rolling updates and rollbacks for your applications. You can update your application without downtime and easily revert to a previous version if issues arise during deployment.
 
 ## explain k8s architecture?
+![image](https://github.com/SushantOps/AWS_Devops_Questions_and_Answers/assets/109059766/0a3d1257-7bac-40a8-8d4c-d2156644e855)
+
 Kubernetes (K8s) has a distributed architecture designed to provide scalability, resilience, and flexibility for containerized applications. Its architecture consists of several key components that work together to manage containerized workloads efficiently. Below, I'll explain the core components and their roles in the K8s architecture:
 
 1. **Master Node (Control Plane):**
