@@ -3,10 +3,10 @@ Deploying an application in a Kubernetes cluster involves several steps that ens
 
 Once the Docker image is in the registry, the next step is to create a Kubernetes deployment. This involves writing a YAML file that describes the desired state of the application, such as the number of replicas and the Docker image to use. The deployment is then applied to the cluster using the kubectl apply command. After the deployment has been applied, it can be verified using the kubectl get command to ensure that the desired number of replicas are running and available.
 
-**Question-2: Can you explain how you would set up a highly available Kubernetes cluster?**
+## Question-2: Can you explain how you would set up a highly available Kubernetes cluster?
 Setting up a highly available Kubernetes cluster requires careful planning and attention to detail. To ensure high availability, it’s important to choose a cloud provider (AWS, Azure, GCP or on-premises) infrastructure that supports redundancy and fault tolerance. The cluster should have a minimum of three nodes to allow for redundancy in case one or two nodes fail. Setting up a load balancer to distribute traffic across the nodes and configuring Kubernetes to use a highly available etcd cluster to store configuration data are also important steps. Additionally, monitoring and alerting tools should be set up to quickly identify and respond to issues. Finally, having a disaster recovery plan in place with regular backups and procedures for restoring the cluster is critical. Overall, with proper planning and attention to detail, a highly available Kubernetes cluster can provide a reliable and scalable platform for deploying and managing containerized applications.
 
-**Question-3: Can you discuss your experience with using Kubernetes network plugins such as Calico, Flannel, or Weave Net?**
+## Question-3: Can you discuss your experience with using Kubernetes network plugins such as Calico, Flannel, or Weave Net?**
 Kubernetes network plugins, such as Calico, Flannel, and Weave Net, are essential components of a Kubernetes cluster that enable communication between the various components of the cluster, such as pods, nodes, and services.
 
 Calico is a popular network plugin that provides network security, network segmentation, and network policy enforcement. It is known for its high performance and ease of use, making it a popular choice for many Kubernetes deployments.
@@ -15,15 +15,6 @@ Flannel is another popular network plugin that provides network overlay support 
 
 Weave Net is a third popular network plugin that provides a fully featured network fabric for Kubernetes. It is known for its support for multiple networking modes, such as VLAN and overlay networking, and for its support for encrypted and unencrypted network traffic.
 
-**Question-4: How do you handle rolling updates in a Kubernetes cluster? Can you discuss the strategies you have used to manage application updates?**
-Rolling updates in a Kubernetes cluster refers to the process of updating an application without disrupting its availability to users. This is typically achieved by gradually updating the application pods one-by-one, rather than updating all of them at once.
-
-There are several strategies that can be used to manage rolling updates in a Kubernetes cluster:
-
-RollingUpdate: This is the default update strategy in Kubernetes, and involves updating the pods one-by-one, starting with a single pod, and proceeding to the next one only after the first one has successfully been updated.
-Recreate: In this strategy, all pods are deleted and recreated at once, which results in a brief disruption in service availability.
-Blue-Green Deployment: This involves running two versions of the application in parallel, with one version being updated while the other remains unchanged. When the update is complete, traffic is redirected to the updated version.
-Canary Deployment: This involves gradually rolling out the updated application to a small subset of users, and gradually increasing the percentage of users who receive the update over time. This allows for testing and validation of the updated application before it is rolled out to all users.
 
 **Question-5: Can you explain how you would configure resource limits and requests in a Kubernetes cluster to ensure that resources are used efficiently?**
 Configuring resource limits and requests in a Kubernetes cluster is an important aspect of ensuring that resources are used efficiently. Resource limits and requests are used to control the amount of CPU, memory, and other resources that a pod can use.
