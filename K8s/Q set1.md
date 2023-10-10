@@ -34,15 +34,6 @@ Kubernetes (K8s) has a distributed architecture designed to provide scalability,
 
    - **CRI (Container Runtime Interface):** CRI is an interface between Kubelet and the container runtime. It standardizes how Kubelet communicates with container runtimes, allowing for flexibility in choosing different container runtimes.
 
-3. **Networking:**
-   - Kubernetes relies on a network overlay or plugin to enable pod-to-pod communication. Common solutions include Calico, Flannel, and Weave. These network plugins handle routing, IP address assignment, and network policies within the cluster.
-
-4. **Add-Ons:**
-   - Kubernetes can be extended with various add-ons to enhance its functionality. These add-ons include the Kubernetes Dashboard for web-based cluster management, DNS for service discovery, and Ingress controllers for managing external access to services.
-
-5. **Custom Resources and Extensions:**
-   - Kubernetes allows for custom resource definitions (CRDs) and extensions, which enable you to define and manage custom resources and controllers. This extensibility is used for creating custom resources like Operators that automate complex application management tasks.
-
 ## diff bet docker-swarm and k8s and docker ?
 
 **Docker:**
