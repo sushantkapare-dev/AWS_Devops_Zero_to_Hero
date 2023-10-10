@@ -226,29 +226,11 @@ In Kubernetes, it's generally not recommended to schedule regular application Po
 A node is a working machine in Kubernetes cluster which is also known as a minion. They are working units which can be physical, VM, or a cloud instance.
 
 ## what are kubeproxy and CNI?
-**Kube-proxy** and **CNI (Container Networking Interface)** are two essential components in Kubernetes that play crucial roles in networking within a Kubernetes cluster:
-
 **Kube-proxy:**
-
-1. **Service Proxy:** Kube-proxy is a network proxy that runs on each node in a Kubernetes cluster. Its primary function is to maintain network rules on nodes, which allows network communication to reach the correct Pods and Services.
-
-2. **Load Balancing:** Kube-proxy implements load balancing for Services of type "LoadBalancer" or "NodePort." It distributes traffic to the appropriate backend Pods associated with a Service.
-
-3. **IPTables or Userspace Modes:** Kube-proxy can operate in either IPTables mode or userspace proxy mode. In IPTables mode (the default in most Kubernetes clusters), it uses IPTables rules to manage network traffic routing and load balancing. In userspace mode, it relies on a userspace proxy program.
-
-4. **EndpointSlices:** In more recent Kubernetes versions, Kube-proxy has transitioned to using EndpointSlices, which improves scalability and performance when managing a large number of endpoints (Pods).
+KubeProxy, short for Kubernetes Proxy, is a network proxy service responsible for facilitating network communication to and from services within a Kubernetes cluster. It helps route traffic to the appropriate pods (containers) based on service endpoints and manages network policies, such as load balancing and routing.
 
 **CNI (Container Networking Interface):**
-
-1. **Network Plugin System:** CNI is an interface and standard for connecting container runtimes (e.g., Docker, containerd) to various network plugins. It provides a consistent way to configure networking for containers and Pods.
-
-2. **Network Plugins:** CNI allows you to choose from a variety of network plugins that can implement different networking models, such as bridged networking, overlay networks, or even direct hardware access. Popular CNI plugins include Calico, Flannel, Weave, and many others.
-
-3. **Pod Network:** Each Kubernetes cluster typically uses a specific CNI plugin to manage Pod networking. This plugin is responsible for assigning IP addresses to Pods, setting up network routes, and handling network policies.
-
-4. **Isolation and Security:** CNI plugins offer network isolation and security features, such as network policies, which allow you to control the flow of traffic between Pods.
-
-5. **Integration with Kubernetes:** Kubernetes integrates with CNI by invoking CNI plugins during Pod creation to set up the network interfaces and configurations required for communication between Pods and external networks.
+ CNI, or Container Network Interface, is a specification and set of plugins that define how networking is configured and managed for containers within a Kubernetes cluster. CNIs provide the necessary networking capabilities for containers to communicate with each other and external resources. These plugins handle tasks like IP address allocation, routing, and network isolation, allowing containers in different pods to communicate securely.
 
 ## what is Istio in k8s?
 **Istio** is an open-source service mesh platform that can be deployed on Kubernetes and other container orchestration systems. It is designed to help manage and secure microservices-based applications by providing a set of powerful networking, security, and observability features.
