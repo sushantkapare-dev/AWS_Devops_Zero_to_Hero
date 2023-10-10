@@ -65,6 +65,10 @@ Kubernetes (K8s) has a distributed architecture designed to provide scalability,
 ## What is init container and can have multiple init container?
 An init container, short for initialization container, is a special type of container in Kubernetes that runs before the main application containers in a pod start. Init containers are primarily used to perform setup tasks, such as initializing a database, downloading configuration files, or waiting for external services to become available. They ensure that certain conditions are met or that specific resources are available before the main application containers begin executing.
 
+You can have multiple init containers within a single pod. 
+
+Remember that if an init container fails, the pod will not start, and Kubernetes will perform retries based on your pod's restart policy. You can configure various aspects of init containers, such as resource requirements and volume mounts, just like you would for main containers.
+
 ## What is liveness , readyness and start probe in k8s?
 In Kubernetes (K8s), liveness probes, readiness probes, and startup probes are mechanisms used to improve the reliability and availability of containerized applications running in pods. These probes help Kubernetes determine the health and readiness of a pod and its containers. Here's an overview of each probe type:
 
