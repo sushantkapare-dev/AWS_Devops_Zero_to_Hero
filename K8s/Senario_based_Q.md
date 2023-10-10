@@ -286,11 +286,15 @@ Canary deployment is a deployment strategy where a new version of an application
 ## How can you integrate Kubernetes with an external logging and monitoring system?
 Integrating Kubernetes with an external logging and monitoring system is crucial for gaining insights into the cluster’s health, performance, and resource utilization. Here are the steps to achieve this integration:
 
-Container Logging: Configure each container to write logs to stdout/stderr. Kubernetes automatically collects these logs.
-Log Aggregation: Use a centralized logging system like Elasticsearch, Fluentd, and Kibana (EFK) or Prometheus and Grafana to collect, aggregate, and visualize logs from all containers.
-Monitoring Agent: Deploy a monitoring agent (e.g., Prometheus Node Exporter) as a DaemonSet on each node to collect system-level metrics and node-specific data.
-Prometheus Adapter: If you’re using Prometheus for monitoring, consider using the Prometheus Adapter to enable custom metrics and Horizontal Pod Autoscaler (HPA) support.
-Service Monitors: Define ServiceMonitor resources to automatically discover and monitor applications exposed via Kubernetes Services.
+**Container Logging**: Configure each container to write logs to stdout/stderr. Kubernetes automatically collects these logs.
+
+**Log Aggregation**: Use a centralized logging system like Elasticsearch, Fluentd, and Kibana (EFK) or Prometheus and Grafana to collect, aggregate, and visualize logs from all containers.
+
+**Monitoring Agent**: Deploy a monitoring agent (e.g., Prometheus Node Exporter) as a DaemonSet on each node to collect system-level metrics and node-specific data.
+
+**Prometheus Adapter**: If you’re using Prometheus for monitoring, consider using the Prometheus Adapter to enable custom metrics and Horizontal Pod Autoscaler (HPA) support.
+
+**Service Monitors**: Define ServiceMonitor resources to automatically discover and monitor applications exposed via Kubernetes Services.
 Alerting: Set up alerting rules to trigger notifications in case of abnormal behavior or threshold breaches.
 
 ## Explain the concept of “Pod Priority” and “PriorityClass” in Kubernetes.
