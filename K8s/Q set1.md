@@ -72,31 +72,11 @@ You can have multiple init containers within a single pod.
 Remember that if an init container fails, the pod will not start, and Kubernetes will perform retries based on your pod's restart policy. You can configure various aspects of init containers, such as resource requirements and volume mounts, just like you would for main containers.
 
 ## What is liveness , readyness and start probe in k8s?
-In Kubernetes (K8s), liveness probes, readiness probes, and startup probes are mechanisms used to improve the reliability and availability of containerized applications running in pods. These probes help Kubernetes determine the health and readiness of a pod and its containers. Here's an overview of each probe type:
+1. **Liveness Probe**: A liveness probe is a health check performed by Kubernetes to determine if a container within a pod is still running and healthy. If the liveness probe fails (e.g., the container is unresponsive or in a bad state), Kubernetes may restart the container to restore its health and maintain application availability.
 
-1. **Liveness Probe:**
-   
-   - **Purpose:** The liveness probe determines whether a container within a pod is running correctly. If a liveness probe fails, Kubernetes considers the container unhealthy and attempts to restart it.
-   
-   - **Use Cases:** Liveness probes are used to detect and recover from situations where a container becomes unresponsive, stuck, or deadlocked. For example, you can use a liveness probe to check if a web server within a container is still responding to requests.
+2. **Readiness Probe**: A readiness probe is a health check performed by Kubernetes to determine if a container is ready to accept incoming network traffic. Containers marked as "not ready" won't receive traffic from services or load balancers. Readiness probes are used to ensure that only fully functional containers participate in serving traffic.
 
-   - **Probe Configuration:** A liveness probe typically consists of an HTTP GET request, TCP socket check, or an execution of a custom command within the container. You specify a path, port, or command to execute, and Kubernetes periodically checks the result.
-
-2. **Readiness Probe:**
-   
-   - **Purpose:** The readiness probe indicates whether a container is ready to serve traffic. When a container is not ready (as determined by a failed readiness probe), Kubernetes stops sending network traffic to that container.
-   
-   - **Use Cases:** Readiness probes are crucial for ensuring that only healthy containers receive incoming traffic. This prevents users or clients from interacting with applications that may still be initializing or not fully functional. For example, a database container may need time to initialize before accepting connections.
-
-   - **Probe Configuration:** Like the liveness probe, the readiness probe can also use HTTP GET requests, TCP socket checks, or custom commands to determine readiness. It is essential to configure it to match the criteria that define when the application is ready to serve traffic.
-
-3. **Startup Probe:**
-   
-   - **Purpose:** The startup probe is a relatively new addition to Kubernetes (as of my last knowledge update in September 2021). It's specifically designed to determine when a container has started successfully. Unlike liveness and readiness probes, which run periodically after the container is running, the startup probe only runs at the beginning of a container's lifecycle.
-   
-   - **Use Cases:** The startup probe is useful for applications that take some time to initialize or require complex startup procedures. It helps ensure that a container has successfully completed its startup sequence before it's considered ready or healthy.
-
-   - **Probe Configuration:** The configuration of a startup probe is similar to that of liveness and readiness probes. You can specify an HTTP GET request, TCP socket check, or a custom command to check the container's readiness.
+3. **Startup Probe**: A startup probe is a specialized probe introduced in Kubernetes 1.16 and later. It's used to determine when a container has successfully started and is ready to receive traffic. Startup probes are useful for scenarios where the container takes some time to initialize or warm up, and you want to delay marking it as "ready" until it's truly prepared to serve requests.
 
 ## What is CRD in k8s?
 In Kubernetes (K8s), a Custom Resource Definition (CRD) is an extension mechanism that allows you to define custom resources and their schema within a K8s cluster. CRDs enable you to extend the Kubernetes API and create custom resources that are specific to your applications or use cases. These custom resources can then be managed like built-in K8s resources, such as pods, services, or deployments.
