@@ -51,18 +51,6 @@ Prometheus has a modular architecture that consists of several components workin
    - Prometheus server sends alerts to the Alert Manager when predefined alerting rules are triggered.
    - The Alert Manager manages alert notifications, including deduplication, grouping, and sending alerts to various alerting channels (e.g., email, Slack, or webhooks).
 
-7. **Grafana (Optional)**:
-   - While not part of the core Prometheus architecture, Grafana is commonly used alongside Prometheus for data visualization and dashboarding.
-   - Grafana integrates with Prometheus and allows users to create customizable, interactive dashboards to visualize metrics data.
-
-8. **Push Gateway (Optional)**:
-   - In some cases, it may be necessary to collect metrics from short-lived or batch jobs that cannot be scraped by Prometheus.
-   - The Push Gateway is an optional component that allows these jobs to push their metrics data to Prometheus for storage and querying.
-
-9. **Federation (Optional)**:
-   - Prometheus supports federation, which allows multiple Prometheus servers to work together in a hierarchical or peer-to-peer fashion.
-   - Federation is useful for aggregating metrics from different data centers or regions and creating centralized monitoring views.
-
 ## How Prometheous handle service descovery?
 Prometheus handles service discovery by offering multiple mechanisms for dynamically discovering and monitoring instances of services. It can use static configuration files or leverage dynamic service discovery tools, such as Kubernetes, Consul, or DNS-based discovery. These mechanisms enable Prometheus to automatically discover new instances of services as they come online or go offline, ensuring that monitoring remains up-to-date and adaptable to changing infrastructure conditions. This dynamic service discovery simplifies the management of monitoring configurations and helps ensure that all relevant targets are continuously monitored without manual intervention.
 
