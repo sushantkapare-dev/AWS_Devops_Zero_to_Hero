@@ -1,5 +1,5 @@
 ## what is prometheus?
-Prometheus is an open-source monitoring and alerting toolkit originally developed at SoundCloud. It is designed to help organizations monitor the health and performance of their systems and applications in a highly efficient and flexible manner. Prometheus is widely used in the field of DevOps and system administration for its robust features and community support.
+Prometheus is an open-source monitoring and alerting system designed for efficiently collecting, storing, and querying time-series data. It is widely used in the field of cloud-native and containerized applications to monitor the performance and health of various systems and services. Prometheus works by scraping metrics from instrumented applications and infrastructure components, storing this data in a time-series database, and providing a powerful query language for analyzing and creating custom alerts based on the collected data. Its architecture is highly scalable and adaptable, making it a popular choice for monitoring container orchestration platforms like Kubernetes. Prometheus plays a crucial role in helping organizations gain insights into their applications' performance, diagnose issues, and proactively respond to anomalies and outages, ultimately contributing to improved system reliability and operational efficiency.
 
 Here are some key features and components of Prometheus:
 
@@ -18,9 +18,6 @@ Here are some key features and components of Prometheus:
 7. **Scalability**: Prometheus is designed to be highly scalable and can handle a large volume of metrics and data points. It can also be deployed in a federated setup, allowing multiple Prometheus servers to work together to collect and aggregate data from different sources.
 
 8. **Pull-Based Model**: Prometheus follows a pull-based model, where it periodically queries endpoints to collect metrics. This approach simplifies monitoring setups, as services only need to expose metrics endpoints, and there's no need for complex agent installations on every target.
-
-Prometheus is a popular choice for monitoring cloud-native and containerized environments due to its flexibility, reliability, and support for Kubernetes and other cloud-native technologies. It helps organizations gain insights into the performance and health of their systems, troubleshoot issues, and proactively respond to anomalies.
-
 
 ## Architecture of Prometheus?
 ![What-is-Prometheus-Architecutre-components1-740x414](https://github.com/SushantOps/AWS_Devops_Questions_and_Answers/assets/109059766/c3ab36a0-4a31-4a60-9618-f43f88b446d5)
@@ -71,7 +68,6 @@ Prometheus handles service discovery by offering multiple mechanisms for dynamic
 
 ## what is metric label in prometheous?
 In Prometheus, a metric label is a key-value pair associated with a metric that provides additional metadata or context to the metric data. Labels allow users to differentiate and aggregate metric values based on specific characteristics or dimensions, enabling more fine-grained analysis and alerting. For example, in a metric representing HTTP request latency, labels could include information such as the HTTP method, endpoint, and status code, allowing users to analyze and alert on latency for specific routes or error codes. Labels are a fundamental concept in PromQL queries, enabling users to filter, group, and aggregate metric data effectively.
-
 
 ## How do you write basic PromQL Query?
 Writing a basic PromQL (Prometheus Query Language) query involves selecting a metric, optionally applying filters or aggregations using labels, and specifying a time range. Here's a step-by-step guide on how to write a simple PromQL query:
