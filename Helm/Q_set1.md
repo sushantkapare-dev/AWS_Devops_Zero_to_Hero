@@ -226,7 +226,8 @@ The primary purpose of Helm's templating engine is to provide a way to abstract 
 ## Explain the difference between `helm install`, `helm upgrade`, and `helm rollback` commands in Helm, and when would you use each of them?
 **helm install**:
 Use: The helm install command is used to deploy a new release of a Helm chart. It is primarily used to install a chart and create a new release in the cluster.
-  when to use it:
+
+when to use it:
 When you want to deploy a new application or a new version of an application for the first time.
 When you need to install an application in a fresh Kubernetes cluster.
 ```
@@ -235,6 +236,7 @@ helm install my-release ./my-chart
 
 **helm upgrade**:
 Use: The helm upgrade command is used to upgrade an existing release of a Helm chart. It is used to modify and update the configuration of an existing deployment, such as updating image versions, changing configuration values, or scaling the application.
+
 When to use it:
 When you need to apply changes to an existing deployment, like updating the application with a new version, changing configuration settings, or scaling the application.
 When you want to roll back to a previous release (you can do this by specifying a previous revision).
@@ -244,6 +246,7 @@ helm upgrade my-release ./my-chart
 
 **helm rollback**:
 Use: The helm rollback command allows you to roll back to a previous release of a Helm chart. It is used to undo an upgrade and return to a previous known good state.
+
 When to use it:
 When an upgrade or change in your application causes issues or errors, and you need to quickly revert to a previously stable version.
 When a release is in a broken state after an upgrade, and you want to recover by rolling back to a known good state.
