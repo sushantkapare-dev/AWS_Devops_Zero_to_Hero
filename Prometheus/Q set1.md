@@ -1,7 +1,7 @@
 ## what is prometheus?
 Prometheus is an open-source monitoring and alerting system designed for efficiently collecting, storing, and querying time-series data. It is widely used in the field of cloud-native and containerized applications to monitor the performance and health of various systems and services. Prometheus works by scraping metrics from instrumented applications and infrastructure components, storing this data in a time-series database, and providing a powerful query language for analyzing and creating custom alerts based on the collected data. Its architecture is highly scalable and adaptable, making it a popular choice for monitoring container orchestration platforms like Kubernetes. Prometheus plays a crucial role in helping organizations gain insights into their applications' performance, diagnose issues, and proactively respond to anomalies and outages, ultimately contributing to improved system reliability and operational efficiency.
 
-Here are some key features and components of Prometheus:
+Here are some key features of Prometheus:
 
 1. **Data Collection**: Prometheus collects time-series data from various sources, such as applications, services, servers, and network devices. This data is typically in the form of numeric metrics, like CPU usage, memory usage, and request latencies.
 
