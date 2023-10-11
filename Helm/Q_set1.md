@@ -260,11 +260,6 @@ To list all installed Helm releases in a Kubernetes cluster and view information
 helm list [flags]
 ```
 Commonly used flags with helm list:
-
--A or --all-namespaces: Lists releases across all namespaces.
---namespace [NAMESPACE]: Lists releases in a specific namespace.
-When you run helm list, you'll typically see output similar to the following columns:
-
 **NAME**: This column displays the name of each Helm release. The release name is used to identify and manage a specific instance of a Helm chart.
 
 **NAMESPACE**: This column indicates the Kubernetes namespace in which the release is deployed. If you use the --all-namespaces flag, this column shows the namespaces for each release.
@@ -274,15 +269,22 @@ When you run helm list, you'll typically see output similar to the following col
 **UPDATED**: This column shows the date and time when the release was last updated or installed. It provides a timestamp for the most recent Helm operation on the release.
 
 **STATUS**: The status column describes the current state of the release. Common status values include:
-**DEPLOYED**: The release is successfully deployed.
-**FAILED**: The release encountered issues during installation or upgrade.
-**PENDING_INSTALL**: The release is in the process of being installed.
-**PENDING_UPGRADE**: The release is in the process of being upgraded.
-**PENDING_ROLLBACK**: The release is in the process of being rolled back.
-**SUPERSEDED**: The release has been upgraded or rolled back to a different version.
-**CHART**: This column displays the name of the Helm chart used for the release.
-APP VERSION: The application version is the version of the application that the Helm chart deploys. This information is provided by the chart and may vary depending on the chart’s configuration.
-DESCRIPTION: This optional column contains a brief description of the release. It can provide additional context or information about the release.
+
+1. **DEPLOYED**: The release is successfully deployed.
+ 
+2. **FAILED**: The release encountered issues during installation or upgrade.
+ 
+3. **PENDING_INSTALL**: The release is in the process of being installed.
+
+4. **PENDING_UPGRADE**: The release is in the process of being upgraded.
+
+5. **PENDING_ROLLBACK**: The release is in the process of being rolled back.
+   
+6. **SUPERSEDED**: The release has been upgraded or rolled back to a different version.
+ 
+7. **CHART**: This column displays the name of the Helm chart used for the release.
+
+8. **APP VERSION**: The application version is the version of the application that the Helm chart deploys. This information is provided by the chart and may vary depending on the chart’s configuration.
 
 ## Explain the purpose of Helm release management, including how to delete a Helm release and associated resources safely.
 
