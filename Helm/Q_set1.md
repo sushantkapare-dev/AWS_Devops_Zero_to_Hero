@@ -156,12 +156,7 @@ A Helm chat is a package that contains all the information needed to deploy and 
 
 5. **Templates/helpers**: Inside the `templates/` directory, you can also find a `helpers.tpl` file. This file contains reusable template snippets and functions that can be included in other template files. It’s used to factor out common logic or configurations, making the templates more maintainable and readable.
 
-6. **Tests**: The `tests/` directory can contain test files that validate the correctness of the Helm chart’s deployment. These tests can be executed using the `helm test` command to ensure that the application is functioning as expected after deployment.
-
-7. **Files**: The `files/` directory allows you to include non-template files (e.g., scripts, configuration files) that should be packaged with the chart but do not undergo templating. These files can be useful for adding extra resources required for the application.
-
 ## How do you create a Helm chart, and what is the structure of a basic Helm chart directory?
-
 Creating a Helm chart involves following a specific directory structure and defining the necessary files and templates for packaging and deploying your application. Here’s a step-by-step guide on how to create a basic Helm chart and an explanation of the structure of a Helm chart directory:
 
 Step 1: Create a New Chart
