@@ -58,34 +58,19 @@ Prometheus handles service discovery by offering multiple mechanisms for dynamic
 In Prometheus, a metric label is a key-value pair associated with a metric that provides additional metadata or context to the metric data. Labels allow users to differentiate and aggregate metric values based on specific characteristics or dimensions, enabling more fine-grained analysis and alerting. For example, in a metric representing HTTP request latency, labels could include information such as the HTTP method, endpoint, and status code, allowing users to analyze and alert on latency for specific routes or error codes. Labels are a fundamental concept in PromQL queries, enabling users to filter, group, and aggregate metric data effectively.
 
 ## How do you write basic PromQL Query?
-Writing a basic PromQL (Prometheus Query Language) query involves selecting a metric, optionally applying filters or aggregations using labels, and specifying a time range. Here's a step-by-step guide on how to write a simple PromQL query:
+Prometheus Query Language (PromQL) is used to retrieve and manipulate time-series data from Prometheus, a popular monitoring and alerting system. A basic PromQL query typically consists of several components: metric selectors, time range, and filtering conditions.
 
-1. **Select a Metric**:
-   - Begin your query by selecting the metric you want to retrieve data for. Metrics in Prometheus are typically represented as a combination of metric name and labels enclosed in curly braces `{}`.
-   - For example, if you want to query CPU usage for a specific server, you might have a metric like `cpu_usage{server="example-server"}`.
+To write a basic PromQL query, you start with the metric selector, which identifies the specific metric you want to query, often in the form of `metric_name{label="value"}`. You can choose to select all instances of a metric by omitting the label or specify label values to filter the results.
 
-2. **Apply Filters (Optional)**:
-   - You can apply filters to narrow down the data you want to query. Filters are typically applied using label selectors enclosed in square brackets `[]`.
-   - For instance, to query only the CPU usage for the "example-server" with the label `region="us-west"`, you could write: `cpu_usage{server="example-server", region="us-west"}`.
+Next, you specify the time range for the query using the `time` or `offset` parameters. Time range can be set using absolute timestamps or relative time expressions like `1h` for the last hour.
 
-3. **Aggregations (Optional)**:
-   - You can use aggregation functions to summarize or manipulate metric data. Common aggregation functions include `sum`, `avg`, `min`, `max`, and others.
-   - For example, to calculate the average CPU usage across all instances of a server, you can use: `avg(cpu_usage{server="example-server"})`.
+You can apply filtering conditions using operators like `==`, `!=`, `>`, `<`, etc., to further refine the results. Additionally, aggregation functions like `sum`, `avg`, or `count` can be applied to group and summarize data.
 
-4. **Specify a Time Range**:
-   - PromQL queries operate within a specified time range. You can use the `time()` function to specify a time window.
-   - For instance, to retrieve the CPU usage for the last 1 hour, you can use: `cpu_usage{server="example-server"}[1h]`.
+A basic PromQL query could look like this:
+```plaintext
+metric_name{label="value"}[5m] > 10
+```
 
-5. **Putting It All Together**:
-   - Here's a complete example of a basic PromQL query that selects CPU usage for "example-server," filters by region, calculates the average over the last 1 hour, and returns a time series:
+In this example, we are querying the "metric_name" with the label "value" over a 5-minute time range and filtering for instances where the metric's value is greater than 10.
 
-   ```promql
-   avg(cpu_usage{server="example-server", region="us-west"})[1h]
-   ```
-
-6. **Query in Prometheus**:
-   - To execute your PromQL query, you can use the Prometheus web interface, the Prometheus API, or tools like `curl` if you're working with the API directly.
-   - In the Prometheus web interface, you can access the "Graph" tab, paste your query into the input field, and click "Execute" to visualize the results as a graph.
-
-PromQL is a powerful language for querying and analyzing time-series data in Prometheus, and you can create more complex queries by combining various functions, operators, and expressions to suit your monitoring and alerting needs.
-
+PromQL allows for more complex queries by combining metric selectors, time ranges, and filtering conditions using logical operators, mathematical functions, and aggregation functions, enabling in-depth analysis of time-series data for monitoring and alerting purposes.
