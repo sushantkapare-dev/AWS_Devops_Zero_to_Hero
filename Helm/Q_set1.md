@@ -188,16 +188,25 @@ mychart/
  ``` 
 Let’s break down the key components and their roles:
 
-Chart.yaml: This file contains metadata about the chart, such as its name, version, description, and other information.
-values.yaml: The values.yaml file allows you to define customizable parameters for the chart. Users can customize these values when installing or upgrading the chart to configure the application's behavior.
-charts/: This directory is used for including sub-charts if your application has dependencies on other Helm charts. You can place sub-charts in this directory.
-templates/: This directory contains Kubernetes resource definition files written using Go templates. These templates are used to generate Kubernetes manifest files during chart deployment. You can create templates for different Kubernetes resources like deployments, services, config maps, etc., in this directory.
-templates/NOTES.txt: This file can contain instructions or notes that are displayed after the chart is installed. It’s a good place to provide guidance to users on how to access or interact with the deployed application.
-templates/_helpers.tpl: This file contains reusable template snippets and functions that can be included in other template files. It helps factor out common logic or configurations from template files.
-tests/: This directory is used for including test files that validate the correctness of the chart’s deployment. Tests can be executed using the helm test command.
-files/: You can include non-template files (e.g., scripts, configuration files) in this directory. These files will be packaged with the chart but won’t undergo templating.
-README.md: This file provides documentation on how to use the chart, configure it, and deploy the application. It’s important to include clear instructions for users.
-LICENSE: The LICENSE file specifies the licensing terms for the chart, helping users understand the legal terms under which they can use and distribute the chart.
+**Chart.yaml**: This file contains metadata about the chart, such as its name, version, description, and other information.
+
+**values.yaml**: The values.yaml file allows you to define customizable parameters for the chart. Users can customize these values when installing or upgrading the chart to configure the application's behavior.
+
+**charts/**: This directory is used for including sub-charts if your application has dependencies on other Helm charts. You can place sub-charts in this directory.
+
+**templates/**: This directory contains Kubernetes resource definition files written using Go templates. These templates are used to generate Kubernetes manifest files during chart deployment. You can create templates for different Kubernetes resources like deployments, services, config maps, etc., in this directory.
+
+**templates/NOTES.txt**: This file can contain instructions or notes that are displayed after the chart is installed. It’s a good place to provide guidance to users on how to access or interact with the deployed application.
+
+**templates/_helpers.tpl**: This file contains reusable template snippets and functions that can be included in other template files. It helps factor out common logic or configurations from template files.
+
+**tests/**: This directory is used for including test files that validate the correctness of the chart’s deployment. Tests can be executed using the helm test command.
+
+**files/**: You can include non-template files (e.g., scripts, configuration files) in this directory. These files will be packaged with the chart but won’t undergo templating.
+
+**README.md**: This file provides documentation on how to use the chart, configure it, and deploy the application. It’s important to include clear instructions for users.
+
+**LICENSE**: The LICENSE file specifies the licensing terms for the chart, helping users understand the legal terms under which they can use and distribute the chart.
 
 ## What is the purpose of Helm’s templating engine, and how does it enable customization of Kubernetes manifests for different environments?
 
