@@ -102,20 +102,6 @@ Helm chart architecture consists of several components and directories that defi
      └── frontend/
      ```
 
-6. **charts.lock** and **charts.yaml** (optional):
-   - These files are used to track and manage chart dependencies, similar to a package manager's lockfile and metadata file.
-
-7. **README.md** (optional):
-   - This file can provide documentation and usage instructions for the Helm chart.
-
-8. **LICENSE** (optional):
-   - This file contains the licensing information for the Helm chart.
-
-9. **tests/** (optional):
-   - This directory can contain test files and scripts to verify the correctness of the chart's deployment.
-
-Helm uses these components to package, deploy, and manage applications on Kubernetes clusters. It provides a convenient way to customize configurations, manage dependencies, and version control your application deployments, making it easier to maintain complex Kubernetes setups and promote reusability of application configurations.
-
 ## what is helmfile and why we need it?
 Helmfile is a declarative configuration tool for deploying and managing Kubernetes Helm charts. Helm is a package manager for Kubernetes that allows you to define, install, and upgrade even the most complex Kubernetes applications. Helmfile, on the other hand, provides a way to manage multiple Helm releases and their configurations in a structured and version-controlled manner.
 
