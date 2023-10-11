@@ -307,26 +307,26 @@ A Helm chart repository is a centralized location where Helm charts are stored a
 
 To add a custom Helm chart repository and install charts from it, you need to follow these steps:
 
-Create or Locate Your Custom Chart Repository:
+**1. Create or Locate Your Custom Chart Repository**:
 You can either create your own Helm chart repository or use an existing one, depending on your requirements.
 If you’re creating your own repository, you can use tools like ChartMuseum to set up a private Helm chart repository.
 
-2. Add the Custom Repository to Helm:
+**2. Add the Custom Repository to Helm**:
 To add your custom repository to Helm, you can use the helm repo add command. Replace [REPO_NAME] with a unique name for your repository and [REPO_URL] with the URL of your repository.
 ```
 helm repo add [REPO_NAME] [REPO_URL]
 ```
-3. Update the Repository List:
+**3. Update the Repository List**:
 After adding the custom repository, update Helm’s local repository cache to make sure it’s aware of the new repository and its available charts.
 ```
 helm repo update
 ```
-4. Search for Charts:
+**4. Search for Charts**:
 You can now search for charts available in your custom repository using the helm search repo command.
 ```
 helm search repo [REPO_NAME]/[CHART_NAME]
 ```
-5. Install Charts from the Custom Repository:
+**5. Install Charts from the Custom Repository**:
 To install a chart from your custom repository, you can use the helm install command followed by the repository name and chart name.
 ```
 helm install [RELEASE_NAME] [REPO_NAME]/[CHART_NAME]
