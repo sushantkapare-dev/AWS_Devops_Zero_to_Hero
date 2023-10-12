@@ -56,3 +56,72 @@ Purpose: API management and deployment service.
 Port: Varies by engine (e.g., 3306 for MySQL, 5432 for PostgreSQL).
 Purpose: MySQL and PostgreSQL-compatible relational database service.
 
+## Amazon EMR (Elastic MapReduce)
+
+Port: 8888 (JupyterHub), 8088 (Hadoop ResourceManager Web UI), 8042 (Hadoop NodeManager Web UI), etc.
+Purpose: Big data processing and analytics service.
+
+## Amazon Neptune
+
+Port: 8182 (HTTP), 8182 (WebSocket), 8183 (Gremlin), 8183 (Gremlin WebSocket)
+Purpose: Managed graph database service.
+
+## Amazon Step Functions
+
+Port: Not applicable (serverless service)
+Purpose: Serverless function orchestration service.
+
+## Amazon ElasticSearch Service
+
+Port: 80 (HTTP), 443 (HTTPS)
+Purpose: Managed Elasticsearch service for full-text search and analytics.
+
+## Amazon GameLift
+
+Port: Varies depending on the game and matchmaking configuration.
+Purpose: Managed game server hosting and matchmaking service.
+
+## Amazon ECS Anywhere
+
+Port: Varies based on containerized applications.
+Purpose: Extends Amazon ECS to on-premises or edge locations.
+
+## Amazon Workspaces
+
+Port: 4172 (Workspaces streaming protocol), 4173 (PCoIP), 443 (HTTPS)
+Purpose: Desktop as a Service (DaaS) for cloud-based virtual desktops.
+
+## AWS Direct Connect
+
+Port: 25 (SMTP), 80 (HTTP), 443 (HTTPS), etc. (varies by peering agreement)
+Purpose: Dedicated network connection to AWS for increased network performance.
+
+## Amazon Managed Blockchain
+
+Port: 3000 (REST API), 3001 (WebSocket API)
+Purpose: Managed blockchain service for creating and managing blockchain networks.
+
+## Amazon Keyspaces (for Apache Cassandra)
+
+Port: 9142 (CQL)
+Purpose: Managed Apache Cassandra-compatible database service.
+
+## Amazon App Runner
+
+Port: 80 (HTTP) and 443 (HTTPS)
+Purpose: Serverless container-based application deployment.
+
+## Amazon Timestream
+
+Port: 8182 (HTTP), 8182 (InfluxDB line protocol)
+Purpose: Serverless time-series database service
+
+## Amazon DataSync
+
+Port: 443 (HTTPS)
+Purpose: Data transfer service for automating data movement between on-premises and AWS.
+
+## Amazon HealthLake
+
+Port: 443 (HTTPS)
+Purpose: Service for storing and analyzing healthcare data.
