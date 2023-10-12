@@ -98,3 +98,78 @@
 
 **Port**: 6379
 **Purpose**: In-memory data structure store.
+
+## SonarQube
+
+Port: 9000
+Purpose: Continuous code quality inspection and reporting.
+
+## Artifactory
+
+Port: 8081
+Purpose: Repository manager for storing and managing binary artifacts.
+
+## Nexus Repository Manager
+
+Port: 8081 (HTTP) or 8443 (HTTPS)
+Purpose: Repository manager for storing and distributing artifacts.
+
+## Zabbix
+
+Port: 10051 (Server) and 10050 (Agent)
+Purpose: Monitoring and alerting for various IT components.
+
+## Consul
+
+Port: 8300
+Purpose: Service discovery and configuration management.
+
+## Vault
+
+Port: 8200
+Purpose: Secrets management and data protection.
+
+## TeamCity
+
+Port: 8111
+Purpose: Continuous Integration and Continuous Delivery (CI/CD) server.
+
+## Bitbucket
+
+Port: 7990
+Purpose: Web-based Git repository management and collaboration tool.
+
+## Graylog
+
+Port: 9000 (Web Interface) and 12201 (GELF)
+Purpose: Log management and analysis platform.
+
+## Selenium Grid
+
+Port: 4444
+Purpose: Distributed testing tool for web applications.
+
+## Kafka
+
+Port: 9092
+Purpose: Distributed streaming platform for building real-time data pipelines.
+
+## Rancher
+
+Port: 80 (HTTP) or 443 (HTTPS)
+Purpose: Container management and orchestration platform.
+
+## Spinnaker
+
+Port: 8084
+Purpose: Continuous Delivery (CD) platform for releasing software changes.
+
+## Consul
+
+Port: 8500
+Purpose: Service discovery and distributed key-value store.
+
+## Nomad
+
+Port: 4646
+Purpose: Distributed job scheduler and application orchestrator.
