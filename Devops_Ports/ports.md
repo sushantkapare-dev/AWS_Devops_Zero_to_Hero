@@ -53,47 +53,48 @@ Purpose: Network and infrastructure monitoring and alerting.
 
 Port: 22 (SSH)
 Purpose: Automation and configuration management tool.
-Prometheus
 
-Port: 9090
-Purpose: Open-source monitoring and alerting toolkit.
+## Prometheus
+
+**Port**: 9090
+**Purpose**: Open-source monitoring and alerting toolkit.
 
 ## Grafana
 
-Port: 3000
-Purpose: Open-source platform for monitoring and observability.
+**Port**: 3000
+**Purpose**: Open-source platform for monitoring and observability.
 
 ## Kubernetes API Server
 
-Port: 6443
-Purpose: Cluster management and container orchestration.
+**Port**: 6443
+**Purpose**: Cluster management and container orchestration.
 
 ## Elasticsearch
 
-Port: 9200 (HTTP) or 9300 (TCP transport)
-Purpose: Distributed search and analytics engine.
+**Port**: 9200 (HTTP) or 9300 (TCP transport)
+**Purpose**: Distributed search and analytics engine.
 
 ## Logstash
 
-Port: 5044
-Purpose: Data collection and log processing.
+**Port**: 5044
+**Purpose**: Data collection and log processing.
 
 ## Kibana
 
-Port: 5601
-Purpose: Data visualization and exploration for Elasticsearch.
+**Port**: 5601
+**Purpose**: Data visualization and exploration for Elasticsearch.
 
 ## RabbitMQ
 
-Port: 5672
-Purpose: Message broker for distributed systems.
+**Port**: 5672
+**Purpose**: Message broker for distributed systems.
 
 ## PostgreSQL (used in various applications)
 
-Port: 5432
-Purpose: Open-source relational database management system.
+**Port**: 5432
+**Purpose**: Open-source relational database management system.
 
 ## Redis (used for caching and data storage)
 
-Port: 6379
-Purpose: In-memory data structure store.
+**Port**: 6379
+**Purpose**: In-memory data structure store.
