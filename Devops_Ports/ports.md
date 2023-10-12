@@ -173,3 +173,78 @@ Purpose: Service discovery and distributed key-value store.
 
 Port: 4646
 Purpose: Distributed job scheduler and application orchestrator.
+
+## DynamoDB (Amazon Web Services)
+
+Port: 443 (HTTPS)
+Purpose: Managed NoSQL database service.
+
+## Elasticsearch
+
+Port: 9200 (HTTP) and 9300 (TCP transport)
+Purpose: Distributed search and analytics engine.
+
+## Cassandra
+
+Port: 7000 (Inter-node communication), 9042 (CQL), and 7199 (JMX)
+Purpose: Distributed NoSQL database.
+
+## Couchbase
+
+Port: 8091 (Management), 8092 (Views), 11210 (Data)
+Purpose: NoSQL database for high-performance applications.
+
+## GitLab Runner
+
+Port: 9229
+Purpose: Runner used in GitLab CI/CD to execute jobs.
+
+## Rundeck
+
+Port: 4440
+Purpose: Automation and job scheduling platform.
+
+## Jenkins Agent
+
+Port: Varies (configured dynamically)
+Purpose: Agents used for Jenkins build and deployment tasks.
+
+## Artifactory Reverse Proxy
+
+Port: 80 (HTTP) or 443 (HTTPS)
+Purpose: Proxy server for Artifactory, often used for caching and load balancing.
+
+## Consul
+
+Port: 8301 (LAN), 8302 (WAN), 8600 (DNS), 8502 (HTTP API)
+Purpose: Service discovery, configuration, and orchestration.
+
+## Octopus Deploy
+
+Port: 10933
+Purpose: Deployment automation and release management tool.
+
+## Webhooks
+
+Ports can vary (configured as needed)
+Purpose: Used for triggering actions or notifications between systems, typically over HTTP/HTTPS.
+
+## SaltStack
+
+Port: 4505 (Publish) and 4506 (Request)
+Purpose: Automation and configuration management tool.
+
+## Kubernetes Dashboard
+
+Port: 30000-32767 (NodePort, typically managed by Kubernetes)
+Purpose: Web-based dashboard for managing Kubernetes clusters.
+
+## JFrog Xray
+
+Port: 80 (HTTP) or 443 (HTTPS)
+Purpose: Component analysis and security for artifacts.
+
+## Graylog GELF
+
+Port: 12201 (UDP)
+Purpose: Graylog Extended Log Format for logging and log management.
