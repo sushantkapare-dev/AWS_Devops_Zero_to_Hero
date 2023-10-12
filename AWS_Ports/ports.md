@@ -37,10 +37,12 @@ Purpose: In-memory caching service.
 
 Port: 443 (HTTPS)
 Purpose: Messaging service for publishing and subscribing to notifications.
+
 ## Amazon SQS (Simple Queue Service)
 
 Port: 443 (HTTPS)
 Purpose: Managed message queue service.
+
 ## Amazon Kinesis
 
 Port: 443 (HTTPS)
@@ -50,11 +52,6 @@ Purpose: Real-time data streaming and processing service.
 
 Port: Varies, typically 443 (HTTPS)
 Purpose: API management and deployment service.
-
-## Amazon Aurora
-
-Port: Varies by engine (e.g., 3306 for MySQL, 5432 for PostgreSQL).
-Purpose: MySQL and PostgreSQL-compatible relational database service.
 
 ## Amazon EMR (Elastic MapReduce)
 
@@ -66,25 +63,10 @@ Purpose: Big data processing and analytics service.
 Port: 8182 (HTTP), 8182 (WebSocket), 8183 (Gremlin), 8183 (Gremlin WebSocket)
 Purpose: Managed graph database service.
 
-## Amazon Step Functions
-
-Port: Not applicable (serverless service)
-Purpose: Serverless function orchestration service.
-
 ## Amazon ElasticSearch Service
 
 Port: 80 (HTTP), 443 (HTTPS)
 Purpose: Managed Elasticsearch service for full-text search and analytics.
-
-## Amazon GameLift
-
-Port: Varies depending on the game and matchmaking configuration.
-Purpose: Managed game server hosting and matchmaking service.
-
-## Amazon ECS Anywhere
-
-Port: Varies based on containerized applications.
-Purpose: Extends Amazon ECS to on-premises or edge locations.
 
 ## Amazon Workspaces
 
