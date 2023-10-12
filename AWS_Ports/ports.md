@@ -1,12 +1,12 @@
 ## Amazon S3
 
-Port: 80 (HTTP) and 443 (HTTPS)
-Purpose: Object storage service for storing and retrieving data.
+**Port**: 80 (HTTP) and 443 (HTTPS)
+**Purpose**: Object storage service for storing and retrieving data.
 
 ## Amazon RDS (Relational Database Service)
 
-Port: 3306 (MySQL), 5432 (PostgreSQL), 1521 (Oracle), 1433 (SQL Server), etc. (varies by database engine)
-Purpose: Managed database service for various relational database engines.
+**Port**: 3306 (MySQL), 5432 (PostgreSQL), 1521 (Oracle), 1433 (SQL Server), etc. (varies by database engine)
+**Purpose**: Managed database service for various relational database engines.
 
 ## Amazon EC2 (Elastic Compute Cloud)
 
