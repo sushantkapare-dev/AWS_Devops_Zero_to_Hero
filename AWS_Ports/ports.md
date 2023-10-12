@@ -13,7 +13,7 @@ Purpose: Managed database service for various relational database engines.
 Port: Varies based on the security group and instance configuration (common ports include 22 for SSH and 3389 for RDP).
 Purpose: Cloud-based virtual servers for compute resources.
 
-# Amazon DynamoDB Local
+## Amazon DynamoDB Local
 
 Port: 8000
 Purpose: Local version of DynamoDB for development and testing.
@@ -33,43 +33,26 @@ Purpose: Data warehousing service.
 Port: 6379 (Redis) or 11211 (Memcached)
 Purpose: In-memory caching service.
 
-## Amazon Lambda
-
-Port: Not applicable (triggered by events)
-Purpose: Serverless computing service for running code in response to events.
-Amazon SNS (Simple Notification Service)
+## Amazon SNS (Simple Notification Service)
 
 Port: 443 (HTTPS)
 Purpose: Messaging service for publishing and subscribing to notifications.
-Amazon SQS (Simple Queue Service)
+## Amazon SQS (Simple Queue Service)
 
 Port: 443 (HTTPS)
 Purpose: Managed message queue service.
-Amazon Kinesis
+## Amazon Kinesis
 
 Port: 443 (HTTPS)
 Purpose: Real-time data streaming and processing service.
-Amazon ECS (Elastic Container Service)
 
-Port: Varies based on containerized applications.
-Purpose: Container orchestration service.
-AWS CodeBuild
-
-Port: Not applicable (serverless service)
-Purpose: Managed build service for compiling source code.
-Amazon API Gateway
+## Amazon API Gateway
 
 Port: Varies, typically 443 (HTTPS)
 Purpose: API management and deployment service.
-Amazon EKS (Elastic Kubernetes Service)
 
-Port: Varies based on Kubernetes components.
-Purpose: Managed Kubernetes service.
-Amazon Aurora
+## Amazon Aurora
 
 Port: Varies by engine (e.g., 3306 for MySQL, 5432 for PostgreSQL).
 Purpose: MySQL and PostgreSQL-compatible relational database service.
-AWS Glue
 
-Port: Not applicable (serverless service)
-Purpose: ETL (Extract, Transform, Load) service for data processing.
