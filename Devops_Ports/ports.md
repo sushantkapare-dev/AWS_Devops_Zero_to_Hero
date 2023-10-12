@@ -101,8 +101,8 @@
 
 ## SonarQube
 
-Port: 9000
-Purpose: Continuous code quality inspection and reporting.
+**Port**: 9000
+**Purpose**: Continuous code quality inspection and reporting.
 
 ## Artifactory
 
@@ -204,11 +204,6 @@ Purpose: Runner used in GitLab CI/CD to execute jobs.
 Port: 4440
 Purpose: Automation and job scheduling platform.
 
-## Jenkins Agent
-
-Port: Varies (configured dynamically)
-Purpose: Agents used for Jenkins build and deployment tasks.
-
 ## Artifactory Reverse Proxy
 
 Port: 80 (HTTP) or 443 (HTTPS)
@@ -223,11 +218,6 @@ Purpose: Service discovery, configuration, and orchestration.
 
 Port: 10933
 Purpose: Deployment automation and release management tool.
-
-## Webhooks
-
-Ports can vary (configured as needed)
-Purpose: Used for triggering actions or notifications between systems, typically over HTTP/HTTPS.
 
 ## SaltStack
 
