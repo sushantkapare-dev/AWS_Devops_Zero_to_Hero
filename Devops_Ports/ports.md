@@ -41,18 +41,18 @@
 
 # Confluence
 
-Port: 8090
-Purpose: Collaboration and documentation tool often used in conjunction with Jira.
+**Port**: 8090
+**Purpose**: Collaboration and documentation tool often used in conjunction with Jira.
 
 ## Nagios
 
-Port: 5666
-Purpose: Network and infrastructure monitoring and alerting.
+**Port**: 5666
+**Purpose**: Network and infrastructure monitoring and alerting.
 
 ## Ansible
 
-Port: 22 (SSH)
-Purpose: Automation and configuration management tool.
+**Port**: 22 (SSH)
+**Purpose**: Automation and configuration management tool.
 
 ## Prometheus
 
