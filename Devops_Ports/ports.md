@@ -1,42 +1,42 @@
 **SSH (Secure Shell)**
 
-Port: 22
-Purpose: Secure remote access to servers for configuration and management.
+**Port**: 22
+**Purpose**: Secure remote access to servers for configuration and management.
 
 **HTTP**
 
-Port: 80
-Purpose: Used for unsecured web traffic, often for serving web applications.
+**Port**: 80
+**Purpose**: Used for unsecured web traffic, often for serving web applications.
 
-HTTPS (HTTP Secure)
+**HTTPS (HTTP Secure)**
 
-Port: 443
-Purpose: Used for secure web traffic with SSL/TLS encryption.
+**Port**: 443
+**Purpose**: Used for secure web traffic with SSL/TLS encryption.
 
-Git
+**Git**
 
-Port: 22 (SSH) or 9418 (Git protocol) or 443 (HTTPS)
-Purpose: Version control system for source code management.
+**Port**: 22 (SSH) or 9418 (Git protocol) or 443 (HTTPS)
+**Purpose**: Version control system for source code management.
 
-Docker Registry
+**Docker Registry**
 
-Port: 5000
-Purpose: Repository for storing and managing Docker images.
+**Port**: 5000
+**Purpose**: Repository for storing and managing Docker images.
 
-Jenkins
+**Jenkins**
 
-Port: 8080
-Purpose: Continuous Integration and Continuous Delivery (CI/CD) server.
+**Port**: 8080
+**Purpose**: Continuous Integration and Continuous Delivery (CI/CD) server.
 
-GitLab
+**GitLab**
 
-Port: 80 (HTTP) or 443 (HTTPS)
-Purpose: Web-based Git repository manager and CI/CD platform.
+**Port**: 80 (HTTP) or 443 (HTTPS)
+**Purpose**: Web-based Git repository manager and CI/CD platform.
 
-Jira
+**Jira**
 
-Port: 8080
-Purpose: Issue and project tracking tool for software development.
+**Port**: 8080
+**Purpose**: Issue and project tracking tool for software development.
 
 Confluence
 
