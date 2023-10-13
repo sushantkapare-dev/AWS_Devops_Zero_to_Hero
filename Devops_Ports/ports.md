@@ -216,25 +216,25 @@ Purpose: Service discovery, configuration, and orchestration.
 
 ## Octopus Deploy
 
-Port: 10933
-Purpose: Deployment automation and release management tool.
+**Port**: 10933
+**Purpose**: Deployment automation and release management tool.
 
 ## SaltStack
 
-Port: 4505 (Publish) and 4506 (Request)
-Purpose: Automation and configuration management tool.
+**Port**: 4505 (Publish) and 4506 (Request)
+**Purpose**: Automation and configuration management tool.
 
 ## Kubernetes Dashboard
 
-Port: 30000-32767 (NodePort, typically managed by Kubernetes)
-Purpose: Web-based dashboard for managing Kubernetes clusters.
+**Port**: 30000-32767 (NodePort, typically managed by Kubernetes)
+**Purpose**: Web-based dashboard for managing Kubernetes clusters.
 
 ## JFrog Xray
 
-Port: 80 (HTTP) or 443 (HTTPS)
-Purpose: Component analysis and security for artifacts.
+**Port**: 80 (HTTP) or 443 (HTTPS)
+**Purpose**: Component analysis and security for artifacts.
 
 ## Graylog GELF
 
-Port: 12201 (UDP)
-Purpose: Graylog Extended Log Format for logging and log management.
+**Port**: 12201 (UDP)
+**Purpose**: Graylog Extended Log Format for logging and log management.
