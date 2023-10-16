@@ -86,3 +86,22 @@ Prometheus uses a pull-based model. It periodically scrapes metrics from target 
 ## What is a Prometheus target, and how can you configure target discovery?
 
 A Prometheus target is an endpoint that provides metrics. Target discovery can be configured using service discovery mechanisms, such as static_configs (for static targets), DNS-based service discovery, or by integrating with tools like Kubernetes for dynamic service discovery.
+
+## What are Prometheus alerting rules, and how do you define them?
+
+Alerting rules in Prometheus are used to specify conditions for generating alerts. They are defined in the Prometheus configuration file and include a rule name, conditions, and a custom alert message. For example:
+```
+groups:
+  - name: example
+    rules:
+    - alert: HighErrorRate
+      expr: job_requests_errors / job_requests_total > 0.1
+      for: 5m
+      labels:
+        severity: critical
+      annotations:
+        summary: "High error rate detected"
+        description: "Error rate is above 10% for 5 minutes."
+```
+
+
