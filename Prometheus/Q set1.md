@@ -74,3 +74,6 @@ metric_name{label="value"}[5m] > 10
 In this example, we are querying the "metric_name" with the label "value" over a 5-minute time range and filtering for instances where the metric's value is greater than 10.
 
 PromQL allows for more complex queries by combining metric selectors, time ranges, and filtering conditions using logical operators, mathematical functions, and aggregation functions, enabling in-depth analysis of time-series data for monitoring and alerting purposes.
+
+## What is Prometheus, and what is its primary purpose in a DevOps environment?
+Prometheus is an open-source monitoring and alerting toolkit designed for reliability and scalability. Its primary purpose is to collect and store time-series data, allowing DevOps teams to monitor and alert on the performance and health of their applications and infrastructure.
