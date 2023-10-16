@@ -1,7 +1,7 @@
 ## what is grafana?
 Grafana is an open-source platform for monitoring and observability. It allows you to create, explore, and share dashboards and alerts for various data sources. Grafana plays a crucial role in a DevOps environment by providing real-time visibility into the performance and health of applications, servers, and infrastructure. It helps DevOps teams to identify issues, troubleshoot problems, and optimize system performance.
 
-Key features of Grafana include:
+**Key features of Grafana include**:
 
 1. **Data Visualization**: Grafana provides a user-friendly interface for creating interactive and customizable dashboards. Users can create charts, graphs, and other visualizations to represent data from different sources.
 
@@ -16,7 +16,9 @@ Key features of Grafana include:
 6. **Cross-Platform**: Grafana is platform-agnostic and can run on various operating systems, making it accessible for users across different environments.
 
 ## explain panels and dashboard in grafana?
-In Grafana, a "panel" refers to an individual visual element or widget within a dashboard. Panels are used to display data from various sources in the form of charts, graphs, tables, or other visual representations. Users can configure each panel to show specific data from chosen data sources and apply custom settings like time ranges, aggregation, and visual styling. A "dashboard" in Grafana is a collection of these panels organized on a single screen, allowing users to create comprehensive and customizable views of their data for monitoring, analysis, and visualization. Dashboards can display real-time or historical data, making them a powerful tool for gaining insights and making informed decisions in various domains, from IT infrastructure monitoring to business analytics.
+In Grafana, a "**panel**" refers to an individual visual element or widget within a dashboard. Panels are used to display data from various sources in the form of charts, graphs, tables, or other visual representations. Users can configure each panel to show specific data from chosen data sources and apply custom settings like time ranges, aggregation, and visual styling.
+
+A "**dashboard**" in Grafana is a collection of these panels organized on a single screen, allowing users to create comprehensive and customizable views of their data for monitoring, analysis, and visualization. Dashboards can display real-time or historical data, making them a powerful tool for gaining insights and making informed decisions in various domains, from IT infrastructure monitoring to business analytics.
 
 ## what is datasource in grafana?
  Data sources in Grafana are plugins or integrations that allow Grafana to connect to various data storage or monitoring systems. Common data sources include Prometheus, InfluxDB, Elasticsearch, MySQL, and many others. Grafana queries these data sources to retrieve data for creating dashboards and alerts.
