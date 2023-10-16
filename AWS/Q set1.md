@@ -505,3 +505,6 @@ A launch template and a launch configuration are both used in AWS Auto Scaling t
 ## vertical scaling is possible in Lambda?
 No, vertical scaling, which involves increasing the compute resources (e.g., CPU or memory) of a single instance, is not possible in AWS Lambda. Lambda is a serverless compute service that automatically handles the scaling of functions by creating and managing separate instances for each execution, and you are billed based on the number of invocations and the duration of each invocation, rather than the size of the instance. If you need more compute power for a Lambda function, you would typically adjust the allocated memory, which also affects CPU and network capacity, but this is done at the function level, not by vertically scaling a single instance.
 
+## What is AWS Organization?
+AWS Organizations is a service offered by Amazon Web Services (AWS) that allows you to centrally manage and govern multiple AWS accounts within your organization. It enables you to create a hierarchy of accounts, apply policies and permissions across those accounts, and streamline billing and cost management, making it easier to scale and manage your AWS resources efficiently while maintaining security and compliance.
+
