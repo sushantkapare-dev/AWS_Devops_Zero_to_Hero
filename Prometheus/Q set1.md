@@ -82,3 +82,7 @@ Prometheus is an open-source monitoring and alerting toolkit designed for reliab
 ## How does Prometheus data collection work, and what are the components involved?
 
 Prometheus uses a pull-based model. It periodically scrapes metrics from target systems, which expose an HTTP endpoint (typically /metrics). The main components are Prometheus server, exporters, and client libraries. Exporters collect and expose metrics, and client libraries enable applications to provide custom metrics.
+
+## What is a Prometheus target, and how can you configure target discovery?
+
+A Prometheus target is an endpoint that provides metrics. Target discovery can be configured using service discovery mechanisms, such as static_configs (for static targets), DNS-based service discovery, or by integrating with tools like Kubernetes for dynamic service discovery.
