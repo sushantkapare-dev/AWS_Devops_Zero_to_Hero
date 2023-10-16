@@ -110,7 +110,7 @@ High availability can be achieved by running multiple Prometheus instances behin
 
 ## What are some common Exporters for Prometheus, and why are they useful?
 
-Common exporters include the Node Exporter, Blackbox Exporter, and the MySQL Exporter. They collect and expose system and application-specific metrics for monitoring. These exporters are essential for capturing various aspects of a system's performance.
+Common exporters include the **Node Exporter**, **Blackbox Exporter**, and the **MySQL Exporter**. They collect and expose system and application-specific metrics for monitoring. These exporters are essential for capturing various aspects of a system's performance.
 
 ## Explain the concept of metric cardinality. How does it impact Prometheus performance?
 
