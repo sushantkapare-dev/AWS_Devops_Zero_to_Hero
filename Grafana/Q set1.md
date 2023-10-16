@@ -65,3 +65,7 @@ In a production environment, authentication and authorization in Grafana are cru
 ## What are the key advantages of using Grafana in a DevOps environment compared to other monitoring and visualization tools?
 
 Grafana offers several advantages, including its open-source nature, support for various data sources, templating, alerting, and a strong user community. It provides flexibility in creating custom dashboards and is widely adopted in the DevOps world, making it easier to find resources, plugins, and integrations.
+
+## What are Grafana plugins, and how can you install them?
+
+Grafana plugins are extensions that enhance Grafana's functionality. You can install them via the Grafana CLI, the built-in plugin manager, or by manually placing the plugin files in the plugins directory. Popular Grafana plugins include Loki, Tempo, and many data source plugins for different databases and monitoring systems.
