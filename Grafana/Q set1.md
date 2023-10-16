@@ -1,5 +1,5 @@
 ## what is grafana?
-Grafana is an open-source analytics and monitoring platform designed for visualizing and analyzing data from various sources. It is commonly used for monitoring and observability in IT and DevOps contexts, but it can also be employed in a wide range of other domains.
+Grafana is an open-source platform for monitoring and observability. It allows you to create, explore, and share dashboards and alerts for various data sources. Grafana plays a crucial role in a DevOps environment by providing real-time visibility into the performance and health of applications, servers, and infrastructure. It helps DevOps teams to identify issues, troubleshoot problems, and optimize system performance.
 
 Key features of Grafana include:
 
