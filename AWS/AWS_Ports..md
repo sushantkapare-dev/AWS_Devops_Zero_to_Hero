@@ -10,18 +10,18 @@
 
 ## Amazon EC2 (Elastic Compute Cloud)
 
-Port: Varies based on the security group and instance configuration (common ports include 22 for SSH and 3389 for RDP).
-Purpose: Cloud-based virtual servers for compute resources.
+**Port**: Varies based on the security group and instance configuration (common ports include 22 for SSH and 3389 for RDP).
+**Purpose**: Cloud-based virtual servers for compute resources.
 
 ## Amazon DynamoDB Local
 
-Port: 8000
-Purpose: Local version of DynamoDB for development and testing.
+**Port**: 8000
+**Purpose**: Local version of DynamoDB for development and testing.
 
 ## Amazon Elastic Beanstalk
 
-Port: 80 (HTTP) and 443 (HTTPS)
-Purpose: Platform as a Service (PaaS) for deploying web applications.
+**Port**: 80 (HTTP) and 443 (HTTPS)
+**Purpose**: Platform as a Service (PaaS) for deploying web applications.
 
 ## Amazon Redshift
 
