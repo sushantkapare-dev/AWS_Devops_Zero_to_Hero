@@ -58,6 +58,6 @@ By following these steps, you can create template variables in Grafana to enhanc
 ## What are anotation in grafana?
 Grafana annotations are used to mark specific points in time on a graph or dashboard to provide additional context. They can be used to indicate deployments, incidents, maintenance windows, or any other events relevant to your monitoring data. Annotations help in correlating data with external events and make it easier to troubleshoot issues.
 
-**Explain the importance of Grafana's authentication and authorization mechanisms in a production environment.**
+## Explain the importance of Grafana's authentication and authorization mechanisms in a production environment.
 
 In a production environment, authentication and authorization in Grafana are crucial for securing access to sensitive monitoring data. Grafana provides various authentication methods, such as LDAP, OAuth, and built-in user management. Authorization ensures that users have appropriate access rights to dashboards and data sources. Implementing these mechanisms helps prevent unauthorized access and maintain data privacy and security.
