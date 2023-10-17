@@ -174,11 +174,43 @@ Set up a Virtual Private Network (VPN) connection between your on-premises netwo
 6. **Use a CloudFront Distribution:**
 If your application consists of static content (e.g., a website), you can use Amazon CloudFront as a Content Delivery Network (CDN). CloudFront can distribute your content globally, and it can be configured to work with private origins (your private EC2 instances).
 
-## If you have your own S3 bucket and provide access to certain IP ranges/addresses not to everyone. How you will do? and which policy you will add? specify the type of policy you will add with your name ie.
-Role-based policy, service-based policy, inline policy, or custom policy
-To provide access to a certain IP range/address and restrict access to everyone else in your own S3 bucket, you can use an IAM (Identity and Access Management) policy to control the permissions. IAM policies allow you to define who can access your S3 bucket and what actions they can perform.
+## If you have your own S3 bucket and provide access to certain IP ranges/addresses not to everyone. How you will do? and which policy you will add? specify the type of policy you will add with your name.
+To restrict access to your own S3 bucket to specific IP ranges/addresses, you can use an S3 bucket policy. Here's a simple example of how to do this:
 
-In this scenario, you would use a custom IAM policy to define the specific IP range or addresses that are allowed access to the S3 bucket. The policy will be attached to the IAM users, groups, or roles that need access to the bucket.
+1. **Create a Bucket Policy**: You can create a bucket policy by following these steps:
+    a. Go to the AWS S3 Management Console.
+    
+    b. Select your bucket.
+
+    c. Click on the "Permissions" tab.
+
+    d. Under "Bucket Policy," click "Edit."
+
+2. **Define the Policy**:
+ Below is a simple bucket policy example that allows access from a specific IP address (e.g., 203.0.113.0/24). Replace `your-bucket-name` with your actual bucket name and `203.0.113.0/24` with the IP address or range you want to allow.
+
+    ```json
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": "s3:GetObject",
+                "Resource": "arn:aws:s3:::your-bucket-name/*",
+                "Condition": {
+                    "IpAddress": {
+                        "aws:SourceIp": "203.0.113.0/24"
+                    }
+                }
+            }
+        ]
+    }
+    ```
+
+    This policy allows the specified IP address range to access objects in the bucket for the "s3:GetObject" action.
+
+3. **Review and Save**: Review the policy to ensure it's correctly configured, and then click "Save" to apply the policy to your bucket.
 
 ## If we are getting data under S3 standard storage class and I want to move that data every last of the month into Glacier, how you will do?
 To automate the process of moving data from the S3 Standard storage class to Glacier every last day of the month, you can use AWS Lambda along with CloudWatch Events.
