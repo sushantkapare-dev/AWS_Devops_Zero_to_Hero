@@ -144,7 +144,9 @@ To identify a private subnet:
 To access a web application (e.g., Apache HTTPD) running on an Amazon EC2 instance in a private subnet from a web browser, you typically need to set up a Network Address Translation (NAT) gateway or a NAT instance in a public subnet to facilitate outbound traffic from your private subnet to the internet.
 
 ## What is the use of a NAT gateway? and is it one-way communication or two-way communication?
-NAT gateway facilitates two-way communication. Devices within the private network can initiate outbound connections to the internet, and the NAT gateway manages the translation of IP addresses and ports, allowing responses from the internet to be correctly delivered back to the respective devices within the private network.
+A Network Address Translation (NAT) Gateway is a managed AWS service used to enable outbound internet connectivity for resources in private subnets within a Virtual Private Cloud (VPC). It performs the translation of private IP addresses of instances in a private subnet to a public IP address. 
+
+As for the nature of communication through a NAT Gateway, it is primarily one-way communication for outbound traffic. Resources in a private subnet can communicate with external resources on the internet, but incoming traffic initiated from the internet is blocked by default. In other words, a NAT Gateway facilitates traffic going out from your private subnet, but it does not allow incoming traffic initiated from the internet to reach your private instances.
 
 ## If you want to access your private instance from your local machine so will you be able to access using private IP?
 Private IP addresses are meant for internal communication within a private network only
