@@ -85,7 +85,12 @@ An AWS Transit Gateway is a highly scalable and centralized networking service t
 Amazon EC2 Auto Scaling offers the ability to add lifecycle hooks to your Auto Scaling groups. These hooks let you create solutions that are aware of events in the Auto Scaling instance lifecycle, and then perform a custom action on instances when the corresponding lifecycle event occurs. A lifecycle hook provides a specified amount of time (one hour by default) to wait for the action to complete before the instance transitions to the next state.
 
 ## I want to create the VPC, what cloud is the maximum CIDR range you can provide?
+In AWS, when you create a Virtual Private Cloud (VPC), you can specify a Classless Inter-Domain Routing (CIDR) range for the VPC's IP address space. The valid CIDR range for an AWS VPC can be between /16 (65,536 IP addresses) and /28 (16 IP addresses), inclusive. 
+
+This range allows you to define the size of your VPC's IP address space according to your specific needs. You can allocate a larger CIDR range if you require more IP addresses or a smaller one if you need fewer. Keep in mind that the choice of CIDR range is an important architectural decision, and you should plan it carefully to accommodate your current and future requirements. It's possible to resize a VPC after creation, but the process can be complex and requires careful consideration, so it's best to choose an appropriate CIDR range from the start.
+```
 10.0.0.0/16
+```
 
 ## How you will add your own system Ip under the security group?
 Find the IP of the system using ifconfig command and add it to the SG
