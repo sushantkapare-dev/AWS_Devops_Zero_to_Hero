@@ -156,10 +156,23 @@ As for the nature of communication through a NAT Gateway, it is primarily one-wa
 **Bastion Host or Jump Box**: If you have a bastion host or jump box set up in the private network, you can first SSH into the bastion host and then SSH from the bastion host to the private instance. This allows you to access the private instance indirectly.
 
 ## How can we access the application through the web browser if the application is hosted on a private subnet instance? what are the ways?
+1. **Use a Bastion Host or Jump Box:**
+Deploy a bastion host or jump box in a public subnet, which acts as an intermediary between your local system and the private instance. You can SSH into the bastion host from your local system and then use SSH port forwarding (SSH tunneling) to reach the private instance. This approach is suitable for secure SSH access to the private instance.
 
-Using NAT Gateway:
-Proxy Server: Set up a proxy server in the public subnet, which acts as an intermediary between the user and the private application.
-VPN-based Cloud Services: Some cloud providers offer managed VPN solutions, like AWS Client VPN
+2. **Create a VPN Connection:**
+Set up a Virtual Private Network (VPN) connection between your on-premises network or a remote location and your VPC. This allows you to access private instances securely as if they were on your local network. You can then use Remote Desktop Protocol (RDP) for Windows instances or SSH for Linux instances.
+
+3. **Implement a Site-to-Site VPN:**
+ If you have an on-premises data center or another remote network, you can establish a site-to-site VPN connection with your VPC. This allows secure communication between your local network and the private instances. Once the VPN is established, you can access the private instances directly as if they were part of your local network.
+
+4. **Use AWS Systems Manager Session Manager:**
+ AWS Systems Manager Session Manager allows you to access your EC2 instances securely without requiring direct internet access to your instances. You can establish a session to your private instance through the AWS Management Console or command-line interface.
+
+5. **Set Up an Application Load Balancer:**
+ If you want to make your application accessible to the public but keep your instances private, you can place an Application Load Balancer (ALB) in a public subnet. The ALB can then route incoming HTTP/HTTPS traffic to your private instances.
+
+6. **Use a CloudFront Distribution:**
+If your application consists of static content (e.g., a website), you can use Amazon CloudFront as a Content Delivery Network (CDN). CloudFront can distribute your content globally, and it can be configured to work with private origins (your private EC2 instances).
 
 ## If you have your own S3 bucket and provide access to certain IP ranges/addresses not to everyone. How you will do? and which policy you will add? specify the type of policy you will add with your name ie.
 Role-based policy, service-based policy, inline policy, or custom policy
