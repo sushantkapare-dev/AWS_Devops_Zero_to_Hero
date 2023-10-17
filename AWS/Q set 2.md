@@ -1,4 +1,4 @@
-## **Q1: Can we attach multiple target groups in one LB?**
+## Can we attach multiple target groups in one LB?**
 Yes, we can attach multiple target groups in one LB
 
 ## **Q2: How to create an internal load balancer?**
