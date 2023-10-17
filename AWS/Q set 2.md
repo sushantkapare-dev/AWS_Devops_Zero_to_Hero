@@ -4,19 +4,19 @@ Yes, we can attach multiple target groups in one LB
 ## How to create an internal load balancer?**
 There are 2 types of load balancers. One is internet-facing and other one is internal, just define the type while creating it.
 
-## **Q3: How to resize the EBS volume?**
+## How to resize the EBS volume?**
 Go to edit the volume and select modify the volume and change the size, IOPS, etc.
 
-## **Q4: Can we attach the same EBS volumes to multiple instances?**
+## Can we attach the same EBS volumes to multiple instances?**
 No, we can’t attach. We need to use the EFS for that.
 
-## Q5: What is the transit gateway in AWS?
+## What is the transit gateway in AWS?
 A transit gateway is a network transit hub that you can use to interconnect your virtual private clouds (VPCs) and on-premises networks.
 
-## Q6: What is the use of lifecycle hooks in Autoscaling?
+## What is the use of lifecycle hooks in Autoscaling?
 Amazon EC2 Auto Scaling offers the ability to add lifecycle hooks to your Auto Scaling groups. These hooks let you create solutions that are aware of events in the Auto Scaling instance lifecycle, and then perform a custom action on instances when the corresponding lifecycle event occurs. A lifecycle hook provides a specified amount of time (one hour by default) to wait for the action to complete before the instance transitions to the next state.
 
-## Q7: I want to create the VPC, what cloud is the maximum CIDR range you can provide?
+## I want to create the VPC, what cloud is the maximum CIDR range you can provide?
 10.0.0.0/16
 
 ## Q8: How you will add your own system Ip under the security group?
