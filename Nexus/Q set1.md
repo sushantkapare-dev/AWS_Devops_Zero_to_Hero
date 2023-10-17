@@ -145,8 +145,7 @@ Limit exposure to the public internet by using a reverse proxy.
 A hosted repository in Nexus is used for storing and managing artifacts that are created and published internally. It provides a controlled environment for hosting your organization's own artifacts, ensuring that they are properly managed, versioned, and secured.
 
 ## What is a snapshot repository, and when would you use it?
-
-Answer: A snapshot repository in Nexus is used for storing unstable or frequently changing versions of artifacts during the development process. Snapshots are not intended for long-term use and should not be relied upon in production. They are useful for continuous integration and development phases when you need to quickly publish and access the latest changes without versioning.
+A snapshot repository in Nexus is used for storing unstable or frequently changing versions of artifacts during the development process. Snapshots are not intended for long-term use and should not be relied upon in production. They are useful for continuous integration and development phases when you need to quickly publish and access the latest changes without versioning.
 
 ## Explain the process of configuring Nexus as a Docker Registry.
 To configure Nexus as a Docker Registry:
@@ -168,5 +167,4 @@ Ensuring access controls are well-defined.
 Regularly cleaning up old or unused artifacts to save storage space.
 
 ## How would you handle issues related to artifact versioning and conflicts in Nexus?
-
-Answer: Handling versioning and conflicts can involve setting up strict versioning policies, implementing a release strategy, and utilizing features like the staging suite in Nexus to promote artifacts through different lifecycle stages (e.g., from snapshot to release). It's crucial to establish clear versioning rules and enforce them throughout the development and deployment processes.
+Handling versioning and conflicts can involve setting up strict versioning policies, implementing a release strategy, and utilizing features like the staging suite in Nexus to promote artifacts through different lifecycle stages (e.g., from snapshot to release). It's crucial to establish clear versioning rules and enforce them throughout the development and deployment processes.
