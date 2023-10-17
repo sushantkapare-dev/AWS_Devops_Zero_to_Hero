@@ -76,7 +76,7 @@ Test the load balancer by sending traffic to it. It should distribute the traffi
   If you created a snapshot in Step 2 and no longer need it, you can delete it to save storage costs.
 
 ## Can we attach the same EBS volumes to multiple instances?
-
+No, you cannot attach the same Elastic Block Store (EBS) volume to multiple Amazon EC2 instances simultaneously. EBS volumes are designed for use as block storage for a single EC2 instance at a time.
 
 ## What is the transit gateway in AWS?
 A transit gateway is a network transit hub that you can use to interconnect your virtual private clouds (VPCs) and on-premises networks.
