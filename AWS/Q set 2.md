@@ -19,7 +19,7 @@ Amazon EC2 Auto Scaling offers the ability to add lifecycle hooks to your Auto S
 ## I want to create the VPC, what cloud is the maximum CIDR range you can provide?
 10.0.0.0/16
 
-## Q8: How you will add your own system Ip under the security group?
+## How you will add your own system Ip under the security group?
 Find the IP of the system using ifconfig command and add it to the SG
 
 ## Q9: We have two subnets one is public and the second is private so how you will identify which is public and which is private?
@@ -31,16 +31,16 @@ Class C: 192.168.0.0 to 192.168.255.255
 Public Subnets:
 All other IP ranges not falling into the above private ranges are generally considered public.
 
-## Q10: If I have configured one application(HTTPD) on EC2 instance private subnet and now I want to access the URL from the web browser, how it will be possible?
+## If I have configured one application(HTTPD) on EC2 instance private subnet and now I want to access the URL from the web browser, how it will be possible?
 Yes, it is possible. Here is the approach.
 
 You can use a NAT Gateway
 In the route table associated with your private subnet, add a route that sends all outgoing traffic (0.0.0.0/0) to the NAT Gateway
 
-## Q11: What is the use of a NAT gateway? and is it one-way communication or two-way communication?
+## What is the use of a NAT gateway? and is it one-way communication or two-way communication?
 NAT gateway facilitates two-way communication. Devices within the private network can initiate outbound connections to the internet, and the NAT gateway manages the translation of IP addresses and ports, allowing responses from the internet to be correctly delivered back to the respective devices within the private network.
 
-## Q12: If you want to access your private instance from your local machine so will you be able to access using private IP?
+## If you want to access your private instance from your local machine so will you be able to access using private IP?
 Private IP addresses are meant for internal communication within a private network only
 VPN (Virtual Private Network): Set up a VPN connection between your local machine and the private network where the instance is located. Once connected to the VPN, your local machine will effectively be part of the private network and can access resources, including the private instance, using its private IP address.
 
@@ -48,30 +48,30 @@ SSH Tunneling (Port Forwarding): If the private instance has SSH enabled and you
 
 Bastion Host or Jump Box: If you have a bastion host or jump box set up in the private network, you can first SSH into the bastion host and then SSH from the bastion host to the private instance. This allows you to access the private instance indirectly.
 
-## Q13: How can we access the application through the web browser if the application is hosted on a private subnet instance? what are the ways?
+## How can we access the application through the web browser if the application is hosted on a private subnet instance? what are the ways?
 
 Using NAT Gateway:
 Proxy Server: Set up a proxy server in the public subnet, which acts as an intermediary between the user and the private application.
 VPN-based Cloud Services: Some cloud providers offer managed VPN solutions, like AWS Client VPN
 
-## Q14: If you have your own S3 bucket and provide access to certain IP ranges/addresses not to everyone. How you will do? and which policy you will add? specify the type of policy you will add with your name ie.
+## If you have your own S3 bucket and provide access to certain IP ranges/addresses not to everyone. How you will do? and which policy you will add? specify the type of policy you will add with your name ie.
 Role-based policy, service-based policy, inline policy, or custom policy
 To provide access to a certain IP range/address and restrict access to everyone else in your own S3 bucket, you can use an IAM (Identity and Access Management) policy to control the permissions. IAM policies allow you to define who can access your S3 bucket and what actions they can perform.
 
 In this scenario, you would use a custom IAM policy to define the specific IP range or addresses that are allowed access to the S3 bucket. The policy will be attached to the IAM users, groups, or roles that need access to the bucket.
 
-## Q15: If we are getting data under S3 standard storage class and I want to move that data every last of the month into Glacier, how you will do?
+## If we are getting data under S3 standard storage class and I want to move that data every last of the month into Glacier, how you will do?
 To automate the process of moving data from the S3 Standard storage class to Glacier every last day of the month, you can use AWS Lambda along with CloudWatch Events.
 Set up an S3 Lifecycle policy to transition objects to the Glacier storage
 
-## Q16: Do you know the type of LB?
+## Do you know the type of LB?
 Classic Load Balancer (CLB): The original ELB, which provides basic load balancing across multiple Amazon EC2 instances. It operates at both the application and transport layers.
 
 Application Load Balancer (ALB): A more advanced load balancer that operates at the application layer (Layer 7) and is designed to route traffic to different targets based on the content of the request. ALBs are well-suited for HTTP and HTTPS traffic, supporting features like host-based routing, path-based routing, and support for WebSocket and HTTP/2 protocols.
 
 Network Load Balancer (NLB): A high-performance load balancer that operates at the transport layer (Layer 4). It is designed to handle large amounts of traffic and is best suited for TCP, UDP, and TLS traffic. NLBs are often used for scenarios that require low latency and high throughput.
 
-## Q17: Do you know the flow of application LB? end to end?
+## Do you know the flow of application LB? end to end?
 Incoming Client Request: The flow begins when a client, such as a web browser or a mobile app, sends a request to access a specific application or service hosted on the load balancer’s IP address or domain name.
 
 Load Balancer Receives the Request: The application load balancer (ALB) sits between the client and the backend application servers. It receives the incoming client request on a specific port (e.g., port 80 for HTTP or port 443 for HTTPS).
