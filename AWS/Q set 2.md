@@ -1,7 +1,7 @@
 ## Can we attach multiple target groups in one LB?**
 Yes, we can attach multiple target groups in one LB
 
-## **Q2: How to create an internal load balancer?**
+## How to create an internal load balancer?**
 There are 2 types of load balancers. One is internet-facing and other one is internal, just define the type while creating it.
 
 ## **Q3: How to resize the EBS volume?**
