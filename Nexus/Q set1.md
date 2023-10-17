@@ -122,3 +122,7 @@ Nexus Repository Manager allows you to define and enforce various types of polic
 
 5. **Maven Central Sync Policies**:
    - **Maven Central Sync Policies**: If you're proxying Maven Central Repository, you can define policies that control how and when Nexus synchronizes with Maven Central. This ensures that you have control over which artifacts are cached and when updates are pulled.
+  
+## What is Nexus Repository Manager, and why is it important in the context of DevOps?
+
+Nexus Repository Manager is a repository manager used for storing and managing binary artifacts such as build dependencies, libraries, and Docker images. It's crucial in DevOps because it centralizes artifact storage, promotes artifact reuse, and ensures consistent and reliable artifact management throughout the software development lifecycle.
