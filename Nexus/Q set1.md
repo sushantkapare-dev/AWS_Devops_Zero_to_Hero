@@ -124,5 +124,49 @@ Nexus Repository Manager allows you to define and enforce various types of polic
    - **Maven Central Sync Policies**: If you're proxying Maven Central Repository, you can define policies that control how and when Nexus synchronizes with Maven Central. This ensures that you have control over which artifacts are cached and when updates are pulled.
   
 ## What is Nexus Repository Manager, and why is it important in the context of DevOps?
-
 Nexus Repository Manager is a repository manager used for storing and managing binary artifacts such as build dependencies, libraries, and Docker images. It's crucial in DevOps because it centralizes artifact storage, promotes artifact reuse, and ensures consistent and reliable artifact management throughout the software development lifecycle.
+
+## Explain the difference between Nexus Repository Manager 2 and Nexus Repository Manager 3.
+Nexus Repository Manager 2 was the earlier version, and Nexus Repository Manager 3 is the newer, more advanced version. The key differences include a shift to using a more modern technology stack (Nexus 3 is built on Java 8 and OrientDB), support for Docker registry formats, improved scalability, and the introduction of the REST API for enhanced automation and integration capabilities.
+
+## What is the purpose of a proxy repository in Nexus?
+A proxy repository in Nexus is used to cache and manage external artifacts from remote repositories. This minimizes network overhead and improves build performance by allowing your team to access frequently used dependencies from a local repository instead of fetching them repeatedly from external sources.
+
+## How can you secure a Nexus Repository Manager?
+To secure Nexus Repository Manager, you can implement the following measures:
+
+Use authentication and authorization mechanisms to control access.
+Configure SSL to encrypt communication.
+Implement fine-grained access control by creating roles and privileges.
+Regularly update and patch the Nexus instance.
+Limit exposure to the public internet by using a reverse proxy.
+
+## Explain what a hosted repository is in Nexus.
+A hosted repository in Nexus is used for storing and managing artifacts that are created and published internally. It provides a controlled environment for hosting your organization's own artifacts, ensuring that they are properly managed, versioned, and secured.
+
+## What is a snapshot repository, and when would you use it?
+
+Answer: A snapshot repository in Nexus is used for storing unstable or frequently changing versions of artifacts during the development process. Snapshots are not intended for long-term use and should not be relied upon in production. They are useful for continuous integration and development phases when you need to quickly publish and access the latest changes without versioning.
+
+## Explain the process of configuring Nexus as a Docker Registry.
+To configure Nexus as a Docker Registry:
+Enable the Docker connector in the Nexus configuration.
+Create a Docker hosted repository for storing Docker images.
+Set up appropriate security and access controls.
+Use a Docker client to push and pull images from Nexus, specifying the repository URL.
+
+## How can you automate the deployment of artifacts to Nexus in a CI/CD pipeline?
+You can automate artifact deployment to Nexus by integrating it into your CI/CD pipeline. Use build scripts or plugins like Maven, Gradle, or Jenkins to publish artifacts to Nexus after successful builds. Implement deployment jobs or stages in your pipeline that interact with Nexus to ensure reliable and version-controlled artifact deployment.
+
+## What are some best practices for maintaining and optimizing Nexus Repository Manager for a production environment?
+Best practices include:
+
+Regular backups of the Nexus data.
+Monitoring system health, performance, and storage.
+Implementing a disaster recovery plan.
+Ensuring access controls are well-defined.
+Regularly cleaning up old or unused artifacts to save storage space.
+
+## How would you handle issues related to artifact versioning and conflicts in Nexus?
+
+Answer: Handling versioning and conflicts can involve setting up strict versioning policies, implementing a release strategy, and utilizing features like the staging suite in Nexus to promote artifacts through different lifecycle stages (e.g., from snapshot to release). It's crucial to establish clear versioning rules and enforce them throughout the development and deployment processes.
