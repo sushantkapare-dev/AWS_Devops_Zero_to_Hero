@@ -224,11 +224,11 @@ Application Load Balancer (ALB): A more advanced load balancer that operates at 
 Network Load Balancer (NLB): A high-performance load balancer that operates at the transport layer (Layer 4). It is designed to handle large amounts of traffic and is best suited for TCP, UDP, and TLS traffic. NLBs are often used for scenarios that require low latency and high throughput.
 
 ## Do you know the flow of application LB? end to end?
-Incoming Client Request: The flow begins when a client, such as a web browser or a mobile app, sends a request to access a specific application or service hosted on the load balancer’s IP address or domain name.
+**Incoming Client Request**: The flow begins when a client, such as a web browser or a mobile app, sends a request to access a specific application or service hosted on the load balancer’s IP address or domain name.
 
-Load Balancer Receives the Request: The application load balancer (ALB) sits between the client and the backend application servers. It receives the incoming client request on a specific port (e.g., port 80 for HTTP or port 443 for HTTPS).
+**Load Balancer Receives the Request**: The application load balancer (ALB) sits between the client and the backend application servers. It receives the incoming client request on a specific port (e.g., port 80 for HTTP or port 443 for HTTPS).
 
-Load Balancer Selection Algorithm: The ALB uses a load balancing algorithm to determine which backend server should handle the incoming request. The selection process can be based on various factors, such as round-robin, least connections, least response time, etc.
+**Load Balancer Selection Algorithm**: The ALB uses a load balancing algorithm to determine which backend server should handle the incoming request. The selection process can be based on various factors, such as round-robin, least connections, least response time, etc.
 
 Load Balancer Routes the Request: Once the backend server is selected, the load balancer forwards the client request to that server. The backend server processes the request and generates a response.
 
@@ -243,21 +243,19 @@ Client Receives Response: The client (e.g., web browser or mobile app) receives 
 Scaling and High Availability: Application Load Balancers are often deployed in a redundant configuration with multiple instances to ensure high availability and fault tolerance. If any backend server becomes unavailable, the load balancer will automatically route traffic to the healthy servers.
 
 ## Q18: If you have three instances in the target group so whenever any instance gets down, how you will come to know that one instance is down?
-To detect when an instance in the target group goes down, you can set up an automated monitoring and alerting system. AWS, for example, provides various services that can help you achieve this. Here’s one possible approach using AWS services:
+**Amazon CloudWatch**: Set up CloudWatch to monitor the health of the instances in your target group. CloudWatch can collect and track metrics like CPU utilization, network traffic, and status checks.
 
-Amazon CloudWatch: Set up CloudWatch to monitor the health of the instances in your target group. CloudWatch can collect and track metrics like CPU utilization, network traffic, and status checks.
+**CloudWatch Alarms**: Create CloudWatch alarms based on specific conditions, such as when the status check fails for an instance or when the instance’s health check status becomes “unhealthy.”
 
-CloudWatch Alarms: Create CloudWatch alarms based on specific conditions, such as when the status check fails for an instance or when the instance’s health check status becomes “unhealthy.”
+**Amazon SNS (Simple Notification Service)**: Configure an SNS topic to send notifications when an alarm is triggered. This topic can have one or more subscribers, such as email addresses, SMS numbers, or other AWS services.
 
-Amazon SNS (Simple Notification Service): Configure an SNS topic to send notifications when an alarm is triggered. This topic can have one or more subscribers, such as email addresses, SMS numbers, or other AWS services.
-
-Amazon Auto Scaling: If you are using Auto Scaling, it can automatically replace failed instances. In such cases, you can configure Auto Scaling to use the SNS topic as a notification mechanism.
+**Amazon Auto Scaling**: If you are using Auto Scaling, it can automatically replace failed instances. In such cases, you can configure Auto Scaling to use the SNS topic as a notification mechanism.
 
 ## Q19: Have you created any RDS instances? could you specify the multi-AZ and read replica?
-Multi-AZ Deployment:
+**Multi-AZ Deployment**:
 In Multi-AZ (Availability Zone) deployment, Amazon RDS automatically provisions and maintains a synchronous standby replica of your primary database in a different Availability Zone. This standby replica provides data redundancy and automatic failover in the event of an infrastructure failure or maintenance event affecting the primary database. If the primary database becomes unavailable, Amazon RDS will automatically promote the standby replica to become the new primary database. Multi-AZ is a high-availability feature that helps enhance the resilience of your database.
 
-Read Replicas:
+**Read Replicas**:
 Read replicas in Amazon RDS are copies of the primary database instance that are asynchronously updated from the primary instance. They are used to offload read traffic from the primary database, thereby improving read performance and scalability. Read replicas can be created in the same region as the primary database or in different regions, allowing you to distribute read traffic across various locations
 
 ## Q20: Cloud formation vs Terraform
@@ -266,11 +264,11 @@ Cloudformation is the IaC tool that is limited to AWS only. You can use cloud fo
 While Terraform is an IaC tool that can interact with any cloud provider like AWS, GCP & Azure. We need to write the manifest files in Terraform and need to use Terraform commands to provision the infrastructure. Terraform maintains the information about the infrastructure in a state file called terraform.tfstate
 
 ## Q21: Cloudtrail vs Cloudwatch
-AWS CloudTrail:
+**AWS CloudTrail**:
 CloudTrail is a service that enables you to monitor and audit the actions taken by users, applications, and services in your AWS account.
 It provides detailed event history of activities that occur within your account, such as API calls made on resources, changes to resource configurations, and more.
 
-Amazon CloudWatch:
+**Amazon CloudWatch**:
 Amazon CloudWatch is a monitoring and observability service that provides insights into the performance and operational health of your AWS resources and applications. It collects and tracks metrics, creates alarms, and generates logs.
 
 CloudWatch collects and stores metrics (such as CPU usage, network traffic, etc.) from various AWS services and custom sources.
@@ -279,13 +277,15 @@ You can set up alarms based on thresholds for certain metrics, and CloudWatch ca
 ## Q22: When to use AWS Fargate?
 You can use AWS Fargate in the following scenarios:
 
-Containerized Applications: When you have containerized applications using Docker, Fargate can manage the deployment, scaling, and infrastructure for those containers.
-Microservices: Fargate is well-suited for deploying and managing microservices architectures where each service can be containerized and deployed independently.
+**Containerized Applications**: When you have containerized applications using Docker, Fargate can manage the deployment, scaling, and infrastructure for those containers.
 
-Serverless Container Management: Fargate provides a serverless computing model for containers, allowing you to only pay for the resources used by your containers without worrying about server provisioning and management.
+**Microservices**: Fargate is well-suited for deploying and managing microservices architectures where each service can be containerized and deployed independently.
 
-Simplified Operations: If you want to reduce operational overhead and focus more on application development, Fargate abstracts away the need to manage the underlying instances.
-Scalability: Fargate makes it easier to scale your containers as needed without the need to manage the scaling process manually.
+**Serverless Container Management**: Fargate provides a serverless computing model for containers, allowing you to only pay for the resources used by your containers without worrying about server provisioning and management.
+
+**Simplified Operations**: If you want to reduce operational overhead and focus more on application development, Fargate abstracts away the need to manage the underlying instances.
+
+**Scalability**: Fargate makes it easier to scale your containers as needed without the need to manage the scaling process manually.
 
 ## Q23: Can we use EFS as the root volume?
 No, we can’t use only EBS can be used as the root volume
