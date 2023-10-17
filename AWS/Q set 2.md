@@ -149,12 +149,11 @@ A Network Address Translation (NAT) Gateway is a managed AWS service used to ena
 As for the nature of communication through a NAT Gateway, it is primarily one-way communication for outbound traffic. Resources in a private subnet can communicate with external resources on the internet, but incoming traffic initiated from the internet is blocked by default. In other words, a NAT Gateway facilitates traffic going out from your private subnet, but it does not allow incoming traffic initiated from the internet to reach your private instances.
 
 ## If you want to access your private instance from your local machine so will you be able to access using private IP?
-Private IP addresses are meant for internal communication within a private network only
-VPN (Virtual Private Network): Set up a VPN connection between your local machine and the private network where the instance is located. Once connected to the VPN, your local machine will effectively be part of the private network and can access resources, including the private instance, using its private IP address.
+**VPN (Virtual Private Network)**: Set up a VPN connection between your local machine and the private network where the instance is located. Once connected to the VPN, your local machine will effectively be part of the private network and can access resources, including the private instance, using its private IP address.
 
-SSH Tunneling (Port Forwarding): If the private instance has SSH enabled and you have SSH access to it, you can create an SSH tunnel from your local machine to the private instance.
+**SSH Tunneling (Port Forwarding)**: If the private instance has SSH enabled and you have SSH access to it, you can create an SSH tunnel from your local machine to the private instance.
 
-Bastion Host or Jump Box: If you have a bastion host or jump box set up in the private network, you can first SSH into the bastion host and then SSH from the bastion host to the private instance. This allows you to access the private instance indirectly.
+**Bastion Host or Jump Box**: If you have a bastion host or jump box set up in the private network, you can first SSH into the bastion host and then SSH from the bastion host to the private instance. This allows you to access the private instance indirectly.
 
 ## How can we access the application through the web browser if the application is hosted on a private subnet instance? what are the ways?
 
