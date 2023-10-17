@@ -92,23 +92,56 @@ This range allows you to define the size of your VPC's IP address space accordin
 10.0.0.0/16
 ```
 
-## How you will add your own system Ip under the security group?
-Find the IP of the system using ifconfig command and add it to the SG
+ ## How you will add your own system Ip under the security group?
+1. **Sign in to the AWS Management Console:**
+   - Go to the [AWS Management Console](https://aws.amazon.com/).
+   - Sign in with your credentials.
 
-## Q9: We have two subnets one is public and the second is private so how you will identify which is public and which is private?
-Private Subnets:
-Class A: 10.0.0.0 to 10.255.255.255
-Class B: 172.16.0.0 to 172.31.255.255
-Class C: 192.168.0.0 to 192.168.255.255
+2. **Navigate to the Security Group:**
+   - In the AWS Management Console, open the EC2 dashboard.
+   - In the navigation pane, click on "Security Groups" to view your security groups.
 
-Public Subnets:
-All other IP ranges not falling into the above private ranges are generally considered public.
+3. **Select the Security Group:**
+   - Select the security group to which you want to add your system's IP address.
+
+4. **Edit the Inbound Rules:**
+   - In the "Inbound rules" tab of the selected security group, click the "Edit inbound rules" button.
+
+5. **Add a New Rule:**
+   - Click the "Add rule" button.
+   - In the "Type" dropdown, choose the type of traffic you want to allow. For example, you can choose "SSH" for SSH access or "HTTP" for web access.
+   - In the "Source" field, you can specify your system's IP address. You can do this in one of the following ways:
+     - Select "My IP" from the dropdown, which will automatically detect and add your system's public IP address.
+     - Enter your system's IP address manually in CIDR notation (e.g., `1.2.3.4/32` for a single IP address).
+
+6. **Review and Save:**
+   - Review the rule to ensure it's correct.
+   - Click the "Save rules" button to apply the new rule to the security group.
+
+## We have two subnets one is public and the second is private so how you will identify which is public and which is private?
+In AWS, you can distinguish between public and private subnets by looking at the route tables associated with those subnets. The key factor that determines whether a subnet is public or private is the presence of a route to an internet gateway (IGW) in the subnet's route table.
+**Public Subnet:**
+A public subnet is one that has a route to an internet gateway (IGW) in its associated route table. This allows instances in the public subnet to communicate with the public internet.
+
+To identify a public subnet:
+
+1. Open the AWS Management Console.
+2. Go to the VPC service.
+3. In the navigation pane, click on "Subnets."
+4. Select the subnet you want to check.
+5. In the "Route table" section, you will see the associated route table for the subnet.
+6. In the associated route table, if there is a default route (0.0.0.0/0) pointing to an IGW, then the subnet is a public subnet.
+
+**Private Subnet:**
+A private subnet does not have a route to an internet gateway (IGW) in its associated route table. Instances in a private subnet can reach the public internet only if they go through a Network Address Translation (NAT) gateway or NAT instance located in the public subnet.
+
+To identify a private subnet:
+
+1. Follow the same steps as above to navigate to the subnet in the AWS Management Console.
+2. In the associated route table, if there is no default route to an IGW and the route table has routes directing traffic to a NAT gateway or NAT instance, then the subnet is a private subnet.
 
 ## If I have configured one application(HTTPD) on EC2 instance private subnet and now I want to access the URL from the web browser, how it will be possible?
-Yes, it is possible. Here is the approach.
-
-You can use a NAT Gateway
-In the route table associated with your private subnet, add a route that sends all outgoing traffic (0.0.0.0/0) to the NAT Gateway
+To access a web application (e.g., Apache HTTPD) running on an Amazon EC2 instance in a private subnet from a web browser, you typically need to set up a Network Address Translation (NAT) gateway or a NAT instance in a public subnet to facilitate outbound traffic from your private subnet to the internet.
 
 ## What is the use of a NAT gateway? and is it one-way communication or two-way communication?
 NAT gateway facilitates two-way communication. Devices within the private network can initiate outbound connections to the internet, and the NAT gateway manages the translation of IP addresses and ports, allowing responses from the internet to be correctly delivered back to the respective devices within the private network.
