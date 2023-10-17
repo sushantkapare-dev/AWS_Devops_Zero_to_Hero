@@ -42,11 +42,41 @@ Ensure that the route tables associated with your private subnets have a route f
 9. **Test the Load Balancer:**
 Test the load balancer by sending traffic to it. It should distribute the traffic to your backend instances based on your target group configuration.
 
-## How to resize the EBS volume?**
+## How to resize the EBS volume?
 Go to edit the volume and select modify the volume and change the size, IOPS, etc.
 
-## Can we attach the same EBS volumes to multiple instances?**
-No, we can’t attach. We need to use the EFS for that.
+## Can we attach the same EBS volumes to multiple instances?
+**Steps to Resize an EBS Volume:**
+
+1. **Identify the EBS Volume:**
+ - Sign in to the AWS Management Console.
+   - Open the EC2 dashboard.
+   - In the left navigation pane, click on "Volumes" to view your EBS volumes.
+   - Identify the EBS volume you want to resize.
+
+2. **Create a Snapshot (Optional but Recommended):**
+  It's a best practice to create a snapshot of your EBS volume before making any changes to ensure data backup. You can do this by selecting the volume and clicking "Create Snapshot."
+
+3. **Stop the Associated EC2 Instance:**
+  You must stop the EC2 instance to which the EBS volume is attached. You cannot resize a volume that is in use.
+
+4. **Resize the EBS Volume:**
+ - In the AWS Management Console, select the volume you want to resize.
+   - Click the "Actions" button, and then select "Modify Volume."
+   - In the "Modify Volume" dialog, adjust the size of the volume to your desired size.
+   - Confirm the change.
+
+5. **Start the EC2 Instance:**
+ After resizing the EBS volume, start the EC2 instance that it's attached to.
+
+6. **File System Resize (if needed):**
+  If your file system is XFS (common for Amazon Linux and some other distributions), you can resize it without unmounting it. If it's an ext4 file system (common for many Linux distributions), you may need to resize it using the `resize2fs` command. Be sure to consult your specific Linux distribution's documentation for the exact command to use.
+
+7. **Verify the Resize:**
+ Log in to your EC2 instance and check the available disk space to ensure that the volume has been resized correctly.
+
+8. **Optional: Delete the Snapshot:**
+  If you created a snapshot in Step 2 and no longer need it, you can delete it to save storage costs.
 
 ## What is the transit gateway in AWS?
 A transit gateway is a network transit hub that you can use to interconnect your virtual private clouds (VPCs) and on-premises networks.
