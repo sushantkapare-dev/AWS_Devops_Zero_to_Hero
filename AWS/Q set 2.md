@@ -217,11 +217,11 @@ To automate the process of moving data from the S3 Standard storage class to Gla
 Set up an S3 Lifecycle policy to transition objects to the Glacier storage
 
 ## Do you know the type of LB?
-Classic Load Balancer (CLB): The original ELB, which provides basic load balancing across multiple Amazon EC2 instances. It operates at both the application and transport layers.
+**Classic Load Balancer (CLB)**: The original ELB, which provides basic load balancing across multiple Amazon EC2 instances. It operates at both the application and transport layers.
 
-Application Load Balancer (ALB): A more advanced load balancer that operates at the application layer (Layer 7) and is designed to route traffic to different targets based on the content of the request. ALBs are well-suited for HTTP and HTTPS traffic, supporting features like host-based routing, path-based routing, and support for WebSocket and HTTP/2 protocols.
+**Application Load Balancer (ALB)**: A more advanced load balancer that operates at the application layer (Layer 7) and is designed to route traffic to different targets based on the content of the request. ALBs are well-suited for HTTP and HTTPS traffic, supporting features like host-based routing, path-based routing, and support for WebSocket and HTTP/2 protocols.
 
-Network Load Balancer (NLB): A high-performance load balancer that operates at the transport layer (Layer 4). It is designed to handle large amounts of traffic and is best suited for TCP, UDP, and TLS traffic. NLBs are often used for scenarios that require low latency and high throughput.
+**Network Load Balancer (NLB)**: A high-performance load balancer that operates at the transport layer (Layer 4). It is designed to handle large amounts of traffic and is best suited for TCP, UDP, and TLS traffic. NLBs are often used for scenarios that require low latency and high throughput.
 
 ## Do you know the flow of application LB? end to end?
 **Incoming Client Request**: The flow begins when a client, such as a web browser or a mobile app, sends a request to access a specific application or service hosted on the load balancer’s IP address or domain name.
@@ -230,17 +230,17 @@ Network Load Balancer (NLB): A high-performance load balancer that operates at t
 
 **Load Balancer Selection Algorithm**: The ALB uses a load balancing algorithm to determine which backend server should handle the incoming request. The selection process can be based on various factors, such as round-robin, least connections, least response time, etc.
 
-Load Balancer Routes the Request: Once the backend server is selected, the load balancer forwards the client request to that server. The backend server processes the request and generates a response.
+**Load Balancer Routes the Request**: Once the backend server is selected, the load balancer forwards the client request to that server. The backend server processes the request and generates a response.
 
-Backend Server Processes the Request: The selected backend server processes the client request, performs any necessary computations, and generates a response. This response may include the requested data or an error message.
+**Backend Server Processes the Request**: The selected backend server processes the client request, performs any necessary computations, and generates a response. This response may include the requested data or an error message.
 
-Response Sent to Load Balancer: After processing the request, the backend server sends the response back to the load balancer.
+**Response Sent to Load Balancer**: After processing the request, the backend server sends the response back to the load balancer.
 
-Load Balancer Sends Response to Client: The load balancer receives the response from the backend server and forwards it to the client that made the initial request.
+**Load Balancer Sends Response to Client**: The load balancer receives the response from the backend server and forwards it to the client that made the initial request.
 
-Client Receives Response: The client (e.g., web browser or mobile app) receives the response from the load balancer. From the client’s perspective, it appears as if the request was directly processed by a single server, unaware of the load balancing behind the scenes.
+**Client Receives Response**: The client (e.g., web browser or mobile app) receives the response from the load balancer. From the client’s perspective, it appears as if the request was directly processed by a single server, unaware of the load balancing behind the scenes.
 
-Scaling and High Availability: Application Load Balancers are often deployed in a redundant configuration with multiple instances to ensure high availability and fault tolerance. If any backend server becomes unavailable, the load balancer will automatically route traffic to the healthy servers.
+**Scaling and High Availability**: Application Load Balancers are often deployed in a redundant configuration with multiple instances to ensure high availability and fault tolerance. If any backend server becomes unavailable, the load balancer will automatically route traffic to the healthy servers.
 
 ## Q18: If you have three instances in the target group so whenever any instance gets down, how you will come to know that one instance is down?
 **Amazon CloudWatch**: Set up CloudWatch to monitor the health of the instances in your target group. CloudWatch can collect and track metrics like CPU utilization, network traffic, and status checks.
