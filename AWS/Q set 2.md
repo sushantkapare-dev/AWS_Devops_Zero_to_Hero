@@ -43,9 +43,6 @@ Ensure that the route tables associated with your private subnets have a route f
 Test the load balancer by sending traffic to it. It should distribute the traffic to your backend instances based on your target group configuration.
 
 ## How to resize the EBS volume?
-Go to edit the volume and select modify the volume and change the size, IOPS, etc.
-
-## Can we attach the same EBS volumes to multiple instances?
 **Steps to Resize an EBS Volume:**
 
 1. **Identify the EBS Volume:**
@@ -77,6 +74,9 @@ Go to edit the volume and select modify the volume and change the size, IOPS, et
 
 8. **Optional: Delete the Snapshot:**
   If you created a snapshot in Step 2 and no longer need it, you can delete it to save storage costs.
+
+## Can we attach the same EBS volumes to multiple instances?
+
 
 ## What is the transit gateway in AWS?
 A transit gateway is a network transit hub that you can use to interconnect your virtual private clouds (VPCs) and on-premises networks.
