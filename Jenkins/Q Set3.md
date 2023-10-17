@@ -95,3 +95,4 @@ time (currently 4 minutes and configurable), then it assumes that the connection
 This is to avoid an infinite hang, as some of the failure modes in the network cannot be detected otherwise. The timeout is also set to a long enough value so that a temporary surge in the load or a long garbage collection pause will not trip off the close-down.
 Ping thread is installed on both controller & agent; each side pings the other and tries to detect the problem from their sides.
 The ping thread time out is reported through java.util.logging. Besides, the controller will also report this exception in the agent launch log. Note that some agent launchers, most notably SSH agents, writes all stdout/stderr outputs from the agent JVM into this same log file, so you need to be careful.
+
