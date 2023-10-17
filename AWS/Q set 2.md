@@ -2,7 +2,45 @@
 Yes, we can attach multiple target groups in one LB
 
 ## How to create an internal load balancer?**
-There are 2 types of load balancers. One is internet-facing and other one is internal, just define the type while creating it.
+An AWS Internal Load Balancer (ILB) is used to distribute network traffic to resources within a Virtual Private Cloud (VPC). It is not exposed to the public internet and is typically used for routing traffic between private instances. Here's how you can create an Internal Load Balancer in AWS:
+**Steps to create an Internal Load Balancer:**
+
+1. **Sign in to the AWS Management Console:**
+  Go to the [AWS Management Console](https://aws.amazon.com/), sign in with your credentials.
+
+2. **Create a Virtual Private Cloud (VPC):**
+  If you don't already have a VPC, you will need to create one. You can do this by navigating to the VPC service and following the steps to create a new VPC.
+
+3. **Create Subnets:**
+ Make sure you have at least two subnets in your VPC. These subnets should be private and part of the same Availability Zone for high availability.
+
+4. **Create Security Groups:**
+  Create or configure security groups for your backend instances to allow traffic from the load balancer.
+
+5. **Create Backend Instances:**
+Launch the instances that you want to load balance in the private subnets. Ensure that they are properly configured and have the necessary software installed.
+
+6. **Create an Internal Load Balancer:**
+- Navigate to the EC2 service in the AWS Management Console.
+   - In the left-hand navigation pane, click on "Load Balancers."
+   - Click the "Create Load Balancer" button.
+   - Select "Application Load Balancer" as the load balancer type.
+   - In the "Configure Load Balancer" page:
+     - Give your load balancer a name and optional description.
+     - Choose your VPC.
+     - Select "Internal" as the scheme.
+   - In the "Assign Security Groups" section, choose or create a security group for the load balancer.
+   - In the "Configure Routing" section, you will need to create a target group. This group will define how traffic is routed to your backend instances. Specify the protocol, port, and health check settings.
+   - Review and create the load balancer.
+
+7. **Register Targets:**
+ After creating the target group, you'll need to register your backend instances with it. This can be done by navigating to the "Target Groups" section of the EC2 service and selecting your target group.
+
+8. **Configure Route Tables:**
+Ensure that the route tables associated with your private subnets have a route for the target group to send traffic to the load balancer.
+
+9. **Test the Load Balancer:**
+Test the load balancer by sending traffic to it. It should distribute the traffic to your backend instances based on your target group configuration.
 
 ## How to resize the EBS volume?**
 Go to edit the volume and select modify the volume and change the size, IOPS, etc.
