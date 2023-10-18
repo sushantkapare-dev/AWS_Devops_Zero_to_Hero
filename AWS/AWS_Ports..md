@@ -120,12 +120,12 @@ Purpose: Serverless time-series database service
 
 ## Amazon DataSync
 
-Port: 443 (HTTPS)
+**Port**: 443 (HTTPS)
 
-Purpose: Data transfer service for automating data movement between on-premises and AWS.
+**Purpose**: Data transfer service for automating data movement between on-premises and AWS.
 
 ## Amazon HealthLake
 
-Port: 443 (HTTPS)
+**Port**: 443 (HTTPS)
 
-Purpose: Service for storing and analyzing healthcare data.
+**Purpose**: Service for storing and analyzing healthcare data.
