@@ -536,15 +536,14 @@ Docker's layered architecture refers to the way Docker images are constructed an
 
 Here's an overview of Docker's layered architecture:
 
-Base Image Layer:
-
+**Base Image Layer**:
 At the bottom of the image stack is the base image layer. This layer typically contains the root file system of a minimal Linux distribution (e.g., Alpine, Ubuntu). It serves as the foundation for all other layers in the image.
 Intermediate Layers:
 
 Above the base image layer, there can be multiple intermediate layers. Each intermediate layer represents a specific set of changes or instructions from the Dockerfile. For example, each RUN, COPY, or ADD instruction in the Dockerfile creates a new intermediate layer.
 These layers are read-only and cached, allowing Docker to reuse them when building new images. This caching mechanism speeds up the image-building process by reusing previously built layers if the instructions in the Dockerfile have not changed.
-Top Layer (Writable Layer):
 
+**Top Layer (Writable Layer)**:
 The top layer, also known as the writable layer or the container layer, is where the container-specific data is stored. This layer includes any files created or modified during container runtime, such as application code, logs, and data.
 This layer is writeable, meaning changes made to the container during its execution are stored in this layer. It is unique to each container based on the same image.
 Docker uses a union file system, such as OverlayFS or AUFS (depending on the host OS), to combine these layers into a single, unified view of the file system for the container. This union file system allows Docker to efficiently share and reuse common layers among multiple containers based on the same image. This approach minimizes storage space requirements and speeds up container creation and image distribution.
