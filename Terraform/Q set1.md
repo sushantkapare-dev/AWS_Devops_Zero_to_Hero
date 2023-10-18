@@ -342,3 +342,4 @@ The random provider assists in the generation of numeric or alphabetic character
 **terraform fmt –recursive**
 
 **terraform show**
+
