@@ -108,15 +108,15 @@ Purpose: Managed Apache Cassandra-compatible database service.
 
 ## Amazon App Runner
 
-Port: 80 (HTTP) and 443 (HTTPS)
+**Port**: 80 (HTTP) and 443 (HTTPS)
 
-Purpose: Serverless container-based application deployment.
+**Purpose**: Serverless container-based application deployment.
 
 ## Amazon Timestream
 
-Port: 8182 (HTTP), 8182 (InfluxDB line protocol)
+**Port**: 8182 (HTTP), 8182 (InfluxDB line protocol)
 
-Purpose: Serverless time-series database service
+**Purpose**: Serverless time-series database service
 
 ## Amazon DataSync
 
