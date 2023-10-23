@@ -290,4 +290,8 @@ You can use AWS Fargate in the following scenarios:
 ## Q23: Can we use EFS as the root volume?
 No, we can’t use only EBS can be used as the root volume
 
+## how DNS is work?
+
+##
+
 
