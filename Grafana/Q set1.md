@@ -72,4 +72,6 @@ Grafana plugins are extensions that enhance Grafana's functionality. You can ins
 
 ## How to configure Alerts In Grafana?
 
-##
+## I have Senario that it is java web based application and i want to see logs of selenium in grafana then what will be the process of it?
+
+## 
