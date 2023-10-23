@@ -294,6 +294,8 @@ No, we can’t use only EBS can be used as the root volume
 
 ## why we go with DNS and not goes with other third party tool like GoDaddy?
 
+## What types of Dns ?
+
 ## 
 
 
