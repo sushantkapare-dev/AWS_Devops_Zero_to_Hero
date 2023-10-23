@@ -842,4 +842,6 @@ Docker itself does not impose a strict limit on the number of containers you can
 
 ## Diff between Cgroup and Namespace?
 
+## If the container is in Paused state then can you remove it?
+
 ##
