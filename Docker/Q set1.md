@@ -839,3 +839,7 @@ yes you can use these in lowercase
 Regarding the maximum number of containers you can run on a single host, it depends on various factors, including the host's hardware resources (CPU, memory, storage), the specific workload of each container, and the overall resource management of the host operating system.
 
 Docker itself does not impose a strict limit on the number of containers you can run, but the available resources on the host machine will ultimately determine how many containers can run efficiently without resource contention. As a general guideline, it's essential to monitor your host's resource utilization and performance when running a significant number of containers to ensure optimal operation. You can also use orchestration tools like Docker Swarm or Kubernetes to manage container deployments across multiple hosts for scalability and load balancing.
+
+## Diff between Cgroup and Namespace?
+
+##
