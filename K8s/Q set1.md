@@ -1069,3 +1069,5 @@ Setting up Role-Based Access Control (RBAC) in Kubernetes involves defining role
 
 ## what is multi-tenent cluster in k8s
 A multi-tenant cluster in Kubernetes (K8s) refers to a shared computing environment where multiple independent users or organizations can deploy and manage their containerized applications on the same Kubernetes cluster. This cluster is designed to isolate and secure the workloads of different tenants, ensuring resource allocation, access controls, and network policies are in place to prevent interference or unauthorized access between tenants while optimizing resource utilization across the cluster.
+
+## act as a devops engineer and tell me one job req to exec 5 mi but some reason it req 10 min in k8s what is the reason behind it
