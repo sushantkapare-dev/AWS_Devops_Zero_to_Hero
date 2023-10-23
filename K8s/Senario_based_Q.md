@@ -314,3 +314,6 @@ Securing communication between Pods in a Kubernetes cluster is essential to prot
 **Service Accounts**: Use Kubernetes Service Accounts to authenticate communication between Pods. Ensure that only authorized Service Accounts can access specific resources.
 
 **Secrets Management**: Store sensitive information like API keys, passwords, or database credentials in Kubernetes Secrets. Mount these Secrets as volumes or environment variables in your Pods securely.
+
+## Consider a senario where aplication pod is running and this pod is using configmap so container within pod is also updated how will you do it?
+
