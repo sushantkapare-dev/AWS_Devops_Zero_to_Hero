@@ -69,3 +69,7 @@ Grafana offers several advantages, including its open-source nature, support for
 ## What are Grafana plugins, and how can you install them?
 
 Grafana plugins are extensions that enhance Grafana's functionality. You can install them via the Grafana CLI, the built-in plugin manager, or by manually placing the plugin files in the plugins directory. Popular Grafana plugins include Loki, Tempo, and many data source plugins for different databases and monitoring systems.
+
+## How to configure Alerts In Grafana?
+
+##
