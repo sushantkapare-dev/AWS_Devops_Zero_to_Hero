@@ -548,3 +548,6 @@ main
 
 ## what is Linux loader?
 The Linux loader, often referred to as the bootloader, is a small program that initiates the process of loading the Linux operating system into computer memory during the system's startup. Its primary function is to locate the Linux kernel on the storage device, load it into RAM, and pass control to the kernel, thus enabling the operating system to start and run on the hardware. Popular bootloaders for Linux systems include GRUB (GRand Unified Bootloader) and LILO (LInux LOader).
+
+## what is root kit infection in Linux?
+
