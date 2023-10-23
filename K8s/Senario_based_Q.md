@@ -358,6 +358,36 @@ In Kubernetes, you can gracefully redirect traffic away from a specific pod that
 6. **Revert Traffic or Reschedule Pods**:
    If you want to return traffic to the pods that were on the drained node, you can do so by updating services, ingress controllers, or any other traffic management configurations to include the node again. Alternatively, you can reschedule any pods that were evicted back to the node.
 
+## Can we sequential order the containers within the pod
+Yes, you can specify the order in which containers within a Kubernetes pod start and run by defining their dependencies. Containers within the same pod share the same network namespace and can communicate with each other, making it possible to set up a sequence of tasks that must be executed in a specific order. Here's how you can achieve sequential execution of containers within a pod:
+
+1. **Init Containers**: Use init containers to set up dependencies and run tasks that need to be completed before the main application container starts. Init containers are run to completion in order, one after another, and the main application container only starts after all init containers have successfully completed.
+
+   Here's an example of a pod definition with init containers:
+
+   ```yaml
+   apiVersion: v1
+   kind: Pod
+   metadata:
+     name: sequential-containers
+   spec:
+     containers:
+     - name: init-container-1
+       image: init-image-1
+     - name: init-container-2
+       image: init-image-2
+     initContainers:
+     - name: setup-container
+       image: setup-image
+     - name: main-container
+       image: main-image
+   ```
+
+   In this example, `init-container-1` and `init-container-2` are init containers that run sequentially before the `setup-container` (init container) and the `main-container` (application container) are started.
+
+2. **Application Logic**: Ensure that your application or script inside the main application container is designed to wait for dependencies or signals from the init containers before it begins its main tasks.
+
+3. **Exit Status**: If an init container fails, it will block the execution of subsequent init containers and the main application container. Ensure that your init containers have appropriate error handling and exit gracefully on failure, so that the main application container doesn't start prematurely.
 
 ## Consider a senario where aplication pod is running and this pod is using configmap so container within pod is also updated how will you do it?
 
