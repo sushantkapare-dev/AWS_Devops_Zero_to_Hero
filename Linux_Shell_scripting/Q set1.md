@@ -551,3 +551,6 @@ The Linux loader, often referred to as the bootloader, is a small program that i
 
 ## what is root kit infection in Linux?
 
+## what is parellel ports in Linux?
+
+## 
