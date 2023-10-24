@@ -1,4 +1,3 @@
-
 # AWS DevOps Questions and Answers
 
 Welcome to the AWS DevOps Questions and Answers repository! This repository is designed to help you learn and understand various aspects of AWS (Amazon Web Services) DevOps through a collection of questions and answers.
@@ -15,8 +14,7 @@ If you're new to GitHub, you can follow these steps to begin:
 
 1. **Clone the Repository:**
    ```
- git clone  https://github.com/SushantOps/AWS_Devops_Questions_and_Answers.git
- 
+   git clone https://github.com/SushantOps/AWS_Devops_Questions_and_Answers.git
    ```
 
 2. **Browse Questions:** Open the repository directory and explore the questions in the `Questions.md` file.
@@ -48,5 +46,8 @@ This repository is licensed under the [MIT License](LICENSE). Feel free to use a
 Happy learning, and enjoy your journey into AWS DevOps!
 
 If you have any questions or need further assistance, please don't hesitate to open an issue or reach out to the repository maintainers.
+
+##
+
 ![image](https://github.com/SushantOps/AWS_Devops_Questions_and_Answers/assets/109059766/e1166c2c-7620-4972-a057-7888100850b7)
 
