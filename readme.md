@@ -15,7 +15,8 @@ If you're new to GitHub, you can follow these steps to begin:
 
 1. **Clone the Repository:**
    ```
-   git clone https://github.com/yourusername/AWS_Devops_Questions_and_Answers.git
+ git clone  https://github.com/SushantOps/AWS_Devops_Questions_and_Answers.git
+ 
    ```
 
 2. **Browse Questions:** Open the repository directory and explore the questions in the `Questions.md` file.
