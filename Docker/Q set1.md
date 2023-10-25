@@ -841,6 +841,18 @@ Regarding the maximum number of containers you can run on a single host, it depe
 Docker itself does not impose a strict limit on the number of containers you can run, but the available resources on the host machine will ultimately determine how many containers can run efficiently without resource contention. As a general guideline, it's essential to monitor your host's resource utilization and performance when running a significant number of containers to ensure optimal operation. You can also use orchestration tools like Docker Swarm or Kubernetes to manage container deployments across multiple hosts for scalability and load balancing.
 
 ## Diff between Cgroup and Namespace?
+Control Groups (cgroups) and Namespaces are two fundamental Linux kernel features that Docker uses to create and manage containers. They serve different purposes but are both essential for containerization. Here's a brief overview of the differences between cgroups and namespaces in Docker:
+
+1. ### Control Groups (cgroups):
+   - **Purpose**: Cgroups are responsible for resource management and allocation. They enable Docker to control and limit the resource usage of containers, such as CPU, memory, and I/O.
+   - **Function**: Cgroups allow Docker to set limits, quotas, and priorities for container resources. For example, you can restrict a container to use no more than a certain amount of CPU or memory.
+   - **Example Use Cases**: Ensuring that one container cannot monopolize all available system resources, enforcing resource quotas, and managing resource priorities.
+
+2. ### Namespaces:
+   - **Purpose**: Namespaces provide process and resource isolation. They isolate containers from each other and from the host system, making each container think it has its own isolated environment.
+   - **Function**: Namespaces create separate instances of various system resources for each container. This includes process IDs, network interfaces, file systems, and more. It prevents processes in one container from seeing or affecting processes in other containers or the host.
+   - **Example Use Cases**: Isolating file systems, network configurations, and process trees so that containers can run independently without interference.
+
 
 ## If the container is in Paused state then can you remove it?
 
