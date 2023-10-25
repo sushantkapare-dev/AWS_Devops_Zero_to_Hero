@@ -71,7 +71,48 @@ Grafana offers several advantages, including its open-source nature, support for
 Grafana plugins are extensions that enhance Grafana's functionality. You can install them via the Grafana CLI, the built-in plugin manager, or by manually placing the plugin files in the plugins directory. Popular Grafana plugins include Loki, Tempo, and many data source plugins for different databases and monitoring systems.
 
 ## How to configure Alerts In Grafana?
+1. **Prerequisites**:
+   Ensure that you have Grafana installed and configured, and that you have data sources set up to retrieve the data you want to monitor. You'll also need a dashboard that contains the panel you want to set alerts on.
+
+2. **Create or Select a Panel**:
+   You can add a panel to an existing dashboard or create a new one. Alerts are configured at the panel level.
+
+3. **Edit the Panel**:
+   Open the dashboard that contains the panel you want to set up alerts on, and then click the "Edit" button to enter the panel edit mode.
+
+4. **Configure the Visualization**:
+   Adjust the visualization settings of the panel as needed to display the data you want to monitor. Make sure the panel is displaying the data series you intend to set an alert on.
+
+5. **Add Alert**:
+   Inside the panel edit mode, you should see an "Alert" tab. Click on it to configure your alert.
+
+6. **Alert Conditions**:
+   Configure the conditions that will trigger the alert. Grafana provides various condition options, such as `Threshold`, `Query`, and `No Data`. For example, if you want to trigger an alert when a metric value exceeds a certain threshold, select the "Threshold" condition and set the criteria.
+
+7. **Alert Settings**:
+   Configure alert settings, which include the following:
+
+   - **Name**: Give your alert a descriptive name.
+   - **Message**: Provide a message that will be included in the alert notifications.
+   - **For**: Set the minimum duration that the condition must be met before the alert triggers.
+   - **Frequency**: Set the frequency at which Grafana will evaluate the condition.
+   - **Conditions**: Define what should happen when the alert is triggered, such as sending a notification or executing custom actions.
+
+8. **Notification Channels**:
+   Define the notification channels to which Grafana should send alerts. Grafana supports various notification channels, such as email, Slack, and more. Configure these channels in Grafana's notification settings.
+
+9. **Test the Alert Rule**:
+   Before saving the alert rule, you can test it to ensure it works as expected. The test will evaluate the condition based on the current data.
+
+10. **Save the Alert Rule**:
+    Once you are satisfied with the alert configuration, click "Save" to save the alert rule.
+
+11. **Return to Dashboard**:
+    After saving the alert rule, return to the dashboard view.
+
+12. **Enable the Alert Rule**:
+    Make sure the alert rule is enabled by clicking the "Alerting" toggle button at the top of the panel.
 
 ## I have Senario that it is java web based application and i want to see logs of selenium in grafana then what will be the process of it?
 
-## 
+
