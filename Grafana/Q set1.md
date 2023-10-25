@@ -114,5 +114,43 @@ Grafana plugins are extensions that enhance Grafana's functionality. You can ins
     Make sure the alert rule is enabled by clicking the "Alerting" toggle button at the top of the panel.
 
 ## I have Senario that it is java web based application and i want to see logs of selenium in grafana then what will be the process of it?
+1. **Set Up Grafana and Loki**:
+   Ensure you have Grafana and Grafana Loki installed and configured. You'll also need a running Java web application, such as a web server or application server, where Selenium tests are executed.
+
+2. **Instrument Selenium Tests**:
+   In your Selenium test suite, you'll need to capture and log the output generated during test execution. This can be done by configuring the Selenium WebDriver to write log entries.
+
+   Here's a sample code snippet in Java for configuring the WebDriver to capture logs:
+
+   ```java
+   WebDriver driver = new ChromeDriver();
+   LoggingPreferences logs = new LoggingPreferences();
+   logs.enable(LogType.BROWSER, Level.ALL);
+   driver = new ChromeDriver(new ChromeOptions().setCapability(CapabilityType.LOGGING_PREFS, logs));
+   ```
+
+3. **Capture and Send Logs to Loki**:
+   In your test suite, capture the Selenium logs and send them to Grafana Loki. You'll need to use a logging library or client that can send log entries to Loki. Grafana Loki typically accepts logs in the [Promtail](https://grafana.com/docs/loki/latest/clients/promtail/) format.
+
+   An example of how to send logs to Loki using a Java library like Logback might look like this:
+
+   ```xml
+   <appender name="LOKI" class="com.grafana.loki.appender.LokiAppender">
+     <url>http://loki-server:3100/loki/api/v1/push</url>
+     <labels>{"application": "your-app"}</labels>
+   </appender>
+   ```
+
+   Make sure to configure the `url` to point to your Loki server's endpoint and specify appropriate labels.
+
+4. **Run Selenium Tests**:
+   Execute your Selenium tests on the Java web application. As the tests run, the WebDriver will capture logs and send them to Loki.
+
+5. **Query Logs in Grafana**:
+   Now that you're sending logs to Loki, you can query and visualize them in Grafana. Create a Grafana dashboard with Loki as the data source and set up log queries to display the logs from your Selenium tests.
+
+6. **Create Alerting Rules (Optional)**:
+   If you want to be notified about specific log events, you can set up alerting rules in Grafana to trigger alerts when certain log entries match predefined criteria.
+
 
 
