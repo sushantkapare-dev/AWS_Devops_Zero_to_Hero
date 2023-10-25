@@ -293,7 +293,7 @@ No, we can’t use only EBS can be used as the root volume
 ## how DNS is work?
 In Amazon Web Services (AWS), the Domain Name System (DNS) works by translating human-friendly domain names (e.g., www.example.com) into IP addresses, allowing clients to locate resources on the internet. AWS provides its DNS service known as Route 53, which enables domain registration, DNS routing, and health checking. When a user accesses an AWS-hosted resource via its domain name, Route 53 routes the DNS query to the appropriate AWS resource, such as an Elastic Load Balancer, an Amazon S3 bucket, or an EC2 instance, based on the DNS configuration you've set up. Route 53 supports various routing policies like weighted, latency-based, and geolocation routing to optimize traffic distribution. It also offers features for domain registration, DNS failover, and health checks to ensure high availability and fault tolerance of your services. AWS Route 53 integrates seamlessly with other AWS services, making it a crucial component for managing DNS within the AWS ecosystem.
 
-## why we go with DNS and not goes with other third party tool like GoDaddy?
+## Why we go with DNS and not goes with other third party tool like GoDaddy?
 ### DNS:-
 
 1. **Integration with AWS Services**: If you're heavily invested in the AWS ecosystem and use various AWS services like Elastic Load Balancers, S3 buckets, or EC2 instances, using AWS Route 53 can provide seamless integration. It makes it easier to set up and manage DNS records for these services without needing to configure external services separately.
