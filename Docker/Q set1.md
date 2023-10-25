@@ -841,7 +841,7 @@ Regarding the maximum number of containers you can run on a single host, it depe
 Docker itself does not impose a strict limit on the number of containers you can run, but the available resources on the host machine will ultimately determine how many containers can run efficiently without resource contention. As a general guideline, it's essential to monitor your host's resource utilization and performance when running a significant number of containers to ensure optimal operation. You can also use orchestration tools like Docker Swarm or Kubernetes to manage container deployments across multiple hosts for scalability and load balancing.
 
 ## Diff between Cgroup and Namespace?
-Control Groups (cgroups) and Namespaces are two fundamental Linux kernel features that Docker uses to create and manage containers. They serve different purposes but are both essential for containerization. Here's a brief overview of the differences between cgroups and namespaces in Docker:
+Control Groups (cgroups) and Namespaces are two fundamental Linux kernel features that Docker uses to create and manage containers. They serve different purposes but are both essential for containerization.
 
 1. ### Control Groups (cgroups):
    - **Purpose**: Cgroups are responsible for resource management and allocation. They enable Docker to control and limit the resource usage of containers, such as CPU, memory, and I/O.
