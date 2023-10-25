@@ -32,13 +32,13 @@ Static and dynamic code analysis are two different approaches to examining and e
 ## what is code covrage and code smell in sonarqube?
 In SonarQube, "code coverage" and "code smells" are two key concepts used to evaluate and improve code quality:
 
-1. Code Coverage:
+### 1. Code Coverage:
    - Code coverage refers to the percentage of your codebase that is tested by automated tests, such as unit tests, integration tests, and functional tests.
    - It measures how much of your source code is executed during testing. High code coverage suggests that more parts of your code have been tested, reducing the likelihood of undetected bugs.
    - Code coverage metrics are essential for assessing the effectiveness of your testing strategy and identifying areas of your code that may not be adequately tested.
    - SonarQube can display code coverage metrics and highlight code that lacks test coverage, helping developers identify areas that require additional testing.
 
-2. Code Smells:
+### 2. Code Smells:
    - Code smells are indicators of potential problems or suboptimal code practices within your source code. They are not necessarily bugs but suggest areas where code quality could be improved.
    - Code smells encompass various issues, such as long methods or functions, excessive complexity, duplicated code, inconsistent naming conventions, and unused variables or parameters.
    - SonarQube's code analysis tools automatically identify and report code smells based on predefined coding rules and best practices.
