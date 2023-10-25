@@ -390,6 +390,32 @@ Yes, you can specify the order in which containers within a Kubernetes pod start
 3. **Exit Status**: If an init container fails, it will block the execution of subsequent init containers and the main application container. Ensure that your init containers have appropriate error handling and exit gracefully on failure, so that the main application container doesn't start prematurely.
 
 ## Consider a senario where aplication pod is running and this pod is using configmap so container within pod is also updated how will you do it?
+if you need to update a configuration used by an application running within a Kubernetes pod that is using a ConfigMap, you can follow these steps:
+
+1. **Edit the ConfigMap**:
+   Start by editing the ConfigMap to update the configuration data. You can do this by running the `kubectl edit configmap <configmap-name>` command, where `<configmap-name>` is the name of your ConfigMap. Make the necessary changes to the configuration data and save the file.
+
+2. **Save the Changes**:
+   Save the changes to the ConfigMap. This will update the configuration data within the ConfigMap.
+
+3. **Trigger a Rolling Update**:
+   Since the application pod is using the ConfigMap for its configuration, you need to trigger a rolling update of the pod to apply the changes. There are several ways to do this:
+
+   a. **Rolling Restart**:
+      You can perform a rolling restart of the pod by deleting it. Kubernetes will automatically create a new pod with the updated configuration. To do this, you can run the following command:
+      ```
+      kubectl delete pod <pod-name>
+      ```
+      Replace `<pod-name>` with the name of your application pod.
+
+   b. **Use Deployment or StatefulSet**:
+      If your application is managed by a Deployment or StatefulSet, you can update the ConfigMap in the respective YAML file and apply the changes using `kubectl apply -f <deployment-or-statefulset.yaml>`. The Deployment or StatefulSet controller will manage the rolling update of pods.
+
+4. **Monitor the Update**:
+   Monitor the rollout status to ensure that the new pods are running successfully and that there are no issues with the updated configuration. You can use the following command to monitor the rollout:
+   ```
+   kubectl rollout status deployment/<deployment-name>
+   ```
 
 
 
