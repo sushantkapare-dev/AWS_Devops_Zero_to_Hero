@@ -318,7 +318,12 @@ However, there are situations where using a third-party registrar like GoDaddy m
 3. **Independence**: Using a third-party registrar gives you more independence from a specific cloud provider. This can be important if you anticipate using multiple cloud providers or migrating between them.
 
 ## What types of Dns ?
+1. **Public DNS**:
+   - **Purpose**: Public DNS is used to translate human-friendly domain names (e.g., www.example.com) into IP addresses that are globally accessible over the internet. It's what most people interact with when browsing the web or accessing publicly available websites and services.
+   - **Access**: Public DNS servers are accessible to the general public and are operated by organizations, including internet service providers (ISPs) and third-party providers like Google (8.8.8.8), Cloudflare (1.1.1.1), and OpenDNS. These servers have extensive, publicly accessible DNS records, allowing anyone to resolve public domain names.
+   - **Example Use Cases**: Browsing the internet, sending and receiving emails, accessing public websites, and connecting to public services.
 
-## 
-
-
+2. **Private DNS**:
+   - **Purpose**: Private DNS, also known as internal DNS or DNS within a private network, is used for resolving domain names for resources within a closed or restricted network. It's used to manage and resolve domain names for devices and services that are part of a private network, such as a corporate intranet, a data center, or a private cloud.
+   - **Access**: Private DNS servers are typically not accessible from the public internet. They are used to maintain DNS records for internal hosts, services, and devices. Access to these DNS servers is restricted and managed within the organization, often with security and access controls in place.
+   - **Example Use Cases**: Resolving domain names for internal resources, such as servers, printers, databases, and other devices within a private network. Private DNS is used for internal communication, managing resources within a closed environment.
