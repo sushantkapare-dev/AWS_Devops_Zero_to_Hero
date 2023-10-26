@@ -1,6 +1,36 @@
 ## what is Docker
 Docker is a platform and a set of tools that allows developers to develop, package, and deploy applications as lightweight, portable containers. These containers can include everything needed to run the application, including code, runtime, libraries, and system tools. Docker provides a consistent and isolated environment for applications, making it easier to build, ship, and run software across different environments, such as development laptops, testing servers, and production servers.
 
+## What is Docker Architecture?
+![image](https://github.com/SushantOps/AWS_Devops_Questions_and_Answers/assets/109059766/73430ba6-cc7a-4baf-844b-cf5b70ffd362)
+
+1. **Docker Daemon (dockerd)**:
+   - The Docker Daemon is the core component of Docker. It runs as a background service on the host operating system.
+   - It's responsible for building, running, and managing containers.
+   - It listens for Docker API requests and processes them.
+
+2. **Docker Client**:
+   - The Docker Client is the primary interface through which users interact with Docker.
+   - Users issue commands to the Docker Client, which then communicates with the Docker Daemon to perform the requested actions.
+   - The Docker Client can run locally on the same machine as the Docker Daemon or connect to a remote Docker Daemon.
+
+3. **Docker Registry**:
+   - A Docker Registry is a repository for Docker images.
+   - Docker Hub (hub.docker.com) is a public Docker Registry that hosts a vast collection of publicly available Docker images.
+   - Users can push and pull Docker images from Docker Registries.
+   - Organizations often set up private Docker Registries to store and manage their own images securely.
+
+4. **Docker Images**:
+   - Docker Images are read-only templates used to create containers.
+   - They include the application code, libraries, and dependencies needed to run an application.
+   - Docker Images are composed of layers, making them lightweight and easy to distribute.
+
+5. **Docker Containers**:
+   - Docker Containers are instances of Docker Images.
+   - They are lightweight, isolated environments that run applications.
+   - Each container is created from an image and has its file system, processes, and network stack.
+   - Containers can be started, stopped, deleted, and moved between different environments.
+
 ## write diff docker comamnds 
 
 **docker run**
