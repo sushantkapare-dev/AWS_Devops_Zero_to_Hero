@@ -26,13 +26,8 @@ SonarQube can be integrated into a CI/CD pipeline by adding a step for code anal
    - **Bugs** are issues that may lead to runtime errors or unexpected behavior.
    - **Vulnerabilities** are security-related issues that could be exploited by attackers.
 
-9. **What are the different levels of access control and user roles in SonarQube?**
-
-   *Answer:* SonarQube offers various user roles, including Admin, Quality Profile Admin, Project Admin, Developer, and User. Each role has different levels of access and permissions within the platform, allowing administrators to control who can perform specific actions.
-
-10. **How can SonarQube help in technical debt management?**
-
-    *Answer:* SonarQube can identify and report on code quality issues, which are often indicators of technical debt. By addressing these issues, teams can reduce technical debt over time, leading to more maintainable and robust code.
+## How can SonarQube help in technical debt management?
+SonarQube can identify and report on code quality issues, which are often indicators of technical debt. By addressing these issues, teams can reduce technical debt over time, leading to more maintainable and robust code.
 
 ## what are you evalute in sonarqube?
 SonarQube is a code quality and security analysis tool that evaluates software projects for various issues, including code smells, bugs, vulnerabilities, and code style violations. It assesses the maintainability, reliability, and security of code by analyzing source code and providing actionable feedback to help developers improve the overall quality of their software. SonarQube scans code to identify issues, assigns severity levels, and generates reports, making it a valuable tool for continuous code inspection and improvement in software development processes.
