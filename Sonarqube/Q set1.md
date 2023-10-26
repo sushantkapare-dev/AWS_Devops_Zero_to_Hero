@@ -1,19 +1,16 @@
-1. **What is SonarQube, and what is its primary purpose?**
-   
-   *Answer:* SonarQube is an open-source platform for continuous inspection of code quality. It is designed to help developers and teams manage and improve the quality of their code by identifying and tracking issues, bugs, vulnerabilities, and code smells in a variety of programming languages.
+## What is SonarQube, and what is its primary purpose?
+SonarQube is an open-source platform for continuous inspection of code quality. It is designed to help developers and teams manage and improve the quality of their code by identifying and tracking issues, bugs, vulnerabilities, and code smells in a variety of programming languages.
 
-2. **What are the key benefits of using SonarQube in the software development process?**
-
-   *Answer:* The benefits of SonarQube include:
+## What are the key benefits of using SonarQube in the software development process?
+The benefits of SonarQube include:
    - Improved code quality and maintainability.
    - Early detection and prevention of code issues.
    - Enhanced security through vulnerability analysis.
    - Consistent coding standards and best practices.
    - Better collaboration among development teams.
 
-3. **How does SonarQube analyze code quality?**
-
-   *Answer:* SonarQube uses a combination of static code analysis and code scanning techniques to assess code quality. It checks code for issues like code smells, bugs, security vulnerabilities, and coding standard violations. It generates reports and visualizations to help developers identify and prioritize issues.
+ ## How does SonarQube analyze code quality?
+ SonarQube uses a combination of static code analysis and code scanning techniques to assess code quality. It checks code for issues like code smells, bugs, security vulnerabilities, and coding standard violations. It generates reports and visualizations to help developers identify and prioritize issues.
 
 4. **What are some of the programming languages supported by SonarQube?**
 
