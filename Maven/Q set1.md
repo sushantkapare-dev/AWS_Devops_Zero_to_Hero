@@ -204,3 +204,43 @@ When combined, GAVS provides a unique identifier for a specific artifact in the 
 - Packaging: `jar`
 
 This information specifies the exact version of the "my-library" artifact produced by the "com.example" group, and it indicates that the artifact is packaged as a JAR file. Maven uses these coordinates to fetch the correct artifact from remote repositories, manage dependencies, and ensure that the right versions are used in your project.
+
+## What is Apache Maven, and why is it used?**
+   - Apache Maven is a build automation and project management tool used to manage the build lifecycle of a software project. It simplifies the build process, manages project dependencies, and provides a uniform way to build, package, and distribute software.
+
+## What is a POM file in Maven?**
+   - POM stands for "Project Object Model." It's an XML file that contains project-specific configuration information. This includes project dependencies, plugins, goals, and other settings.
+
+## What is the Maven Repository?**
+   - The Maven Repository is a centralized repository where Maven stores project dependencies (JAR files). There are two types of repositories: local (on your machine) and remote (shared repositories accessed via the internet).
+
+4. **Explain the Maven build lifecycle phases.**
+   - The Maven build lifecycle consists of three phases: clean, default, and site. The default phase includes validate, compile, test, package, verify, install, and deploy. Each phase represents a specific stage in the build process.
+
+5. **What is a dependency in Maven, and how is it defined in a POM file?**
+   - A dependency is an external library or module that your project relies on. Dependencies are defined in the `<dependencies>` section of the POM file, specifying the group ID, artifact ID, and version of the dependency.
+
+6. **How do you execute a Maven build from the command line?**
+   - To execute a Maven build, you can use the `mvn` command followed by a specific goal or phase. For example, `mvn clean install` will clean the project and then install the artifact.
+
+7. **What is a Maven plugin, and how does it work?**
+   - A Maven plugin is a collection of goals that can be executed during the build process. Plugins are defined in the POM file and can be used to customize and extend the build process.
+
+8. **Explain the purpose of the `settings.xml` file in Maven.**
+   - The `settings.xml` file is used to configure settings for Maven, including repository locations, authentication credentials, and proxy settings. It is usually located in the `conf` directory of the Maven installation.
+
+9. **What is the difference between compile and runtime scope for dependencies?**
+   - The `compile` scope means that the dependency is needed for compiling the code and running the application. The `runtime` scope means that the dependency is only needed at runtime, not for compilation.
+
+10. **How can you skip the tests during a Maven build?**
+    - You can skip tests during a Maven build by using the `-DskipTests` flag, like this: `mvn clean install -DskipTests`.
+
+11. **Explain the purpose of the `dependencyManagement` section in a POM file.**
+    - The `dependencyManagement` section is used to define dependencies and their versions in a centralized location. It allows you to specify versions once and then refer to them in individual modules without repeating version information.
+
+12. **What is a transitive dependency in Maven?**
+    - Transitive dependencies are dependencies that are pulled in automatically because they are required by one of your project's direct dependencies. Maven manages these transitive dependencies for you.
+
+13. **How can you create a custom Maven archetype?**
+    - You can create a custom Maven archetype by using the `archetype:create-from-project` goal. This generates an archetype from an existing project, which can then be used to create new projects with similar structures.
+
