@@ -96,3 +96,38 @@ This is to avoid an infinite hang, as some of the failure modes in the network c
 Ping thread is installed on both controller & agent; each side pings the other and tries to detect the problem from their sides.
 The ping thread time out is reported through java.util.logging. Besides, the controller will also report this exception in the agent launch log. Note that some agent launchers, most notably SSH agents, writes all stdout/stderr outputs from the agent JVM into this same log file, so you need to be careful.
 
+## i have a jenkins pipeline and outside the pipeline there is a job then how we will rigger that job along with pipeline with examle
+
+To trigger a job outside of a Jenkins pipeline while also running the pipeline, you can use the "build" step within your pipeline script. This allows you to initiate the execution of another job as part of your pipeline's workflow. Here's an example of how to do this:
+
+1. First, make sure you have both the Jenkins pipeline and the job you want to trigger in your Jenkins instance.
+
+2. In your Jenkins pipeline script, add a `build` step to trigger the external job. You can use the `build` step to specify the name of the job to be triggered. You can also pass parameters to the job if needed. Here's an example Jenkinsfile:
+
+```groovy
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                // Your pipeline steps here
+            }
+        }
+        stage('Trigger External Job') {
+            steps {
+                build(job: 'NameOfYourExternalJob', parameters: [string(name: 'PARAM_NAME', value: 'PARAM_VALUE')])
+            }
+        }
+    }
+}
+```
+
+In this example, the "Trigger External Job" stage will trigger the job named "NameOfYourExternalJob" with a parameter named "PARAM_NAME" set to "PARAM_VALUE."
+
+3. Save and commit your Jenkinsfile to your source code repository if you are using one, and Jenkins should automatically detect and run the pipeline when you make changes.
+
+4. When the pipeline is executed, it will first run the pipeline's stages, and when it reaches the "Trigger External Job" stage, it will trigger the external job.
+
+Make sure that the external job is configured to accept the parameters you are passing from the pipeline.
+
+
