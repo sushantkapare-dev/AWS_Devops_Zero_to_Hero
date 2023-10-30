@@ -86,10 +86,10 @@ This protection is provided by the Script Security plugin. As soon as an unsafe 
 
 This in-process script approval inherently improves the security of the overall Jenkins ecosystem.
 
-## 11. Can we monitor Jenkins using common Observability tools?
+## Can we monitor Jenkins using common Observability tools?
 Common monitoring platforms like DataDog, Prometheus, JavaMelody & few others — have their corresponding Jenkins plugin, which when configured, sends Metrics to the corresponding Monitoring platform, which can then be Observed with the latest tools & technologies. The same can be configured with Alarms & Notifications for immediate attention when something goes wrong.
 
-## 12. What is a Ping Thread in Jenkins and how it works?
+## What is a Ping Thread in Jenkins and how it works?
 Jenkins installs “ping thread” on every remote connection, such as Controller/Agent connections, regardless of its transport mechanism (such as SSH, JNLP, etc.). The lower level of the Jenkins Remoting Protocol is a message-oriented protocol, and a ping thread periodically sends a ping message that the receiving end will reply to. The ping thread measures the time it takes for the reply to arrive, and if it’s taking excessive 
 time (currently 4 minutes and configurable), then it assumes that the connection was lost and initiates the formal close down.
 This is to avoid an infinite hang, as some of the failure modes in the network cannot be detected otherwise. The timeout is also set to a long enough value so that a temporary surge in the load or a long garbage collection pause will not trip off the close-down.
