@@ -1,4 +1,4 @@
-## 1.How is continuous integration achieved using Jenkins?
+## How is continuous integration achieved using Jenkins?
 Continuous integration is a process where a developer’s code changes are constantly integrated into the main code and the same will be tested automatically and the results of the tests will decide whether the change is ready for deployment. In this process:
 Developer Makes a change — commit/pull_request — in feature/dev branch
 Source Control Management system generates appropriate events
