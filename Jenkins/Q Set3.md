@@ -7,27 +7,27 @@ After the Test/Dependent jobs are completed, the change/patch will be labeled ac
 Based on the Status (i.e. readiness of a change to be merged with the main
 branch), the Continuous Delivery or Continuous Deployment strategy/tool will take it forward.
 
-## 2. What is Artifact Archival & how to do it in Pipelines?
+## What is Artifact Archival & how to do it in Pipelines?
 Artifacts are the exportable/storable/archivable results of a specific job build. This can be configured using a plugin called — Copy artifact Plugin. Based on the configured pattern, the files/directories matching the configured patterns will be archived for a Jenkins build, which can be used for future references. In the pipeline, it can be configured as follows -
 
 archiveArtifacts artifacts: ‘output/**/*’
-## 3. How to configure inclusions & exclusions in Artifacts Archival?
+## How to configure inclusions & exclusions in Artifacts Archival?
 Artifact archival takes in a pattern for matching target files. Similarly, it also takes in a pattern (ANT build system pattern for matching files) for exclusion as well which will be ignored while selecting the files for archival. For e.g.
 archiveArtifacts artifacts: ‘output/*.txt’, excludes: ‘output/specific_file.txt’
 The above command will archive all the text files from the output folder except specific_file.txt
 
-## 4. How can we share information between different build steps or stages in a Jenkins Job?
+## How can we share information between different build steps or stages in a Jenkins Job?
 Every build step or stage will be running in its process and hence sharing information between two different build steps is not so direct. We can use either a File, a Database Entry, an Environment Variable, etc. to share info from one build step to another or a post-build action.
 
-## 5. How code coverage is measured/tracked using Jenkins in a CI environment?
+## How code coverage is measured/tracked using Jenkins in a CI environment?
 
 Using language-specific code coverage plugins like JaCoCo, CodeCov, etc or generic tools/plugins like Sonarqube which will add the code coverage data to builds with some minor tweaks in the code and the same can be displayed as a graph in Jenkins.
 
-## 6. How can a job configuration be reset to an earlier version/state?
+## How can a job configuration be reset to an earlier version/state?
 
 From the Job details page, we can use Job Config History to — See diff, Review & Revert the Job configs from the history of changes we have made to a particular job. This will be super useful when a job is misconfigured by someone by mistake, it can be reviewed and reverted easily to any of its earlier states.
 
-## 7. How to do Global Tools Configuration in Jenkins?
+## How to do Global Tools Configuration in Jenkins?
 
 Global Tools are tools that need to be installed outside the Jenkins environment and need to be controlled from within the Jenkins environment. Hence, it needs its corresponding Jenkins plugin as well. Steps to using a Global Tool generally include -
 
@@ -36,7 +36,7 @@ Install the tool in the Jenkins instance or provide away (maybe a command to dow
 Go to Manage Jenkins -> Global Tools Configuration and Scroll through the tool list and configure the global tool-specific configurations.
 Make use of the installed global Tool in your job/pipeline.
 
-## 8. How to create & use a Shared Library in Jenkins?
+## How to create & use a Shared Library in Jenkins?
 Basic requirements for a Jenkins shared library to be used in a Pipeline Code are -
 
 A Repository with pipeline shared library code in SCM.
@@ -47,7 +47,7 @@ Include the Shared Library in the Pipeline Code and use the methods defined in t
 
 @Library(‘fs_jenkins_shared_library@v2.0.7’)_
 
-## 9. How to install a Custom Jenkins Plugin or a Version of Plugin Not available in Jenkins Update Center?
+##  How to install a Custom Jenkins Plugin or a Version of Plugin Not available in Jenkins Update Center?
 
 Generally, it is the best practice to use the latest version of a plugin. But there are ways to install custom plugins or outdated versions of a published plugin. Jenkins Plugins are exported using a .hpi file and the same can be installed in multiple ways -
 
@@ -78,7 +78,7 @@ Copy the downloaded .hpi file into the JENKINS_HOME/plugins directory on the Jen
 
 The master will need to be restarted before the plugin is loaded and made available in the Jenkins environment
 
-## 10. What is In-process Script Approval and how it works?
+## What is In-process Script Approval and how it works?
 
 Jenkins, and several plugins, allow users to execute Groovy scripts in Jenkins. To protect Jenkins from the execution of malicious scripts, these plugins execute user- provided scripts in a Groovy Sandbox that limits what internal APIs are accessible.
 
