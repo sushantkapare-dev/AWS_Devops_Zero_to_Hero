@@ -202,3 +202,4 @@ Git submodules provide a structured way to manage complex projects with dependen
 6. **Documentation:** Maintain comprehensive documentation for your Git workflow, including branching strategies, PR/MR guidelines, and CI/CD pipelines. This documentation helps team members understand and follow the workflow effectively.
 
 7. **Conflict Resolution:** In the event of conflicts or issues, establish clear communication channels and procedures for resolving them promptly. Team members should prioritize conflict resolution to prevent delays in the development process.
+8. 
