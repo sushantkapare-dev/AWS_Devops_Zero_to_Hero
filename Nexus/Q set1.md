@@ -168,3 +168,4 @@ Regularly cleaning up old or unused artifacts to save storage space.
 
 ## How would you handle issues related to artifact versioning and conflicts in Nexus?
 Handling versioning and conflicts can involve setting up strict versioning policies, implementing a release strategy, and utilizing features like the staging suite in Nexus to promote artifacts through different lifecycle stages (e.g., from snapshot to release). It's crucial to establish clear versioning rules and enforce them throughout the development and deployment processes.
+
