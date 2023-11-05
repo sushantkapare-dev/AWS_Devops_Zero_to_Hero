@@ -1,5 +1,4 @@
-
-1. **Why is Python commonly used in DevOps?**
+**Why is Python commonly used in DevOps?**
    
    Python is popular in DevOps due to its simplicity, readability, and extensive libraries. It is versatile, making it easy to automate tasks, create scripts, and work with various DevOps tools and APIs.
 
