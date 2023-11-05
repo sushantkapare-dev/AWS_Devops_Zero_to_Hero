@@ -2,7 +2,7 @@
    
    Python is popular in DevOps due to its simplicity, readability, and extensive libraries. It is versatile, making it easy to automate tasks, create scripts, and work with various DevOps tools and APIs.
 
-2. **What are some common use cases for Python in DevOps?**
+**What are some common use cases for Python in DevOps?**
 
    Python is used for tasks like configuration management (with tools like Ansible), infrastructure provisioning (with Terraform), CI/CD pipeline scripting, monitoring, log analysis, and more.
 
