@@ -12,23 +12,23 @@
    - On macOS: You can use Homebrew or download Python from the official website.
    - On Windows: Download the installer from the official website and follow the installation instructions.
 
-4. **What are virtual environments in Python, and why are they important in DevOps?**
+## What are virtual environments in Python, and why are they important in DevOps?**
 
    Virtual environments allow you to isolate Python environments for different projects or tasks. They are crucial in DevOps to prevent conflicts between packages and dependencies used in various automation scripts and tools.
 
-5. **How can I use Python to automate repetitive tasks in DevOps?**
+## How can I use Python to automate repetitive tasks in DevOps?**
 
    You can use Python to write scripts that interact with APIs, automate server provisioning, deploy applications, manage configurations, and perform various other repetitive tasks.
 
-6. **What are popular Python libraries for DevOps tasks?**
+## What are popular Python libraries for DevOps tasks?**
 
    Some common libraries include `paramiko` (SSH library), `boto3` (AWS SDK for Python), `requests` (HTTP library), `Fabric` (for remote command execution), and `psutil` (for system monitoring).
 
-7. **How can I integrate Python with DevOps tools like Docker and Kubernetes?**
+## How can I integrate Python with DevOps tools like Docker and Kubernetes?**
 
    You can use libraries like `docker-py` and `pykube` to interact with Docker containers and Kubernetes clusters through Python scripts. This enables automation and management of containerized applications.
 
-8. **What is Infrastructure as Code (IaC), and how does Python fit in?**
+## What is Infrastructure as Code (IaC), and how does Python fit in?**
 
    IaC involves defining infrastructure using code. Python is often used in tools like Terraform and Ansible for IaC to automate infrastructure provisioning, configuration management, and orchestration.
 
