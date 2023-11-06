@@ -28,11 +28,11 @@
 
    You can use libraries like `docker-py` and `pykube` to interact with Docker containers and Kubernetes clusters through Python scripts. This enables automation and management of containerized applications.
 
-## What is Infrastructure as Code (IaC), and how does Python fit in?**
+## What is Infrastructure as Code (IaC), and how does Python fit in?
 
    IaC involves defining infrastructure using code. Python is often used in tools like Terraform and Ansible for IaC to automate infrastructure provisioning, configuration management, and orchestration.
 
-9. **What is Continuous Integration and Continuous Deployment (CI/CD), and how can Python be used in these processes?**
+## What is Continuous Integration and Continuous Deployment (CI/CD), and how can Python be used in these processes?
 
    CI/CD automates the building, testing, and deployment of software. Python is used to write scripts that integrate with CI/CD pipelines, perform testing, and orchestrate deployment tasks.
 
