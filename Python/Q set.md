@@ -36,15 +36,15 @@
 
    CI/CD automates the building, testing, and deployment of software. Python is used to write scripts that integrate with CI/CD pipelines, perform testing, and orchestrate deployment tasks.
 
-10. **Are there Python frameworks or platforms for DevOps?
+## Are there Python frameworks or platforms for DevOps?
 
     Yes, there are frameworks like "Flask" and "Django" for building web-based DevOps tools and dashboards. Additionally, platforms like "Jenkins" can be extended using Python plugins.
 
-11. **How can Python be used for monitoring and alerting in DevOps?
+## How can Python be used for monitoring and alerting in DevOps?
 
     Python can interact with monitoring and alerting systems like Prometheus and Grafana, collect and analyze data, and trigger alerts based on predefined conditions.
 
-12. **What best practices should I follow when using Python in DevOps?
+##  What best practices should I follow when using Python in DevOps?
 
     - Use version control (e.g., Git) for your code.
     - Write clean, well-documented code.
