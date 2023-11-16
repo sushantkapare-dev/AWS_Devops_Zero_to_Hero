@@ -1,4 +1,4 @@
-1. Explain the key components of Amazon EKS and how they work together to manage containerized applications.
+## Explain the key components of Amazon EKS and how they work together to manage containerized applications.
 
 Amazon EKS consists of three main components:
 
