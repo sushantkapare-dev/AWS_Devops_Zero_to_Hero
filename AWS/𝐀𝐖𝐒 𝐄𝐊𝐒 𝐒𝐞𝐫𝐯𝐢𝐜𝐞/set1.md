@@ -5,22 +5,24 @@ Amazon EKS consists of three main components:
 Control plane: The control plane manages the overall state of the cluster, including the worker nodes, pods, and services. It is responsible for scheduling pods, managing pod lifecycle, and providing an API for managing the cluster.
 Worker nodes: Worker nodes are the physical or virtual machines that run the containerized applications. They are responsible for pulling container images, running containers, and providing network connectivity for the pods.
 Kubernetes API: The Kubernetes API is the primary interface for managing an EKS cluster. It is a RESTful API that allows you to create, update, and delete resources in your cluster.
-2. Describe the different networking options available for Amazon EKS clusters, including Amazon VPC, AWS PrivateLink, and Calico.
+
+## Describe the different networking options available for Amazon EKS clusters, including Amazon VPC, AWS PrivateLink, and Calico.
 
 Amazon EKS supports several networking options:
 
 Amazon VPC: The default networking option for EKS clusters. It allows you to isolate your cluster in a private VPC and control network access to your pods and services.
 AWS PrivateLink: Provides private connectivity between your EKS cluster and other AWS services, such as Amazon S3, DynamoDB, and Amazon RDS, without exposing your cluster’s traffic to the public internet.
 Calico: An open-source networking solution that provides advanced networking features for EKS clusters, such as network policy enforcement and network policy automation.
-3. Discuss how to use AWS IAM roles to manage access to AWS resources for EKS pods and services.
+
+## Discuss how to use AWS IAM roles to manage access to AWS resources for EKS pods and services.
 
 AWS IAM roles allow you to grant specific permissions to Amazon EKS pods and services to access AWS resources, such as Amazon S3 buckets, DynamoDB tables, and Amazon SNS topics. This approach ensures that pods and services have the necessary permissions to perform their tasks without granting them excessive access to your AWS account.
 
-4. Explain how to configure and manage logging and monitoring for Amazon EKS clusters using Amazon CloudWatch and other AWS services.
+## Explain how to configure and manage logging and monitoring for Amazon EKS clusters using Amazon CloudWatch and other AWS services.
 
 Logging and monitoring are essential for ensuring the health and performance of your Amazon EKS clusters. You can use Amazon CloudWatch to collect logs from your pods and nodes, as well as metrics about their performance. Additionally, you can use other AWS services, such as Amazon CloudTrail and Amazon Kinesis Firehose, to further enhance your logging and monitoring capabilities.
 
-5. Describe how to implement security best practices for Amazon EKS clusters, including pod security policies, network policies, and image scanning.
+## Describe how to implement security best practices for Amazon EKS clusters, including pod security policies, network policies, and image scanning.
 
 Security is paramount for Amazon EKS clusters. You can implement various security best practices, including:
 
