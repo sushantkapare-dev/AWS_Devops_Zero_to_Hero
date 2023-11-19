@@ -1,22 +1,22 @@
-1. What is AWS Secrets Manager, and why is it important for securing sensitive information in a DevOps environment?
+## What is AWS Secrets Manager, and why is it important for securing sensitive information in a DevOps environment?
 
 Answer: AWS Secrets Manager is a service that helps you protect and manage sensitive information, such as database passwords and API keys. It’s essential for DevOps as it centralizes secret storage, enforces rotation policies, and provides automatic credential management, enhancing security and compliance.
 
-2. Explain the concept of a secret in AWS Secrets Manager, including how secrets are stored and rotated.
+## Explain the concept of a secret in AWS Secrets Manager, including how secrets are stored and rotated.
 
 Answer: A secret in AWS Secrets Manager is a JSON object that stores sensitive information. Secrets can be stored and managed, and automatic rotation can be configured for certain types of secrets. When a secret is rotated, the old credentials are marked as deprecated, and new credentials are generated.
 
-3. How can you create and manage secrets in AWS Secrets Manager using the AWS Management Console, CLI, or SDKs? Provide an example command for creating a secret.
+## How can you create and manage secrets in AWS Secrets Manager using the AWS Management Console, CLI, or SDKs? Provide an example command for creating a secret.
 
 Answer: You can create and manage secrets using the AWS Management Console, AWS CLI, or SDKs. To create a secret using the CLI, you can use the following command:
 
 aws secretsmanager create-secret — name MyDatabaseSecret — secret-string ‘my-secret-value’
 
-4. What is secret rotation, and why is it a crucial security practice? How can you configure automatic secret rotation for RDS database credentials?
+## What is secret rotation, and why is it a crucial security practice? How can you configure automatic secret rotation for RDS database credentials?
 
 Answer: Secret rotation is the process of regularly updating credentials to reduce the risk of exposure. It’s crucial for security. You can configure automatic rotation for RDS database credentials in AWS Secrets Manager by creating a rotation Lambda function and defining rotation rules.
 
-5. Explain how you can access secrets stored in AWS Secrets Manager in your applications and services securely.
+## Explain how you can access secrets stored in AWS Secrets Manager in your applications and services securely.
 
 Answer: To access secrets securely, you can use the AWS SDKs or the AWS CLI, which automatically retrieve and rotate secrets. You can also integrate your application code with AWS Secrets Manager using IAM roles, reducing the need for static credentials in your code.
 
