@@ -1,4 +1,4 @@
-1. What is AWS EC2, and how does it fit into the DevOps workflow?
+## What is AWS EC2, and how does it fit into the DevOps workflow?
 
 Answer: AWS EC2 is a web service that provides resizable compute capacity in the cloud. It plays a pivotal role in DevOps workflows by allowing DevOps engineers to provision and manage virtual machines (instances) for running applications, microservices, and infrastructure as code.
 
