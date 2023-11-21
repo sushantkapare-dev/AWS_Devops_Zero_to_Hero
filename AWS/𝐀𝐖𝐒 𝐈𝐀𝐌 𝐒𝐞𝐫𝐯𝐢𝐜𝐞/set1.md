@@ -67,19 +67,19 @@ Answer: IAM roles are used to grant permissions to AWS resources, such as EC2 in
 
 Answer: IAM policy evaluation follows a deny-by-default logic. If an action is explicitly allowed by any policy attached to a user, group, or role, it is permitted. However, if any policy attached to the entity explicitly denies the action or the action is not mentioned in any policy, it is denied.
 
-15. Explain the “condition” element in IAM policies and provide an example use case.
+## Explain the “condition” element in IAM policies and provide an example use case.
 
 Answer: Conditions in IAM policies allow you to specify additional criteria for when a policy should be applied. For example, you can create a condition to restrict access to an S3 bucket only from a specific IP address range, enhancing security by limiting access to trusted networks.
 
-16. What is AWS Organizations, and how does it relate to IAM in a multi-account AWS environment?
+## What is AWS Organizations, and how does it relate to IAM in a multi-account AWS environment?
 
 Answer: AWS Organizations is a service that helps you manage multiple AWS accounts. In a multi-account setup, it allows you to centralize and simplify IAM management. You can create and manage policies and roles at the organization level, making it easier to control access across all accounts.
 
-17. How can you monitor and audit AWS IAM activities for security and compliance purposes?
+## How can you monitor and audit AWS IAM activities for security and compliance purposes?
 
 Answer: AWS provides AWS CloudTrail for monitoring and logging IAM activities. By enabling CloudTrail, you can track all IAM-related events, providing visibility into who performed actions, what actions were taken, and when they occurred. These logs can be used for security analysis and compliance reporting.
 
-18. Explain the process of implementing a “least privilege” IAM policy for a DevOps team member.
+## Explain the process of implementing a “least privilege” IAM policy for a DevOps team member.
 
 Answer: To implement a least privilege policy for a DevOps team member, you should:
 — Identify the specific tasks and resources they need access to.
@@ -87,12 +87,12 @@ Answer: To implement a least privilege policy for a DevOps team member, you shou
 — Regularly review and update the policy to remove unnecessary permissions.
 — Use IAM groups to manage and assign policies to simplify policy management.
 
-19. What is the IAM policy “Effect” field, and what are the possible values?
+## What is the IAM policy “Effect” field, and what are the possible values?
 
 Answer: The “Effect” field in an IAM policy can have two values:
 — “Allow”: Grants permissions to perform specified actions.
 — “Deny”: Explicitly denies permissions, even if they are allowed in other policies. Deny statements should be used sparingly.
 
-20. How can you recover from a situation where you’ve locked yourself out of your AWS account due to overly restrictive IAM policies?
+## How can you recover from a situation where you’ve locked yourself out of your AWS account due to overly restrictive IAM policies?
 
 Answer: In such a situation, if you’re unable to sign in with sufficient permissions to fix your IAM policies, you can contact AWS support. They can assist in regaining access by verifying your identity and making necessary adjustments to your IAM policies.
