@@ -28,31 +28,31 @@ Answer: You can create and manage EC2 instances using the `aws ec2` commands. An
 
 aws ec2 run-instances — image-id ami-12345678 — instance-type t2.micro — key-name MyKeyPair
 
-7. What is AWS CLI role-based access control (IAM) and how do you use it to control access to AWS resources?
+## What is AWS CLI role-based access control (IAM) and how do you use it to control access to AWS resources?
 
 Answer: AWS Identity and Access Management (IAM) enables you to manage access to AWS resources. With the AWS CLI, you can use IAM roles to assign permissions to users, groups, and services, allowing fine-grained access control to AWS resources based on the principle of least privilege.
 
-8. How can you use the AWS CLI to configure and manage S3 buckets and objects? Provide an example command to upload a file to an S3 bucket.
+## How can you use the AWS CLI to configure and manage S3 buckets and objects? Provide an example command to upload a file to an S3 bucket.
 
 Answer: You can manage S3 buckets and objects using the `aws s3` commands. An example command to upload a file to an S3 bucket:
 
 aws s3 cp my-file.txt s3://my-bucket/
 
-9. Explain how you can use the AWS CLI to manage CloudFormation stacks and templates. Provide an example command to create a CloudFormation stack.
+## Explain how you can use the AWS CLI to manage CloudFormation stacks and templates. Provide an example command to create a CloudFormation stack.
 
 Answer: You can use the `aws cloudformation` commands to manage CloudFormation stacks. An example command to create a CloudFormation stack:
 
 aws cloudformation create-stack — stack-name MyStack — template-body file://my-template.json
 
-10. What is the purpose of AWS CLI query and JMESPath, and how can you use them to filter and format AWS CLI output?
+## What is the purpose of AWS CLI query and JMESPath, and how can you use them to filter and format AWS CLI output?
 
 Answer: AWS CLI query and JMESPath are used to filter and format AWS CLI output. They allow you to extract specific data from the JSON output of AWS CLI commands. For example, you can use JMESPath expressions with the ` — query` parameter to extract specific values from the output.
 
-11. Explain how to use AWS CLI session management, and why it can be valuable for long-running operations or multi-step tasks.
+## Explain how to use AWS CLI session management, and why it can be valuable for long-running operations or multi-step tasks.
 
 Answer: AWS CLI session management allows you to use the ` — profile` and ` — duration-seconds` parameters to create temporary sessions with limited permissions for specific tasks. It is valuable for enhancing security and reducing exposure to long-running operations or multi-step tasks.
 
-12. How do you troubleshoot AWS CLI issues, such as authentication problems or permission errors?
+## How do you troubleshoot AWS CLI issues, such as authentication problems or permission errors?
 
 Answer: When troubleshooting AWS CLI issues, you can:
 — Verify your AWS CLI credentials.
