@@ -10,31 +10,31 @@ Answer: In a VPC, a public subnet is associated with a route table that directs 
 
 Answer: NACLs are stateless, optional network-level security controls for VPCs. They allow or deny traffic at the subnet level based on rules you define. Unlike Security Groups, NACLs are stateless and evaluate traffic on a per-rule basis, making them less granular but providing broader control over traffic.
 
-4. What is an AWS VPC Peering connection, and under what circumstances would you use it in a multi-VPC architecture?
+## What is an AWS VPC Peering connection, and under what circumstances would you use it in a multi-VPC architecture?
 
 Answer: VPC Peering is a way to connect two VPCs to allow instances in each VPC to communicate with each other. It’s used in scenarios where you need to create a shared network or allow resource sharing between different VPCs, such as in a multi-tier application with separate VPCs for development and production.
 
-5. Explain the purpose and benefits of using AWS Transit Gateway in a VPC architecture.
+## Explain the purpose and benefits of using AWS Transit Gateway in a VPC architecture.
 
 Answer: AWS Transit Gateway is a fully managed service that simplifies network connectivity between VPCs and on-premises networks. It allows for centralized management of routing and simplifies connectivity in complex, multi-VPC environments, reducing the administrative overhead.
 
-6. What is an AWS Site-to-Site VPN, and how does it enable secure communication between on-premises networks and VPCs?
+## What is an AWS Site-to-Site VPN, and how does it enable secure communication between on-premises networks and VPCs?
 
 Answer: An AWS Site-to-Site VPN is a secure connection between an on-premises network and a VPC. It uses encrypted tunnels to ensure data confidentiality and integrity, allowing resources in the VPC to securely communicate with on-premises resources.
 
-7. Explain the use of VPC Endpoints in AWS and how they can enhance security and performance for VPC resources.
+## Explain the use of VPC Endpoints in AWS and how they can enhance security and performance for VPC resources.
 
 Answer: VPC Endpoints allow your VPC to connect directly to AWS services like S3 and DynamoDB, without traversing the public internet. This enhances security by reducing exposure to the internet and improves performance by reducing latency, especially for data-intensive workloads.
 
-8. What is the purpose of a Network Address Translation (NAT) Gateway in a VPC, and how does it enable instances in a private subnet to access the internet?
+## What is the purpose of a Network Address Translation (NAT) Gateway in a VPC, and how does it enable instances in a private subnet to access the internet?
 
 Answer: A NAT Gateway allows instances in private subnets to initiate outbound traffic to the internet, such as downloading updates or patches, while preventing incoming connections from the internet. It acts as a network address translator for private instances, providing internet connectivity.
 
-9. What is a VPC Flow Log, and how can it be used for monitoring and troubleshooting network traffic in a VPC?
+## What is a VPC Flow Log, and how can it be used for monitoring and troubleshooting network traffic in a VPC?
 
 Answer: VPC Flow Logs capture information about the IP traffic going in and out of network interfaces in a VPC. They can be used for monitoring, troubleshooting, and security analysis by providing insights into the traffic patterns and helping to identify and diagnose network issues.
 
-10. Explain the role of Route Tables in AWS VPC and how they determine the flow of network traffic.
+## Explain the role of Route Tables in AWS VPC and how they determine the flow of network traffic.
 
 Answer: Route Tables in a VPC determine the path of network traffic by defining routes to different destinations, such as subnets and the internet. Each subnet is associated with a specific route table, allowing you to control how traffic flows within the VPC and to external networks.
 
