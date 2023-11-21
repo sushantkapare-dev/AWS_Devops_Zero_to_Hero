@@ -1,16 +1,16 @@
-1. What is AWS S3, and how does it fit into a DevOps environment?
+## What is AWS S3, and how does it fit into a DevOps environment?
 
 Answer: AWS S3 is an object storage service that provides scalable, durable, and secure storage for a wide range of data. In a DevOps environment, S3 is used for storing application artifacts, backups, logs, and as a source for deploying code and assets.
 
-2. Explain the concept of S3 buckets and objects. How is data organized in S3?
+## Explain the concept of S3 buckets and objects. How is data organized in S3?
 
 Answer: S3 uses a flat namespace where data is organized into buckets, which are top-level containers for storing objects. Objects are the actual data files stored within buckets and can range from small files to large data sets.
 
-3. What are the storage classes available in S3, and when would you use each one?
+## What are the storage classes available in S3, and when would you use each one?
 
 Answer: S3 offers various storage classes, including STANDARD, INTELLIGENT_TIERING, ONEZONE_IA, GLACIER, and more. The choice depends on factors like data access frequency, durability requirements, and cost considerations. For example, STANDARD is used for frequently accessed data, while GLACIER is for long-term archival.
 
-4. Explain the importance of data consistency in S3 and how S3 ensures read-after-write consistency.
+## Explain the importance of data consistency in S3 and how S3 ensures read-after-write consistency.
 
 Answer: Data consistency ensures that once data is written to S3, any subsequent read request returns the most recent version of the data. S3 achieves read-after-write consistency for all objects by updating all replicas across multiple Availability Zones before acknowledging a write request.
 
