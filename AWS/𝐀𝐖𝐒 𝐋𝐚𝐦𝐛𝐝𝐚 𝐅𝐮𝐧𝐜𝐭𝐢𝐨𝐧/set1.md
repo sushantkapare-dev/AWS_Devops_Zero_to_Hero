@@ -1,20 +1,20 @@
-1. What is AWS Lambda, and how does it fit into a DevOps environment?
+## What is AWS Lambda, and how does it fit into a DevOps environment?
 
 Answer: AWS Lambda is a serverless compute service that allows you to run code without provisioning or managing servers. It fits into a DevOps environment by enabling the execution of functions in response to events, making it valuable for automation, application scaling, and event-driven workflows.
 
-2. Explain the concept of an AWS Lambda function and its key components.
+## Explain the concept of an AWS Lambda function and its key components.
 
 Answer: An AWS Lambda function is a piece of code that is executed in response to an event. Key components include the function code, runtime, handler, execution role, and triggers. The handler is the entry point for the function code, and triggers define what events invoke the function.
 
-3. What are the programming languages and runtimes supported by AWS Lambda, and how do you choose the appropriate runtime for your function?
+## What are the programming languages and runtimes supported by AWS Lambda, and how do you choose the appropriate runtime for your function?
 
 Answer: AWS Lambda supports various runtimes, including Node.js, Python, Java, Go, Ruby, .NET Core, and custom runtimes. You choose the appropriate runtime based on the language you are comfortable with and the specific requirements of your function.
 
-4. How do you deploy and update AWS Lambda functions, and what is the role of versioning and aliases in managing functions?
+## How do you deploy and update AWS Lambda functions, and what is the role of versioning and aliases in managing functions?
 
 Answer: You can deploy and update functions using the AWS Management Console, AWS CLI, or SDKs. Versioning and aliases allow you to manage different versions of a function and control which version or alias is invoked by other services or applications.
 
-5. Explain the concept of AWS Lambda event sources and provide examples of services that can trigger Lambda functions.
+## Explain the concept of AWS Lambda event sources and provide examples of services that can trigger Lambda functions.
 
 Answer: AWS Lambda event sources are services that invoke Lambda functions in response to events. Examples include Amazon S3, Amazon DynamoDB, Amazon SNS, Amazon SQS, AWS API Gateway, and custom applications using AWS SDKs.
 
