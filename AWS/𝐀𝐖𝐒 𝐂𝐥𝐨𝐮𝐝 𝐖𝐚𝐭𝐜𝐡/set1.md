@@ -55,35 +55,35 @@ Answer: CloudWatch can be integrated with other AWS services by creating CloudWa
 
 Answer: CloudWatch Alarm actions are the responses triggered when an alarm state is reached. Actions can include sending notifications (e.g., via SNS), executing an Auto Scaling policy, or invoking a Lambda function. These actions allow you to automate responses to events based on alarm conditions.
 
-12. Explain the use of CloudWatch Logs Agents and how they help in forwarding log data to CloudWatch Logs.
+## Explain the use of CloudWatch Logs Agents and how they help in forwarding log data to CloudWatch Logs.
 
 Answer: CloudWatch Logs Agents are software components that can be installed on your AWS resources to capture and forward log data to CloudWatch Logs. They are used to collect and centralize logs from EC2 instances, on-premises servers, or other sources, making log management more efficient.
 
-13. How can you set up automated log retention policies in CloudWatch Logs, and what are the best practices for managing log data retention?
+## How can you set up automated log retention policies in CloudWatch Logs, and what are the best practices for managing log data retention?
 
 Answer: You can set up log retention policies in CloudWatch Logs to automatically expire log data after a specified duration. Best practices include defining retention policies based on compliance requirements, archiving important logs, and regularly reviewing and optimizing log retention settings.
 
-14. Explain how you can use CloudWatch Synthetics for monitoring the user experience of web applications.
+## Explain how you can use CloudWatch Synthetics for monitoring the user experience of web applications.
 
 Answer: CloudWatch Synthetics allows you to create and run synthetic monitoring scripts to monitor the user experience of web applications. You can configure scripts to simulate user interactions with your application, such as clicking buttons, filling out forms, and verifying content, to ensure optimal performance and functionality.
 
-15. What is the CloudWatch Logs Insights Insights query language, and how can you use it to extract useful information from log data?
+## What is the CloudWatch Logs Insights Insights query language, and how can you use it to extract useful information from log data?
 
 Answer: The CloudWatch Logs Insights query language allows you to search and analyze log data using a SQL-like syntax. You can use it to filter, aggregate, and extract specific information from log entries, making it easier to troubleshoot issues and gather insights from logs.
 
-16. Explain how you can use the CloudWatch Metrics math expressions feature to perform mathematical operations on CloudWatch metrics. Provide an example scenario.
+## Explain how you can use the CloudWatch Metrics math expressions feature to perform mathematical operations on CloudWatch metrics. Provide an example scenario.
 
 Answer: CloudWatch Metrics math expressions allow you to perform calculations on multiple metrics. For example, you can create an expression to calculate the error rate as a percentage by dividing the number of error requests by the total number of requests.
 
-17. How does CloudWatch Logs Insights handle log data from multiple log streams within a log group?
+## How does CloudWatch Logs Insights handle log data from multiple log streams within a log group?
 
 Answer: CloudWatch Logs Insights can aggregate and query log data from multiple log streams within a log group. When you run a query in Insights, you can choose to query specific streams, all streams, or apply a filter to narrow down the log data used in the query.
 
-18. Explain how CloudWatch Alarms’ actions can be used to automatically recover from incidents or outages, such as restarting an EC2 instance.
+## Explain how CloudWatch Alarms’ actions can be used to automatically recover from incidents or outages, such as restarting an EC2 instance.
 
 Answer: CloudWatch Alarms can be configured to trigger actions when a specified alarm condition is met. For example, you can create an alarm that monitors the status of an EC2 instance and, if the instance becomes unhealthy, set up an action to automatically restart the instance, helping to recover from incidents or outages.
 
-19. What are the best practices for setting up effective CloudWatch Alarms and managing alerting in a production environment?
+## What are the best practices for setting up effective CloudWatch Alarms and managing alerting in a production environment?
 
 Answer: Best practices include:
 — Setting clear and meaningful alarm names and descriptions.
@@ -92,6 +92,6 @@ Answer: Best practices include:
 — Implementing multi-dimensional alarms to detect issues with custom metrics.
 — Using composite alarms to reduce alarm noise.
 
-20. Explain how you can monitor and analyze CloudWatch Alarms and metrics programmatically using the AWS SDKs or APIs.
+## Explain how you can monitor and analyze CloudWatch Alarms and metrics programmatically using the AWS SDKs or APIs.
 
 Answer: You can programmatically monitor and analyze CloudWatch Alarms and metrics using the AWS SDKs and APIs. These tools allow you to create, update, and delete alarms, retrieve metric data, and automate alerting and responses to various events in your environment.
