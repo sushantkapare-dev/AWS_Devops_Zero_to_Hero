@@ -1,12 +1,12 @@
-1. What is AWS VPC, and how does it enable network isolation and customization for cloud resources?
+## What is AWS VPC, and how does it enable network isolation and customization for cloud resources?
 
 Answer: AWS VPC is a logically isolated section of the AWS Cloud where you can launch AWS resources. It enables network isolation and customization by allowing you to define your network configuration, including IP address ranges, subnets, and route tables, providing control and security for your cloud resources.
 
-2. What is the primary difference between a public subnet and a private subnet in an AWS VPC?
+## What is the primary difference between a public subnet and a private subnet in an AWS VPC?
 
 Answer: In a VPC, a public subnet is associated with a route table that directs traffic to the internet via an Internet Gateway (IGW), making it accessible from the internet. A private subnet is not associated with an IGW and is intended for resources that should not be directly accessible from the internet.
 
-3. Explain the purpose of Network Access Control Lists (NACLs) in AWS VPC and how they differ from Security Groups.
+## Explain the purpose of Network Access Control Lists (NACLs) in AWS VPC and how they differ from Security Groups.
 
 Answer: NACLs are stateless, optional network-level security controls for VPCs. They allow or deny traffic at the subnet level based on rules you define. Unlike Security Groups, NACLs are stateless and evaluate traffic on a per-rule basis, making them less granular but providing broader control over traffic.
 
