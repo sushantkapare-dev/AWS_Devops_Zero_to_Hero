@@ -38,45 +38,45 @@ Answer: VPC Flow Logs capture information about the IP traffic going in and out 
 
 Answer: Route Tables in a VPC determine the path of network traffic by defining routes to different destinations, such as subnets and the internet. Each subnet is associated with a specific route table, allowing you to control how traffic flows within the VPC and to external networks.
 
-11. What is a VPC CIDR block, and why is it important when designing a VPC network?
+## What is a VPC CIDR block, and why is it important when designing a VPC network?
 
 Answer: A VPC CIDR block is the IP address range you choose for your VPC. It’s a crucial aspect of network design, as it determines the address space available for your VPC and its subnets. Careful planning of the CIDR block is essential to avoid IP address conflicts and to align with your organization’s network structure.
 
-12. Explain the key differences between a VPC and a VPN in AWS, and when you would use each.
+## Explain the key differences between a VPC and a VPN in AWS, and when you would use each.
 
 Answer: A VPC (Virtual Private Cloud) is a logically isolated section of the AWS cloud where you deploy your resources. A VPN (Virtual Private Network) is a technology for creating secure, encrypted connections between on-premises networks and VPCs. You use a VPC for cloud resource deployment and a VPN for secure connectivity between on-premises and the VPC.
 
-13. What is the purpose of a Direct Connect in the context of a VPC, and how does it provide dedicated network connectivity to AWS?
+## What is the purpose of a Direct Connect in the context of a VPC, and how does it provide dedicated network connectivity to AWS?
 
 Answer: AWS Direct Connect is a dedicated network connection that provides private and secure access to AWS services. It bypasses the public internet, offering lower latency and more consistent network performance. It is typically used for high-throughput and mission-critical workloads that require a direct, private connection to AWS.
 
-14. Explain the role of Elastic Network Interfaces (ENIs) in AWS VPC and how they can be used to enhance network capabilities for instances.
+## Explain the role of Elastic Network Interfaces (ENIs) in AWS VPC and how they can be used to enhance network capabilities for instances.
 
 Answer: ENIs are virtual network interfaces that can be attached to instances in a VPC. They provide additional network capabilities, such as multiple IP addresses, network segmentation, and the ability to attach and detach them from instances. ENIs are useful for creating network redundancy and implementing advanced networking scenarios.
 
-15. What is the difference between a VPC Security Group and Network ACL, and how do they complement each other in securing a VPC?
+## What is the difference between a VPC Security Group and Network ACL, and how do they complement each other in securing a VPC?
 
 Answer:
 — VPC Security Group: Security Groups are stateful and operate at the instance level. They control inbound and outbound traffic based on user-defined rules and can be attached to instances. They are used for fine-grained control over traffic to and from instances.
 — Network ACL: Network ACLs are stateless and operate at the subnet level. They use rules to allow or deny traffic to subnets. They provide an additional layer of security and can be used in combination with Security Groups to create a defense-in-depth strategy.
 
-16. Explain the use of AWS VPC Flow Logs in network monitoring and analysis. What types of data do they capture?
+## Explain the use of AWS VPC Flow Logs in network monitoring and analysis. What types of data do they capture?
 
 Answer: VPC Flow Logs capture network traffic data, including details like source and destination IP addresses, ports, protocol, and the action taken (allow or deny). They can be used for network monitoring, troubleshooting, and security analysis, providing insights into the flow of traffic within the VPC.
 
-17. What is a VPC Endpoint, and how does it improve security and performance for VPC resources?
+## What is a VPC Endpoint, and how does it improve security and performance for VPC resources?
 
 Answer: VPC Endpoints are used to securely access AWS services without going over the internet. They enable instances in a VPC to communicate with AWS services like S3 and DynamoDB privately, reducing data exposure and latency. They are a key component in improving security and performance for VPC resources.
 
-18. Explain the concept of VPC peering limitations and challenges, especially in terms of routing and overlapping IP ranges.
+## Explain the concept of VPC peering limitations and challenges, especially in terms of routing and overlapping IP ranges.
 
 Answer: VPC peering has some limitations, such as no transitive peering, non-overlapping IP ranges, and route table management challenges. Transitive peering requires additional connections, and overlapping IP ranges can cause routing conflicts. Careful planning and clear routing table design are necessary to address these challenges.
 
-19. How can you ensure secure and efficient communication between on-premises data centers and VPCs in different regions or accounts?
+## How can you ensure secure and efficient communication between on-premises data centers and VPCs in different regions or accounts?
 
 Answer: You can ensure secure and efficient communication by using VPN connections, AWS Direct Connect, or AWS Transit Gateway to connect VPCs across different regions or accounts. VPNs are suitable for secure, encrypted connections over the public internet, while Direct Connect offers dedicated, private connections. Transit Gateway simplifies connectivity between multiple VPCs and on-premises networks.
 
-20. What are the best practices for designing and optimizing VPC architectures for high availability, security, and scalability?
+## What are the best practices for designing and optimizing VPC architectures for high availability, security, and scalability?
 
 Answer: Best practices include:
 — Using multiple Availability Zones for redundancy.
