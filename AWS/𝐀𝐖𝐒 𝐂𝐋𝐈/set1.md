@@ -2,7 +2,7 @@
 
 Answer: The AWS CLI is a command-line tool provided by AWS for interacting with various AWS services. It allows users to manage resources, configure services, and automate tasks through a command-line interface, making it an essential tool for DevOps engineers.
 
-2. How do you configure the AWS CLI on your local machine, and what are the key configuration settings you need to provide?
+## How do you configure the AWS CLI on your local machine, and what are the key configuration settings you need to provide?
 
 Answer: You can configure the AWS CLI using the `aws configure` command. Key settings include:
 — AWS Access Key ID
@@ -10,19 +10,19 @@ Answer: You can configure the AWS CLI using the `aws configure` command. Key set
 — Default AWS region
 — Output format (e.g., JSON, text)
 
-3. Explain the concept of named profiles in the AWS CLI configuration and why they are useful.
+## Explain the concept of named profiles in the AWS CLI configuration and why they are useful.
 
 Answer: Named profiles are separate configurations within the AWS CLI configuration file. They allow you to use different sets of AWS credentials and settings for different purposes, such as development, testing, and production environments. Profiles enable easier management of multiple AWS accounts and regions.
 
-4. How can you list all the available AWS CLI profiles on your local machine?
+## How can you list all the available AWS CLI profiles on your local machine?
 
 Answer: You can list all the available AWS CLI profiles by examining the `~/.aws/credentials` file or by running the `aws configure list` command.
 
-5. What is AWS CLI output formatting, and how can you change the default output format for command results?
+## What is AWS CLI output formatting, and how can you change the default output format for command results?
 
 Answer: AWS CLI output formatting controls the structure of the output when running AWS CLI commands. The default format is JSON. You can change the output format using the ` — output` parameter, specifying options like `json`, `table`, or `text`.
 
-6. Explain how you can use the AWS CLI to create and manage EC2 instances. Provide an example command to launch an EC2 instance.
+## Explain how you can use the AWS CLI to create and manage EC2 instances. Provide an example command to launch an EC2 instance.
 
 Answer: You can create and manage EC2 instances using the `aws ec2` commands. An example command to launch an EC2 instance:
 
