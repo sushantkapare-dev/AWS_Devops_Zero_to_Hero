@@ -1,12 +1,12 @@
-1. What is AWS CloudFormation, and how does it fit into a DevOps environment?
+## What is AWS CloudFormation, and how does it fit into a DevOps environment?
 
 Answer: AWS CloudFormation is a service that allows you to provision and manage AWS infrastructure as code. In a DevOps environment, CloudFormation enables the automated and repeatable creation of AWS resources, making it an essential tool for infrastructure deployment and management.
 
-2. Explain the concept of an AWS CloudFormation stack and its components.
+## Explain the concept of an AWS CloudFormation stack and its components.
 
 Answer: An AWS CloudFormation stack is a collection of AWS resources defined in a CloudFormation template. Stack components include the template, the stack name, and the set of resources created and managed by that stack.
 
-3. What are AWS CloudFormation templates, and in what formats can they be written?
+## What are AWS CloudFormation templates, and in what formats can they be written?
 
 Answer: AWS CloudFormation templates are JSON or YAML text files that define the AWS resources and their configurations. You can write templates in either JSON or YAML format. YAML is often preferred for its human-readable and concise syntax.
 
