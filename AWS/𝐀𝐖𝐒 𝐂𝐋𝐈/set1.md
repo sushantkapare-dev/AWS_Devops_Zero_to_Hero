@@ -1,4 +1,4 @@
-1. What is the AWS CLI, and how does it facilitate interactions with AWS services?
+## What is the AWS CLI, and how does it facilitate interactions with AWS services?
 
 Answer: The AWS CLI is a command-line tool provided by AWS for interacting with various AWS services. It allows users to manage resources, configure services, and automate tasks through a command-line interface, making it an essential tool for DevOps engineers.
 
