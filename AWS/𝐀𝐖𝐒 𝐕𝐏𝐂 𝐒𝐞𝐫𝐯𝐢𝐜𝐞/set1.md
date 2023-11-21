@@ -1,4 +1,3 @@
-
 1. What is AWS VPC, and how does it enable network isolation and customization for cloud resources?
 
 Answer: AWS VPC is a logically isolated section of the AWS Cloud where you can launch AWS resources. It enables network isolation and customization by allowing you to define your network configuration, including IP address ranges, subnets, and route tables, providing control and security for your cloud resources.
