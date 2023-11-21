@@ -20,15 +20,15 @@ Answer: Secret rotation is the process of regularly updating credentials to redu
 
 Answer: To access secrets securely, you can use the AWS SDKs or the AWS CLI, which automatically retrieve and rotate secrets. You can also integrate your application code with AWS Secrets Manager using IAM roles, reducing the need for static credentials in your code.
 
-6. What is the difference between AWS Key Management Service (KMS) and AWS Secrets Manager in terms of encryption and access control for stored secrets?
+## What is the difference between AWS Key Management Service (KMS) and AWS Secrets Manager in terms of encryption and access control for stored secrets?
 
 Answer: AWS KMS is used for encryption of stored secrets in AWS Secrets Manager. KMS is responsible for managing encryption keys. AWS Secrets Manager provides a higher-level service for secret management and access control.
 
-7. How do you audit and monitor secret activity in AWS Secrets Manager? What AWS services can be used for auditing and tracking changes to secrets?
+## How do you audit and monitor secret activity in AWS Secrets Manager? What AWS services can be used for auditing and tracking changes to secrets?
 
 Answer: You can audit and monitor secret activity using AWS CloudTrail and AWS CloudWatch. CloudTrail provides an audit trail of API calls, and CloudWatch allows you to set up alarms and monitor secret events, such as rotations.
 
-8. What are the best practices for securing secrets in AWS Secrets Manager, and how can you ensure that sensitive information remains protected?
+## What are the best practices for securing secrets in AWS Secrets Manager, and how can you ensure that sensitive information remains protected?
 
 Answer: Best practices for securing secrets include:
 — Using automatic rotation.
@@ -37,7 +37,7 @@ Answer: Best practices for securing secrets include:
 — Enforcing strong policies and audit logs.
 — Implementing fine-grained access control using IAM roles.
 
-9. Explain the benefits of using AWS Secrets Manager over traditional methods of storing and managing secrets, such as storing them in configuration files or environment variables.
+## Explain the benefits of using AWS Secrets Manager over traditional methods of storing and managing secrets, such as storing them in configuration files or environment variables.
 
 Answer: AWS Secrets Manager provides several benefits, including:
 — Centralized secret management.
@@ -46,6 +46,6 @@ Answer: AWS Secrets Manager provides several benefits, including:
 — Reduced exposure of secrets in code and configuration files.
 — Compliance with best practices and regulations.
 
-10. What is the AWS Secrets Manager rotation Lambda function, and how can you customize it to meet specific secret rotation requirements?
+## What is the AWS Secrets Manager rotation Lambda function, and how can you customize it to meet specific secret rotation requirements?
 
 Answer: The rotation Lambda function is responsible for performing secret rotation. You can customize it to meet specific requirements by developing a Lambda function that aligns with your application’s requirements and integrates with AWS Secrets Manager for rotation.
