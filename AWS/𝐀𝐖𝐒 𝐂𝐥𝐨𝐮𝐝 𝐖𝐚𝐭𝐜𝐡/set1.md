@@ -1,8 +1,8 @@
-1. What is AWS CloudWatch, and how does it contribute to DevOps practices?
+## What is AWS CloudWatch, and how does it contribute to DevOps practices?
 
 Answer: AWS CloudWatch is a monitoring and observability service that provides insights into the performance, health, and resource utilization of AWS resources. It contributes to DevOps practices by offering real-time monitoring, alerting, and centralized log management, helping to ensure the reliability and availability of applications.
 
-2. Explain the difference between CloudWatch Alarms and CloudWatch Events. When and how would you use each?
+## Explain the difference between CloudWatch Alarms and CloudWatch Events. When and how would you use each?
 
 Answer:
 — CloudWatch Alarms are used to monitor metrics and trigger actions when a threshold is breached, such as sending notifications or performing automated remediation.
