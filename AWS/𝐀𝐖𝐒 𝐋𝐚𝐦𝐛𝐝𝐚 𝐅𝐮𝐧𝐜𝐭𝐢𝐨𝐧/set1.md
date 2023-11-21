@@ -1,4 +1,3 @@
-
 1. What is AWS Lambda, and how does it fit into a DevOps environment?
 
 Answer: AWS Lambda is a serverless compute service that allows you to run code without provisioning or managing servers. It fits into a DevOps environment by enabling the execution of functions in response to events, making it valuable for automation, application scaling, and event-driven workflows.
