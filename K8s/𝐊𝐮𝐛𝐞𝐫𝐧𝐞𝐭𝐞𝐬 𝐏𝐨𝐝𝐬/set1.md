@@ -50,19 +50,19 @@
 
 - Kubernetes uses its control plane to detect node failures. When a node becomes unavailable, Pods running on that node are rescheduled to healthy nodes in the cluster, ensuring high availability and minimal disruption.
 
-14. What is a PodSecurityPolicy, and how can it be used to enhance security when deploying Pods?
+## What is a PodSecurityPolicy, and how can it be used to enhance security when deploying Pods?
 
 - A PodSecurityPolicy is a resource that defines a set of security policies and constraints for Pods. It can control aspects like allowed volume types, host namespaces, and more. Using PodSecurityPolicies helps enforce security best practices across your cluster.
 
-15. Explain how you can limit the resources a Pod can consume using resource quotas in Kubernetes.
+## Explain how you can limit the resources a Pod can consume using resource quotas in Kubernetes.
 
 - Resource quotas are used to limit the total CPU and memory resources that can be consumed by Pods in a namespace. By setting resource quotas, you prevent individual Pods from monopolizing cluster resources, ensuring fair resource allocation.
 
-16. What are Init Containers in Kubernetes, and in what scenarios might you use them?
+## What are Init Containers in Kubernetes, and in what scenarios might you use them?
 
 - Init Containers are containers that run before the main containers in a Pod. They are used for tasks like application setup, database schema migrations, or pre-loading data. Init Containers ensure that the main application container starts in a predictable state.
 
-17. How can you debug issues with Pods in Kubernetes? Provide some common troubleshooting techniques.
+## How can you debug issues with Pods in Kubernetes? Provide some common troubleshooting techniques.
 
 - To debug Pods, you can use techniques like:
 — Viewing Pod logs with `kubectl logs`.
