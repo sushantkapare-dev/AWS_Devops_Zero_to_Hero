@@ -50,15 +50,15 @@ Answer: Terraform Cloud and Terraform Enterprise provide centralized workspace m
 
 Answer:Consistency can be maintained by using version control for workspace configurations, creating and enforcing naming conventions, and implementing automation to set up and initialize workspaces. Documenting the purpose and intended use of each workspace also helps maintain consistency.
 
-13. Explain the concept of “infrastructure as code” in the context of Terraform workspaces, and how does it relate to managing environments and deployments?
+## Explain the concept of “infrastructure as code” in the context of Terraform workspaces, and how does it relate to managing environments and deployments?
 
 Answer: “Infrastructure as code” means defining your infrastructure in code, including workspace configurations. In the context of workspaces, it allows you to manage different environments or deployments using code, making it easy to spin up, tear down, or modify environments as needed, consistently and predictably.
 
-14. In a continuous integration/continuous deployment (CI/CD) pipeline, how can Terraform workspaces be leveraged for automated testing and validation of infrastructure changes before deployment?
+## In a continuous integration/continuous deployment (CI/CD) pipeline, how can Terraform workspaces be leveraged for automated testing and validation of infrastructure changes before deployment?
 
 Answer: Workspaces can be used to create isolated environments for testing and validation. For each feature or change, a dedicated workspace can be created to test infrastructure changes independently before merging them into the main environment.
 
-15. Give an example of how Terraform workspaces can be used for disaster recovery (DR) planning and testing.
+## Give an example of how Terraform workspaces can be used for disaster recovery (DR) planning and testing.
 
 Answer: In a DR scenario, you can create workspaces that mimic your production environment. Regularly test and validate your DR plan by switching to these workspaces and confirming that the disaster recovery process works as expected.
 
