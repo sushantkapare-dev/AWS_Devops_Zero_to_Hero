@@ -26,27 +26,27 @@
 
 - Readiness probes determine when a Pod is ready to receive traffic, helping Kubernetes avoid sending requests to unhealthy Pods. Liveness probes check if a container is still running; if not, Kubernetes can restart the container. Both probes are vital for maintaining the availability and reliability of applications.
 
-8. What is a PodDisruptionBudget, and how can it be useful in ensuring high availability during maintenance or disruptions?
+## What is a PodDisruptionBudget, and how can it be useful in ensuring high availability during maintenance or disruptions?
 
 - A PodDisruptionBudget is a resource that specifies how many Pods of a particular application can be disrupted simultaneously. It helps ensure that a minimum number of Pods remain available during node maintenance or disruptions, minimizing downtime and maintaining high availability.
 
-9. When might you use a StatefulSet instead of a Deployment in Kubernetes, and what are the key differences between the two?
+## When might you use a StatefulSet instead of a Deployment in Kubernetes, and what are the key differences between the two?
 
 - StatefulSets are suitable for stateful applications like databases, where each Pod has a stable network identity and needs ordered scaling. Deployments are better suited for stateless applications that can scale horizontally. StatefulSets also provide ordered Pod creation and deletion, while Deployments focus on maintaining a desired replica count.
 
-10. How can you update the configuration or image of a running Pod without deleting it?
+## How can you update the configuration or image of a running Pod without deleting it?
 
 - You can update a running Pod’s configuration or image by applying changes to the associated Deployment or StatefulSet. Kubernetes will automatically manage the rolling update process, ensuring minimal downtime and a smooth transition.
 
-11. Explain how you can configure environment variables for containers within a Kubernetes Pod.
+## Explain how you can configure environment variables for containers within a Kubernetes Pod.
 
 - Environment variables for containers within a Pod can be configured in the Pod’s YAML manifest under the `spec.containers.env` field. You can define variables statically or use ConfigMaps and Secrets to inject them dynamically.
 
-12. What are the differences between an Ephemeral Volume and a Persistent Volume in Kubernetes, and when would you use each with Pods?
+## What are the differences between an Ephemeral Volume and a Persistent Volume in Kubernetes, and when would you use each with Pods?
 
 - Ephemeral Volumes are temporary and tied to the Pod’s lifecycle, while Persistent Volumes (PVs) are external storage volumes that persist data beyond a Pod’s lifecycle. Use Ephemeral Volumes for temporary storage, and PVs for long-term data storage that needs to survive Pod restarts.
 
-13. How does Kubernetes handle the rescheduling of Pods when a node fails or becomes unavailable?
+## How does Kubernetes handle the rescheduling of Pods when a node fails or becomes unavailable?
 
 - Kubernetes uses its control plane to detect node failures. When a node becomes unavailable, Pods running on that node are rescheduled to healthy nodes in the cluster, ensuring high availability and minimal disruption.
 
