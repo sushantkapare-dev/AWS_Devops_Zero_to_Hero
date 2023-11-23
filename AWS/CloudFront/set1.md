@@ -41,3 +41,4 @@ Answer: You can monitor and analyze CloudFront performance using AWS CloudWatch,
 ## What are the cost considerations when using AWS CloudFront, and how can you optimize costs while ensuring high-performance content delivery?
 
 Answer: Cost considerations for CloudFront include data transfer, request fees, and regional data transfer. To optimize costs, consider using cache settings to minimize the number of requests to origin servers, choosing appropriate TTLs, and setting up request filters to reduce the amount of data transferred.
+
