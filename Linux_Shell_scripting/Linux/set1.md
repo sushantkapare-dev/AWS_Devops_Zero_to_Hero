@@ -1,5 +1,4 @@
-
-Q1. What is a process & how it works?
+## What is a process & how it works?
 
 The process is a program that is in the running state.
 PID: Process ID
