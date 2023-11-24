@@ -42,28 +42,34 @@ Ensure that you are using the correct IP addresses for both servers.
 Confirm that both servers are on the same subnet and have the correct network configuration settings, including IP addresses, subnet masks, and default gateways.
 Ensure that both servers can resolve each other’s hostnames to the correct IP addresses. You can use the nslookup or ping with hostnames to test DNS resolution.
 Check for IP address conflicts on the network. If two devices have the same IP address, it can cause communication issues.
-Q6. Write a linux command that will print the only IP address of the machine
+
+## Write a linux command that will print the only IP address of the machine
 
 curl ifconfig.me: Will only print the public IP
 ifconfig | grep -oE ‘inet (addr:)?([0–9]*\.){3}[0–9]*’ | awk ‘{print $2}
-Q7. Write the command to find all the files modified in the last 3 days
+
+## Write the command to find all the files modified in the last 3 days
 
 find /path/to/directory -mtime 3
-Q8. What is the difference between kill and kill -9 commands?
+
+## What is the difference between kill and kill -9 commands?
 
 Kill command will generate a SIGTERM which will ask process to kill itself where kill -9 command will generate SIGKILL which will kill the process immediatly. It does not wait for the process to clear memory or wait for a graceful exit.
-Q9. What is INITRD in Linux?
+
+## What is INITRD in Linux?
 
 In Linux, INITRD (short for “initial RAM disk”) is a temporary file system that’s loaded into memory during the boot process before the actual root file system is mounted.
 When a Linux system boots up, the kernel is loaded into memory and executed. However, the root file system, which contains all the user programs and configuration files, may reside on a storage device like a hard drive or SSD.
 During the boot process, the kernel detects the INITRD/INITRAMFS image and loads it into memory as a temporary file system.
 Once the necessary drivers are loaded and the system can access the real root file system, the kernel switches over to it, and the INITRD/INITRAMFS is unmounted.
-Q10. What is MBR in linux?
+
+## What is MBR in linux?
 
 MBR stands for Master Boot Record, and it is a crucial data structure used in partitioned storage devices, including those used with Linux operating systems.
 The MBR contains a small program known as a bootloader. The bootloader’s primary job is to load and execute the operating system’s kernel, which is responsible for starting the Linux operating system. Common Linux bootloaders include GRUB (Grand Unified Bootloader)
 The MBR also includes a partition table that describes how the storage device is divided into partitions.
-Q11. What is .bashrc and .bashrc_profile in Linux?
+
+## What is .bashrc and .bashrc_profile in Linux?
 
 These files allow you to customize your shell environment and behavior by setting various environment variables, aliases, and functions.
 .bashrc: This file is read and executed every time you start a new non-login interactive shell session.
