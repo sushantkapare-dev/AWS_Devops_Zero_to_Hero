@@ -10,7 +10,8 @@ Kill command is to kill the process
 Zombie is the process which is killed but still shows in the OS
 When you boot the OS the kernel will start the init process(1) and it will execute the different shell scripts to turn on the processes. Some processes become daemon and some will start.
 When one process starts another process then it will first create a copy of itself then it will create the child process and it will replace the copy
-Q2. What is the difference between init & systems?
+
+## What is the difference between init & systems?
 
 Init:
 The traditional init system follows a simple and linear approach to process management. It starts processes sequentially.
@@ -21,17 +22,20 @@ init typically relies on syslog or other logging mechanisms for service output a
 systemd is a modern initialization and service management system that follows a more complex and parallel approach. It aims to improve system startup performance by starting services in parallel and offers a more feature-rich configuration system.
 systemd uses native service unit files (often with a .service extension) for service management. These unit files can define various service properties, dependencies, and execution parameters, providing more fine-grained control over service behavior.
 systemd includes its own logging system called systemd-journald, which provides advanced features like structured logging and centralized log management.
-Q3. Explain the boot process of Linux.
+
+## Explain the boot process of Linux.
 
 When you boot the OS the hardware transfers the control to Bios, which resides in the ROM. The bios perform the health check of the hardware component and then it will start scanning the list of bootable devices once it finds the bootloader it will go to MBR (Master Boot Record) and then grub loads the kernel to memory and then the kernel will start the init process(1) and it will execute the different scripts to turn on the processes. Some processes become daemon and some will start.
 BIOS (Basic I/O system) — MBR (Master Boot Record) — GRUB (Grand unified boot loader) — Kernel — SystemD, Init
-Q4. I have one Linux machine, and an application is installed on it but I am not able to access this machine through a web browser how you will troubleshoot?
+
+## I have one Linux machine, and an application is installed on it but I am not able to access this machine through a web browser how you will troubleshoot?
 
 Check whether the port on which the application is running is open or not
 Check whether the service is running or not
 Check the logs for errors
 Check the server whether it’s configured perfectly or not
-Q5. 2 servers are in the same network but the ping command is not working what is the issue?
+
+## 2 servers are in the same network but the ping command is not working what is the issue?
 
 Check if there are any firewalls or security software (including antivirus programs) running on either server that might be blocking ICMP (ping) packets.
 Ensure that you are using the correct IP addresses for both servers.
