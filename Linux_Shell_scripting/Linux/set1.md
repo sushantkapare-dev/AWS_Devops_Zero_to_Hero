@@ -74,7 +74,8 @@ The MBR also includes a partition table that describes how the storage device is
 These files allow you to customize your shell environment and behavior by setting various environment variables, aliases, and functions.
 .bashrc: This file is read and executed every time you start a new non-login interactive shell session.
 .bash_profile: This file is read and executed only when you log in to the system.
-Q12. What is INODE?
+
+## What is INODE?
 
 An inode, short for "index node," is a data structure used in Unix-based file systems
 Each file or directory on a Unix file system is associated with an inode, which contains information about that specific file or directory. Inodes are crucial for managing and organizing files on a file system.
@@ -83,16 +84,19 @@ File permissions: Specifies the access permissions for the file, determining who
 Owner and group: Identifies the user and group associated with the file or directory.
 File size: Records the size of the file or directory in bytes.
 Timestamps: Includes timestamps for when the file or directory was created, last modified, and last accessed.
-Q13. What are mtab and fstab in Linux?
+
+## What are mtab and fstab in Linux?
 
 mtab and fstab are two important files in Linux that are used to manage and control filesystems and their mounting.
 mtab (Mounted Filesystems Table):
 mtab is a system file that keeps a record of currently mounted filesystems.
 fstab (File System Table):
 fstab is a system configuration file that defines how and where filesystems should be mounted at boot time.
-Q14. What is Swap Space?
+
+## What is Swap Space?
 
 Swap Space is the additional space used by Linux that temporarily holds concurrently running programs when the RAM does not have enough space to hold the programs. When you run a program, it resides on the RAM so that the processor can fetch data quickly. Suppose you are running more programs than the RAM can hold, then these running programs are stored in the Swap Space. The processor will now look for data in the RAM and the Swap Space.
-Q15. What are daemons?
+
+## What are daemons?
 
 A daemon is a computer program that runs as a background process to provide functions that might not be available in the base Operating System. Daemons are usually used to run services in the background without directly being in control of interactive users. The purpose of Daemons are to handle periodic requests and then forward the requests to appropriate programs for execution.
