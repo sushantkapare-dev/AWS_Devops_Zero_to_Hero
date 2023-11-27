@@ -10,11 +10,11 @@ Ansible can be used to automate deployment tasks such as pulling code from a rep
 
 Implementing rolling deployments, blue-green deployments, or canary releases can help minimize downtime and reduce risks during deployments. Additionally, setting up proper monitoring and automated rollback mechanisms can provide a safety net in case issues arise.
 
-## Q5: You’re managing a diverse server fleet with varying configurations. How can Ansible help you automate the process of installing software packages and updating configurations consistently across all servers?
+##  You’re managing a diverse server fleet with varying configurations. How can Ansible help you automate the process of installing software packages and updating configurations consistently across all servers?
 
 Ansible provides a powerful solution through playbooks. You can create playbooks that define a set of tasks to be executed on multiple servers. By specifying the required software packages, configurations, and updates in these playbooks, you can ensure that the desired state is achieved on all servers. Ansible’s idempotent nature ensures that if a server is already in the desired state, no unnecessary changes are made.
 
-## Q6: In a dynamic development environment, how would you set up a continuous deployment pipeline using Ansible? What are the key components and steps involved?
+##  In a dynamic development environment, how would you set up a continuous deployment pipeline using Ansible? What are the key components and steps involved?
 
 To set up a continuous deployment pipeline with Ansible, you can follow these steps:
 
@@ -32,11 +32,11 @@ To set up a continuous deployment pipeline with Ansible, you can follow these st
 
 **Monitoring & Rollback:** Set up monitoring to detect any issues post-deployment. If issues arise, use Ansible to roll back to a previous version.
 
-## Q7: In a cloud environment with constantly changing instances, how can Ansible’s dynamic inventory management assist you in automating tasks?
+##  In a cloud environment with constantly changing instances, how can Ansible’s dynamic inventory management assist you in automating tasks?
 
 Ansible’s dynamic inventory management allows you to automatically discover and manage your infrastructure as it changes. Instead of maintaining a static inventory file, you can use scripts to generate inventory on-the-fly based on your cloud provider’s API or other data sources. This ensures that Ansible always has an accurate view of your infrastructure, making automation more flexible and efficient.
 
-## Q8: Explain how Ansible can be employed to enforce security policies and perform security hardening across your servers.
+##  Explain how Ansible can be employed to enforce security policies and perform security hardening across your servers.
 
 With Ansible, you can create playbooks that apply security configurations across your infrastructure. This could include tasks like:
 
@@ -47,7 +47,7 @@ Configuring user access and permissions according to the principle of least priv
 Enabling security features like SELinux or AppArmor.
 By running these playbooks, you can automate the process of security hardening, ensuring that your servers are in compliance with security best practices.
 
-## Q9: Your application experiences sudden spikes in traffic. How would you design an Ansible playbook to automatically scale resources based on demand?
+##  Your application experiences sudden spikes in traffic. How would you design an Ansible playbook to automatically scale resources based on demand?
 
 To design an Ansible playbook for automatic scaling, you can:
 
