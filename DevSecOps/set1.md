@@ -4,4 +4,4 @@
 
 ## what are the main challenges faced while implementing SCA and how can they be addressed in devsecops enviroment?
 
-##
+## 
