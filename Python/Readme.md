@@ -1,7 +1,5 @@
 ![image](https://github.com/SushantOps/AWS_Devops_Questions_and_Answers/assets/109059766/31832239-6814-4cd6-a642-be687a7e1fdb)
 
-## python 
-
 # Python Emoji Fun 🐍🎉
 
 Welcome to the Python Emoji Fun repository! 🚀 This project adds a touch of fun to your Python code by incorporating emojis into your scripts. Emojis not only make your code more visually appealing but also add a dash of personality. 😎
