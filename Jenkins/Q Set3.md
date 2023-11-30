@@ -234,5 +234,46 @@ Moreover, for infrastructure-as-code (IaC) and cloud-native applications, incorp
 In summary, while Jenkins is a foundational element for automation, a holistic approach often involves integrating it with a combination of tools that cater to specific aspects of the development and deployment process. This ensures a more versatile, efficient, and end-to-end automated workflow in the context of modern software development practices.
 
 ## Explain diff stages in CI-CD setup?
+In a Continuous Integration and Continuous Deployment (CI/CD) setup, various stages are involved in automating the software delivery pipeline. These stages help ensure that code changes are systematically built, tested, and deployed, allowing for rapid and reliable delivery of software. Here are the typical stages in a CI/CD setup:
+
+1. **Code Commit/Version Control:**
+   - Developers commit code changes to a version control system (e.g., Git).
+   - Each commit triggers the CI/CD pipeline to initiate the build process.
+
+2. **Build:**
+   - The code is compiled, and dependencies are resolved to create an executable or deployable artifact.
+   - This stage ensures that the code can be successfully compiled and is ready for further testing.
+
+3. **Code Quality Analysis:**
+   - Static code analysis tools check the code for potential issues, adherence to coding standards, and best practices.
+   - This stage helps maintain code quality and identifies potential issues early in the development process.
+
+4. **Automated Testing:**
+   - Unit tests, integration tests, and other automated tests are executed to validate the functionality of the code.
+   - Testing at this stage ensures that new changes do not introduce regressions and maintains the reliability of the application.
+
+5. **Artifact Storage:**
+   - The build artifacts are stored in a repository (e.g., Nexus, Artifactory) for later use in deployment.
+   - Storing artifacts centrally ensures traceability and facilitates deployment consistency.
+
+6. **Deployment to Development/Testing Environment:**
+   - The application is deployed to a development or testing environment for further testing and validation.
+   - This stage allows for testing in an environment that closely resembles the production environment.
+
+7. **User Acceptance Testing (UAT):**
+   - The application is deployed to a UAT environment for testing by stakeholders or users.
+   - This stage ensures that the software meets business requirements and is ready for production.
+
+8. **Deployment to Production:**
+   - Upon successful testing, the application is deployed to the production environment.
+   - This stage involves careful coordination and may include strategies like blue-green deployments or canary releases to minimize downtime and risk.
+
+9. **Monitoring and Logging:**
+   - Continuous monitoring tools are employed to track the application's performance and identify any issues in real-time.
+   - Logging mechanisms capture and store relevant information for analysis and troubleshooting.
+
+10. **Rollback (if necessary):**
+    - In the event of issues detected in the production environment, a rollback mechanism is triggered to revert to a previous version.
+    - This stage ensures the ability to quickly respond to unexpected issues in production.
 
 
