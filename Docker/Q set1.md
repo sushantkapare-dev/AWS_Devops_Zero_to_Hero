@@ -888,3 +888,7 @@ Control Groups (cgroups) and Namespaces are two fundamental Linux kernel feature
 When a container is in a "Paused" state, it means that all processes within the container have been temporarily stopped, but the container itself is not terminated. It is a state of suspended animation, where the container remains intact with its file system, configurations, and network settings preserved. While a container is paused, you cannot remove it directly using the "docker rm" command because it's not running.
 
 To remove a paused container, you must first unpause it using the "docker unpause" command to allow the container's processes to resume. Once it's unpaused and running, you can use the "docker rm" command to remove the container.
+
+## Explain how to secure docker Images?
+
+##
