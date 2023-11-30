@@ -166,6 +166,60 @@ Configuring a job in Jenkins involves defining the parameters and settings that 
    - You can manually trigger the job by selecting "Build Now" on the job's dashboard. Alternatively, the job may be triggered automatically based on the configured triggers.
 
 ## In Jenkins how can you find log files?
+In Jenkins, you can find log files for your builds and jobs in a few different ways. Here are the common locations where you can find log files:
+
+1. **Console Output:**
+   - When you run a build, Jenkins provides real-time logging information in the "Console Output" section of the build job.
+   - Navigate to the specific build job on the Jenkins dashboard.
+   - Click on the build number of interest.
+   - Look for the "Console Output" link. This shows the live log of the build process.
+
+2. **Build Artifacts:**
+   - If your build produces log files or artifacts, they may be archived as part of the build.
+   - Check the "Artifacts" link on the left side of the build job's page.
+   - If log files were archived, you can download them from this location.
+
+3. **File System:**
+   - Log files for Jenkins builds are stored on the Jenkins server's file system.
+   - The default location is generally within the Jenkins home directory under the "jobs" folder.
+   - The logs for each build are typically stored in a subdirectory named after the job and build number.
+
+   Example:
+   ```
+   JENKINS_HOME/
+   └── jobs/
+       └── YourJobName/
+           └── builds/
+               └── 1/
+                   └── log
+   ```
+
+   In this example, the log file for build number 1 of "YourJobName" would be in the `JENKINS_HOME/jobs/YourJobName/builds/1/log` file.
+
+4. **Jenkins Server Log:**
+   - Jenkins itself maintains a system log that captures overall Jenkins server activity.
+   - The location of the system log depends on how Jenkins is installed and configured.
+   - Common locations include `/var/log/jenkins/jenkins.log` on Linux systems.
+
+   Example (Linux):
+   ```
+   /var/log/jenkins/jenkins.log
+   ```
+
+   - Check the Jenkins documentation or your system's documentation to find the exact location of the Jenkins server log.
+
+5. **Workspace Directory:**
+   - The workspace directory for a job contains files related to the job's build.
+   - You can find the workspace directory on the job's page, and logs may be present there.
+
+   Example:
+   ```
+   JENKINS_HOME/
+   └── workspace/
+       └── YourJobName/
+   ```
+
+   In this example, check the `YourJobName` directory for log files.
 
 ## Why we use pipeline in Jenkins?
 
