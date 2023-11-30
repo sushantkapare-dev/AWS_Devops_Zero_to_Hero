@@ -102,14 +102,6 @@ There are two main types of Jenkins Pipelines:
 
 Both Declarative and Scripted Pipelines can accomplish the same tasks, but the choice between them depends on your specific requirements and your team's familiarity with Groovy scripting. Declarative Pipelines are generally easier to read and write, making them a good choice for straightforward workflows, while Scripted Pipelines offer more advanced capabilities for complex and customized workflows.
 
-10. **Customization and Extensibility**:
-    - Jenkins offers extensive customization options through its pipeline configuration, plugins, and scripting capabilities. Teams can tailor Jenkins to their specific needs and workflows.
-
-11. **Monitoring and Optimization**:
-    - Teams can monitor Jenkins' performance and optimize the CI/CD pipeline over time, aiming for faster build times, better test coverage, and improved code quality.
-
-The process outlined above represents a simplified view of Jenkins' functionality. In practice, Jenkins is highly configurable and can accommodate complex and customized CI/CD pipelines to meet the specific requirements of different software development projects and organizations.
-
 ## How to move Jenkins from one to another server
 Moving Jenkins from one server to another involves several steps to ensure a smooth transition. Here's a general guideline for migrating Jenkins:
 
