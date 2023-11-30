@@ -131,6 +131,39 @@ In this example, the "Trigger External Job" stage will trigger the job named "Na
 Make sure that the external job is configured to accept the parameters you are passing from the pipeline.
 
 ## How do you configure the job in Jenkins?
+Configuring a job in Jenkins involves defining the parameters and settings that determine how Jenkins will execute the job. Here's a general guide on how to configure a job in Jenkins:
+
+1. **Access Jenkins Dashboard:**
+   - Open a web browser and navigate to the Jenkins server's URL.
+   - Log in to the Jenkins dashboard using your credentials.
+
+2. **Create a New Job:**
+   - Click on the "New Item" or "Create New Job" link on the Jenkins dashboard.
+   - Enter a name for your job and select the type of job you want to create (e.g., Freestyle project, Pipeline).
+
+3. **General Configuration:**
+   - Configure the general settings for your job, such as the description, discard old builds, and parameters.
+
+4. **Source Code Management (SCM):**
+   - If your project involves source code management, select the type of version control system (e.g., Git, SVN) and provide the necessary repository URL and credentials.
+
+5. **Build Triggers:**
+   - Specify when the job should be triggered. Options include polling the SCM for changes, triggering the build remotely, or triggering builds after other projects are built.
+
+6. **Build Environment:**
+   - Configure the build environment settings, such as setting environment variables or defining build wrappers.
+
+7. **Build:**
+   - Define the steps that Jenkins should take to build your project. This can include executing shell commands, running a script, or using build tools like Maven or Gradle.
+
+8. **Post-build Actions:**
+   - Define actions to be taken after the build is complete. This may include archiving artifacts, triggering other jobs, or sending notifications.
+
+9. **Save Configuration:**
+   - Once you have configured all the necessary settings, click the "Save" or "Apply" button to save the job configuration.
+
+10. **Run the Job:**
+   - You can manually trigger the job by selecting "Build Now" on the job's dashboard. Alternatively, the job may be triggered automatically based on the configured triggers.
 
 ## In Jenkins how can you find log files?
 
