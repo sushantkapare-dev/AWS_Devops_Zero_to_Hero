@@ -132,8 +132,6 @@ Make sure that the external job is configured to accept the parameters you are p
 
 ## How do you configure the job in Jenkins?
 
-## Where do you find errors in Jenkins?
-
 ## In Jenkins how can you find log files?
 
 ## Why we use pipeline in Jenkins?
