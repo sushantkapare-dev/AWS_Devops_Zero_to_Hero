@@ -198,5 +198,48 @@ In Grafana, traces are often associated with distributed tracing, and Grafana ca
 
 When using Grafana with a distributed tracing system like Jaeger, Zipkin, or OpenTelemetry, these components are usually part of the trace data ingested by the system. Grafana can then visualize this data, allowing users to explore the traces, understand the flow of requests, identify bottlenecks, and troubleshoot performance issues in a distributed environment.
 
+## The common metrics monitored in Grafana?
+The common metrics monitored in Grafana depend on the type of system or application you are monitoring. However, there are some general categories of metrics that are commonly monitored across various environments. Here are some examples:
 
+1. **System Metrics:**
+   - CPU Usage: Percentage of CPU utilization.
+   - Memory Usage: Percentage of memory (RAM) utilization.
+   - Disk Usage: Percentage of disk space utilization.
+   - Network Throughput: Incoming and outgoing network traffic.
+
+2. **Application Metrics:**
+   - Request Rate: Number of incoming requests per second.
+   - Response Time: Average time it takes to respond to a request.
+   - Error Rate: Percentage of requests that result in errors.
+   - Concurrent Connections: Number of simultaneous connections.
+
+3. **Database Metrics:**
+   - Query Performance: Response time and throughput of database queries.
+   - Connection Pooling: Number of open database connections.
+   - Buffer Pool Hit Ratio: Efficiency of database buffer usage.
+
+4. **Web Server Metrics:**
+   - HTTP Status Codes: Distribution of HTTP response status codes.
+   - Request Rate: Number of HTTP requests per second.
+   - Response Time: Average time to serve HTTP requests.
+
+5. **Container Metrics:**
+   - CPU Usage: CPU utilization within containers.
+   - Memory Usage: Memory utilization within containers.
+   - Network Metrics: Data transmitted and received by containers.
+
+6. **Custom Application Metrics:**
+   - Metrics specific to your application or business logic.
+   - For example, if you have an e-commerce platform, you might monitor metrics related to shopping cart interactions, checkout times, etc.
+
+7. **Infrastructure Metrics:**
+   - Server Uptime: Availability and uptime of servers.
+   - Load Average: System load average over time.
+   - Disk I/O: Input/output operations on disks.
+
+8. **Logs and Events:**
+   - Monitoring logs and events for anomalies or specific patterns.
+   - Integrating log data into Grafana for correlation with metrics.
+
+When setting up Grafana dashboards, you'll often use data sources such as Prometheus, InfluxDB, or other time-series databases to collect and store these metrics. Grafana provides a flexible and customizable platform for visualizing these metrics in the form of charts, graphs, and other visualizations, enabling users to gain insights into the performance and health of their systems. The specific metrics you monitor will depend on the goals and requirements of your monitoring strategy.
 
