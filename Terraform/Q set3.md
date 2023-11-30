@@ -62,4 +62,33 @@ Answer: Workspaces can be used to create isolated environments for testing and v
 
 Answer: In a DR scenario, you can create workspaces that mimic your production environment. Regularly test and validate your DR plan by switching to these workspaces and confirming that the disaster recovery process works as expected.
 
+## what happen when we change configuration manually instead of terraform in infrastruture?
+Manually changing the configuration of your infrastructure instead of using a tool like Terraform can lead to several challenges and potential issues. Here are some of the key considerations:
+
+1. **Lack of Version Control:**
+   - When changes are made manually, it becomes challenging to track and manage different versions of your infrastructure. Terraform, on the other hand, allows you to version your infrastructure configurations, making it easier to roll back changes and maintain a history of modifications.
+
+2. **Inconsistency:**
+   - Manual changes can introduce inconsistencies across different environments. It's common for development, testing, and production environments to drift apart, leading to unexpected behavior and issues. Terraform ensures that your infrastructure is consistent across all environments by applying the same configuration.
+
+3. **Reproducibility:**
+   - Manually making changes makes it difficult to reproduce the exact infrastructure setup in different environments. Terraform provides a declarative approach to infrastructure as code, enabling you to define the desired state of your infrastructure and apply it consistently across environments.
+
+4. **Documentation:**
+   - Changes made manually might not be adequately documented. Terraform configurations serve as documentation for your infrastructure, making it clear what resources are provisioned, how they are configured, and what dependencies exist between them.
+
+5. **Collaboration:**
+   - In a team environment, manual changes can lead to challenges in collaboration and communication. Terraform configurations can be versioned, shared, and collaborated on by multiple team members, facilitating a more organized and collaborative approach to infrastructure management.
+
+6. **Auditability:**
+   - Understanding who made a specific change and why is crucial for auditing and compliance. Terraform keeps a record of changes, making it easier to audit modifications and understand the history of your infrastructure.
+
+7. **Error Handling and Rollback:**
+   - Terraform provides error handling mechanisms and the ability to roll back changes in case something goes wrong during the provisioning or modification of infrastructure. Manual changes may lack these safeguards.
+
+8. **Scalability:**
+   - As your infrastructure grows, manually managing changes becomes increasingly impractical. Terraform is designed to scale with your infrastructure, providing a consistent and efficient way to manage resources at any scale.
+
+In summary, while manual changes may be quick for small-scale setups, using Terraform or a similar infrastructure as code tool becomes essential as your infrastructure becomes more complex and as you prioritize consistency, version control, and collaboration in your development and operations workflows.
+
 
