@@ -130,4 +130,16 @@ In this example, the "Trigger External Job" stage will trigger the job named "Na
 
 Make sure that the external job is configured to accept the parameters you are passing from the pipeline.
 
+## How do you configure the job in Jenkins?
+
+## Where do you find errors in Jenkins?
+
+## In Jenkins how can you find log files?
+
+## Why we use pipeline in Jenkins?
+
+## Is Only Jenkins enough for automation?
+
+## Explain diff stages in CI-CD setup?
+
 
