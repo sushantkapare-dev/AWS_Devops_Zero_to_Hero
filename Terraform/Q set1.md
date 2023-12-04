@@ -322,6 +322,36 @@ Here are several strategies and best practices to avoid duplicating resources in
 ## What is the "Random" provider? What is its function?
 The random provider assists in the generation of numeric or alphabetic characters that can be used as a prefix or suffix for the desired named identifier.
 
+## Diff between Terraform provider and Terraform resurce?
+In Terraform, a provider and a resource are two fundamental concepts that play distinct roles in infrastructure as code (IaC). Let's explore the differences between Terraform providers and resources:
+
+1. **Terraform Provider:**
+   - **Definition:** A provider in Terraform is a plugin that interfaces with APIs of a specific platform or service. It acts as an abstraction layer between Terraform and the underlying infrastructure or service.
+   - **Purpose:** Providers enable Terraform to manage resources across different cloud providers, on-premises data centers, or third-party services. Examples of providers include AWS, Azure, Google Cloud, VMware, and many others.
+   - **Configuration:** You define a provider in your Terraform configuration file to specify details such as access credentials, region, or other settings required to connect to the target infrastructure.
+
+   ```hcl
+   provider "aws" {
+     region = "us-west-2"
+   }
+   ```
+
+   - **Usage:** Providers are declared once per Terraform configuration and are used to manage various resources across the specified infrastructure.
+
+2. **Terraform Resource:**
+   - **Definition:** A resource in Terraform represents a piece of infrastructure or a component that you want to manage. It could be a virtual machine, a database, a network interface, or any other entity depending on the provider.
+   - **Purpose:** Resources define the desired state of an infrastructure component and specify how it should be configured. Terraform uses the provider to interact with the API of the target platform and create, update, or delete the associated resources to match the desired state.
+   - **Configuration:** Resources are defined in the Terraform configuration file. You specify the resource type, its name, and configuration settings.
+
+   ```hcl
+   resource "aws_instance" "example" {
+     ami           = "ami-0c55b159cbfafe1f0"
+     instance_type = "t2.micro"
+   }
+   ```
+
+   - **Usage:** Resources are declared as needed in the Terraform configuration to represent the infrastructure components you want to manage. They can depend on each other, creating relationships and dependencies within the infrastructure.
+
 ## What are the ten most used terraform commands?
 **terraform init**
 
