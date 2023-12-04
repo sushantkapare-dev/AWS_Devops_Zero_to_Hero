@@ -96,3 +96,40 @@ Answer: The “Effect” field in an IAM policy can have two values:
 ## How can you recover from a situation where you’ve locked yourself out of your AWS account due to overly restrictive IAM policies?
 
 Answer: In such a situation, if you’re unable to sign in with sufficient permissions to fix your IAM policies, you can contact AWS support. They can assist in regaining access by verifying your identity and making necessary adjustments to your IAM policies.
+
+## diff between aws IAM policy and permission?
+In AWS, both IAM (Identity and Access Management) policies and permissions play crucial roles in controlling access to AWS resources, but they serve different purposes. Let's clarify the difference between IAM policies and permissions:
+
+1. **IAM Policy:**
+   - **Definition:** An IAM policy is a JSON document that defines permissions and access control rules. It is attached to an IAM identity (such as a user, group, or role) and specifies what actions are allowed or denied on what AWS resources.
+   - **Scope:** IAM policies can be attached at various levels, including the user level, group level, or role level. They can also be attached directly to AWS resources like S3 buckets or Lambda functions.
+   - **Granularity:** IAM policies can be very granular, allowing you to define fine-grained access controls based on specific actions, resources, and conditions.
+
+   Example IAM Policy:
+   ```json
+   {
+     "Version": "2012-10-17",
+     "Statement": [
+       {
+         "Effect": "Allow",
+         "Action": "s3:GetObject",
+         "Resource": "arn:aws:s3:::example-bucket/*"
+       },
+       {
+         "Effect": "Deny",
+         "Action": "s3:PutObject",
+         "Resource": "arn:aws:s3:::example-bucket/top-secret/*"
+       }
+     ]
+   }
+   ```
+
+2. **Permission:**
+   - **Definition:** In the context of AWS IAM, a permission refers to the explicit authorization to perform a specific action on a specific AWS resource. Permissions are granted through IAM policies.
+   - **Granularity:** Permissions are more granular than policies. They represent a single action on a single resource.
+   - **Example:** If an IAM policy allows the action "s3:GetObject" on a specific S3 bucket, then the permission granted is the ability to get (read) objects from that bucket.
+
+   Example IAM Permission:
+   - Action: `s3:GetObject`
+   - Resource: `arn:aws:s3:::example-bucket/some-object.txt`
+
