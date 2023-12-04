@@ -76,3 +76,5 @@ In SonarQube, "code coverage" and "code smells" are two key concepts used to eva
    - Code smells encompass various issues, such as long methods or functions, excessive complexity, duplicated code, inconsistent naming conventions, and unused variables or parameters.
    - SonarQube's code analysis tools automatically identify and report code smells based on predefined coding rules and best practices.
    - Addressing code smells can lead to improved code maintainability, readability, and overall software quality. SonarQube provides information about specific code smells and offers suggestions for remediation.
+
+## what metrix will be considered in sonrqube
