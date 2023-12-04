@@ -77,4 +77,44 @@ In SonarQube, "code coverage" and "code smells" are two key concepts used to eva
    - SonarQube's code analysis tools automatically identify and report code smells based on predefined coding rules and best practices.
    - Addressing code smells can lead to improved code maintainability, readability, and overall software quality. SonarQube provides information about specific code smells and offers suggestions for remediation.
 
-## what metrix will be considered in sonrqube
+## what metrix will be considered in sonrqube?
+Here are some key metrics considered in SonarQube:
+1. **Code Smells:**
+   - **Definition:** Code smells are certain patterns in the code that may indicate a deeper problem. Examples include duplicated code, complex methods, and long classes.
+   - **Metric:** SonarQube identifies and reports the number of code smells in the codebase.
+
+2. **Security Vulnerabilities:**
+   - **Definition:** Security vulnerabilities represent potential weaknesses in the code that could be exploited, leading to security risks.
+   - **Metric:** SonarQube analyzes the code for known security vulnerabilities and provides a count of issues related to security concerns.
+
+3. **Bugs:**
+   - **Definition:** Bugs are actual errors in the code that may lead to unexpected behavior or issues.
+   - **Metric:** SonarQube identifies and reports the number of bugs found in the codebase.
+
+4. **Code Duplication:**
+   - **Definition:** Code duplication occurs when similar or identical code blocks exist in multiple places in the codebase.
+   - **Metric:** SonarQube measures the percentage of code duplication in the project.
+
+5. **Code Coverage:**
+   - **Definition:** Code coverage represents the percentage of code that is covered by automated tests.
+   - **Metric:** SonarQube integrates with testing tools to display code coverage metrics and identify areas with low coverage.
+
+6. **Technical Debt:**
+   - **Definition:** Technical debt is a measure of the work that needs to be done to address code quality issues and improve maintainability.
+   - **Metric:** SonarQube calculates and reports the estimated time and effort required to address the identified code quality issues.
+
+7. **Complexity:**
+   - **Definition:** Code complexity measures the intricacy of code structures, such as the number of branches in a method or the cyclomatic complexity.
+   - **Metric:** SonarQube provides metrics related to code complexity, helping developers identify areas that may be hard to understand or maintain.
+
+8. **Maintainability Rating:**
+   - **Definition:** Maintainability rating is an overall score that reflects how maintainable the codebase is, based on various code quality factors.
+   - **Metric:** SonarQube assigns a maintainability rating to the project, indicating the overall health of the codebase.
+
+9. **Reliability Rating:**
+   - **Definition:** Reliability rating assesses the reliability of the codebase by considering factors such as the number of bugs and the stability of the code.
+   - **Metric:** SonarQube assigns a reliability rating to the project, providing insights into the code's robustness.
+
+10. **Coverage by Unit Tests:**
+    - **Definition:** This metric shows the percentage of lines or branches covered by unit tests.
+    - **Metric:** SonarQube calculates and displays the coverage by unit tests to help teams assess the effectiveness of their test suite.
