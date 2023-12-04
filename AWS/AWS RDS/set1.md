@@ -42,3 +42,5 @@ Key points to note about Multi-AZ RDS:
 
 Multi-AZ deployment is a crucial strategy for achieving high availability in your database infrastructure on AWS, as it provides resilience against infrastructure failures and allows for seamless failover in case of issues with the primary database instance.
 
+## 
+
