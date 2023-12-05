@@ -31,7 +31,7 @@
    - **Image Scanning:** Scan container images for vulnerabilities before deployment.
    - **Runtime Security:** Implement measures to secure containers during runtime, such as network policies and runtime monitoring.
 
-## Why is the Importsnt  to have security to output in machine-redable format?
+## Why is the Important to have security to output in machine-redable format?
 Having security outputs in machine-readable formats is important for several reasons, primarily because it enables automation, integration, and efficient analysis of security data. Here are key reasons why machine-readable formats for security outputs are crucial:
 
 1. **Automation:**
