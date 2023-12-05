@@ -1,1 +1,34 @@
+---
+- name: Multi-Play Ansible Playbook
+  hosts: web_servers
+  become: yes  # Run tasks with elevated privileges (sudo)
+
+  tasks:
+    - name: Ensure Apache is installed
+      package:
+        name: apache2
+        state: present
+
+- name: Second Play
+  hosts: database_servers
+  become: yes
+
+  tasks:
+    - name: Ensure MySQL is installed
+      package:
+        name: mysql-server
+        state: present
+
+    - name: Configure MySQL
+      template:
+        src: /path/to/mysql/my.cnf.j2
+        dest: /etc/mysql/my.cnf
+      notify:
+        - Restart MySQL
+
+  handlers:
+    - name: Restart MySQL
+      service:
+        name: mysql
+        state: restarted
 
