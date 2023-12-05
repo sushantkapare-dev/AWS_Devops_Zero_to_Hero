@@ -1,27 +1,22 @@
-- name: handlers
-  hosts: dev
-  become: yes
+---
+- name: Simple Handlers Playbook
+  hosts: your_target_servers
+  become: yes  # Run tasks with elevated privileges (sudo)
+
   tasks:
-         - name: update everything
-           package:
-               name: '*'
-               state: latestFor example, it is useful for secondary actions that might be required after running a Task, such as installing a new service after installation then run the service or update configuration of service.
-               exclude: kernel*
-         - name: Copy using inline content
-           copy:
-               content: "update the file"
-               dest: /home/dee.txt
-               mode: "0777"
-           notify:
-                - update
-                - data
+    - name: Ensure a file is present
+      copy:
+        content: "This is a sample file."
+        dest: /path/on/remote/server/sample_file.txt
+        owner: your_remote_user
+        group: your_remote_group
+        mode: 0644  # Adjust permissions as needed
+      notify: 
+        - Restart Service  # Notify the handler
+
   handlers:
-       - name: update
-         find:
-                paths: /home/
-                patterns: '*.txt'
-                recurse: yes
-         register: new_file
-       - name: data
-         debug:
-            var: new_file.matched
+    - name: Restart Service
+      service:
+        name: your_service_name
+        state: restarted
+
