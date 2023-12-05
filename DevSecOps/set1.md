@@ -32,8 +32,6 @@
    - **Runtime Security:** Implement measures to secure containers during runtime, such as network policies and runtime monitoring.
 
 ## Why is the Important to have security to output in machine-redable format?
-Having security outputs in machine-readable formats is important for several reasons, primarily because it enables automation, integration, and efficient analysis of security data. Here are key reasons why machine-readable formats for security outputs are crucial:
-
 1. **Automation:**
    - **Integration with DevOps Tools:** Machine-readable formats allow security data to be easily integrated into existing DevOps tools and processes. This integration facilitates automation of security checks and responses.
    - **Continuous Monitoring:** Automated tools can continuously monitor security configurations, code, and infrastructure, providing real-time feedback to development and operations teams.
@@ -56,15 +54,6 @@ Having security outputs in machine-readable formats is important for several rea
 
 7. **Collaboration:**
    - **Cross-Team Collaboration:** Machine-readable formats promote collaboration between security, development, and operations teams. Security findings can be shared in a format that is easily consumable by all relevant stakeholders, fostering a collaborative and proactive security culture.
-
-8. **Speed of Response:**
-   - **Real-Time Response:** Machine-readable formats enable real-time response to security events. Automated systems can trigger alerts and actions as soon as security issues are detected, reducing the window of exposure to potential threats.
-
-9. **Auditability:**
-   - **Audit Trails:** Machine-readable formats contribute to comprehensive audit trails. Detailed logs in a machine-readable format can be used for forensic analysis, compliance audits, and retrospective investigations.
-
-10. **Adaptability:**
-    - **Adaptable to Change:** In a dynamic DevOps environment, where changes occur frequently, machine-readable formats allow security processes to adapt quickly to new technologies, tools, and development practices.
 
 ## what are the main challenges faced while implementing SCA and how can they be addressed in DevSecOps enviroment?
 Software Composition Analysis (SCA) is a critical component of DevSecOps that focuses on identifying and managing security risks associated with third-party and open-source components used in software applications. While SCA provides valuable insights into potential vulnerabilities, there are challenges that organizations may face during its implementation in a DevSecOps environment. Here are some common challenges and strategies to address them:
