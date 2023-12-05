@@ -18,30 +18,20 @@
 
 5. **Access Control and Identity Management:**
    - **Role-Based Access Control (RBAC):** Implement RBAC to ensure that users and processes have the minimum necessary permissions.
-   - **Single Sign-On (SSO):** Use SSO to centralize and streamline identity management.
 
-6. **Incident Response Planning:**
-   - **Plan and Test:** Develop an incident response plan and regularly test it to ensure that the team is prepared to respond to security incidents effectively.
-   - **Post-Incident Analysis:** Conduct post-incident analysis to learn from security events and improve future responses.
-
-7. **Collaboration and Communication:**
+6. **Collaboration and Communication:**
    - **Cross-Functional Teams:** Foster collaboration between development, operations, and security teams to ensure that security considerations are integrated into all aspects of the workflow.
    - **Security Champions:** Appoint security champions within development teams to advocate for security best practices.
 
-8. **Compliance and Governance:**
+7. **Compliance and Governance:**
    - **Automated Compliance Checks:** Implement automated checks to ensure that deployments comply with regulatory and security requirements.
    - **Audit Trails:** Maintain detailed audit trails to track changes and access, facilitating compliance and security investigations.
 
-9. **Container Security:**
+8. **Container Security:**
    - **Image Scanning:** Scan container images for vulnerabilities before deployment.
    - **Runtime Security:** Implement measures to secure containers during runtime, such as network policies and runtime monitoring.
 
-10. **Continuous Improvement:**
-    - **Feedback Loops:** Establish feedback loops to continuously improve security practices based on lessons learned from incidents and vulnerabilities.
-    - **Regular Reviews:** Conduct regular security reviews of the DevOps process to identify areas for improvement.
-
-
-## Why is the Imp to have security too output in machine-redable format?
+## Why is the Importsnt  to have security to output in machine-redable format?
 Having security outputs in machine-readable formats is important for several reasons, primarily because it enables automation, integration, and efficient analysis of security data. Here are key reasons why machine-readable formats for security outputs are crucial:
 
 1. **Automation:**
