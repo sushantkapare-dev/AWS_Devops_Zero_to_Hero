@@ -1,0 +1,10 @@
+---
+- name: Red Hat-based Systems Playbook
+  hosts: redhat_servers
+  become: yes  # Run tasks with elevated privileges (sudo)
+
+  tasks:
+    - name: Update package cache and install a package
+      yum:
+        name: your_package_name
+        state: latest  # You can use 'present' for other package managers
