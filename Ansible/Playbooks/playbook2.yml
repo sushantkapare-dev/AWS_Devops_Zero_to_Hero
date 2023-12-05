@@ -1,1 +1,24 @@
+---
+- name: Basic Ansible Playbook
+  hosts: your_target_servers
+  become: yes  # Run tasks with elevated privileges (sudo)
+
+  tasks:
+    - name: Update package cache and install a package
+      apt:
+        name: your_package_name
+        state: latest  # You can use 'present' for other package managers
+
+    - name: Copy configuration file
+      copy:
+        src: /path/to/your/local/config/file.conf
+        dest: /path/on/remote/server/config/file.conf
+        owner: your_remote_user
+        group: your_remote_group
+        mode: 0644  # Adjust permissions as needed
+
+    - name: Restart the service
+      service:
+        name: your_service_name
+        state: restarted
 
