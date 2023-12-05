@@ -106,8 +106,6 @@
     - SAST tools contribute to continuous improvement by providing insights into common security patterns and trends. Developers can learn from the feedback provided by SAST reports, enhancing their understanding of secure coding practices.
 
 ## How do you approch threat modeling?
-Threat modeling is a structured approach to identifying and assessing potential security threats and vulnerabilities in a system or application. It involves analyzing the system's architecture, identifying assets and their value, and evaluating potential threats to prioritize and address security risks. Here's a general approach to threat modeling:
-
 1. **Define the Scope:**
    - Clearly define the scope of the threat modeling exercise. Identify the boundaries of the system or application under consideration. Understand the objectives, functionalities, and data flows within the system.
 
@@ -129,30 +127,16 @@ Threat modeling is a structured approach to identifying and assessing potential 
 7. **Mitigation Strategies:**
    - Develop mitigation strategies for each identified threat. Consider security controls and best practices that can be implemented to reduce the risk associated with each threat. This could include implementing access controls, input validation, encryption, and other security measures.
 
-8. **Document the Threat Model:**
-   - Document the entire threat modeling process, including the identified assets, trust boundaries, data flow diagrams, and the list of prioritized threats. Ensure that the documentation is clear and accessible to relevant stakeholders.
-
-9. **Review and Iterate:**
-   - Conduct a review of the threat model with key stakeholders, including developers, architects, and security experts. Seek feedback to ensure that the threat model accurately reflects the system's architecture and potential threats. Iterate on the model as needed.
-
-10. **Integrate into SDLC:**
-    - Integrate threat modeling into the Software Development Lifecycle (SDLC). This could involve conducting threat modeling sessions during the design phase, incorporating findings into user stories, and continuously updating the threat model as the system evolves.
-
-11. **Automate where Possible:**
-    - Consider automating parts of the threat modeling process to streamline its integration into development workflows. Some tools can assist in identifying common threats and vulnerabilities based on the system's architecture and configuration.
-
-12. **Training and Awareness:**
+8. **Training and Awareness:**
     - Provide training and awareness sessions for development and security teams on the importance of threat modeling. Encourage a security-aware culture where team members actively participate in identifying and mitigating security threats.
 
-13. **Regular Updates:**
+9. **Regular Updates:**
     - Regularly update the threat model as the system undergoes changes. New features, updates, or modifications to the architecture may introduce new threats or change the risk landscape, requiring ongoing threat modeling efforts.
 
 ## How does compliance of code help in DevSecOps process?
 In the DevOps workflow, security must be prioritized as an integral and continuous part of the development and deployment process. This involves integrating security practices seamlessly into every stage, from code inception to production release. Security measures such as code analysis, vulnerability scanning, and compliance checks should be automated and incorporated into the CI/CD pipeline. Additionally, fostering a culture of collaboration between development, operations, and security teams is crucial for proactive identification and mitigation of potential threats. By treating security as a shared responsibility and implementing it as code, organizations can achieve a robust and adaptive security posture that aligns with the agility and speed of the DevOps methodology.
 
 ## How do you assess the effectiveness of DevSecOps implementation accross org. ?
-Assessing the effectiveness of DevSecOps implementation across an organization involves evaluating various aspects of the development, security, and operations processes. Here are key considerations for assessing DevSecOps effectiveness:
-
 1. **Integration of Security in the CI/CD Pipeline:** Evaluate how well security practices are integrated into the continuous integration and continuous deployment (CI/CD) pipeline. Ensure that automated security checks, such as static code analysis, dynamic application security testing (DAST), and dependency scanning, are seamlessly embedded at each stage of the pipeline.
 
 2. **Automation and Orchestration:** Assess the level of automation and orchestration in security processes. Effective DevSecOps relies on automating routine security tasks, allowing for quicker response to vulnerabilities and reducing manual errors. Automated incident response and remediation are also important factors.
@@ -168,7 +152,6 @@ Assessing the effectiveness of DevSecOps implementation across an organization i
 7. **Incident Response and Recovery:** Evaluate the organization's incident response and recovery capabilities. Assess how quickly and effectively the teams can identify and respond to security incidents, minimizing the impact on the business.
 
 8. **Feedback Loops and Continuous Improvement:** Establish feedback loops for continuous improvement. Encourage a culture of learning from security incidents and near misses. Regularly review and update security practices based on lessons learned and emerging threats.
-
 
 ## Diff between Devops and DevSecOps?
 DevOps and DevSecOps are both methodologies aimed at improving the software development and delivery process, but they differ in their emphasis on security. Here's a brief comparison:
