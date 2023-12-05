@@ -1,5 +1,4 @@
-
-## explain architecure of ansible
+## explain architecure of ansible ?
 ![Ansible Architecture](https://www.interviewbit.com/blog/wp-content/uploads/2022/06/Ansible-Architecture-1024x560.png)
 Ansible is an open-source automation tool that is commonly used for configuration management, application deployment, and task automation. Its architecture is designed to be simple, agentless, and easy to use. Here's a high-level overview of the architecture of Ansible:
 
@@ -28,7 +27,7 @@ Ansible is an open-source automation tool that is commonly used for configuratio
    - Modules are small, standalone scripts that Ansible runs on the managed node and can perform various actions like installing packages, managing services, copying files, and more.
    - Ansible includes a wide range of built-in modules, and you can also create custom modules when needed.
 
-## Features of ansible
+## Features of ansible ?
 Ansible is a powerful automation tool with a wide range of features that make it popular for managing and configuring IT infrastructure. Here are some key features of Ansible:
 
 1. **Agentless**: Ansible is agentless, meaning it doesn't require any software or agents to be installed on the target systems. It uses SSH or other remote access methods to connect to and manage remote hosts.
@@ -43,10 +42,10 @@ Ansible is a powerful automation tool with a wide range of features that make it
 
 6. **Role-Based Organization**: Ansible promotes a role-based organization of playbooks, making it easier to reuse and share automation code.
 
-## what is ansible galexy
+## what is ansible galexy ?
 Ansible Galaxy is a central repository for Ansible roles, which are reusable collections of automation tasks and configurations. It allows Ansible users to easily discover, share, and reuse roles created by the community, streamlining the automation process. With Galaxy, users can search for roles, view documentation, and install them into their Ansible projects, saving time and effort in developing automation solutions. It promotes collaboration and standardization within the Ansible ecosystem, making it a valuable resource for automating various IT tasks and configurations.
 
-## what is ansible modules
+## what is ansible modules ?
 Ansible modules are small, self-contained units of code that perform specific tasks on remote systems during Ansible playbook execution. These modules are the building blocks of Ansible automation, enabling users to interact with remote hosts, manage configurations, install software, and perform a wide range of administrative tasks. Each module corresponds to a particular action or operation, and Ansible includes a vast library of built-in modules covering various use cases. Users can also create custom modules to extend Ansible's capabilities, making it a versatile and extensible automation tool for managing IT infrastructure and applications.
 
 Examples of some commonly used built-in modules include:
@@ -59,13 +58,13 @@ Examples of some commonly used built-in modules include:
 
 Custom modules can be created to address specific automation requirements not covered by the built-in modules. These custom modules follow the same principles and can be seamlessly integrated into Ansible playbooks.
 
-## what is ansible tasks
+## what is ansible tasks ?
 In Ansible, tasks are the individual units of work defined within playbooks. Tasks represent specific actions that Ansible should perform on target hosts as part of an automation process. Each task is responsible for executing a single action or operation, such as installing a package, creating a user account, or configuring a service. Tasks are written in YAML format and are organized within plays in Ansible playbooks.
 
-## what is ansible playbooks
+## what is ansible playbooks ?
 Ansible playbooks are files written in YAML format that define a set of tasks, configurations, and automation processes to be executed on remote hosts. Playbooks are a fundamental component of Ansible and serve as the main automation script that instructs Ansible on what actions to perform. Playbooks can be used for configuration management, application deployment, and orchestration of complex workflows.
 
-## what is ansible tower
+## what is ansible tower ?
 Ansible Tower, now known as Red Hat Ansible Automation Platform, is a commercial platform built on top of Ansible that provides enhanced automation and management capabilities. It offers a centralized web-based interface for defining, scheduling, and monitoring Ansible playbooks and jobs, making it easier to manage automation workflows across large-scale environments. Ansible Tower provides role-based access control, audit trails, and credential management for improved security and compliance. It also includes features like job templates and notifications, simplifying automation tasks and enabling better collaboration among teams. This platform is designed to scale automation efforts and streamline IT operations, making it a valuable tool for organizations seeking to automate and orchestrate complex tasks efficiently.
 
 ## what is ad-hoc commands in ansible
