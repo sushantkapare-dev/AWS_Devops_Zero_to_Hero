@@ -1,3 +1,6 @@
+![image](https://github.com/SushantOps/AWS_Devops_Questions_and_Answers/assets/109059766/44db8d3f-c703-4b13-941f-be83f23aef62)
+
+
 # DevSecOps Interview Questions 🚀🛡️
 
 Welcome to the DevSecOps Interview Questions repository! 🤝 In preparation for your DevSecOps interview, here's a curated list of questions that cover various aspects of this dynamic field.
