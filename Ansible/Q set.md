@@ -290,30 +290,20 @@ Here's an example of how to use the `fetch` module in an Ansible playbook:
 ```
 
 ## What are the best practices to write ansible playbook?
-Writing Ansible playbooks effectively requires following best practices to ensure that your automation is maintainable, readable, and robust. Here are some best practices for writing Ansible playbooks:
+1. **Modularization with Roles:**
+   - Utilize roles to modularize your playbooks. Roles encapsulate related tasks, handlers, and variables, making your playbooks more organized and maintainable. Roles can be reused across different playbooks, enhancing code reusability.
 
-1. **Organize Playbooks and Roles**:
-   - Use a well-structured directory layout for your playbooks and roles. Ansible Galaxy's recommended directory structure is a good starting point.
-   - Separate playbooks by functionality or purpose.
+2. **Idempotency:**
+   - Ensure that your playbooks are idempotent. This means running the playbook multiple times should result in the same desired state. Leveraging idempotent tasks ensures consistency and reduces the risk of unintended changes.
 
-2. **Use Variables and Templates**:
-   - Use variables for configuration values that might change across environments.
-   - Utilize Jinja2 templates for dynamic configuration files.
+3. **Variable Management:**
+   - Centralize and manage variables effectively. Use variable files, group_vars, and host_vars to organize and store variable values. This practice simplifies maintenance and allows for easy adjustment of configurations based on different environments.
 
-3. **Use Ansible Vault for Secrets**:
-   - Store sensitive information like passwords and API keys in Ansible Vault for secure encryption.
-   - Don't store secrets in plain text within playbooks or roles.
+4. **Documentation and Comments:**
+   - Document your playbooks with comments to explain the purpose of tasks, roles, and variables. This is particularly important for sharing code with teammates or collaborators. Clear documentation enhances readability and understanding.
 
-4. **Use Ansible Modules**:
-   - Leverage Ansible modules whenever possible instead of running shell commands.
-   - Modules are idempotent, which helps maintain the desired state of the system.
-    - 
-5. **Security**:
-    - Follow security best practices, such as limiting privileges and access where necessary.
-    - Keep your Ansible control machine and target hosts secure.
-
-6. **Continuous Integration/Continuous Deployment (CI/CD)**:
-    - Integrate Ansible into your CI/CD pipeline to automate testing and deployment.
+5. **Security with Ansible Vault:**
+   - Protect sensitive information such as passwords, API keys, and other secrets using Ansible Vault. Encrypting these values with Vault ensures that they are secure both in version control and during playbook execution. Always use `ansible-vault` to create and edit encrypted files.
 
 ## How to manage and solve errors in ansible
 Managing and solving errors in Ansible is a crucial part of working with the automation tool. Ansible provides various mechanisms to help you identify, understand, and resolve errors efficiently. Here are some steps to manage and solve errors in Ansible:
