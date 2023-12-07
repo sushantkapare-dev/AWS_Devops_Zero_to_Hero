@@ -383,31 +383,34 @@ In my experience as a DevOps engineer, working with Kubernetes (K8s) and Prometh
 In Kubernetes, exit status refers to the numeric code returned by a container when it terminates its execution. An exit status of 0 typically indicates a successful execution, while non-zero values indicate an error or failure. Kubernetes uses container exit statuses to determine the state of a pod and whether it should be considered healthy or not, helping in the automatic recovery and scaling of applications based on their health checks and exit codes.
 
 ## Diff between deploy application on host and container?
-Deploying an application directly on a host system and deploying it within a container have several key differences:
+Deploying applications on hosts and containers represent two distinct approaches to application deployment, each with its own set of characteristics and considerations.
 
-1. **Isolation and Portability**:
-   - **Host**: On a host system, applications run directly on the host's OS, which means they share the same OS kernel and resources. This can lead to conflicts and compatibility issues when multiple applications have different dependencies or requirements.
-   - **Container**: Containers provide a higher level of isolation. Each container has its own filesystem, libraries, and runtime environment, ensuring that application dependencies do not interfere with each other. Containers are highly portable, as they include everything needed to run the application, making it easy to move between different environments.
+**Deploying Applications on Hosts:**
 
-2. **Resource Management**:
-   - **Host**: Resource management is manual on a host system. You need to allocate CPU, memory, and other resources manually for each application, which can lead to resource contention and inefficiency.
-   - **Container**: Containers can be managed and orchestrated using tools like Kubernetes or Docker Compose, which automate resource allocation, scaling, and load balancing, optimizing resource utilization.
+Deploying applications directly on hosts involves installing and running applications on the underlying operating system without containerization. In this traditional deployment model, applications share the host's resources, and dependencies need to be managed at the system level.
 
-3. **Dependency Management**:
-   - **Host**: Managing dependencies on a host system can be challenging, as different applications may require different versions of libraries or software. This can lead to conflicts and make it difficult to maintain a stable environment.
-   - **Container**: Containers encapsulate application dependencies, ensuring that each application has its own isolated environment with the required libraries and dependencies. This simplifies dependency management and reduces conflicts.
+**Advantages:**
+1. **Simplicity:** Deploying directly on hosts is often simpler, especially for monolithic applications that don't have complex dependencies.
+2. **Performance:** Applications running directly on the host can potentially achieve better performance since there is no overhead introduced by containerization.
 
-4. **Scaling and Orchestration**:
-   - **Host**: Scaling applications on a host system often requires manual intervention, and it may be challenging to manage multiple instances of an application efficiently.
-   - **Container**: Containers are well-suited for orchestration platforms like Kubernetes, which can automatically scale applications based on demand, distribute traffic, and manage updates seamlessly.
+**Challenges:**
+1. **Isolation:** Applications on the same host can interfere with each other, leading to dependency conflicts and difficulties in managing different runtime environments.
+2. **Dependency Management:** Dependencies must be installed and managed at the system level, potentially leading to compatibility issues.
+3. **Scaling:** Scaling can be challenging, especially when trying to scale individual components of an application independently.
 
-5. **Versioning and Rollbacks**:
-   - **Host**: Rolling back an application to a previous version on a host system can be complex and error-prone.
-   - **Container**: Containers can be versioned, allowing for easy rollbacks to previous container images in case of issues, ensuring application reliability and stability.
+**Deploying Applications in Containers:**
 
-6. **Security and Isolation**:
-   - **Host**: Security boundaries between applications on a host system are limited, making it easier for one compromised application to affect others.
-   - **Container**: Containers enhance security through isolation. Security features like namespaces and control groups are used to restrict container access to the host system, reducing the impact of security breaches.
+Deploying applications in containers involves encapsulating the application, its dependencies, and runtime environment in a lightweight and isolated container. Containers run on a container runtime (such as Docker or containerd) and share the host OS kernel while maintaining process-level isolation.
+
+**Advantages:**
+1. **Isolation:** Containers provide a high level of isolation, ensuring that applications and their dependencies are encapsulated and do not interfere with each other.
+2. **Portability:** Containers encapsulate everything needed to run an application, making it highly portable across different environments, from development to production.
+3. **Resource Efficiency:** Containers share the host OS kernel, resulting in efficient resource utilization and faster startup times compared to virtual machines.
+4. **Dependency Management:** Dependencies are managed within the container, reducing conflicts and making it easier to reproduce the same environment across different stages of the development lifecycle.
+
+**Challenges:**
+1. **Learning Curve:** Adopting containerization may require a learning curve for teams unfamiliar with container concepts and orchestration tools.
+2. **Overhead:** While containers introduce minimal overhead compared to virtual machines, there is still some overhead associated with containerization.
 
 ## How does handle scaling in k8s?
 Kubernetes (K8s) provides robust mechanisms for handling scaling, both horizontal and vertical, to ensure your applications can adapt to varying workloads and resource demands. Here's how K8s handles scaling:
