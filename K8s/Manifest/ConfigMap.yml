@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: example-configmap
+data:
+  # Key-value pairs for configuration data
+  DATABASE_URL: "mysql://db.example.com:3306/mydatabase"
+  API_KEY: "your_api_key_here"
+  LOG_LEVEL: "info"
+  # Add more key-value pairs as needed
