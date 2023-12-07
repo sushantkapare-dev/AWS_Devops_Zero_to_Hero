@@ -116,7 +116,6 @@ Upgrading a Kubernetes (K8s) cluster involves a well-planned process to ensure a
 11. **Rollback Plan**:
     - Have a rollback plan in place in case issues arise during or after the upgrade. This includes knowing how to revert to the previous K8s version and restore data and configurations.
 
-
 ## How to handle PVC in k8s?
 Handling Persistent Volume Claims (PVCs) in Kubernetes involves creating, managing, and using these claims to provide storage to pods. Here's a basic guide on how to handle PVCs:
 
