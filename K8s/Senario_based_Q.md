@@ -3,43 +3,6 @@ Deploying an application in a Kubernetes cluster involves several steps that ens
 
 Once the Docker image is in the registry, the next step is to create a Kubernetes deployment. This involves writing a YAML file that describes the desired state of the application, such as the number of replicas and the Docker image to use. The deployment is then applied to the cluster using the kubectl apply command. After the deployment has been applied, it can be verified using the kubectl get command to ensure that the desired number of replicas are running and available
 
-## Can you explain how you would configure resource limits and requests in a Kubernetes cluster to ensure that resources are used efficiently?
-Configuring resource limits and requests in a Kubernetes cluster is an important aspect of ensuring that resources are used efficiently. Resource limits and requests are used to control the amount of CPU, memory, and other resources that a pod can use.
-
-To configure resource limits and requests, the following steps can be followed:
-
-1.Define the resource limits and requests for the pod in the pod specification. The resource limits define the maximum amount of resources that a pod can use, while the resource requests define the minimum amount of resources that a pod requires to function correctly.
-
-2. Specify the resource limits and requests in the pod specification using the ‘limits’ and ‘requests’ fields, respectively. For example, to specify a limit of 500m CPU and 256MB of memory, the following can be added to the pod specification:
-
-resources:
-  limits:
-    cpu: 500m
-    memory: 256Mi
-  requests:
-    cpu: 100m
-    memory: 128Mi
-3. Verify that the resource limits and requestsusing tools such as the Kubernetes Dashboard, kubectl top, or a third-party monitoring tool.
-
-4. Tune the resource limits and requests based on the resource utilization of the pods. If a pod is consistently hitting its resource limits, it may be necessary to increase the limits, while if a pod is consistently underutilizing its resources, it may be possible to reduce the limits or requests.
-
-## Can you explain how you would use Kubernetes role-based access control (RBAC) to secure a cluster and its resources?
-Role-based access control (RBAC) is an important security feature in Kubernetes that allows administrators to manage and control access to the cluster and its resources. RBAC allows administrators to define who can perform specific actions on specific resources within a cluster.
-
-Here are the steps to set up RBAC in a Kubernetes cluster:
-
-Define roles: Roles are sets of permissions that can be assigned to users or service accounts. Roles can be defined for different namespaces in a cluster, or for the entire cluster.
-Define role bindings: Role bindings associate a role with a user or service account. Role bindings can be defined for different namespaces in a cluster, or for the entire cluster.
-Assign roles to users and service accounts: Once roles have been defined and role bindings have been created, administrators can assign roles to users and service accounts. This can be done using the Kubernetes API or through the use of kubectl.
-Validate RBAC rules: After RBAC rules have been defined and role bindings have been created, administrators can validate the RBAC rules by attempting to perform actions with a user or service account that has been assigned a role. This can be done using the Kubernetes API or through the use of kubectl.
-Monitor and enforce RBAC rules: Administrators should regularly monitor and enforce RBAC rules to ensure that they are functioning correctly and that users and service accounts have the correct level of access to the cluster and its resources.
-
-## Can you discuss your experience with using Kubernetes auto-scaling, such as horizontal pod auto-scaling (HPA) or vertical pod auto-scaling (VPA)?
-**Horizontal Pod Auto-scaling (HPA)** is focused on scaling the number of pod replicas in a deployment or replica set to handle changes in application load. It uses metrics like CPU utilization or custom metrics to dynamically adjust the number of pods running to meet the specified performance targets. When the resource utilization exceeds or falls below the defined thresholds, HPA automatically scales the number of pods up or down to maintain the desired performance levels.
-
-**Vertical Pod Auto-scaling (VPA)**, on the other hand, is concerned with adjusting the resource requests and limits for individual pods to match their actual resource needs. VPA continuously analyzes the resource utilization of running pods and adjusts their resource requests and limits accordingly. This helps in optimizing resource allocation and can prevent situations where pods are over-provisioned or under-provisioned in terms of CPU and memory, which can lead to resource wastage or performance issues.
-
-In summary, HPA focuses on scaling the number of pod replicas, while VPA focuses on dynamically adjusting the resource allocations for individual pods. Both mechanisms play important roles in managing resource utilization and optimizing the performance of applications running in Kubernetes clusters.
 ## Can you discuss how you would diagnose and debug issues with a Kubernetes application, such as slow performance or resource utilization problems?
 
 Diagnosing and debugging issues in a Kubernetes application, such as slow performance or resource utilization problems, can be a complex task. As a DevOps engineer, I've encountered various scenarios and developed a systematic approach to troubleshoot and resolve these issues effectively. Here's a step-by-step guide:
