@@ -239,80 +239,64 @@ As a DevOps engineer working on Kubernetes (K8s) projects, troubleshooting is a 
    - Created custom alerts and dashboards to track specific application metrics.
 
 ## How traffic outside reach to pod ingress way?
-In Kubernetes, external traffic typically reaches the pods through the Ingress resource. Here's a high-level overview of how external traffic is routed to pods using Ingress:
+In Kubernetes, traffic from outside the cluster reaches the pods through the Ingress resource, which is a Kubernetes API object that manages external access to services within the cluster. The Ingress resource defines rules and configurations for routing external requests to specific services or pods based on criteria such as hostnames, paths, and protocols.
 
-1. **Ingress Controller**: An Ingress Controller is a component responsible for implementing the rules defined in the Ingress resource. Popular Ingress Controllers include Nginx Ingress Controller, Traefik, and HAProxy Ingress.
+Here is a simplified overview of how traffic from outside the cluster reaches a pod using Ingress:
 
-2. **Ingress Resource**: An Ingress resource is a Kubernetes object that defines rules and configuration for external access to services within the cluster. It specifies how incoming traffic should be routed to specific services and pods based on hostnames, paths, and other criteria.
+1. **Ingress Controller:**
+   An Ingress Controller is a component responsible for implementing the rules defined in the Ingress resource. The controller runs as a pod within the cluster and monitors changes to Ingress resources. It then configures the underlying load balancer or ingress gateway to handle external traffic based on the defined rules.
 
-3. **DNS Configuration**: To route external traffic to your cluster, you need to configure DNS to point to the public IP address or domain associated with your Ingress Controller's service. This allows clients to resolve domain names to the IP address of your Ingress Controller.
+2. **Ingress Resource:**
+   Users define an Ingress resource, specifying rules for how external traffic should be routed. The Ingress resource includes information about the backend services or pods that should handle the incoming requests, along with additional details such as hostnames, paths, and TLS settings.
 
-4. **Ingress Rules**: In your Ingress resource, you define rules that map incoming requests to specific Kubernetes services and pods. These rules specify the hostnames, paths, and the backend services to route traffic to.
+   ```yaml
+   apiVersion: networking.k8s.io/v1
+   kind: Ingress
+   metadata:
+     name: example-ingress
+   spec:
+     rules:
+     - host: example.com
+       http:
+         paths:
+         - path: /app
+           pathType: Prefix
+           backend:
+             service:
+               name: app-service
+               port:
+                 number: 80
+   ```
 
-5. **Ingress Controller Processing**: The Ingress Controller continuously watches for changes in Ingress resources. When it detects a new or updated Ingress resource, it configures its own routing rules accordingly.
+3. **Ingress Controller Configuration:**
+   The Ingress Controller reads the Ingress resource and configures the external load balancer or ingress gateway accordingly. This involves setting up rules based on hostnames and paths to direct traffic to the appropriate backend services or pods.
 
-6. **Traffic Routing**: Incoming traffic is directed to the appropriate backend service based on the rules defined in the Ingress. The Ingress Controller performs the necessary load balancing and routing to direct traffic to the correct pods.
+4. **External Access:**
+   The external load balancer or ingress gateway is responsible for accepting incoming requests from outside the cluster. It uses the configuration provided by the Ingress Controller to route requests to the correct services or pods based on the defined rules.
 
-7. **Pods**: Finally, the traffic reaches the pods associated with the selected backend service. These pods can then handle the incoming requests based on the application logic.
+5. **Pods Handling Requests:**
+   Finally, the traffic reaches the pods associated with the specified backend service in the Ingress resource. These pods host the application or service that handles the incoming requests.
 
 ## What is Deplyment and service object in k8s?
-In Kubernetes (K8s), Deployment and Service are two fundamental objects used to manage and expose applications running in a cluster. They serve different purposes:
+**Deployment in Kubernetes:**
 
-**Deployment**:
-A Deployment in Kubernetes is a resource that defines and manages the desired state of a set of identical pods. It allows you to declare how many replicas of a containerized application should run, and Kubernetes ensures that the specified number of pods are always running, replacing any failed ones and maintaining availability. Deployments enable easy updates and rollbacks of application versions by managing the rollout process and can be a fundamental building block for maintaining and scaling containerized applications.
+In Kubernetes, a Deployment is an object that provides declarative updates to applications. It allows you to describe the desired state of your application and provides the necessary information to Kubernetes to manage the deployment and scaling of the application. A Deployment ensures that a specified number of replicas (pods) are running and handles updates and rollbacks seamlessly. It abstracts the underlying details of pod creation, scaling, and rolling updates, making it a powerful tool for managing application lifecycle in a Kubernetes cluster. Deployments are often used to ensure high availability, reliability, and easy management of applications by defining the desired state and letting Kubernetes handle the actual implementation.
 
-Here's a simple example of a Deployment manifest:
+**Service in Kubernetes:**
 
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: my-deployment
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: my-app
-  template:
-    metadata:
-      labels:
-        app: my-app
-    spec:
-      containers:
-      - name: my-container
-        image: my-image:latest
-```
-
-In this example, we define a Deployment named "my-deployment" with three replicas, each running a container based on the "my-image" image.
-
-**Service**:
-A Service in Kubernetes is a resource that abstracts and provides network connectivity to a set of pods. It acts as a stable endpoint for accessing one or more pods, even as pods are created, terminated, or replaced. Services enable load balancing and traffic distribution across pods, allowing applications to be accessed internally or externally using a single, well-defined network address. They abstract the underlying pod infrastructure, making it easier to scale and manage the network connectivity of containerized applications within a Kubernetes cluster.
-
-Here's a simple example of a Service manifest:
-
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-spec:
-  selector:
-    app: my-app
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8080
-```
-
-In this example, we define a Service named "my-service" that forwards traffic to Pods labeled with "app: my-app" on port 8080, exposing it on port 80 within the cluster.
+A Service in Kubernetes is an abstraction that defines a logical set of pods and a policy by which to access them. Services enable communication between different sets of pods within a cluster or external traffic from outside the cluster. They provide a stable endpoint (IP address and port) that remains constant even if the underlying pods are scaled, replaced, or moved. There are different types of services, including ClusterIP for internal communication, NodePort for exposing services on a specific port of each node, and LoadBalancer for integrating with external load balancers. Services play a crucial role in enabling connectivity and discovery within a Kubernetes environment, allowing applications to communicate with each other and providing a consistent way to access them.
 
 ## k8s certificates are encrypted ot encoded?
 Kubernetes (K8s) certificates are encoded using various encoding formats, but they are not encrypted in the traditional sense. Instead, they are typically stored in Base64-encoded PEM (Privacy Enhanced Mail) format, which is a widely used format for representing certificates, keys, and related data. PEM encoding is a text-based format that represents binary data (such as certificates) in a human-readable and portable way.
 
 ## Diff between LB and Ingress in k8s
-In Kubernetes, a **LoadBalancer (LB)** is a type of service that automatically provisions an external load balancer, typically provided by a cloud provider, to distribute incoming traffic across a set of pods within a cluster. LoadBalancers are used when you need to expose a service externally, and they ensure high availability and traffic distribution to pods, making it accessible from outside the cluster.
+**Load Balancer in Kubernetes:**
 
-An **Ingress** is a Kubernetes resource that serves as an entry point for managing external access to services within the cluster. It provides a way to configure HTTP and HTTPS routing rules, often using hostnames and paths, to route incoming requests to different services and pods. Ingress controllers, such as Nginx Ingress or Traefik, implement these rules and manage the traffic based on the defined Ingress resources. Ingress is used for more advanced routing and traffic management, especially when multiple services need to be exposed through a single IP address and domain, making it a more versatile option for managing external traffic compared to LoadBalancer services.
+In Kubernetes, a Load Balancer is a service type that exposes a set of pods to the external world and automatically provisions an external load balancer to distribute incoming traffic across those pods. When a service of type LoadBalancer is created, Kubernetes interacts with the underlying cloud provider (AWS, GCP, Azure, etc.) to create a load balancer instance. This load balancer typically routes traffic to the nodes where the pods are running. Load balancers are primarily used to expose services externally, making them accessible from the internet. Each service of type LoadBalancer gets its own external IP address.
+
+**Ingress in Kubernetes:**
+
+Ingress is a Kubernetes API resource that manages external access to services within the cluster. Unlike LoadBalancer, Ingress is not a service type but rather an object that defines how external traffic should be routed to services based on rules. Ingress provides a way to configure the external access and allows for more sophisticated routing based on hostnames, paths, and other criteria. While Ingress itself doesn't provide load balancing, it works in conjunction with an Ingress Controller (which can be a load balancer) to manage and route external traffic to the appropriate services.
 
 ## what is minikube in k8s?
 Minikube is a tool that allows you to run a single-node Kubernetes (K8s) cluster locally on your computer. It's designed to provide a lightweight and easy way for developers to develop and test Kubernetes applications without the need for a full-scale, multi-node cluster. 
