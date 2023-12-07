@@ -244,11 +244,6 @@ Integrating Kubernetes with an external logging and monitoring system is crucial
 **Service Monitors**: Define ServiceMonitor resources to automatically discover and monitor applications exposed via Kubernetes Services.
 Alerting: Set up alerting rules to trigger notifications in case of abnormal behavior or threshold breaches.
 
-## Explain the concept of “Pod Priority” and “PriorityClass” in Kubernetes.
-**"Pod Priority"**:- refers to a mechanism for assigning relative importance or priority levels to pods within a cluster. This enables Kubernetes to make scheduling decisions based on pod priorities, ensuring that higher-priority pods are given precedence over lower-priority pods when allocating cluster resources. 
-
-**"PriorityClass"**:- is a Kubernetes resource used to define these priority levels and associated values, such as priority values and preemption policies. By using PriorityClass, administrators can control the scheduling and resource allocation behavior of pods, helping to meet the specific performance and availability requirements of different workloads running in the cluster.
-
 ##  How can you secure communication between Pods in a Kubernetes cluster?
 Securing communication between Pods in a Kubernetes cluster is essential to protect sensitive data and prevent unauthorized access. Here are some methods to achieve this:
 
