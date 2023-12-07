@@ -153,12 +153,6 @@ Horizontal scaling in Kubernetes involves increasing or decreasing the number of
 
 **c) Node Pools (in cloud providers):** Some cloud providers offer the concept of node pools, where you can define multiple sets of nodes with different characteristics. By creating an autoscaling node pool, the cloud provider will manage node scaling for you based on predefined rules.
 
-## How can you achieve multi-tenancy in Kubernetes clusters?
-Achieving multi-tenancy in Kubernetes involves creating isolated namespaces for different tenants. Each namespace acts as a virtual cluster within the main Kubernetes cluster. By properly configuring resource quotas, role-based access control (RBAC), and network policies, you can ensure that tenants have segregated resources and limited access to only their namespaces.
-
-##  Explain the concept of Operators in Kubernetes.
-Operators are a method of packaging, deploying, and managing Kubernetes applications using custom resources and controllers. They extend Kubernetes’ capabilities to automate complex application-specific operations. Operators encapsulate domain knowledge and automate tasks such as software installation, configuration, and scaling. They are especially valuable when managing stateful applications and databases in Kubernetes.
-
 ## How can you secure communication between different components in a Kubernetes cluster?
 To secure communication between components in a Kubernetes cluster, you can:
 
@@ -369,6 +363,3 @@ if you need to update a configuration used by an application running within a Ku
    ```
    kubectl rollout status deployment/<deployment-name>
    ```
-
-
-
