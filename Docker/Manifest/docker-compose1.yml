@@ -1,0 +1,25 @@
+version: '3.6'
+
+services:
+  frontend:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    network:
+      - mynetwork
+
+  backend:
+    image: node:latest
+    working_dir: app
+    volumes:  
+      - ./backend:app
+    command: npm start
+    ports:
+      - "3000:3000"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:

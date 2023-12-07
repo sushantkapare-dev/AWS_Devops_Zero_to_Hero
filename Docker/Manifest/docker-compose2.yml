@@ -1,0 +1,38 @@
+version: '3.6'
+
+services:
+  frontend:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    networks:
+      - mynetwork
+    depends_on: 
+      - backend
+  
+  backend:
+    image: node:14
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    command: npm start
+    ports:
+      - "3000:3000"
+    networks:
+      - mynetwork
+    depends_on:
+      - database
+  
+  database:
+    image: mongo:latest
+    volumes:
+      - database_data:/data/db
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork
+
+volumes:
+  database_data
+
