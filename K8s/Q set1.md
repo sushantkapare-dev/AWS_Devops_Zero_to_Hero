@@ -49,46 +49,7 @@ Yes, it is possible to have multiple init containers in a single Pod. Each init 
 3. **Startup Probe**: A startup probe is a specialized probe introduced in Kubernetes 1.16 and later. It's used to determine when a container has successfully started and is ready to receive traffic. Startup probes are useful for scenarios where the container takes some time to initialize or warm up, and you want to delay marking it as "ready" until it's truly prepared to serve requests.
 
 ## What is CRD in k8s?
-In Kubernetes (K8s), a CRD stands for Custom Resource Definition. CRDs are a way to extend the Kubernetes API and add custom resources to your cluster. They allow you to define and use custom resources, which are objects that have specific behaviors and can be managed through the Kubernetes API server, just like built-in resources such as Pods, Services, and ConfigMaps.
-
-CRDs enable you to define your own resource types and their schema. These custom resources can represent application-specific objects, configurations, or any other data that is not natively supported by Kubernetes. Once you define a CRD, you can create instances of your custom resources, and controllers can be developed to manage and reconcile the state of these custom resources, allowing you to automate tasks related to your specific applications.
-
-For example, you might define a CRD for a custom "Database" resource, which includes fields like name, storage size, and configuration. Then, you can create instances of this custom resource to represent different database instances in your cluster, and you can develop a controller to provision and manage these databases based on the desired state specified in the custom resources.
-
-Here's a simplified example of how you might define a Custom Resource Definition for a fictional "WebApp" resource:
-
-```yaml
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
-metadata:
-  name: webapps.example.com
-spec:
-  group: example.com
-  names:
-    kind: WebApp
-    plural: webapps
-    singular: webapp
-  scope: Namespaced  # CRDs can have cluster-wide or namespaced scope
-  versions:
-    - name: v1
-      served: true
-      storage: true
-  validation:
-    openAPIV3Schema:
-      type: object
-      properties:
-        spec:
-          type: object
-          properties:
-            replicas:
-              type: integer
-            image:
-              type: string
-```
-
-In this example, we define a CRD named `webapps.example.com` that describes a custom resource called `WebApp`. The schema includes fields for specifying the number of replicas and the container image for the web application.
-
-Once you've defined the CRD, you can create instances of `WebApp` resources in your cluster, and you can build custom controllers or operators to manage these resources according to your application's requirements.
+In Kubernetes, a Custom Resource Definition (CRD) is an extension mechanism that enables users to define and use custom resources, beyond the built-in resources provided by Kubernetes. It allows users to introduce their own object types and associated controllers, extending the Kubernetes API to manage application-specific configurations and behaviors. CRDs essentially enable the definition of domain-specific APIs within a Kubernetes cluster, providing a way to represent and manage resources beyond the standard set of objects like pods, services, and deployments. Once a CRD is created, instances of custom resources can be created and managed, and controllers can be developed to watch and reconcile the state of these resources. This extensibility facilitates the adaptation of Kubernetes to diverse use cases and enables the management of complex, application-specific workloads within the Kubernetes ecosystem.
 
 ## what is namespace and resource quota?
 **Namespace**:
