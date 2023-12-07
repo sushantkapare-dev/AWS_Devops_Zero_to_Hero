@@ -455,23 +455,7 @@ A ReplicaSet is a lower-level resource in Kubernetes that is primarily focused o
 ReplicaSets are useful for ensuring high availability and load balancing within a cluster. They allow operators to define the number of identical pod replicas running concurrently, which helps distribute the application load and provides redundancy. However, ReplicaSets lack certain features provided by Deployments, such as declarative updates, rollbacks, and other high-level deployment management capabilities.
 
 ## Explain concept of rolling update in k8s?
-A rolling update in Kubernetes is a strategy for updating or upgrading applications without causing downtime or service interruptions. It involves gradually replacing the old version of an application with a new one, ensuring that there is always a specified number of healthy Pods available during the transition. Kubernetes provides built-in support for rolling updates through Deployments and ReplicaSets. Here's how it works:
-
-1. **Desired State Configuration**: You define the desired state of your application, including the number of replicas and the updated version of your container image, in a Kubernetes Deployment manifest. The Deployment controller ensures that this desired state is met.
-
-2. **ReplicaSets**: Under the hood, Deployments use ReplicaSets to manage the actual replica count of Pods. Each time you update a Deployment, a new ReplicaSet is created with the updated configuration.
-
-3. **Pod Replacement**: Kubernetes starts creating new Pods with the updated application version, one at a time, and adds them to the new ReplicaSet. At the same time, it gradually terminates Pods from the old ReplicaSet.
-
-4. **Rolling Update Strategy**: Kubernetes employs a rolling update strategy to control the pace of Pod replacement. You can configure parameters like the maximum number of Pods that can be unavailable at any given time (Pod disruption budget) and the maximum number of Pods that can be created concurrently.
-
-5. **Health Checks**: Kubernetes continuously monitors the health of Pods in both the old and new ReplicaSets. Health checks, such as readiness probes, ensure that new Pods are healthy before they receive traffic.
-
-6. **Traffic Switching**: As new Pods become ready and healthy, Kubernetes automatically switches traffic to them, gradually diverting traffic away from the old Pods.
-
-7. **Pause and Resume**: If any issues are detected during the rolling update, Kubernetes can pause the update process to prevent further updates. You can diagnose and resolve any problems before resuming the update.
-
-8. **Rollback**: If the rolling update encounters critical issues, you can easily roll back to the previous version by updating the Deployment to the desired revision. Kubernetes handles the rollback process by scaling down the new ReplicaSet and scaling up the old one.
+In Kubernetes, a rolling update is a deployment strategy that allows for the seamless and controlled transition from one version of an application to another. During a rolling update, new instances of the application are gradually introduced while simultaneously phasing out the old instances. This ensures that the application remains available and responsive throughout the update process. Kubernetes achieves rolling updates by intelligently managing the replacement of individual pods, minimizing downtime and potential disruptions to user traffic. The strategy involves gradually shifting the deployment from the old version to the new version, allowing for real-time monitoring and ensuring the health and stability of the application at each step. This approach is a fundamental feature provided by Kubernetes Deployments, contributing to the platform's ability to maintain application availability during continuous delivery and updates.
 
 ## How k8s handle n/w security and access control?
 1. **Network Policies**: Network Policies are a Kubernetes resource that allows you to specify how pods are allowed to communicate with each other and other network endpoints. They define rules based on labels, namespaces, and pod selectors to control ingress (incoming) and egress (outgoing) traffic. By using Network Policies, you can segment and isolate different parts of your cluster to enforce network security rules.
@@ -533,10 +517,38 @@ A single-node cluster is a Kubernetes cluster that consists of just one physical
 Node group resilience in Kubernetes (K8s) refers to the strategy of organizing and managing clusters by grouping nodes based on shared characteristics or roles. This approach enhances the overall resilience of the cluster by ensuring that various workloads and services are distributed across multiple nodes within the same group. In the event of node failures or maintenance activities, the cluster can continue to operate efficiently, as workloads can be automatically rescheduled onto healthy nodes within the same group, minimizing downtime and disruptions. This resiliency strategy contributes to the robustness and high availability of Kubernetes clusters.
 
 ## what is Error code kin k8s?
-In Kubernetes (K8s), error codes are numeric or string identifiers that represent specific issues, failures, or conditions within the system. These error codes are used to convey information about the state of a resource, operation, or component, helping administrators and developers diagnose and troubleshoot problems in the cluster. Error codes often accompany error messages to provide additional context and guidance for resolving issues.
+In Kubernetes, error codes are typically returned as HTTP status codes in response to API requests. The Kubernetes API uses standard HTTP status codes to indicate the success or failure of a request. These status codes convey information about the result of the operation, allowing clients to understand the outcome and take appropriate action.
+
+Here are some common HTTP status codes you might encounter when interacting with the Kubernetes API:
+
+- **200 OK:** The request was successful.
+
+- **201 Created:** The resource was successfully created.
+
+- **202 Accepted:** The request has been accepted for processing, but the processing has not been completed.
+
+- **204 No Content:** The server successfully processed the request but is not returning any content.
+
+- **400 Bad Request:** The request could not be understood or was missing required parameters.
+
+- **401 Unauthorized:** Authentication failed or the user does not have the necessary permissions.
+
+- **403 Forbidden:** The server understood the request but refused to authorize it.
+
+- **404 Not Found:** The requested resource could not be found.
+
+- **409 Conflict:** The request could not be completed due to a conflict with the current state of the target resource.
+
+- **422 Unprocessable Entity:** The server understands the content type of the request entity but was unable to process the contained instructions.
+
+- **500 Internal Server Error:** An unexpected condition was encountered, and no more specific message is suitable.
 
 ## diff between pod and docker container?
-A Pod and a Docker container are both fundamental units in container orchestration, but they serve different purposes. A Docker container is a lightweight, standalone executable package that contains an application and all its dependencies, isolated from the host system. On the other hand, a Pod in Kubernetes is an abstraction that can encapsulate one or more containers within the same network namespace, allowing them to share networking and storage resources. While a Docker container is typically used to package and run a single application, a Pod is used to co-locate containers that need to work together closely, such as a main application container and sidecar containers for logging or monitoring. Additionally, Pods in Kubernetes provide features like automatic restarts and scaling, making them more suitable for managing complex, multi-container applications in a clustered environment.
+**Docker Container:**
+A Docker container is a lightweight, standalone, and executable software package that includes everything needed to run a piece of software, including the code, runtime, libraries, and system tools. Containers are isolated from each other and from the underlying host system, ensuring consistency and reproducibility across different environments. Docker is a popular containerization platform that uses container technology to package and distribute applications.
+
+**Pod:**
+A pod is a higher-level abstraction in container orchestration systems like Kubernetes. It represents the smallest deployable unit in Kubernetes and can encapsulate one or more containers. Containers within a pod share the same network namespace, allowing them to communicate with each other using localhost. Pods provide a way to deploy and manage groups of containers that need to work together and share resources, such as storage volumes.
 
 ## How to setup RBAC to user or service account?
 Setting up Role-Based Access Control (RBAC) in Kubernetes involves defining roles and role bindings to grant specific permissions to users or service accounts within your cluster. Here's a step-by-step guide on how to set up RBAC for users or service accounts:
