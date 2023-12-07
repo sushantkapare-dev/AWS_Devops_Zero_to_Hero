@@ -329,14 +329,17 @@ In Kubernetes, there are several deployment strategies to manage how updates and
 1. **Recreate Deployment**:
    - In a Recreate deployment strategy, all existing Pods of the previous version are terminated simultaneously, and all new Pods of the updated version are created. This can result in a brief downtime during the update but ensures a clean cutover to the new version.
 
-2. **Rolling Update Deployment**:
-   - Rolling Update is the default deployment strategy in Kubernetes. It gradually replaces old Pods with new Pods, ensuring a smooth transition with no downtime. You can control the speed of the update by specifying the maximum number of Pods that can be unavailable at a time and the maximum number of Pods that can be scheduled simultaneously.
+2. **Rolling Deployment:**
+   A rolling deployment gradually replaces instances of the old application with the new one, ensuring continuous availability. Pods are updated one at a time, minimizing downtime and maintaining a specified number of replicas throughout the process. This strategy is suitable for applications that require high availability and can handle some capacity reduction during the update.
 
-3. **Blue-Green Deployment**:
-   - In a Blue-Green deployment, you maintain two identical environments (Blue and Green). While one environment is live (e.g., Blue), you deploy updates to the other environment (e.g., Green). After successful testing, you switch traffic to the Green environment, making it the new live environment. This approach allows for easy rollback if issues arise.
+3. **Blue-Green Deployment:**
+   Blue-Green deployment involves running two identical environments, "Blue" (the current production version) and "Green" (the new version). Traffic is initially directed to the Blue environment. Once the Green environment is validated, traffic is switched, making the new version live. This strategy provides a straightforward rollback mechanism and is effective for minimizing downtime during updates.
 
-4. **Canary Deployment**:
-   - Canary deployments involve rolling out updates to a small subset of Pods (the "canaries") first to validate the changes. If the canaries perform well, the update is gradually applied to the rest of the Pods. Canary deployments allow you to monitor the impact of changes on a small scale before a full deployment.
+4. **Canary Deployment:**
+   Canary deployment releases the new version incrementally to a subset of users or nodes, allowing for real-time monitoring and assessment of its performance. If the new version proves stable, the deployment is expanded to the entire user base or cluster. Canary deployments are useful for detecting issues early and minimizing the impact on the entire system in case of problems.
+
+5. **Rollback:**
+   While not a deployment strategy per se, the ability to perform rollbacks is a critical aspect of any deployment plan. In Kubernetes, rollbacks can be executed quickly by reverting to a previous version of the application or configuration. This ensures that if issues arise during deployment, the system can be easily rolled back to a known stable state.
 
 ## How to secure k8s cluster if you are admin?
 Securing a Kubernetes (K8s) cluster is critical for protecting your applications, data, and infrastructure. As a K8s cluster administrator, you have a central role in implementing security measures. Here are steps to help secure a K8s cluster:
