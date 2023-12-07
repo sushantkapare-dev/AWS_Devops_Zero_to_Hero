@@ -35,11 +35,11 @@ Docker Swarm is Docker's native orchestration tool designed to manage and orches
 Kubernetes, often abbreviated as K8s, is a powerful and widely adopted open-source container orchestration platform. Unlike Docker Swarm, Kubernetes is container-agnostic and can manage containers created by various container runtimes, not just Docker. Kubernetes offers a rich set of features for automating the deployment, scaling, and management of containerized applications in a highly resilient and scalable manner. It is suitable for large, complex, and production-grade deployments, providing advanced features like automatic load balancing, rolling updates, and self-healing capabilities.
 
 ## What is init container and can have multiple init container?
-An init container, short for initialization container, is a special type of container in Kubernetes that runs before the main application containers in a pod start. Init containers are primarily used to perform setup tasks, such as initializing a database, downloading configuration files, or waiting for external services to become available. They ensure that certain conditions are met or that specific resources are available before the main application containers begin executing.
+AIn Kubernetes, an init container is a specialized type of container that runs before the main containers in a Pod start. The primary purpose of init containers is to perform setup or initialization tasks before the application containers are launched. These tasks could include tasks like downloading data, setting up configurations, or preparing the environment.
 
-You can have multiple init containers within a single pod. 
+Init containers have a defined order of execution and must complete successfully before the main containers in the Pod are started. If an init container fails to run to completion, the Pod restarts until the init container succeeds.
 
-Remember that if an init container fails, the pod will not start, and Kubernetes will perform retries based on your pod's restart policy. You can configure various aspects of init containers, such as resource requirements and volume mounts, just like you would for main containers.
+Yes, it is possible to have multiple init containers in a single Pod. Each init container runs sequentially in the order they are defined within the Pod's specification. This sequential execution allows you to express dependencies between init containers, ensuring that each one completes successfully before the next one starts.
 
 ## What is liveness , readyness and start probe in k8s?
 1. **Liveness Probe**: A liveness probe is a health check performed by Kubernetes to determine if a container within a pod is still running and healthy. If the liveness probe fails (e.g., the container is unresponsive or in a bad state), Kubernetes may restart the container to restore its health and maintain application availability.
