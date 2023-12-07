@@ -1,17 +1,7 @@
 ## Can you walk us through the steps you would take to deploy an application in a Kubernetes cluster?
 Deploying an application in a Kubernetes cluster involves several steps that ensure the application runs smoothly and is easily accessible. The first step is to package the application in a Docker image, which is a format that allows the application to be run as a container. This image should contain all the dependencies and configurations needed for the application to run properly. Next, the Docker image is pushed to a container registry such as Docker Hub making it accessible to the Kubernetes cluster.
 
-Once the Docker image is in the registry, the next step is to create a Kubernetes deployment. This involves writing a YAML file that describes the desired state of the application, such as the number of replicas and the Docker image to use. The deployment is then applied to the cluster using the kubectl apply command. After the deployment has been applied, it can be verified using the kubectl get command to ensure that the desired number of replicas are running and available.
-
-## Can you discuss your experience with using Kubernetes network plugins such as Calico, Flannel, or Weave Net?
-Kubernetes network plugins, such as Calico, Flannel, and Weave Net, are essential components of a Kubernetes cluster that enable communication between the various components of the cluster, such as pods, nodes, and services.
-
-Calico is a popular network plugin that provides network security, network segmentation, and network policy enforcement. It is known for its high performance and ease of use, making it a popular choice for many Kubernetes deployments.
-
-Flannel is another popular network plugin that provides network overlay support for Kubernetes. It is known for its simplicity, as it does not require a lot of configurations, and for its support for many different networking backends, such as VXLAN, host-gw, and AWS VPC.
-
-Weave Net is a third popular network plugin that provides a fully featured network fabric for Kubernetes. It is known for its support for multiple networking modes, such as VLAN and overlay networking, and for its support for encrypted and unencrypted network traffic.
-
+Once the Docker image is in the registry, the next step is to create a Kubernetes deployment. This involves writing a YAML file that describes the desired state of the application, such as the number of replicas and the Docker image to use. The deployment is then applied to the cluster using the kubectl apply command. After the deployment has been applied, it can be verified using the kubectl get command to ensure that the desired number of replicas are running and available
 
 ## Can you explain how you would configure resource limits and requests in a Kubernetes cluster to ensure that resources are used efficiently?
 Configuring resource limits and requests in a Kubernetes cluster is an important aspect of ensuring that resources are used efficiently. Resource limits and requests are used to control the amount of CPU, memory, and other resources that a pod can use.
