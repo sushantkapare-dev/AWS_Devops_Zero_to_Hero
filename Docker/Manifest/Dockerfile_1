@@ -1,0 +1,11 @@
+# Use the official Nginx image as the base image
+FROM nginx:latest
+
+# Copy the static files to the Nginx document root
+COPY html /usr/share/nginx/html
+
+# Expose the default Nginx port
+EXPOSE 80
+
+# Command to start Nginx
+CMD ["nginx", "-g", "daemon off;"]
