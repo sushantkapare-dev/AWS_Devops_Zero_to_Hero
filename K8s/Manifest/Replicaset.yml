@@ -17,3 +17,10 @@ spec:
         image: your/webapp-image:latest
         ports:
         - containerPort: 80
+
+
+
+        
+
+##kubectl apply -f Replicaset.yaml
+
