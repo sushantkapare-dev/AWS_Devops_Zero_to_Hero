@@ -29,7 +29,7 @@ resource "aws_security_group" "my_sg" {
         cidr_block = ["0.0.0.0/0"]
     }
 
-     ingress = {
+    ingress = {
         from_port = 80
         to_port = 80
         protocal = "tcp"
