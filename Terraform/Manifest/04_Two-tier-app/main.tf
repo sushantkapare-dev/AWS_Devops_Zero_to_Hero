@@ -1,71 +1,35 @@
-provider "aws" {
-  region = "us-east-1"  # Change this to your preferred region
+#creating EC2 instance
+resource "aws_instance" "My-web-instance1" {
+  ami                         = "ami-02f3f602d23f1659d" #Amazon linux 2 AMI
+  key_name                    = "mykeypair"
+  associate_public_ip_address = true
+  subnet_id                   = aws_subnet.public-subnet1.id
+  instance_type               = "t2.micro"
+  vpc_security_group_ids      = [aws_security_group.Custom-Public-SG-DB.id]
+  user_data                   = <<-EOF
+        #!/bin/bash
+        yum update -y
+        yum install httpd -y
+        systemctl start httpd
+        systemctl enable httpd
+        echo "<html><body><h1>This is My Custom Project Tier 1 </h1></body></html>" > /var/www/html/index.html
+        EOF
 }
 
-module "web_server" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "~> 2.0"
-
-  name           = "web-server"
-  instance_count = 1
-
-  ami = "ami-xxxxxxxxxxxxxxxx"  # Specify the appropriate AMI ID
-  instance_type = "t2.micro"
-
-  key_name = "your-key-pair-name"  # Change this to your key pair name
-
-  vpc_security_group_ids = [aws_security_group.web_sg.id]
-}
-
-resource "aws_security_group" "web_sg" {
-  name        = "web-sg"
-  description = "Allow inbound HTTP traffic"
-
-  vpc_id = aws_vpc.my_vpc.id
-
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
-
-module "db_server" {
-  source  = "terraform-aws-modules/rds/aws"
-  version = "~> 3.0"
-
-  identifier = "mydb"
-  engine     = "mysql"
-
-  instance = {
-    instance_class = "db.t2.micro"
-    allocated_storage = 20
-  }
-
-  vpc_security_group_ids = [aws_security_group.db_sg.id]
-}
-
-resource "aws_security_group" "db_sg" {
-  name        = "db-sg"
-  description = "Allow inbound MySQL traffic"
-
-  vpc_id = aws_vpc.my_vpc.id
-
-  ingress {
-    from_port   = 3306
-    to_port     = 3306
-    protocol    = "tcp"
-    security_groups = [module.web_server.security_group_id]
-  }
-}
-
-resource "aws_vpc" "my_vpc" {
-  cidr_block = "10.0.0.0/16"
-  enable_dns_support = true
-  enable_dns_hostnames = true
-
-  tags = {
-    Name = "MyVPC"
-  }
+#creating EC2 instance
+resource "aws_instance" "My-web-instance2" {
+  ami                         = "ami-02f3f602d23f1659d" #Amazon linux 2 AMI 
+  key_name                    = "mykeypair"
+  associate_public_ip_address = true
+  subnet_id                   = aws_subnet.public-subnet2.id
+  instance_type               = "t2.micro"
+  vpc_security_group_ids      = [aws_security_group.Custom-Public-SG-DB.id]
+  user_data                   = <<-EOF
+        #!/bin/bash
+        yum update -y
+        yum install httpd -y
+        systemctl start httpd
+        systemctl enable httpd
+        echo "<html><body><h1>This is My Custom Project Tier 2 </h1></body></html>" > /var/www/html/index.html
+        EOF
 }
