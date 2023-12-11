@@ -48,9 +48,6 @@
 ## what are key-pair in aws?
 In AWS, a key pair is a set of cryptographic keys that consists of a public key and a private key. Key pairs are primarily used for secure authentication and access to Amazon Elastic Compute Cloud (Amazon EC2) instances. When you create an EC2 instance, you can associate a key pair with it. The public key is placed on the instance, and the private key is kept securely by the user. When you want to connect to the instance, you use the private key to authenticate, ensuring secure access to your virtual server. Key pairs are crucial for securing access to EC2 instances and are an essential component of AWS's security infrastructure.
 
-## what is s3?
-mazon S3 (Simple Storage Service) is like a giant online storage space provided by Amazon. It's a service that allows you to store and retrieve any amount of data from anywhere on the web. Imagine it as a virtual hard drive in the cloud where you can put files, images, videos, or any other data, and you can access or share them over the internet.
-
 ## what is pricing model for ec2 instances?
 Amazon EC2 (Elastic Compute Cloud) instances in AWS follow a pay-as-you-go pricing model, where you are billed for the compute capacity you use. The pricing is based on several factors, and it can vary depending on the instance type, region, and other options. Here are key components of the EC2 pricing model:
 
@@ -98,14 +95,8 @@ Amazon EC2 (Elastic Compute Cloud) offers a variety of instance types designed t
 9. **High Performance Computing (HPC) Instances:**
    - **hpc6i, hpc6id, hpc6gn, hpc6dgn:** These instances are designed for tightly-coupled, high-performance computing applications using a high bandwidth, low-latency network.
 
-## what is aws lambda?
-AWS Lambda is a serverless compute service provided by Amazon Web Services (AWS) that allows you to run code without provisioning or managing servers. It enables developers to build and deploy applications as individual functions that are triggered by various events, such as changes to data in an Amazon S3 bucket, updates to a database, HTTP requests via API Gateway, or custom events from other AWS services. Lambda automatically scales the execution of these functions in response to the incoming workload, ensuring that you pay only for the compute time consumed by your code.
-
 ## what is CRR IN AWS?
 In Amazon Web Services (AWS), CRR stands for Cross-Region Replication. It is a feature used in AWS S3 (Simple Storage Service) that allows you to replicate objects (files or data) from one S3 bucket in one AWS region to another S3 bucket in a different AWS region. This helps in achieving data redundancy, disaster recovery, and low-latency access to data in different geographical locations. CRR ensures that data is automatically and asynchronously copied to a designated destination bucket, making it a valuable tool for data backup and ensuring high availability of data across regions.
-
-## what is cloudfront?
-Amazon CloudFront is a content delivery network (CDN) service provided by Amazon Web Services (AWS). It is designed to improve the performance, security, and scalability of web applications and websites by distributing content to multiple edge locations worldwide. CloudFront accelerates the delivery of static and dynamic web content, such as images, videos, JavaScript files, and APIs, to end-users by caching this content at edge locations that are geographically closer to them. This reduces latency and provides a better user experience. Additionally, CloudFront offers features like DDoS protection, SSL/TLS encryption, and integration with other AWS services, making it a powerful tool for optimizing the delivery of web content and applications.
 
 ## what are aws region and AZ in aws?
 
