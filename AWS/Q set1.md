@@ -1,4 +1,5 @@
-##Amazon Web Services (AWS) is a comprehensive and widely used cloud computing platform provided by Amazon. AWS offers a broad set of services, including computing power, storage options, networking capabilities, machine learning, security, and more. These services are designed to help businesses scale and grow without the need for large upfront investments in infrastructure. Below are some key components and services within the AWS ecosystem:
+# what s AWS and it's services? 
+Amazon Web Services (AWS) is a comprehensive and widely used cloud computing platform provided by Amazon. AWS offers a broad set of services, including computing power, storage options, networking capabilities, machine learning, security, and more. These services are designed to help businesses scale and grow without the need for large upfront investments in infrastructure. Below are some key components and services within the AWS ecosystem:
 
 1. **Compute Services:**
    - **Amazon EC2 (Elastic Compute Cloud):** Provides scalable virtual servers (instances) in the cloud.
