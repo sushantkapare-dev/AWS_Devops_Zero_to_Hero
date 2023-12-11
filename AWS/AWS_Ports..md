@@ -1,4 +1,4 @@
-### AWS Ports:
+# AWS Ports:
 1. **Amazon RDS:**
    - MySQL: 3306
    - PostgreSQL: 5432
@@ -39,7 +39,7 @@
     - HTTP: 80
     - HTTPS: 443
 
-### DevOps Ports:
+# DevOps Ports:
 1. **Git:**
    - SSH: 22
    - HTTP: 80
