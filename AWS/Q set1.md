@@ -49,50 +49,54 @@
 In AWS, a key pair is a set of cryptographic keys that consists of a public key and a private key. Key pairs are primarily used for secure authentication and access to Amazon Elastic Compute Cloud (Amazon EC2) instances. When you create an EC2 instance, you can associate a key pair with it. The public key is placed on the instance, and the private key is kept securely by the user. When you want to connect to the instance, you use the private key to authenticate, ensuring secure access to your virtual server. Key pairs are crucial for securing access to EC2 instances and are an essential component of AWS's security infrastructure.
 
 ## what is s3?
-Amazon S3 (Simple Storage Service) is a highly scalable and versatile cloud storage service provided by Amazon Web Services (AWS). It is designed to store and retrieve vast amounts of data, making it ideal for a wide range of use cases, including data backup and archival, content distribution, application data storage, and more. S3 offers durable and reliable storage with a 99.999999999% (11 nines) durability guarantee, meaning data stored in S3 is highly resilient. It also provides various features such as data versioning, data encryption, access control through bucket policies and Access Control Lists (ACLs), and seamless integration with other AWS services. S3 is organized into buckets, each of which can store an unlimited number of objects (files) with unique keys. It is a fundamental building block for many AWS applications and is widely used for storing and serving static website content, media files, backups, and as a data lake for analytics.
+mazon S3 (Simple Storage Service) is like a giant online storage space provided by Amazon. It's a service that allows you to store and retrieve any amount of data from anywhere on the web. Imagine it as a virtual hard drive in the cloud where you can put files, images, videos, or any other data, and you can access or share them over the internet.
 
 ## what is pricing model for ec2 instances?
-Amazon Elastic Compute Cloud (EC2) instances in AWS follow a flexible and pay-as-you-go pricing model. The pricing for EC2 instances is based on several factors, including:
+Amazon EC2 (Elastic Compute Cloud) instances in AWS follow a pay-as-you-go pricing model, where you are billed for the compute capacity you use. The pricing is based on several factors, and it can vary depending on the instance type, region, and other options. Here are key components of the EC2 pricing model:
 
-1. **Instance Type**: The cost varies depending on the type of EC2 instance you choose. Different instance types offer varying levels of compute power, memory, and specialized capabilities.
+1. **Instance Type:** EC2 instances come in various types optimized for different use cases, such as compute-optimized, memory-optimized, storage-optimized, and GPU instances. Each instance type has its own pricing, reflecting the underlying hardware and performance characteristics.
 
-2. **Region**: AWS has multiple regions worldwide, and the pricing can vary slightly depending on the region where you launch your EC2 instances.
+2. **On-Demand Instances:** This is the default pricing model where you pay for compute capacity by the hour or second with no upfront costs or commitments. This is suitable for short-term, variable workloads.
 
-3. **Operating System**: The choice of operating system (e.g., Linux, Windows) can affect the pricing, as Windows instances are typically more expensive due to licensing costs.
+3. **Reserved Instances (RIs):** RIs provide a significant discount (compared to On-Demand pricing) in exchange for a commitment to a one- or three-year term. There are different types of RIs, such as Standard RIs, Convertible RIs (allowing flexibility to change the instance type within the same family), and Scheduled RIs (for a specific time window).
 
-4. **Instance Tenancy**: You can choose between On-Demand, Reserved, or Spot instances. On-Demand instances are charged at an hourly rate with no long-term commitment. Reserved instances offer lower costs for a one- or three-year term, but require an upfront payment. Spot instances provide the most cost-effective pricing but are subject to availability and can be terminated if the spot price exceeds your bid.
+4. **Spot Instances:** Spot Instances allow you to bid for unused EC2 capacity at potentially lower costs than On-Demand pricing. However, these instances can be terminated by AWS if the capacity is needed by On-Demand customers.
 
-5. **Instance Size and Configuration**: The number of vCPUs, amount of memory (RAM), and other instance specifications affect the price.
+5. **Dedicated Hosts:** With Dedicated Hosts, you have dedicated physical servers for your use, providing visibility and control over the placement of your instances. Dedicated Hosts have a separate pricing model compared to regular EC2 instances.
 
-6. **Usage Time**: You pay for the compute capacity you use, so the total cost depends on the number of hours or seconds your instances are running.
+6. **Savings Plans:** Savings Plans offer significant savings over On-Demand pricing in exchange for a commitment to a consistent amount of usage (measured in $/hr) for a 1 or 3 year period. They provide flexibility across instance types, families, and regions.
 
-7. **Additional Features**: Additional services such as Elastic Block Store (EBS) storage, data transfer, and other AWS services used in conjunction with your EC2 instances can contribute to the overall cost.
+7. **Data Transfer and Storage:** In addition to compute costs, you may incur charges for data transfer between EC2 instances and other AWS services, as well as for any storage volumes attached to your instances.
 
 ## Diff types of instances?
-Amazon Web Services (AWS) offers a wide variety of EC2 (Elastic Compute Cloud) instances, each designed for specific use cases and workloads. These instances are categorized into several families, each with its own set of characteristics. As of my last knowledge update in September 2021, here are some of the key instance types and families:
+Amazon EC2 (Elastic Compute Cloud) offers a variety of instance types designed to meet different performance, computing, and memory requirements. Each instance type falls into a specific family based on its target use case. Here are some of the primary EC2 instance families:
 
-1. **General Purpose Instances (T2, M4, M5, M6, M7)**:
-   - T2: Burstable instances suitable for low to moderate workloads.
-   - M4, M5, M6, M7: Balanced instances with a good mix of CPU and memory resources, suitable for a wide range of applications.
+1. **General Purpose Instances:**
+   - **t3, t4g, t3a, t4g, t3e:** These instances are well-suited for a variety of diverse workloads and offer a balance of compute, memory, and networking resources.
 
-2. **Compute Optimized Instances (C4, C5, C6)**:
-   - C4, C5, C6: Instances optimized for CPU-intensive workloads such as batch processing and scientific computing.
+2. **Compute Optimized Instances:**
+   - **c6g, c5, c5a, c5n:** These instances are designed for compute-intensive workloads that require high-performance processors.
 
-3. **Memory Optimized Instances (R3, R4, R5, R6, X1, X2, X3)**:
-   - R3, R4, R5, R6: Instances designed for memory-intensive applications like databases and in-memory analytics.
-   - X1, X2, X3: Extremely high memory instances for in-memory databases and applications.
+3. **Memory Optimized Instances:**
+   - **u4, r7, r6g, r5, r5a, r5n, z1d:** Memory-optimized instances are tailored for memory-intensive applications, such as large-scale in-memory databases and real-time big data analytics.
 
-4. **Accelerated Computing Instances (P2, P3, G2, G3, F1, Inf1, G4dn)**:
-   - P2, P3: Instances with powerful GPUs, suitable for machine learning and high-performance computing (HPC).
-   - G2, G3, G4dn: GPU instances for graphics-intensive applications and machine learning.
-   - F1: FPGA-based instances for custom hardware acceleration.
-   - Inf1: Instances with AWS Inferentia chips for AI inference workloads.
+4. **Storage Optimized Instances:**
+   - **i3, i3en, d2, h1:** Storage-optimized instances are designed for workloads that require high, sequential read and write access to very large data sets on local storage.
 
-5. **Storage Optimized Instances (D2, H1, I3, I3en, D3)**:
-   - D2: Dense storage instances for data warehousing and big data analytics.
-   - H1: HDD-based instances for high-throughput, big data workloads.
-   - I3, I3en: SSD-based instances for I/O-intensive applications and databases.
-   - D3: Dense storage HDD-based instances for data-intensive workloads.
+5. **Accelerated Computing Instances:**
+   - **p4, p3, p2, inf1, g4ad, f1:** Accelerated computing instances use hardware accelerators, or co-processors, to perform functions such as floating-point number calculations, graphics processing, or data pattern matching more efficiently than software running on a general-purpose CPU.
+
+6. **Bare Metal Instances:**
+   - **i3 bare metal, i3en bare metal, m5 bare metal, m5zn bare metal, r5 bare metal, z1d bare metal:** These instances provide direct access to the underlying physical hardware and are ideal for applications that require access to the hardware feature set and performance of a specific EC2 instance type but need to run on bare metal.
+
+7. **Burstable Performance Instances:**
+   - **t3, t4g, t3a, t4g:** These instances provide a baseline level of CPU performance with the ability to burst above the baseline for short periods.
+
+8. **Graviton Instances:**
+   - **a1, m6g, c6g, r6g, t4g:** These instances use Arm-based processors (Graviton2) and are optimized for performance and cost-effectiveness.
+
+9. **High Performance Computing (HPC) Instances:**
+   - **hpc6i, hpc6id, hpc6gn, hpc6dgn:** These instances are designed for tightly-coupled, high-performance computing applications using a high bandwidth, low-latency network.
 
 ## what is aws lambda?
 AWS Lambda is a serverless compute service provided by Amazon Web Services (AWS) that allows you to run code without provisioning or managing servers. It enables developers to build and deploy applications as individual functions that are triggered by various events, such as changes to data in an Amazon S3 bucket, updates to a database, HTTP requests via API Gateway, or custom events from other AWS services. Lambda automatically scales the execution of these functions in response to the incoming workload, ensuring that you pay only for the compute time consumed by your code.
