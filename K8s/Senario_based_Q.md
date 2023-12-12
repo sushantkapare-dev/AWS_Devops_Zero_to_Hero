@@ -468,4 +468,91 @@ Here's a brief explanation of how HPA works in Kubernetes:
 
 Horizontal Pod Autoscaling is a key feature in Kubernetes that helps automate the management of your application's resources, making it easier to handle varying workloads and maintain consistent performance.
 
+## how to setup PV and PVC from scrach in k8s?
+To set up a Persistent Volume (PV) and Persistent Volume Claim (PVC) in Kubernetes, you need to follow these general steps. PVs and PVCs are used to provide persistent storage to your applications running in a Kubernetes cluster.
 
+Here's a step-by-step guide:
+
+### Step 1: Create a Persistent Volume (PV)
+
+1. **Create a YAML file for the PV definition.** For example, `pv.yaml`:
+
+    ```yaml
+    apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: example-pv
+    spec:
+      capacity:
+        storage: 1Gi
+      volumeMode: Filesystem
+      accessModes:
+        - ReadWriteOnce
+      hostPath:
+        path: /path/on/host
+    ```
+
+   This example sets up a PV with a capacity of 1Gi, using the host path `/path/on/host`. Adjust the capacity, access modes, and host path according to your requirements.
+
+2. **Apply the PV configuration:**
+
+    ```bash
+    kubectl apply -f pv.yaml
+    ```
+
+### Step 2: Create a Persistent Volume Claim (PVC)
+
+1. **Create a YAML file for the PVC definition.** For example, `pvc.yaml`:
+
+    ```yaml
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: example-pvc
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi
+    ```
+
+   This example sets up a PVC requesting 1Gi of storage with access mode ReadWriteOnce.
+
+2. **Apply the PVC configuration:**
+
+    ```bash
+    kubectl apply -f pvc.yaml
+    ```
+
+### Step 3: Use the PVC in a Pod
+
+Now that you have a PV and a PVC, you can use the PVC in a Pod. Create a Pod YAML file that references the PVC. For example:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example-pod
+spec:
+  containers:
+  - name: example-container
+    image: nginx
+    volumeMounts:
+    - name: storage-volume
+      mountPath: /data
+  volumes:
+  - name: storage-volume
+    persistentVolumeClaim:
+      claimName: example-pvc
+```
+
+This example sets up a Pod with an Nginx container that mounts the PVC at `/data`. Adjust the Pod definition and container specifications according to your application's needs.
+
+Finally, apply the Pod configuration:
+
+```bash
+kubectl apply -f pod.yaml
+```
+
+Now, your Pod is using persistent storage provided by the PVC.
