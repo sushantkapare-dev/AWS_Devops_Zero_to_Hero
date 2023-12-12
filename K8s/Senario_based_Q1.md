@@ -14,7 +14,7 @@
 
 ## How do you manage secrets in your Kubernetes project, and what role does Kubernetes Secret play?
 
-Can you explain a scenario where you would use a service mesh in Kubernetes, especially in terms of authentication and authorization?
+## Can you explain a scenario where you would use a service mesh in Kubernetes, especially in terms of authentication and authorization?
 
 Why are Pod Security Policies important in Kubernetes, and how would you implement them to enhance security?
 
