@@ -118,7 +118,73 @@ Performing rolling updates in Kubernetes without causing downtime involves updat
    - Ensure your application exposes health endpoints, and Kubernetes will use these to determine if a pod is ready to serve traffic.
 
 ## When you create a new version of your Docker image, what steps do you follow?
+Creating a new version of a Docker image involves a series of steps to build, tag, and push the updated image to a container registry. Here's a general guide on the steps you might follow:
 
+1. **Make Changes to Your Code:**
+   - Implement the desired changes or new features in your application code.
+
+2. **Update Versioning:**
+   - If your application has versioning, update the version number in your codebase or any relevant configuration files.
+
+3. **Build the Docker Image:**
+   - Build a new Docker image with the updated code. Navigate to the directory containing your Dockerfile and execute the following command:
+
+     ```bash
+     docker build -t your-registry/your-app:new-version .
+     ```
+
+   - Replace `your-registry` with the address of your container registry, `your-app` with the name of your application, and `new-version` with the updated version number or tag.
+
+4. **Test the New Image Locally:**
+   - Before pushing the image to a container registry, it's a good practice to test the new image locally to ensure that it works as expected.
+
+     ```bash
+     docker run -p 8080:80 your-registry/your-app:new-version
+     ```
+
+   - Adjust the port mapping based on your application configuration.
+
+5. **Tag the Image:**
+   - Tag the image with the appropriate version or tag. This step is crucial for versioning and identifying different releases.
+
+     ```bash
+     docker tag your-registry/your-app:new-version your-registry/your-app:latest
+     ```
+
+   - You can use version numbers or labels like `latest`, depending on your versioning strategy.
+
+6. **Push the Image to the Container Registry:**
+   - Push the newly tagged image to your container registry to make it accessible to your Kubernetes cluster or any other environment.
+
+     ```bash
+     docker push your-registry/your-app:new-version
+     docker push your-registry/your-app:latest
+     ```
+
+7. **Update Kubernetes Deployment:**
+   - If you're using Kubernetes, update your Deployment or StatefulSet with the new image version. This step triggers a rolling update of your application.
+
+     ```bash
+     kubectl set image deployment/your-app your-app-container=your-registry/your-app:new-version
+     ```
+
+8. **Monitor Deployment:**
+   - Monitor the deployment to ensure that the new version is rolled out successfully.
+
+     ```bash
+     kubectl rollout status deployment/your-app
+     ```
+
+9. **Clean Up:**
+   - Optionally, you can clean up local images if you don't need them anymore:
+
+     ```bash
+     docker rmi your-registry/your-app:new-version
+     docker rmi your-registry/your-app:latest
+     ```
+
+   - Be cautious about removing images if they are still in use or required for rollback purposes.
+   - 
 ## Have you ever worked with horizontal pod autoscaling (HPA) in Kubernetes? If so, how do you set it up?
 
 ## Explain the purpose of persistent storage in Kubernetes and why it's needed.
