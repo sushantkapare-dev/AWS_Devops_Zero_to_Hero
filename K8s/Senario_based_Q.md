@@ -358,3 +358,66 @@ if you need to update a configuration used by an application running within a Ku
    ```
    kubectl rollout status deployment/<deployment-name>
    ```
+
+   ## i have web application whch is deplyed on k8s so how can i rolling version to another step by step?
+   Rolling updates in Kubernetes allow you to update a deployed application to a new version gradually, minimizing downtime and ensuring a smooth transition. Here's a step-by-step guide on how to perform a rolling update in Kubernetes:
+
+**1. Prepare Your New Docker Image:**
+   Ensure that you have a new version of your application packaged as a Docker image and pushed to a container registry accessible to your Kubernetes cluster.
+
+**2. Update Deployment YAML:**
+   Modify the `Deployment` YAML file for your application to use the new Docker image. You can do this by changing the `image` field in the `spec.template.spec.containers` section.
+
+   ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: your-app
+   spec:
+     replicas: 3  # Adjust as needed
+     selector:
+       matchLabels:
+         app: your-app
+     template:
+       metadata:
+         labels:
+           app: your-app
+       spec:
+         containers:
+         - name: your-app-container
+           image: your-new-image:tag
+           ports:
+           - containerPort: 80
+   ```
+
+**3. Apply the Updated Configuration:**
+   Apply the changes to the Kubernetes cluster by running the following command:
+
+   ```bash
+   kubectl apply -f your-updated-deployment.yaml
+   ```
+
+**4. Monitor the Rolling Update:**
+   Use the following command to monitor the status of the rolling update:
+
+   ```bash
+   kubectl rollout status deployment/your-app
+   ```
+
+   This command will show you the progress of the rolling update, including the number of updated and available replicas.
+
+**5. Rollback (if necessary):**
+   If the rolling update encounters issues, you can rollback to the previous version using the following command:
+
+   ```bash
+   kubectl rollout undo deployment/your-app
+   ```
+
+**6. Adjust Rolling Update Parameters:**
+   You can adjust the rolling update parameters in the `strategy` section of your `Deployment` YAML to control the update behavior. For example, you can set the `maxUnavailable` and `maxSurge` values.
+
+**7. Testing:**
+   Before performing a rolling update in a production environment, it's a good practice to test the update in a staging environment to catch potential issues.
+
+**8. Continuous Deployment:**
+   Consider integrating a continuous deployment (CD) system to automate the rolling update process, making it easier to deploy new versions frequently and reliably.
