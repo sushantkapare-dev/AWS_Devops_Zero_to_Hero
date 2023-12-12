@@ -606,3 +606,63 @@ spec:
 ```
 
 In this example, the PodSecurityPolicy (`restrictive-psp`) specifies that pods must not run as privileged, must not use the host's network, IPC, or PID namespaces, and must run as a non-root user. It also allows only specific types of volumes.
+
+## give me the ral time senario where you used CRD in k8s?
+1. **Define a CRD:**
+   Create a Custom Resource Definition that captures the custom configuration. For example, you might want to manage the configuration for a caching microservice:
+
+   ```yaml
+   apiVersion: apiextensions.k8s.io/v1
+   kind: CustomResourceDefinition
+   metadata:
+     name: cachingconfigs.example.com
+   spec:
+     group: example.com
+     names:
+       kind: CachingConfig
+       plural: cachingconfigs
+     scope: Namespaced
+     versions:
+       - name: v1
+         served: true
+         storage: true
+     subresources:
+       status: {}
+   ```
+
+2. **Create a Custom Resource (CR):**
+   Users can now create custom resources based on the CRD. For instance, they might create a `CachingConfig` resource to configure the caching microservice:
+
+   ```yaml
+   apiVersion: example.com/v1
+   kind: CachingConfig
+   metadata:
+     name: my-caching-config
+   spec:
+     cacheSize: 512MB
+     evictionPolicy: LRU
+   ```
+
+3. **Controller Implementation:**
+   Develop a controller that watches for changes to the `CachingConfig` resources. When a new resource is created or an existing one is modified, the controller takes actions based on the configuration. It might deploy or update the caching microservice with the specified cache size and eviction policy.
+
+4. **Deployment:**
+   Deploy the CRD, CR, and controller to your Kubernetes cluster.
+
+   ```bash
+   kubectl apply -f caching-crd.yaml
+   kubectl apply -f caching-config.yaml
+   kubectl apply -f caching-controller.yaml
+   ```
+
+5. **User Interaction:**
+   Users can now manage the configuration of the caching microservice by creating, updating, or deleting `CachingConfig` resources. The controller ensures that the microservice adapts to the desired configuration.
+
+### Key Benefits:
+
+- **Declarative Configuration:** CRDs allow you to declaratively define and manage custom configurations using Kubernetes manifests.
+
+- **Automation:** The controller automates the application of configurations, reducing manual intervention.
+
+- **Consistency:** All configurations are managed in a consistent way, and users interact with them through familiar Kubernetes tools and practices.
+
