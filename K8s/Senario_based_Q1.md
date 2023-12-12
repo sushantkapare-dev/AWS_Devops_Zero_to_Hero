@@ -6,7 +6,7 @@
 
 ## Have you ever worked with horizontal pod autoscaling (HPA) in Kubernetes? If so, how do you set it up?
 
-##Explain the purpose of persistent storage in Kubernetes and why it's needed.
+## Explain the purpose of persistent storage in Kubernetes and why it's needed.
 
 ## Describe a scenario where you would use Persistent Volumes (PVs) and Persistent Volume Claims (PVCs) in Kubernetes.
 
