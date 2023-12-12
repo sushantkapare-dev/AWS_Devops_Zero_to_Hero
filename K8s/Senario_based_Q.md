@@ -556,3 +556,53 @@ kubectl apply -f pod.yaml
 ```
 
 Now, your Pod is using persistent storage provided by the PVC.
+
+## what is pod security policy in k8s?
+Pod Security Policy (PSP) in Kubernetes is a cluster-level resource that controls the security features a pod can use. It acts as a set of conditions that a pod must run with to be accepted into the system. PSP is an optional admission controller, and its purpose is to provide an additional layer of security by enforcing policies related to pod specifications.
+
+Key components and concepts of Pod Security Policies include:
+
+1. **PodSecurityPolicy Resource:**
+   A PodSecurityPolicy is a resource object in Kubernetes that defines a set of conditions and restrictions on pods. These conditions cover aspects such as:
+
+   - Running as a privileged user.
+   - Using host namespaces or PID namespaces.
+   - Allowing or disallowing certain volume types.
+   - Specifying SELinux or AppArmor profiles.
+   - Configuring allowed capabilities.
+
+2. **Admission Controller:**
+   To enforce Pod Security Policies, the `PodSecurityPolicy` admission controller must be enabled in the Kubernetes API server. This controller intercepts requests to create or update pods and checks them against the defined PodSecurityPolicies.
+
+3. **Roles and RoleBindings:**
+   Users or service accounts need the appropriate permissions to use a PodSecurityPolicy. This is achieved through Kubernetes RBAC (Role-Based Access Control) by creating `Roles` and `RoleBindings` associated with the PodSecurityPolicy resource.
+
+4. **ClusterRole and ClusterRoleBinding (Optional):**
+   If you want to enforce policies across namespaces, you can use `ClusterRole` and `ClusterRoleBinding` to grant permissions at the cluster level.
+
+Here is a simplified example of a PodSecurityPolicy:
+
+```yaml
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: restrictive-psp
+spec:
+  privileged: false
+  seLinux:
+    rule: RunAsAny
+  runAsUser:
+    rule: MustRunAsNonRoot
+  fsGroup:
+    rule: MustRunAs
+  volumes:
+  - 'emptyDir'
+  - 'secret'
+  - 'configMap'
+  - 'projected'
+  hostNetwork: false
+  hostIPC: false
+  hostPID: false
+```
+
+In this example, the PodSecurityPolicy (`restrictive-psp`) specifies that pods must not run as privileged, must not use the host's network, IPC, or PID namespaces, and must run as a non-root user. It also allows only specific types of volumes.
