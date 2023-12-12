@@ -43,6 +43,79 @@
     - Implement backup and recovery strategies for critical data and configurations.
 
 ## How do you perform rolling updates for your application in Kubernetes without causing downtime?
+Performing rolling updates in Kubernetes without causing downtime involves updating your application in a way that ensures a smooth transition from the old version to the new version. Kubernetes provides several mechanisms to achieve this. Here's a step-by-step guide:
+
+1. **Use Deployment or StatefulSet:**
+   - Deploy your application using either a Deployment or StatefulSet resource. These resources provide rolling update strategies by default.
+
+   ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: your-app
+   spec:
+     replicas: 3
+     selector:
+       matchLabels:
+         app: your-app
+     template:
+       metadata:
+         labels:
+           app: your-app
+       spec:
+         containers:
+         - name: your-app-container
+           image: your-registry/your-app:old-version
+   ```
+
+2. **Update Container Image:**
+   - Build and push the new version of your application to the container registry.
+
+   ```bash
+   docker build -t your-registry/your-app:new-version .
+   docker push your-registry/your-app:new-version
+   ```
+
+3. **Update Deployment:**
+   - Update the Deployment or StatefulSet with the new version of the container image. Kubernetes will automatically manage the rolling update.
+
+   ```bash
+   kubectl set image deployment/your-app your-app-container=your-registry/your-app:new-version
+   ```
+
+4. **Monitor the Update:**
+   - Monitor the progress of the rolling update using the following command:
+
+   ```bash
+   kubectl rollout status deployment/your-app
+   ```
+
+5. **Rollback (if needed):**
+   - If issues arise during the update, you can perform a rollback to the previous version.
+
+   ```bash
+   kubectl rollout undo deployment/your-app
+   ```
+
+6. **Pod Disruption Budget (Optional):**
+   - Implement Pod Disruption Budgets to limit the number of concurrently disrupted pods during the update.
+
+   ```yaml
+   apiVersion: policy/v1beta1
+   kind: PodDisruptionBudget
+   metadata:
+     name: your-app-pdb
+   spec:
+     maxUnavailable: 1
+     selector:
+       matchLabels:
+         app: your-app
+   ```
+
+   This ensures that no more than one pod is down at any given time during the update.
+
+7. **Health Checks:**
+   - Ensure your application exposes health endpoints, and Kubernetes will use these to determine if a pod is ready to serve traffic.
 
 ## When you create a new version of your Docker image, what steps do you follow?
 
