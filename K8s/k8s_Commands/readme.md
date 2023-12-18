@@ -40,7 +40,13 @@ kubectl get deployments
 ```
 # Get information in YAML format
 kubectl get pods -o yaml
+
 # Get information in JSON format
 kubectl get services -o json
+```
+# Kubectl Describe
+```
+# Describe a resource
+kubectl describe pod <pod-name>
 ```
 
