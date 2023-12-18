@@ -57,4 +57,11 @@ https://kubernetes.io/docs/tasks/manage-kubernetes-objects/imperative-command/
 # Create a Deployment imperatively
 kubectl create deployment redis-deploy --image=redis --replicas
 ```
+# Kubectl Create Commands
+```
+# Create a Deployment with Redis image and 2 replicas
+kubectl create deployment redis-deploy --image=redis --replicas=2
 
+# Create an Nginx Deployment
+kubectl create deployment nginx-deploy --image=nginx
+```
