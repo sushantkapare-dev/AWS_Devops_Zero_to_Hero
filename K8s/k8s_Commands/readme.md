@@ -65,3 +65,40 @@ kubectl create deployment redis-deploy --image=redis --replicas=2
 # Create an Nginx Deployment
 kubectl create deployment nginx-deploy --image=nginx
 ```
+# Create a Pod
+```
+# Create a Pod
+kubectl run <pod-name> --image=<image-name>
+```
+# Edit Commands
+```
+# Edit a Deployment imperatively
+kubectl edit deployment <deployment-name>
+
+# Scale a Deployment imperatively
+kubectl scale deployment <deployment-name> --replicas=3
+```
+# Kubectl Replace - Force
+```
+# Replace and force update an object
+kubectl replace --force -f <manifest_file>
+```
+# Debugging Commands
+```
+# Create a Deployment for debugging
+kubectl create deployment debug-deploy --image=alpine
+
+# View logs of a pod
+kubectl logs <pod-name>
+
+# Execute a command inside a container
+kubectl exec -it <pod-name> -- /bin/sh
+```
+# Logging and Monitoring Commands
+```
+# View logs of a pod
+kubectl logs <pod-name>
+
+# Display Resource Usage (CPU and Memory) of Pods
+kubectl top pods
+```
