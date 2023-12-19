@@ -22,4 +22,11 @@ lsof - List Open Files:
 ## iptables - IP Packet Filter:
 - Configure IP packet filter rules.
 
-- 
+## grep - Search Text Patterns:
+- Search for patterns in files.
+
+## awk '{print $NF}' - Extract Last Column:
+- Extract and print the last column from a file.
+
+## tee - Redirect Output to File and Terminal:
+- Redirect output to a file and display it on the terminal
