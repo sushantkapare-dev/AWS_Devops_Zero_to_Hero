@@ -57,3 +57,9 @@ Redis is an open-source, high-performance, in-memory data store that serves as a
    - **Use Case:** Implementing a lightweight message broker for communication between different components or services.
    - **Example:** Using Redis Pub/Sub for a chat application. Clients subscribe to channels of interest, and when a user sends a message, the server publishes it to the corresponding channel. Subscribed clients receive real-time updates.
 
+## How to keep data Persistant in Redis?
+
+## How to scale Redis DB?
+
+## Process of running Redis in K8s?
+
