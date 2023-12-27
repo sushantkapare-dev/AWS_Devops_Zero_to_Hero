@@ -17,4 +17,6 @@ GitOps is a way of managing Kubernetes clusters using Git as the source of truth
 
 ### GitOps Tools
 
-- [ArgoCD](../ArgoCD/README.md) is a git controller that can be used to deploy applications to a Kubernetes cluster. 
+- [ArgoCD](../ArgoCD/README.md) is a git controller that can be used to deploy applications to a Kubernetes cluster.
+
+- 
