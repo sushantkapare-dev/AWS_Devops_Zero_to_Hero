@@ -628,3 +628,7 @@ Grouping in Ansible refers to the practice of organizing and categorizing hosts 
 
 ## what is cowsay in ansible?
 In Ansible, "cowsay" is a playful and optional feature that adds a touch of humor to playbook output. When enabled, Ansible's "cowsay" module replaces the standard output with a speech bubble containing a message from a character resembling a cow. This feature doesn't impact the functionality of Ansible but is a fun and lighthearted way to inject personality into the otherwise serious task of running playbooks. While not essential for practical use, "cowsay" can be activated using the `cowsay` configuration option in the ansible.cfg file or as a command-line flag, providing users with a whimsical and customizable experience during playbook execution.
+
+## How to continue ansible playbook tasks even if some of its tasks are fails?
+we use "ignore_errors" keyword to continue destipe the failure
+
