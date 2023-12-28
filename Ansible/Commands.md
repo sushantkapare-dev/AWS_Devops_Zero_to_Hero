@@ -38,8 +38,11 @@ ansible-lint <playbook.yml>
 ansible-playbook --check demo.yml 
 
 --diff
+
 --list-hosts
+
 --list-tasks
+
 --syntax-check
 
 ## ansible-vault to encrypt data
@@ -47,6 +50,7 @@ ansible-vault create creds.yml
 
 ## ansible-vault to view data
 ansible-vault view creds.yml
+
 
 ## ansible-vault to decrypt data
 ansible-vault decrypt creds.yml
