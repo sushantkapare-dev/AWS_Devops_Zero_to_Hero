@@ -59,3 +59,5 @@ Explain the concept of continuous monitoring in DevSecOps. Why is it essential, 
 How does DevSecOps address regulatory compliance? Discuss the strategies for ensuring compliance in a DevSecOps environment.
 
 Feel free to contribute to this repository by adding more questions or providing insightful answers! Happy interviewing! 🌐💬
+
+
