@@ -1,0 +1,13 @@
+---
+- name: Kill a process
+  hosts: all
+
+  tasks:
+  - name: Find a process and kill it
+    ignore_errors: yes
+    shell: "pgrep nginx | xargs kill"
+
+  - name: Start the service
+    service:
+      name: nginx
+      state: started

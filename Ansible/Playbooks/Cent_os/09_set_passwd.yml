@@ -1,0 +1,10 @@
+---
+- name: Set Password
+  hosts: all
+
+  tasks:
+  - name: Set passwd
+    user:
+      name: nick
+      update_password: always
+      password: "{{'abcd12345' | password_hash('sha512', 'mysecretcode')}}"
