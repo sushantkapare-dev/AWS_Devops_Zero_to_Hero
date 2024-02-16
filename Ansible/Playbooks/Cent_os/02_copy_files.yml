@@ -1,0 +1,13 @@
+---
+- name: Copying files to remote
+  hosts: all
+
+  tasks:
+  - name: Copy files
+    copy:
+        src: /home/ubuntu/myfile.txt
+        dest: /tmp/
+        owner: jarvis
+        group: jarvis
+        mode: ugo=rw
+        backup: true
