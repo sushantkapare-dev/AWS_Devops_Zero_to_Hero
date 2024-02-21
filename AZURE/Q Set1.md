@@ -13,3 +13,5 @@
 ## Your team has various roles with different access needs. How would you configure RBAC within Azure Pipelines to ensure users have appropriate permissions?
 
 ## You want to automate infrastructure provisioning and deployment alongside your application code. How would you integrate infrastructure as code (IaC) tools like Terraform with Azure Pipelines?
+
+## How would you ensure overall security within your Azure Pipelines throughout the CI/CD process, from code building to deployment?
