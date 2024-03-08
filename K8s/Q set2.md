@@ -596,3 +596,8 @@ In Kubernetes, operators are a powerful extension mechanism that automates the m
 **"Pod Priority"**:- refers to a mechanism for assigning relative importance or priority levels to pods within a cluster. This enables Kubernetes to make scheduling decisions based on pod priorities, ensuring that higher-priority pods are given precedence over lower-priority pods when allocating cluster resources. 
 
 **"PriorityClass"**:- is a Kubernetes resource used to define these priority levels and associated values, such as priority values and preemption policies. By using PriorityClass, administrators can control the scheduling and resource allocation behavior of pods, helping to meet the specific performance and availability requirements of different workloads running in the cluster.
+
+## explain diff between deplyment and svc yml files in k8s?
+The `deployment.yaml` file is primarily used to define and manage the deployment of application pods. It specifies details such as the container image, desired replica count, update strategy, and other parameters related to running and scaling the application. The deployment file essentially declares how the application should be deployed and maintained within the cluster.
+
+the `service.yaml` file is used to define a Kubernetes service, which provides a stable endpoint for accessing the application pods. Services enable communication and load balancing across the pods, abstracting the underlying pod IPs and providing a consistent way to access the application. The service file includes information such as the service type (ClusterIP, NodePort, LoadBalancer), port mappings, and selectors to determine which pods should be part of the service.
