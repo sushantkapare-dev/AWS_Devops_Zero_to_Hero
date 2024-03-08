@@ -95,3 +95,5 @@ Answer: Best practices include:
 ## Explain how you can monitor and analyze CloudWatch Alarms and metrics programmatically using the AWS SDKs or APIs.
 
 Answer: You can programmatically monitor and analyze CloudWatch Alarms and metrics using the AWS SDKs and APIs. These tools allow you to create, update, and delete alarms, retrieve metric data, and automate alerting and responses to various events in your environment.
+
+## what is metrix and traces in cloudwatch
