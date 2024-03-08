@@ -118,3 +118,7 @@ Here are some key metrics considered in SonarQube:
 10. **Coverage by Unit Tests:**
     - **Definition:** This metric shows the percentage of lines or branches covered by unit tests.
     - **Metric:** SonarQube calculates and displays the coverage by unit tests to help teams assess the effectiveness of their test suite.
+
+## explain sonarqube policies ?
+
+SonarQube policies are sets of rules and conditions that define the code quality standards enforced during the software development lifecycle. These policies encompass various aspects such as code duplication, security vulnerabilities, and maintainability. For instance, a policy might stipulate that any code with a security rating above a certain threshold is unacceptable, preventing the integration of insecure code into the codebase. By configuring and adhering to these policies, development teams ensure consistent and high-quality code, facilitating early identification and remediation of potential issues, and ultimately contributing to the overall robustness and security of the software.
