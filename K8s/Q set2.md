@@ -601,3 +601,18 @@ In Kubernetes, operators are a powerful extension mechanism that automates the m
 The `deployment.yaml` file is primarily used to define and manage the deployment of application pods. It specifies details such as the container image, desired replica count, update strategy, and other parameters related to running and scaling the application. The deployment file essentially declares how the application should be deployed and maintained within the cluster.
 
 the `service.yaml` file is used to define a Kubernetes service, which provides a stable endpoint for accessing the application pods. Services enable communication and load balancing across the pods, abstracting the underlying pod IPs and providing a consistent way to access the application. The service file includes information such as the service type (ClusterIP, NodePort, LoadBalancer), port mappings, and selectors to determine which pods should be part of the service.
+
+## Diff tools for container  scanning?
+1. **Clair:**
+   - **Description:** Clair is an open-source container image security scanner developed by CoreOS. It analyzes layers within container images to identify known vulnerabilities. Clair integrates with container orchestration platforms like Kubernetes.
+
+2. **Trivy:**
+   - **Description:** Trivy is a lightweight and fast container image scanner. It supports scanning container images for vulnerabilities using vulnerability databases such as CVE, Red Hat, and others. Trivy can be easily integrated into CI/CD pipelines.
+
+3. **Anchore Engine:**
+   - **Description:** Anchore Engine is an open-source tool for container image analysis. It provides detailed reports on image contents, including package information and security vulnerabilities. Anchore supports policy evaluation for compliance checking.
+
+4. **Docker Bench for Security:**
+   - **Description:** Docker Bench for Security is a set of scripts provided by Docker that checks for common best-practices around deploying Docker containers securely. It's not an image scanner but rather a tool to assess the security of your Docker deployment.
+
+
