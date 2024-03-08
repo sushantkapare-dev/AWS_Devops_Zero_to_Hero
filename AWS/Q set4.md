@@ -5,6 +5,9 @@ The Zero Trust security model is a cybersecurity framework that rejects the trad
 **Key principles of the Zero Trust security model include:**
 
 **Verify Identity:** Instead of trusting users and devices based on their location or network, Zero Trust emphasizes the need to verify the identity of users, devices, and applications before granting access.
-
+8
 **Least Privilege:** Users and systems are granted the minimum level of access necessary to perform their tasks. This minimizes the potential damage that can occur if a user account is compromised.
 
+**Micro-Segmentation:** Networks are segmented into smaller, isolated zones to contain potential breaches. This way, even if an attacker gains access to one segment, their movement within the network is restricted.
+
+**Continuous Monitoring:** Continuous monitoring of user and device behavior is crucial in a Zero Trust model. This involves analyzing network traffic, user activities, and other relevant data to detect any anomalous behavior that might indicate a security threat.
