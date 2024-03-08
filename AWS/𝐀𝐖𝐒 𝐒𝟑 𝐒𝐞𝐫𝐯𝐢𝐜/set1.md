@@ -91,3 +91,40 @@ Answer: S3 Select can be integrated with AWS Glue to perform data transformation
 ## What is the difference between S3 Transfer Acceleration and direct uploads to S3? When would you use Transfer Acceleration?
 
 Answer: S3 Transfer Acceleration uses Amazon CloudFront to accelerate uploads to S3 by optimizing the network path. It’s ideal when you need to improve the speed of uploading large amounts of data to S3 from different geographical locations or when your network conditions are less than optimal.
+
+## How do you access s3 bucket from VPC without internet ?
+### Method 1: VPC Endpoint for Amazon S3
+
+1. **Create a VPC Endpoint:**
+   - In the AWS Management Console, navigate to the VPC service.
+   - Create a VPC endpoint for S3 in your VPC.
+   - Ensure that the endpoint is associated with the correct route tables.
+
+2. **IAM Policy:**
+   - Attach an IAM policy to your IAM roles or users to grant permissions for S3 access. The policy should include permissions for the necessary S3 actions.
+
+3. **Bucket Policy:**
+   - Update the S3 bucket policy to allow access from your VPC's IP range. Modify the bucket policy to explicitly allow the VPC endpoint to access the S3 bucket.
+
+### Method 2: VPC Peering
+
+1. **VPC Peering:**
+   - Establish a VPC peering connection between your VPC and the VPC where the S3 bucket resides.
+
+2. **IAM Policy:**
+   - Attach an IAM policy to your IAM roles or users, granting permissions for S3 access.
+
+3. **Bucket Policy:**
+   - Update the S3 bucket policy to allow access from the CIDR block of the peered VPC.
+
+### Method 3: AWS Direct Connect
+
+1. **AWS Direct Connect:**
+   - Set up an AWS Direct Connect connection between your on-premises data center or office network and your VPC.
+
+2. **IAM Policy:**
+   - Attach an IAM policy to your IAM roles or users, granting permissions for S3 access.
+
+3. **Bucket Policy:**
+   - Update the S3 bucket policy to allow access from the CIDR block associated with your Direct Connect connection.
+
