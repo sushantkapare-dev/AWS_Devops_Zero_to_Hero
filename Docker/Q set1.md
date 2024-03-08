@@ -973,5 +973,30 @@ Multi-stage Docker builds provide several advantages for creating smaller, more 
    - **Advantage:** Multi-stage builds support cross-platform development, allowing you to build application images for different operating systems or architectures in a single Dockerfile.
    - **Use Case:** Useful for scenarios where you need to build and deploy images on multiple platforms.
 
+## container is in pending state what are the reason ?
+**Resource Constraints:**
+   - The cluster may not have enough resources (CPU, memory, etc.) to accommodate the container. Check the resource requests and limits specified in the container's configuration.
 
+**Image Pulling:**
+   - The container runtime may be pulling the container image from a container registry. If the image is large or the network is slow, it might take some time. Check the container runtime logs for any issues related to image pulling.
 
+**Node Unavailability:**
+   - The node where the container is scheduled might be temporarily unavailable or not ready. This could be due to maintenance, network issues, or other node problems.
+
+**Pod Scheduling Constraints:**
+   - If you have specified node selectors, affinity, or anti-affinity rules in your pod configuration, the scheduler might be struggling to find a suitable node that meets those constraints.
+
+**Pending Pod Queues:**
+   - There could be a backlog of pods waiting to be scheduled on the cluster, causing your pod to be in a pending state. Check the overall cluster health and the number of pending pods.
+
+**CrashLoopBackOff:**
+   - If a container repeatedly fails to start and crashes immediately, it may enter a "CrashLoopBackOff" state, preventing it from moving to a running state. Check the container logs for any error messages.
+
+**Init Container Issues:**
+   - If your pod has init containers, and they fail, it can prevent the main container from starting. Check the logs of both the main container and any init containers for issues.
+
+**Pending Cluster Quotas:**
+   - The cluster may have resource quotas in place, and reaching those limits could prevent the scheduling of new pods. Check the cluster resource quotas.
+
+**Incorrect Image Name or Tag:**
+    - Ensure that the image name and tag specified in the pod's container specification are correct. An incorrect image name or tag can lead to image pulling failures.
