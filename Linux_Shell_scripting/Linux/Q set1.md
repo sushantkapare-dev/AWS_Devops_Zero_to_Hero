@@ -1,42 +1,81 @@
 Q: How do you change file permissions in Linux?
+
 Q: What is a process in Linux?
+
 Q: How do you view active processes in Linux?
+
 Q: How do you kill a process in Linux?
+
 Q: What is a daemon in Linux?
+
 Q: What is the use of the df command in Linux?
+
 Q: What does the free command do in Linux?
+
 Q: Explain the purpose of the grep command.
+
 Q: How do you compress and extract files in Linux?
+
 Q: What is a symbolic link in Linux?
+
 Q: What are inodes in Linux?
+
 Q: What is the purpose of the crontab in Linux?
+
 Q: How can you find the IP address of a Linux server?
+
 Q: Explain the purpose of the sshd service.
+
 Q: How do you check the status of a service in Linux?
 Q: What is the purpose of the /etc/passwd file?
+
+
 Q: Explain the use of the vi editor.
+
 Q: How do you search for a file in Linux?
+
 Q: What is the purpose of the iptables?
+
 Q: What are environment variables in Linux?
+
 Q: How do you set an environment variable in Linux?
+
 Q: What is the purpose of the /etc/shadow file?
+
 Q: Explain the use of the ping command.
+
 Q: What is the difference between wget and curl?
+
 Q: How do you check disk usage in Linux?
+
 Q: Explain the use of the tail command.
+
 Q: What is the purpose of the xargs command?
+
 Q: How do you schedule a task in Linux?
+
 Q: What is a package manager in Linux?
+
 Q: Name some common package managers in Linux.
+
 Q: What is the difference between yum and rpm?
+
 Q: How do you list all installed packages in Linux?
+
 Q: What is a Linux service?
+
 Q: How do you start, stop, and restart services in Linux?
+
 Q: Explain the purpose of the /etc/fstab file.
+
 Q: What is LVM and what are its advantages?
+
 Q: How do you create a simple script in Linux?
+
 Q: What is the use of the nohup command?
+
 Q: Explain the use of the sed command.
+
 Q: What is the purpose of the /var directory?
 Q: How do you monitor system performance in Linux?
 Q: Explain the purpose of the ssh command.
