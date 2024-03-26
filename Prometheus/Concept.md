@@ -7,6 +7,9 @@ Prometheus collects metrics by scraping targets who expose metrics through an HT
 - Disk space
 - Service Uptime
 - Application sepecific data
-      - Number of expectation
-      - Latency
-      - Pending Requests
+  
+      Number of expectation
+  
+      Latency
+  
+      Pending Requests
