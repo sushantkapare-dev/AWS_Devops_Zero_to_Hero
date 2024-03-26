@@ -13,3 +13,24 @@ Prometheus collects metrics by scraping targets who expose metrics through an HT
       Latency
   
       Pending Requests
+
+## Data monitor
+- Prometheus design to monitor time-series data that is ***numeric***
+- Prometheus is not design to monitor ***Events*** , ***System logs*** , ****Traces***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
