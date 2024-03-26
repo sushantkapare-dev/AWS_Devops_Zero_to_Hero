@@ -18,6 +18,8 @@ Prometheus collects metrics by scraping targets who expose metrics through an HT
 - Prometheus design to monitor time-series data that is ***numeric***
 - Prometheus is not design to monitor ***Events*** , ***System logs*** , ****Traces***
 
+## Prometheus Architecture ?
+![Prometheus jpg](https://github.com/SushantOps/AWS_Devops_Zero_to_Hero/assets/109059766/01c66126-2a8a-43f1-aadb-ad90794cc449)
 
 
 
