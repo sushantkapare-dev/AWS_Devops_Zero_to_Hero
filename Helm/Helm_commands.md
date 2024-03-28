@@ -133,7 +133,34 @@ helm history [release]
 ```
 helm env
 ```
-
+# Chart Management
+### Create a directory containing the common chart files and directories (chart.yaml, values.yaml, charts/ and templates/):
+```
+helm create [name]
+```
+### Package a chart into a chart archive:
+```
+helm package [chart-path]
+```
+### Run tests to examine a chart and identify possible issues:
+```
+helm lint [chart]
+```
+### Inspect a chart and list its contents:
+```
+helm show all [chart]
+```
+### Display the chart’s definition:
+```
+helm show chart [chart]
+```
+### Display the chart’s values:
+```
+helm show values [chart]
+```
+### Download a chart:
+```
+helm pull [chart]
 ```
 
 
