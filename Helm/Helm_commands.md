@@ -66,6 +66,75 @@ helm get values [release]
 ```
 helm history [release]
 ```
+# Add, Remove, and Update Repositories
+### Add a repository from the internet:
+```
+helm repo add [repository-name] [url]
+```
+### Remove a repository from your system:
+```
+helm repo remove [repository-name]
+```
+### Update repositories:
+```
+helm repo update
+```
+# List and Search Repositories
+### List chart repositories:
+```
+helm repo list
+```
+### Generate an index file containing charts found in the current directory:
+```
+helm repo index
+```
+### Search charts for a keyword:
+```
+helm search [keyword]
+```
+### Search repositories for a keyword:
+```
+helm search repo [keyword]
+```
+### Search Helm Hub:
+```
+helm search hub [keyword]
+```
+# Release Monitoring
+### List all available releases in the current namespace:
+```
+helm list
+```
+### List all available releases across all namespaces:
+```
+helm list --all-namespaces
+```
+### List all releases in a specific namespace:
+```
+helm list --namespace [namespace]
+```
+### List all releases in a specific output format:
+```
+helm list --output [format]
+```
+### Apply a filter to the list of releases using regular expressions:
+```
+helm list --filter '[expression]'
+```
+### See the status of a specific release:
+```
+helm status [release]
+```
+### Display the release history:
+```
+helm history [release]
+```
+### See information about the Helm client environment:
+```
+helm env
+```
+
+```
 
 
 
