@@ -41,3 +41,35 @@ helm upgrade [release] [chart] --version [version-number]
 ```
 helm rollback [release] [revision]
 ```
+# Download Release Information
+### Download all the release information:
+```
+helm get all [release]
+```
+### Download all hooks:
+```
+helm get hooks [release]
+```
+### Download the manifest:
+```
+helm get manifest [release]
+```
+### Download the notes:
+```
+helm get notes [release]
+```
+### Download the values file:
+```
+helm get values [release]
+```
+### Fetch release history:
+```
+helm history [release]
+```
+
+
+
+
+
+
+
