@@ -280,3 +280,8 @@ The rsync command is a powerful file synchronization and transfer utility used i
 # What is the difference between PATH and LD_LIBRARY_PATH?
 
 # How do you create a read-only file in Linux?
+
+# How encode and decode the name 
+
+# diff between encoding and encryption
+
