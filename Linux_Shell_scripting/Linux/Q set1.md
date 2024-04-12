@@ -170,35 +170,52 @@ sed [options] 'command' [file]
 # What is the purpose of the /var directory?
 The /var directory in Linux serves as a location for variable data files that are expected to change during normal system operation. Its name stands for "variable," indicating that the contents of this directory are subject to frequent modification.
 
-# How do you monitor system performance in Linux?
-
-# Explain the purpose of the ssh command.
-
 # How do you secure an SSH server?
+To secure an SSH server, ensure strong authentication methods such as SSH keys or multi-factor authentication are implemented, disable root login and use a non-standard port, regularly update the SSH software, configure firewall rules to limit access, employ tools like fail2ban to block repeated failed login attempts, and regularly monitor logs for suspicious activity. Regular security audits and patches are also crucial to maintain a secure SSH environment.
 
 # What is the purpose of the /home directory?
+The "/home" directory in Unix-like operating systems is intended for storing user-specific files and personal data. Each user typically has their own subdirectory within "/home" where they can store documents, configurations, and other personal files. This segregation facilitates user management, file organization, and security by providing each user with their own designated space on the system.
 
 # Explain the use of the awk command.
+The awk command is a powerful text processing tool in Unix-like operating systems used for manipulating and analyzing text data. It operates by processing input data line by line and allows users to define actions based on patterns within the data. awk uses a pattern-action paradigm, where patterns are conditions that must be met, and corresponding actions are executed when a pattern is matched. 
 
 # What is swap space in Linux?
+In Linux, swap space is a dedicated area on a storage device (usually a hard disk or SSD) that the operating system uses as virtual memory when physical RAM (Random Access Memory) is full. When the system runs out of available RAM, it moves less frequently used data from RAM to the swap space, allowing the system to continue running without crashing due to memory exhaustion. 
 
-# How do you create a swap file in Linux?
 
 #  What is the purpose of the /etc/hosts file?
+The "/etc/hosts" file is a plain text file used by operating systems like Unix and Linux to map hostnames to IP addresses locally. It serves as a local DNS (Domain Name System) resolver for the system, allowing users to define custom mappings of hostnames to IP addresses without relying on an external DNS server. This file is commonly used to override DNS resolution for specific domains or to define local hostnames for networked devices. It is often used for testing purposes, to set up local development environments, or to block access to certain websites by redirecting their domain names to localhost.
 
 # How do you set a static IP address in Linux?
+To set a static IP address in Linux, you typically need to modify the network configuration files. Here's a general guide on how to do it:
+
+1. **Identify the Network Interface:** Determine which network interface you want to configure. You can use the `ifconfig` or `ip addr` command to list all network interfaces.
+
+2. **Edit the Network Configuration File:** Depending on your Linux distribution, the network configuration file may vary. Commonly used ones include:
+   - For systems using systemd (such as Ubuntu 16.04 and later, CentOS 7, etc.): Edit the configuration file under `/etc/netplan/`.
+   - For systems using traditional network configuration (such as Ubuntu 14.04 and earlier, CentOS 6, etc.): Edit the configuration file under `/etc/sysconfig/network-scripts/`.
+
+3. **Specify the Static IP Address:** Within the network configuration file, locate the configuration for your network interface (usually named something like `eth0`, `ens33`, etc.) and specify the static IP address, netmask, gateway, and DNS servers. For example:
+   ```
+   address 192.168.1.100
+   netmask 255.255.255.0
+   gateway 192.168.1.1
+   dns-nameservers 8.8.8.8 8.8.4.4
+   ```
+
+4. **Restart Networking Services:** After saving the changes, restart the networking service to apply the new configuration. Use commands like `sudo systemctl restart networking` or `sudo systemctl restart NetworkManager` depending on your distribution.
+
+5. **Verify Configuration:** Use commands like `ip addr show` or `ifconfig` to verify that the static IP address has been configured correctly.
+
+6. **Test Connectivity:** Ensure that you can still access the network and the internet with the newly configured static IP address.
+
+By following these steps, you can successfully set a static IP address in Linux.
 
 # Explain the purpose of the nslookup command.
-
-# What is the difference between iptables and firewalld?
-
-# What are runlevels in Linux?
-
-# How do you change runlevels?
-
-# What is the purpose of the /boot directory?
+The nslookup command is a network administration tool used for querying DNS (Domain Name System) servers to obtain domain name or IP address information. Its primary purpose is to retrieve DNS-related information such as IP addresses associated with domain names, or domain names associated with IP addresses. 
 
 # Explain the purpose of the rsync command.
+The rsync command is a powerful file synchronization and transfer utility used in Unix-like operating systems. Its primary purpose is to efficiently copy and synchronize files and directories either locally or between remote hosts. 
 
 # What is a Linux distribution?
 
