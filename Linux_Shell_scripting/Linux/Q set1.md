@@ -217,11 +217,31 @@ The nslookup command is a network administration tool used for querying DNS (Dom
 # Explain the purpose of the rsync command.
 The rsync command is a powerful file synchronization and transfer utility used in Unix-like operating systems. Its primary purpose is to efficiently copy and synchronize files and directories either locally or between remote hosts. 
 
-# What is a Linux distribution?
-
 # Name some popular Linux distributions.
+***Ubuntu***
+
+Debian
+
+CentOS
+
+Fedora
+
+openSUSE
+
+Kali Linux
 
 # How do you change the hostname of a Linux system?
+```
+hostname
+sudo hostnamectl set-hostname new-hostname
+sudo nano /etc/hostname
+sudo nano /etc/hosts
+127.0.0.1   localhost new-hostname
+sudo systemctl restart systemd-hostnamed
+hostname
+sudo reboot
+```
+
 
 # What are system logs and where are they located?
 
