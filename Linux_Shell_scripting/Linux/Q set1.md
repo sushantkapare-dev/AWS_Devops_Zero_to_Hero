@@ -1,126 +1,210 @@
-Q: How do you change file permissions in Linux?
+#  How do you change file permissions in Linux?
+```
+chmod options permissions filename
+```
 
-Q: What is a process in Linux?
+# What is a process in Linux?
+In Linux, a process is a running instance of a program. It represents the execution of a particular program along with its associated data and resources. Each process has its own unique identifier (PID) and may have its own set of permissions, memory space, and environment variables.
 
-Q: How do you view active processes in Linux?
+#  How do you view active processes in Linux?
+```
+ps -aux
+```
 
-Q: How do you kill a process in Linux?
+# How do you kill a process in Linux?
+```
+kill PID
+```
+forcefully kill
+ ```
+kill -9  PID
+```
+#  What is a daemon in Linux?
+In Linux, a daemon is a background process that runs continuously, providing specific services or performing tasks without direct user interaction
 
-Q: What is a daemon in Linux?
+#  What is the use of the df command in Linux?
+The df command in Linux is used to display information about the disk space usage on the file system(s) that are currently mounted. It provides details such as total disk space, used space, available space, and filesystem type for each mounted partition or filesystem.
+```
+df -h
+```
 
-Q: What is the use of the df command in Linux?
+# What does the free command do in Linux?
+The free command in Linux is used to display information about the system's memory usage, both physical (RAM) and swap space. It provides details such as total memory, used memory, free memory, shared memory, buffers, and cached memory.
+```
+free -h
+```
+# Explain the purpose of the grep command.
+The grep command in Linux is used to search for specific patterns or regular expressions within text files or the output of other commands.
 
-Q: What does the free command do in Linux?
+# How do you compress and extract files in Linux?
+Compressing Files:
+```
+tar -czf example.tar.gz example.txt
+```
+Extracting Files:
+```
+tar -xzf example.tar.gz
+```
 
-Q: Explain the purpose of the grep command.
+# What is a symbolic link in Linux?
+In Linux, a symbolic link, also known as a symlink or soft link, is a special type of file that acts as a pointer to another file or directory in the filesystem. Instead of containing the actual data of the target file or directory, a symbolic link contains a path pointing to the location of the target.
 
-Q: How do you compress and extract files in Linux?
+# What are inodes in Linux?
+In Linux, an inode (index node) is a data structure used by the file system to represent a file or directory. Each file or directory on a Linux file system is associated with an inode, which contains metadata about the file or directory, such as its size, ownership, permissions, timestamps, and pointers to the data blocks on the disk where the actual contents of the file are stored.
 
-Q: What is a symbolic link in Linux?
+# What is the purpose of the crontab in Linux?
+In Linux, the crontab (cron table) is a system utility used to schedule and automate recurring tasks or commands. It allows users to specify commands or scripts that should be executed at specific intervals, such as daily, weekly, monthly, or at custom intervals.
+```
+* * * * * command_to_execute
+```
 
-Q: What are inodes in Linux?
+# How can you find the IP address of a Linux server?
 
-Q: What is the purpose of the crontab in Linux?
+# Explain the purpose of the sshd service.
 
-Q: How can you find the IP address of a Linux server?
+# How do you check the status of a service in Linux? 
 
-Q: Explain the purpose of the sshd service.
-
-Q: How do you check the status of a service in Linux?
-Q: What is the purpose of the /etc/passwd file?
+# What is the purpose of the /etc/passwd file?
 
 
-Q: Explain the use of the vi editor.
+# Explain the use of the vi editor.
 
-Q: How do you search for a file in Linux?
+# How do you search for a file in Linux?
 
-Q: What is the purpose of the iptables?
+# What is the purpose of the iptables?
 
-Q: What are environment variables in Linux?
+# What are environment variables in Linux?
 
-Q: How do you set an environment variable in Linux?
+# How do you set an environment variable in Linux?
 
-Q: What is the purpose of the /etc/shadow file?
+# What is the purpose of the /etc/shadow file?
 
-Q: Explain the use of the ping command.
+# Explain the use of the ping command.
 
-Q: What is the difference between wget and curl?
+# What is the difference between wget and curl?
 
-Q: How do you check disk usage in Linux?
+# How do you check disk usage in Linux?
 
-Q: Explain the use of the tail command.
+# Explain the use of the tail command.
 
-Q: What is the purpose of the xargs command?
+# What is the purpose of the xargs command?
 
-Q: How do you schedule a task in Linux?
+# How do you schedule a task in Linux?
 
-Q: What is a package manager in Linux?
+# What is a package manager in Linux?
 
-Q: Name some common package managers in Linux.
+# Name some common package managers in Linux.
 
-Q: What is the difference between yum and rpm?
+# What is the difference between yum and rpm?
 
-Q: How do you list all installed packages in Linux?
+# How do you list all installed packages in Linux?
 
-Q: What is a Linux service?
+# What is a Linux service?
 
-Q: How do you start, stop, and restart services in Linux?
+# How do you start, stop, and restart services in Linux?
 
-Q: Explain the purpose of the /etc/fstab file.
+# Explain the purpose of the /etc/fstab file.
 
-Q: What is LVM and what are its advantages?
+# What is LVM and what are its advantages?
 
-Q: How do you create a simple script in Linux?
+# How do you create a simple script in Linux?
 
-Q: What is the use of the nohup command?
+# What is the use of the nohup command?
 
-Q: Explain the use of the sed command.
+# Explain the use of the sed command.
 
-Q: What is the purpose of the /var directory?
-Q: How do you monitor system performance in Linux?
-Q: Explain the purpose of the ssh command.
-Q: How do you secure an SSH server?
-Q: What is the purpose of the /home directory?
-Q: Explain the use of the awk command.
-Q: What is swap space in Linux?
-Q: How do you create a swap file in Linux?
-Q: What is the purpose of the /etc/hosts file?
-Q: How do you set a static IP address in Linux?
-Q: Explain the purpose of the nslookup command.
-Q: What is the difference between iptables and firewalld?
-Q: What are runlevels in Linux?
-Q: How do you change runlevels?
-Q: What is the purpose of the /boot directory?
-Q: Explain the purpose of the rsync command.
-Q: What is a Linux distribution?
-Q: Name some popular Linux distributions.
-Q: How do you change the hostname of a Linux system?
-Q: What are system logs and where are they located?
-Q: Explain the purpose of the netstat command.
-Q: What is the purpose of the /etc/sysconfig directory?
-Q: How do you update all packages in Linux?
-Q: What are the common network configuration files in Linux?
-Q: How do you change the default runlevel?
-Q: What is the purpose of the /etc/resolv.conf file?
-Q: How do you find which process is using a particular file?
-Q: What is the purpose of the dmesg command?
-Q: Explain the purpose of the usermod command.
-Q: How do you find the size of a directory in Linux?
-Q: What is the purpose of the /etc/cron.* directories?
-Q: How do you change the priority of a process in Linux?
-Q: What is the purpose of the mount command?
-Q: Explain the purpose of the umask command.
-Q: What is the purpose of the /opt directory?
-Q: Explain the purpose of the dig command.
-Q: What are hard and soft limits in Linux?
-Q: How do you set a quota for users in Linux?
-Q: What is the purpose of the /usr directory?
-Q: How do you find the hardware details of your system?
-Q: What is the purpose of the sysctl command?
-Q: How do you check the kernel version of your Linux system?
-Q: What is the difference between a service and a daemon in Linux?
-Q: How do you redirect output in Linux?
-Q: What is the purpose of the /proc directory?
-Q: Explain the purpose of the tr command.
-Q: What is the difference between PATH and LD_LIBRARY_PATH?
-Q: How do you create a read-only file in Linux?
+# What is the purpose of the /var directory?
+
+# How do you monitor system performance in Linux?
+
+# Explain the purpose of the ssh command.
+
+# How do you secure an SSH server?
+
+# What is the purpose of the /home directory?
+
+# Explain the use of the awk command.
+
+# What is swap space in Linux?
+
+# How do you create a swap file in Linux?
+
+#  What is the purpose of the /etc/hosts file?
+
+# How do you set a static IP address in Linux?
+
+# Explain the purpose of the nslookup command.
+
+# What is the difference between iptables and firewalld?
+
+# What are runlevels in Linux?
+
+# How do you change runlevels?
+
+# What is the purpose of the /boot directory?
+
+# Explain the purpose of the rsync command.
+
+# What is a Linux distribution?
+
+# Name some popular Linux distributions.
+
+# How do you change the hostname of a Linux system?
+
+# What are system logs and where are they located?
+
+# Explain the purpose of the netstat command.
+
+# What is the purpose of the /etc/sysconfig directory?
+
+# How do you update all packages in Linux?
+
+# What are the common network configuration files in Linux?
+
+# How do you change the default runlevel?
+
+# What is the purpose of the /etc/resolv.conf file?
+
+#  How do you find which process is using a particular file?
+
+#  What is the purpose of the dmesg command?
+
+# Explain the purpose of the usermod command.
+
+# How do you find the size of a directory in Linux?
+
+# What is the purpose of the /etc/cron.* directories?
+
+# How do you change the priority of a process in Linux?
+
+# What is the purpose of the mount command?
+
+# Explain the purpose of the umask command.
+
+#  What is the purpose of the /opt directory?
+
+# Explain the purpose of the dig command.
+
+# What are hard and soft limits in Linux?
+
+# How do you set a quota for users in Linux?
+
+# What is the purpose of the /usr directory?
+
+# How do you find the hardware details of your system?
+
+# What is the purpose of the sysctl command?
+
+# How do you check the kernel version of your Linux system?
+
+# What is the difference between a service and a daemon in Linux?
+
+# How do you redirect output in Linux?
+
+# What is the purpose of the /proc directory?
+
+# Explain the purpose of the tr command.
+
+# What is the difference between PATH and LD_LIBRARY_PATH?
+
+# How do you create a read-only file in Linux?
