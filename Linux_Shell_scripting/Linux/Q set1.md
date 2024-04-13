@@ -251,62 +251,89 @@ cd /var/log/
 ```
 
 # Explain the purpose of the netstat command.
+The netstat command is used to display network connections, routing tables, interface statistics, masquerade connections, and multicast memberships. It helps users monitor network activity and troubleshoot networking issues by providing information about open ports, active connections, and network interface status.
 
 # What is the purpose of the /etc/sysconfig directory?
+The /etc/sysconfig directory in Unix-like operating systems, such as Linux, serves as a centralized location for system configuration files. It contains configuration files that define various system parameters, including network settings, system startup behavior, hardware configurations, and other system-specific settings. These files help administrators customize and manage the behavior of the operating system and its services.
 
 # How do you update all packages in Linux?
-
-# What are the common network configuration files in Linux?
-
-# How do you change the default runlevel?
-
-# What is the purpose of the /etc/resolv.conf file?
+```
+sudo apt update && sudo apt upgrade
+```
 
 #  How do you find which process is using a particular file?
+```
+lsof /path/to/file
+
+lsof /var/log/syslog
+```
 
 #  What is the purpose of the dmesg command?
+The `dmesg` command is used in Unix-like operating systems to display the message buffer of the kernel. It prints the kernel's ring buffer, which contains messages produced by the kernel about its operations, including information about hardware devices, drivers, and any system-level errors or warnings. This command is often used for troubleshooting hardware-related issues, diagnosing boot problems, and obtaining information about system events logged by the kernel.
 
 # Explain the purpose of the usermod command.
+The `usermod` command in Linux is used to modify user account properties. It allows administrators to make changes to existing user accounts without deleting and recreating them. With `usermod`, you can alter various attributes of a user account, such as the username, user ID (UID), home directory, login shell, group membership, expiration date, and more. This command provides a flexible way to manage user accounts, enabling administrators to adjust account settings to meet security requirements or operational needs.
 
 # How do you find the size of a directory in Linux?
-
-# What is the purpose of the /etc/cron.* directories?
-
-# How do you change the priority of a process in Linux?
+```
+du -sh /path/to/directory
+```
 
 # What is the purpose of the mount command?
+The `mount` command in Linux is used to mount filesystems and devices onto the system's directory tree. It enables the operating system to access files and directories stored on external devices such as hard drives, USB drives, network shares, and optical media. By specifying the source device or filesystem and the target mount point, administrators can attach storage media to specific locations in the filesystem hierarchy, making the data accessible to users and applications. Additionally, `mount` allows users to control various options and parameters related to how the filesystem is mounted, such as read/write permissions, filesystem type, and special mount options.
 
 # Explain the purpose of the umask command.
+The purpose of umask is to enhance security and control over file permissions, ensuring that newly created files and directories have appropriate levels of access according to the system administrator's preferences.
 
 #  What is the purpose of the /opt directory?
+Using /opt allows administrators to keep such software separate from the rest of the system, reducing the risk of conflicts and simplifying the management of third-party applications.
 
 # Explain the purpose of the dig command.
+The dig command is a network administration tool used for querying DNS (Domain Name System) servers. Its primary purpose is to perform DNS lookups and retrieve various types of DNS records for a given domain name or IP address.
 
 # What are hard and soft limits in Linux?
+***Soft limits***: Soft limits define the maximum resource usage allowed for a process or user. They can be adjusted by the user or the system administrator within certain predefined bounds. When a soft limit is reached, the system may issue a warning or send a signal to the process, depending on the specific resource being limited.
 
-# How do you set a quota for users in Linux?
+***Hard limits***: Hard limits are stricter than soft limits and cannot be exceeded by the user or process. They are set by the system administrator and act as an absolute cap on resource usage. If a process attempts to exceed a hard limit, the system typically terminates the process or denies the operation, depending on the nature of the resource being limited.
 
 # What is the purpose of the /usr directory?
-
-# How do you find the hardware details of your system?
-
-# What is the purpose of the sysctl command?
+The purpose of the /usr directory is to provide a standardized location for installing and organizing software and files that are shared among multiple users on the system. This directory typically contains subdirectories such as /usr/bin (executables), /usr/sbin (system administration executables), /usr/lib (libraries), /usr/share (shared data), /usr/include (header files), /usr/local (locally installed software), and more.
 
 # How do you check the kernel version of your Linux system?
+```
+uname -r
+uname -a
+```
 
 # What is the difference between a service and a daemon in Linux?
+***Daemon***: A daemon is a background process that runs continuously, providing specific services or functionality to the operating system or other applications. Daemons typically start when the system boots and continue running until the system shuts down. Examples of daemons include web servers (like Apache or Nginx), database servers (like MySQL or PostgreSQL), and system services (like the SSH server or the printing service).
 
-# How do you redirect output in Linux?
-
-# What is the purpose of the /proc directory?
-
-# Explain the purpose of the tr command.
-
-# What is the difference between PATH and LD_LIBRARY_PATH?
+***Service***: In the context of Linux system administration, a service refers to a high-level interface for managing daemons or system services. It provides commands or scripts to start, stop, restart, enable, disable, and check the status of daemons running on the system. Services often use init scripts or systemd unit files to control the behavior of daemons.
 
 # How do you create a read-only file in Linux?
+```
+touch filename
+chmod 444 filename
+```
 
 # How encode and decode the name 
+```
+echo <name> | encode base64
+echo <encrypt code> |  base64 --decode
+```
 
 # diff between encoding and encryption
+### Encoding:
 
+- Encoding is the process of converting data from one format to another for the purpose of representing it in a more compact, standardized, or compatible form.
+- Encoding does not involve securing the data or protecting it from unauthorized access. It is primarily used for data transmission, storage, and representation.
+- Encoded data is typically reversible and can be decoded back to its original form using the appropriate decoding method.
+- Examples of encoding include Base64 encoding, URL encoding, HTML encoding, and character set encodings like UTF-8.
+
+### Encryption:
+
+- Encryption is the process of converting data into a scrambled or unreadable form using an algorithm and a key. The purpose of encryption is to protect the confidentiality and integrity of the data, ensuring that only authorized parties can access and decipher it.
+- Encrypted data is transformed into ciphertext, which appears as random and meaningless characters without the decryption key.
+- Encryption algorithms vary in complexity and security level, with modern encryption techniques using strong cryptographic algorithms such as AES (Advanced Encryption Standard) and RSA (Rivest-Shamir-Adleman).
+- Decryption is the process of reversing encryption to recover the original plaintext data using the decryption key.
+- Encryption is commonly used to secure sensitive information during transmission over networks (e.g., HTTPS), storage on devices (e.g., encrypted hard drives), and communication between parties (e.g., end-to-end encryption in messaging apps).
