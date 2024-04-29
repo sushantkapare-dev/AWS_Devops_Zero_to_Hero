@@ -61,3 +61,38 @@ I ensure that infrastructure configurations adhere to relevant compliance standa
 ## Can you share your thoughts on the future evolution of Infrastructure as Code and its impact on the industry?
 I believe that Infrastructure as Code will continue to evolve with advancements in cloud computing, automation, and containerization technologies. Its impact will extend beyond traditional infrastructure management to areas like edge computing, serverless architectures, and AI-driven operations, shaping the future of IT infrastructure management and deployment practices.
 
+
+## You have multiple environments - dev, stage, prod for your application and you want to use the same code for all of these environment. How can you do that?
+
+## What is the Terraform state file, and why is it important?
+
+## Jr DevOps Engineer accidently deleted the state file, what steps should wetake to resolve this?
+
+## What are some best practices to manage terraform state file?
+
+## Your team is adopting a multicloud strategy and you need to manage resources on both AWS and Azure using terraform so how do you structure your terraform code to handle this?
+
+## There are some bash scripts that you want to run after creating your resources with terraform so how would you achieve this
+
+## Your company is looking ways to enable HA. How can you perform blue-green deployments using Terraform?
+
+## Your company wants to automate Terraform through CICD pipelines. How can you integrate Terraform with CI/CD pipelines?
+
+## Describe how you can use Terraform with infrastructure deployment tools like Ansible or Chef.
+
+## Your infrastructure contains database passwords and other sensitive information. How can you manage secrets and sensitive data in Terraform?
+
+## You have a RDS Database and EC2 instance. EC2 should be created before RDS, How can you specify dependencies between resources in Terraform?
+
+## You have 20 servers created through Terraform but you want to delete one of them. Is it possible to destroy a single resource out of multiple resources using Terraform?
+
+## What are the advantages of using Terraform's "count" feature over resource duplication?
+
+## What is Terraform's "module registry," and how can you leverage it?
+
+## How can you implement automated testing for Terraform code?
+
+## You are taskeds with migrating your existing infrastructure from terraform version 1.7 to version 1.8 so what kind of considerations and steps would you take?
+
+## 
+
