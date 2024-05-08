@@ -158,3 +158,7 @@ Consider third-party tools such as Packer, which is specifically designed for cr
   ```
 
 Choose the method that best fits your requirements and infrastructure-as-code preferences. Always follow AWS best practices for security and automation when working with AMIs.
+
+## How can we reduce boot time of VM's ?
+
+
