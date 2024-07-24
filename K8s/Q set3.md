@@ -148,3 +148,8 @@ Differentiating between legitimate users and a Distributed Denial of Service (DD
 7. **Anomaly Detection**: Utilize anomaly detection techniques to identify deviations from normal behavior. Machine learning algorithms can analyze historical traffic data to establish baseline patterns and detect anomalies in real-time. Anomalies, such as sudden spikes or drops in traffic volume, may indicate a DDoS attack in progress.
 
 By combining these techniques, you can enhance your ability to differentiate between legitimate users and DDoS attacks on an application, allowing you to take appropriate measures to mitigate the impact of malicious activity while ensuring uninterrupted service for legitimate users.
+
+# What is choreography vs orchestration in Kubernetes ?
+-  Choreography is a decentralized approach where each service independently decides the sequence of interactions based on predefined rules, allowing for more flexibility and adaptability as services communicate directly with each other. This can lead to simpler, more resilient systems but may also introduce challenges in ensuring consistency and managing complex workflows.
+
+-  orchestration is a centralized approach where a central controller, like a Kubernetes operator or a service orchestrator, dictates the flow and interactions between services. This allows for better control, monitoring, and management of workflows, ensuring that each step is executed in a specific order. However, it can create a single point of failure and may lead to more complex configurations as the orchestrator needs to be aware of all services and their interactions.
