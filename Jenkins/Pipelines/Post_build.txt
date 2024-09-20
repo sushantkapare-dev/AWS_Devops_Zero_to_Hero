@@ -1,0 +1,62 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                // Simulate a build step
+                sh 'echo "Simulating build..."'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+                // Simulate a test step
+                sh 'echo "Running tests..."'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+                // Simulate a deployment step
+                sh 'echo "Deploying to production..."'
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Build succeeded!'
+            // Actions to perform on successful build
+            sh 'echo "Notifying team of successful build..."'
+        }
+        
+        failure {
+            echo 'Build failed!'
+            // Actions to perform on failure
+            sh 'echo "Sending failure notification..."'
+        }
+        
+        always {
+            echo 'This will always run!'
+            // Actions to perform regardless of build outcome
+            sh 'echo "Cleaning up workspace..."'
+            cleanWs()  // Clean the workspace
+        }
+        
+        unstable {
+            echo 'Build is unstable!'
+            // Actions to perform if the build is unstable (test failures, etc.)
+            sh 'echo "Notifying team of unstable build..."'
+        }
+        
+        aborted {
+            echo 'Build was aborted!'
+            // Actions to perform if the build was manually aborted
+            sh 'echo "Handling aborted build..."'
+        }
+    }
+}
